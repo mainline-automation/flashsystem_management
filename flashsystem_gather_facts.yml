@@ -1,5 +1,6 @@
 ---
 - name: Gather facts from FlashSystem and store in inventory
+  hosts: localhost
   gather_facts: false
   become: false
   vars_files:
@@ -9,5 +10,4 @@
       ibm.spectrum_virtualize.ibm_svc_info:
         clustername: "{{ clustername }}"
         gather_subset: all
-        token: result.token
-        
+        token: api_token:

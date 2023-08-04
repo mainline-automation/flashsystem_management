@@ -2,8 +2,8 @@
 - name: Generate API token for FlashSystem
   hosts: localhost
   gather_facts: false 
-  collections:
-    - ibm.spectrum_virtualize
+  # collections:
+  #   - ibm.spectrum_virtualize
   vars_files:
     - vars/authentication.yml
   tasks:
