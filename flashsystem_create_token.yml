@@ -13,14 +13,14 @@
             password: "{{ _password_ }}"
       register: result
     
-    - name: make sure that file token.txt exists
-      ansible.builtin.file:
-        path: ~/.token.txt
-        state: touch
+    # - name: make sure that file token.txt exists
+    #   ansible.builtin.file:
+    #     path: ~/.token.txt
+    #     state: touch
 
-    - name: save result.token to separate file
-      ansible.builtin.copy:
-        content: result.token
-        dest: ~/.token.txt
+    # - name: save result.token to separate file
+    #   ansible.builtin.copy:
+    #     content: result.token
+    #     dest: ~/.token.txt
 
 
