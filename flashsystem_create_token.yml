@@ -5,8 +5,8 @@
   vars_files:
     - vars/authentication.yml
   tasks:
-    - name: use ibm_storage_virtualize.ibm_svc_auth to generate API token
-      ibm.storage_virtualize.ibm_svc_auth:
+    - name: use ibm_spectrum_virtualize.ibm_svc_auth to generate API token
+      ibm.spectrum_virtualize.ibm_svc_auth:
             clustername: "{{clustername}}"
             domain: "{{domain}}"
             username: "{{username}}"
