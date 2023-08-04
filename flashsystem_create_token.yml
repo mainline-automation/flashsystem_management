@@ -15,9 +15,9 @@
         password: "{{ _password_ }}"
       register: result
 
-    - name: save result as fact 
-      ansible.builtin.set_fact:
-        cacheable: true
-        api_token: "{{result.token}}"
+    - name: preserve result using set_stat 
+      ansible.builtin.set_stats:
+        data:
+          api_token: "{{result.token}}"
     
  

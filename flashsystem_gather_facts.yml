@@ -10,4 +10,4 @@
       ibm.spectrum_virtualize.ibm_svc_info:
         clustername: "{{ clustername }}"
         gather_subset: all
-        token: api_token
+        token: "{{ api_token }}"
