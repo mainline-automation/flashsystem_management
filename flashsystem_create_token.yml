@@ -20,6 +20,4 @@
         cacheable: true
         api_token: "{{result.token}}"
     
-    - name: print ansible_fact api_token
-      ansible.builtin.debug:
-        "{{ hostvars['v7kg3flash']['api_token'] }}"
+ 

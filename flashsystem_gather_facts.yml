@@ -1,0 +1,13 @@
+---
+- name: Gather facts from FlashSystem and store in inventory
+  gather_facts: false
+  become: false
+  vars_files:
+    - vars/authentication.yml
+  tasks:
+    - name: gather facts using ibm_svc_info
+      ibm.spectrum_virtualize.ibm_svc_info:
+        clustername: "{{ clustername }}"
+        gather_subset: all 
+        token: result.token
+
