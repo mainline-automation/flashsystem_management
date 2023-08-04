@@ -15,12 +15,12 @@
     
     - name: make sure that file token.txt exists
       ansible.builtin.file:
-        path: /tmp/token.txt
+        path: ~/.token.txt
         state: touch
 
     - name: save result.token to separate file
       ansible.builtin.copy:
         content: result.token
-        dest: /tmp/token.txt
+        dest: ~/.token.txt
 
 
