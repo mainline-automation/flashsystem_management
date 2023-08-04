@@ -2,6 +2,8 @@
 - name: Generate API token for FlashSystem
   hosts: localhost
   gather_facts: false 
+  collections:
+    - ibm.spectrum_virtualize
   vars_files:
     - vars/authentication.yml
   tasks:
@@ -18,14 +20,6 @@
         cacheable: true
         api_token: "{{result.token}}"
     
-    # - name: make sure that file token.txt exists
-    #   ansible.builtin.file:
-    #     path: ~/.token.txt
-    #     state: touch
-
-    # - name: save result.token to separate file
-    #   ansible.builtin.copy:
-    #     content: result.token
-    #     dest: ~/.token.txt
-
-
+    - name: print ansible_fact api_token
+      ansible.builtin.debug:
+        "{{ hostvars['v7kg3flash']['api_token'] }}"
