@@ -12,6 +12,11 @@
             username: "{{username}}"
             password: "{{ _password_ }}"
       register: result
+
+    - name: save result as fact 
+      ansible.builtin.set_fact:
+        cacheable: true
+        api_token: "{{result.token}}"
     
     # - name: make sure that file token.txt exists
     #   ansible.builtin.file:
