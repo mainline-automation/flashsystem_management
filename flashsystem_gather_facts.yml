@@ -10,3 +10,4 @@
         clustername: "{{ clustername }}"
         gather_subset: all
         token: result.token
+        
