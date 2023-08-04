@@ -8,7 +8,7 @@
     - name: use ibm_spectrum_virtualize.ibm_svc_auth to generate API token
       ibm.spectrum_virtualize.ibm_svc_auth:
             clustername: "{{clustername}}"
-            domain: "{{domain}}"
+            #domain: "{{domain}}"
             username: "{{username}}"
             password: "{{ _password_ }}"
       register: result
