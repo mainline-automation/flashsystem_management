@@ -1,0 +1,5 @@
+---
+domain: 'bpic.mainline.com'
+clustername: '10.137.0.30'
+username: 'ansible'
+_password_: 'M@inline1700'

@@ -1,0 +1,21 @@
+---
+- name: Generate API token for FlashSystem
+  hosts: localhost
+  gather_facts: false 
+  vars_files:
+    - vars/authentication.yml
+  tasks:
+    - name: use ibm_storage_virtualize.ibm_svc_auth to generate API token
+      ibm.storage_virtualize.ibm_svc_auth:
+            clustername: "{{clustername}}"
+            domain: "{{domain}}"
+            username: "{{username}}"
+            password: "{{ _password_ }}"
+      register: result
+
+    - name: save result.token to separate file
+      ansible.builtin.copy:
+        content: result.token
+        dest: /tmp/token.txt
+
+
