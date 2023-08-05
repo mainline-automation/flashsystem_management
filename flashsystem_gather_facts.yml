@@ -9,5 +9,5 @@
     - name: gather facts using ibm_svc_info
       ibm.spectrum_virtualize.ibm_svc_info:
         clustername: "{{ clustername }}"
-        gather_subset: all
+        gather_subset: array
         token: "{{ api_token }}"
