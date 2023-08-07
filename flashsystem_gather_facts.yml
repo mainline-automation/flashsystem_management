@@ -19,14 +19,14 @@
 
     - name: create /etc/ansible/facts.d/ directory if it doesn't exist
       ansible.builtin.file:
-        path: /etc/ansible/facts.d/
+        path: /etc/ansible/facts.d
         state: directory
         recurse: true
     
     - name: copy results.Array to /etc/ansible/facts.d/
       ansible.builtin.copy:
         src: "{{ results.Array }}"
-        dest: /etc/ansible/facts.d/
+        dest: /etc/ansible/facts.d
         #owner: root
         #group: root
         #mode: 493
