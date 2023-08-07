@@ -25,7 +25,6 @@
       ansible.builtin.file:
         path: /etc/ansible/facts.d/
         state: directory
-        state: present
         
 
     - name: write array_results to /etc/ansible/facts.d/
