@@ -11,3 +11,8 @@
         clustername: "{{ clustername }}"
         gather_subset: array
         token: "{{ api_token }}"
+      register: results
+
+    - name: Print out results.array
+      ansible.builtin.debug:
+        msg: "{{ results.array }}"
