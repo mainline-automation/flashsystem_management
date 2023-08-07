@@ -15,4 +15,4 @@
 
     - name: Print out results.array
       ansible.builtin.debug:
-        msg: "{{ results.array }}"
+        msg: "{{ results.Array }}"
