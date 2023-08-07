@@ -17,7 +17,11 @@
       ansible.builtin.debug:
         msg: "{{ results.Array }}"
 
-    - name: use results.Array to create facts for inventory
+    - name: use results.Array list to create facts for ibm_flashsystems
       ansible.builtin.set_fact:
-        ibm_flashsystems "{{ ibm_flashsystems | combine( { item.key: item.value } ) }}"
-      loop: "{{ results.Array | dict2items }}"
+        hosts_list: "{{ results.Array | map(attribute='hosts') | list }}"
+        volumes_list: "{{ results.Array | map(attribute='volumes') | list }}"
+        lun_list: "{{ results.Array | map(attribute='lun_count') | list }}"
+      # ansible.builtin.set_fact:
+      #   ibm_flashsystems "{{ ibm_flashsystems | combine( { item.key: item.value } ) }}"
+      # loop: "{{ results.Array | dict2items }}"
