@@ -19,5 +19,5 @@
 
     - name: use results.Array to create facts for inventory
       ansible.builtin.set_fact:
-        inventory: "{{ inventory | combine( { item.key: item.value } ) }}"
+        ibm_flashsystems "{{ ibm_flashsystems | combine( { item.key: item.value } ) }}"
       loop: "{{ results.Array | dict2items }}"
