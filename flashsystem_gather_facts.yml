@@ -1,6 +1,6 @@
 ---
 - name: Gather facts from FlashSystem and store in inventory
-  hosts: localhost
+  hosts: ibm_flashsystems
   gather_facts: false
   become: false
   vars_files:
@@ -16,3 +16,8 @@
     - name: Print out results.array
       ansible.builtin.debug:
         msg: "{{ results.Array }}"
+
+    - name: use results.Array to create facts for inventory
+      ansible.builtin.set_fact:
+        inventory: "{{ inventory | combine( { item.key: item.value } ) }}"
+      loop: "{{ results.Array | dict2items }}"
