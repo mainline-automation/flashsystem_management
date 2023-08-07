@@ -21,13 +21,14 @@
       ansible.builtin.set_fact:
         array_results: "{{ results.Array }}"
 
-    - name: create directory for /etc/ansible/facts.d if it doesn't exist
+    - name: create directory for /etc/ansible/facts.d/ if it doesn't exist
       ansible.builtin.file:
-        path: /etc/ansible/facts.d
+        path: /etc/ansible/facts.d/
         state: directory
+        state: present
         
 
-    - name: write array_results to /etc/ansible/facts.d
+    - name: write array_results to /etc/ansible/facts.d/
       ansible.builtin.copy:
         content: "{{ array_results }}"
         dest: /etc/ansible/facts.d/array_results.fact
