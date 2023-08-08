@@ -39,11 +39,9 @@
         content: "{{ results.Array | to_yaml}}"
         dest: /etc/ansible/facts.d/array_results.fact
 
-- name: use ansible set_fact to define array_results using results.Array
-      ansible.builtin.set_fact:
+    - name: Use ansible set_fact to define array_results
+      delegate_facts: true
+      delegate_to: v7g3flash
+      set_fact:
         array_results: "{{ /etc/ansible/facts.d/array_results.fact }}"
         cacheable: true
-  delegate_facts: true
-  delegate_to: v7g3flash
-    # - name: print the contents of the file /etc/ansible/facts.d/array_results.fact
-    #   ansible.builtin.command: cat /etc/ansible/facts.d/array_results.fact
