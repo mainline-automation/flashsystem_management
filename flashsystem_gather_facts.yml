@@ -36,7 +36,7 @@
 
     - name: write array_results to /etc/ansible/facts.d/
       ansible.builtin.copy:
-        content: "{{ results.Array | items2dict }}"
+        content: "{{ results.Array | dict2items }}"
         dest: /etc/ansible/facts.d/array_results.fact
 
     - name: Use ansible set_fact to define array_results
