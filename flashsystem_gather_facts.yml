@@ -34,5 +34,4 @@
         dest: /etc/ansible/facts.d/array_results.fact
 
     - name: print the contents of the file /etc/ansible/facts.d/array_results.fact
-      ansible.builtin.command:
-        command: cat /etc/ansible/facts.d/array_results.fact
+      ansible.builtin.command: cat /etc/ansible/facts.d/array_results.fact
