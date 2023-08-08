@@ -43,5 +43,6 @@
       delegate_facts: true
       delegate_to: v7g3flash
       set_fact:
-        array_results: "{{ results.Array | items2dict }}"
+        flashsystem: "{{ Array | default({}) | combine({ item['results.Array']: item }) }}"
+        loop: "{{ results.Array }}"
         cacheable: true
