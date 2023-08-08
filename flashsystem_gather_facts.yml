@@ -29,7 +29,7 @@
         
 
     - name: write array_results to /etc/ansible/facts.d/
-      ansible.builtin.copy:
+      ansible.builtin.template:
         content: "{{ results.Array }}"
         dest: /etc/ansible/facts.d/array_results.fact
 
