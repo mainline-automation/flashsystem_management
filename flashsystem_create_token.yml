@@ -1,6 +1,6 @@
 ---
 - name: Generate API token for FlashSystem
-  hosts: ibm-storage
+  hosts: v7g3flash
   gather_facts: false 
   # collections:
   #   - ibm.spectrum_virtualize
