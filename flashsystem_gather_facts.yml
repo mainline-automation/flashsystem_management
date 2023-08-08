@@ -36,12 +36,12 @@
 
     - name: write array_results to /etc/ansible/facts.d/
       ansible.builtin.copy:
-        content: "{{ results.Array | to_json}}"
+        content: "{{ results.Array | list2dict }}"
         dest: /etc/ansible/facts.d/array_results.fact
 
     - name: Use ansible set_fact to define array_results
       delegate_facts: true
       delegate_to: v7g3flash
       set_fact:
-        array_results: "{{ /etc/ansible/facts.d/array_results.fact }}"
+        array_results: "{{ results.Array | items2dict }}"
         cacheable: true
