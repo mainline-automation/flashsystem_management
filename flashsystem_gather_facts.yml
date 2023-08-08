@@ -1,6 +1,6 @@
 ---
 - name: Gather facts from FlashSystem and store in inventory
-  hosts: ibm_flashsystems
+  hosts: localhost
   gather_facts: false
   become: true
   vars_files:
@@ -24,6 +24,7 @@
     - name: create directory for /etc/ansible/facts.d/ if it doesn't exist
       ansible.builtin.file:
         path: /etc/ansible/facts.d
+        owner: ansible
         recurse: true
         state: directory
         
@@ -36,3 +37,17 @@
     - name: Re-read facts after adding custom fact
       ansible.builtin.setup:
         filter: ansible_local
+
+     - name: Display information
+      ansible.builtin.debug:
+        msg:
+          - "Managed Disk ID: {{ ansible_facts['mdisk_id'] }}"
+          - "Managed Disk Name: {{ ansible_facts['mdisk_name'] }}"
+          - "status: {{ ansible_facts['status'] }}"
+          - "mdisk_grp_id: {{ ansible_facts['mdisk_grp_id'] }}"
+          - "mdisk_grp_name: {{ ansible_facts['mdisk_grp_name'] }}"
+          - "capacity: {{ ansible_facts['capacity'] }}"
+          - "raid_status: {{ ansible_facts['raid_status'] }}"
+          - "raid_level: {{ ansible_facts['raid_level'] }}"
+          - "redunancy: {{ ansible_facts['redundancy'] }}"
+         
