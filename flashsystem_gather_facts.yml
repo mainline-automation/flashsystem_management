@@ -17,9 +17,9 @@
       ansible.builtin.debug:
         msg: "{{ results.Array }}"
 
-    - name: use ansible set_fact to define array_results using results.Array
-      ansible.builtin.set_fact:
-        array_results: "{{ results.Array }}"
+    # - name: use ansible set_fact to define array_results using results.Array
+    #   ansible.builtin.set_fact:
+    #     array_results: "{{ results.Array }}"
 
     - name: create directory for /etc/ansible/facts.d/ if it doesn't exist
       ansible.builtin.file:
@@ -30,9 +30,9 @@
 
     - name: write array_results to /etc/ansible/facts.d/
       ansible.builtin.copy:
-        content: "{{ array_results }}"
+        content: "{{ results.Array }}"
         dest: /etc/ansible/facts.d/array_results.fact
 
-    - name: Re-read facts after adding custom fact
-      ansible.builtin.setup:
-        filter: ansible_local
+    - name: print the contents of the file /etc/ansible/facts.d/array_results.fact
+      ansible.builtin.command:
+        command: cat /etc/ansible/facts.d/array_results.fact
