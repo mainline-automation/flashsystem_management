@@ -38,7 +38,7 @@
       ansible.builtin.setup:
         filter: ansible_local
 
-     - name: Display information
+    - name: Display information
       ansible.builtin.debug:
         msg:
           - "Managed Disk ID: {{ ansible_facts['mdisk_id'] }}"
