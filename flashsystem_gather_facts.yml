@@ -2,7 +2,7 @@
 - name: Gather facts from FlashSystem and store in inventory
   hosts: ibm_flashsystems
   gather_facts: false
-  become: false
+  become: true
   vars_files:
     - vars/authentication.yml
   tasks:
