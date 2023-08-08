@@ -24,7 +24,6 @@
     - name: create directory for /etc/ansible/facts.d/ if it doesn't exist
       ansible.builtin.file:
         path: /etc/ansible/facts.d
-        owner: ansible
         recurse: true
         state: directory
         
