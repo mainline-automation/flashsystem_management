@@ -21,11 +21,11 @@
       ansible.builtin.debug:
         msg: "{{ results.Array }}"
 
-    - name: use ansible set_fact to define array_results using results.Array
-      ansible.builtin.set_fact:
-        array_results: "{{ results.Array }}"
-      delegate_facts: true
-      delegate_to: v7g3flash
+    # - name: use ansible set_fact to define array_results using results.Array
+    #   ansible.builtin.set_fact:
+    #     array_results: "{{ results.Array }}"
+    #   delegate_facts: true
+    #   delegate_to: v7g3flash
 
     - name: create directory for /etc/ansible/facts.d/ if it doesn't exist
       ansible.builtin.file:
@@ -39,5 +39,11 @@
         content: "{{ results.Array | to_yaml}}"
         dest: /etc/ansible/facts.d/array_results.fact
 
+- name: use ansible set_fact to define array_results using results.Array
+      ansible.builtin.set_fact:
+        array_results: "{{ /etc/ansible/facts.d/array_results.fact }}"
+        cacheable: true
+  delegate_facts: true
+  delegate_to: v7g3flash
     # - name: print the contents of the file /etc/ansible/facts.d/array_results.fact
     #   ansible.builtin.command: cat /etc/ansible/facts.d/array_results.fact
