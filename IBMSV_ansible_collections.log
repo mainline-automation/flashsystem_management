@@ -1,0 +1,30 @@
+2023-08-08T17:27:46.765  INFO 139911049538432 ibm_svc_utils.py:_svc_rest():186 _svc_rest: url=https://10.137.0.30:7443/rest/auth
+2023-08-08T17:27:46.765  INFO 139911049538432 ibm_svc_utils.py:_svc_rest():191 _svc_rest: payload=None
+2023-08-08T17:27:46.869  INFO 139911049538432 ibm_svc_utils.py:_svc_rest():186 _svc_rest: url=https://10.137.0.30:7443/rest/lsarray
+2023-08-08T17:27:46.869  INFO 139911049538432 ibm_svc_utils.py:_svc_rest():191 _svc_rest: payload=None
+2023-08-08T17:27:46.948  INFO 139911049538432 ibm_svc_utils.py:svc_obj_info():305 svc_obj_info rest={'url': 'https://10.137.0.30:7443/rest/lsarray', 'code': None, 'err': None, 'out': [{'mdisk_id': '0', 'mdisk_name': 'mdisk0_8x4.8FCM_DR6', 'status': 'online', 'mdisk_grp_id': '2', 'mdisk_grp_name': 'Pool_01', 'capacity': '99.1TB', 'raid_status': 'online', 'raid_level': 'raid6', 'redundancy': '2', 'strip_size': '256', 'tier': 'tier0_flash', 'encrypt': 'no', 'distributed': 'yes'}], 'data': None}
+2023-08-08T17:27:46.948  INFO 139911049538432 ibm_svc_info.py:get_list():744 Successfully listed 5 array info from cluster 10.137.0.30
+2023-08-08T17:32:30.306  INFO 140664034728832 ibm_svc_utils.py:_svc_rest():186 _svc_rest: url=https://10.137.0.30:7443/rest/auth
+2023-08-08T17:32:30.306  INFO 140664034728832 ibm_svc_utils.py:_svc_rest():191 _svc_rest: payload=None
+2023-08-08T17:32:30.403  INFO 140664034728832 ibm_svc_utils.py:_svc_rest():186 _svc_rest: url=https://10.137.0.30:7443/rest/lsarray
+2023-08-08T17:32:30.403  INFO 140664034728832 ibm_svc_utils.py:_svc_rest():191 _svc_rest: payload=None
+2023-08-08T17:32:30.483  INFO 140664034728832 ibm_svc_utils.py:svc_obj_info():305 svc_obj_info rest={'url': 'https://10.137.0.30:7443/rest/lsarray', 'code': None, 'err': None, 'out': [{'mdisk_id': '0', 'mdisk_name': 'mdisk0_8x4.8FCM_DR6', 'status': 'online', 'mdisk_grp_id': '2', 'mdisk_grp_name': 'Pool_01', 'capacity': '99.1TB', 'raid_status': 'online', 'raid_level': 'raid6', 'redundancy': '2', 'strip_size': '256', 'tier': 'tier0_flash', 'encrypt': 'no', 'distributed': 'yes'}], 'data': None}
+2023-08-08T17:32:30.483  INFO 140664034728832 ibm_svc_info.py:get_list():744 Successfully listed 5 array info from cluster 10.137.0.30
+2023-08-08T17:33:05.397  INFO 140657263564608 ibm_svc_utils.py:_svc_rest():186 _svc_rest: url=https://10.137.0.30:7443/rest/auth
+2023-08-08T17:33:05.397  INFO 140657263564608 ibm_svc_utils.py:_svc_rest():191 _svc_rest: payload=None
+2023-08-08T17:33:05.482  INFO 140657263564608 ibm_svc_utils.py:_svc_rest():186 _svc_rest: url=https://10.137.0.30:7443/rest/lsarray
+2023-08-08T17:33:05.482  INFO 140657263564608 ibm_svc_utils.py:_svc_rest():191 _svc_rest: payload=None
+2023-08-08T17:33:05.561  INFO 140657263564608 ibm_svc_utils.py:svc_obj_info():305 svc_obj_info rest={'url': 'https://10.137.0.30:7443/rest/lsarray', 'code': None, 'err': None, 'out': [{'mdisk_id': '0', 'mdisk_name': 'mdisk0_8x4.8FCM_DR6', 'status': 'online', 'mdisk_grp_id': '2', 'mdisk_grp_name': 'Pool_01', 'capacity': '99.1TB', 'raid_status': 'online', 'raid_level': 'raid6', 'redundancy': '2', 'strip_size': '256', 'tier': 'tier0_flash', 'encrypt': 'no', 'distributed': 'yes'}], 'data': None}
+2023-08-08T17:33:05.561  INFO 140657263564608 ibm_svc_info.py:get_list():742 Successfully listed 5 array info from cluster 10.137.0.30
+2023-08-08T17:38:22.944  INFO 139639547410240 ibm_svc_utils.py:_svc_rest():186 _svc_rest: url=https://10.137.0.30:7443/rest/auth
+2023-08-08T17:38:22.945  INFO 139639547410240 ibm_svc_utils.py:_svc_rest():191 _svc_rest: payload=None
+2023-08-08T17:38:23.026  INFO 139639547410240 ibm_svc_utils.py:_svc_rest():186 _svc_rest: url=https://10.137.0.30:7443/rest/lsarray
+2023-08-08T17:38:23.026  INFO 139639547410240 ibm_svc_utils.py:_svc_rest():191 _svc_rest: payload=None
+2023-08-08T17:38:23.108  INFO 139639547410240 ibm_svc_utils.py:svc_obj_info():305 svc_obj_info rest={'url': 'https://10.137.0.30:7443/rest/lsarray', 'code': None, 'err': None, 'out': [{'mdisk_id': '0', 'mdisk_name': 'mdisk0_8x4.8FCM_DR6', 'status': 'online', 'mdisk_grp_id': '2', 'mdisk_grp_name': 'Pool_01', 'capacity': '99.1TB', 'raid_status': 'online', 'raid_level': 'raid6', 'redundancy': '2', 'strip_size': '256', 'tier': 'tier0_flash', 'encrypt': 'no', 'distributed': 'yes'}], 'data': None}
+2023-08-08T17:38:23.108  INFO 139639547410240 ibm_svc_info.py:get_list():742 Successfully listed 5 array info from cluster 10.137.0.30
+2023-08-08T17:52:33.896  INFO 140564292052800 ibm_svc_utils.py:_svc_rest():186 _svc_rest: url=https://10.137.0.30:7443/rest/auth
+2023-08-08T17:52:33.897  INFO 140564292052800 ibm_svc_utils.py:_svc_rest():191 _svc_rest: payload=None
+2023-08-08T17:52:33.987  INFO 140564292052800 ibm_svc_utils.py:_svc_rest():186 _svc_rest: url=https://10.137.0.30:7443/rest/lsarray
+2023-08-08T17:52:33.987  INFO 140564292052800 ibm_svc_utils.py:_svc_rest():191 _svc_rest: payload=None
+2023-08-08T17:52:34.069  INFO 140564292052800 ibm_svc_utils.py:svc_obj_info():305 svc_obj_info rest={'url': 'https://10.137.0.30:7443/rest/lsarray', 'code': None, 'err': None, 'out': [{'mdisk_id': '0', 'mdisk_name': 'mdisk0_8x4.8FCM_DR6', 'status': 'online', 'mdisk_grp_id': '2', 'mdisk_grp_name': 'Pool_01', 'capacity': '99.1TB', 'raid_status': 'online', 'raid_level': 'raid6', 'redundancy': '2', 'strip_size': '256', 'tier': 'tier0_flash', 'encrypt': 'no', 'distributed': 'yes'}], 'data': None}
+2023-08-08T17:52:34.069  INFO 140564292052800 ibm_svc_info.py:get_list():742 Successfully listed 5 array info from cluster 10.137.0.30

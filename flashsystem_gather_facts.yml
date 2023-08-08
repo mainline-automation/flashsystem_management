@@ -1,8 +1,10 @@
 ---
 - name: Gather facts from FlashSystem and store in inventory
-  hosts: v7g3flash
+  hosts: localhost
   gather_facts: false
   become: true
+  collections:
+    - ibm.spectrum_virtualize
   vars_files:
     - vars/authentication.yml
   tasks:
@@ -10,16 +12,20 @@
       ibm.spectrum_virtualize.ibm_svc_info:
         clustername: "{{ clustername }}"
         gather_subset: array
-        token: "{{ api_token }}"
+        username: ansible
+        password: M@inline1700
+      #  token: "{{ api_token }}"
       register: results
 
     - name: Print out results.array
       ansible.builtin.debug:
         msg: "{{ results.Array }}"
 
-    # - name: use ansible set_fact to define array_results using results.Array
-    #   ansible.builtin.set_fact:
-    #     array_results: "{{ results.Array }}"
+    - name: use ansible set_fact to define array_results using results.Array
+      ansible.builtin.set_fact:
+        array_results: "{{ results.Array }}"
+      delegate_facts: true
+      delegate_to: v7g3flash
 
     - name: create directory for /etc/ansible/facts.d/ if it doesn't exist
       ansible.builtin.file:
@@ -29,9 +35,9 @@
         
 
     - name: write array_results to /etc/ansible/facts.d/
-      ansible.builtin.template:
-        src: "{{ results.Array }}"
+      ansible.builtin.copy:
+        content: "{{ results.Array | to_yaml}}"
         dest: /etc/ansible/facts.d/array_results.fact
 
-    - name: print the contents of the file /etc/ansible/facts.d/array_results.fact
-      ansible.builtin.command: cat /etc/ansible/facts.d/array_results.fact
+    # - name: print the contents of the file /etc/ansible/facts.d/array_results.fact
+    #   ansible.builtin.command: cat /etc/ansible/facts.d/array_results.fact
