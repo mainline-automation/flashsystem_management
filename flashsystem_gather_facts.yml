@@ -1,6 +1,6 @@
 ---
 - name: Gather facts from FlashSystem and store in inventory
-  hosts: localhost
+  hosts: v7g3flash
   gather_facts: false
   become: true
   vars_files:
