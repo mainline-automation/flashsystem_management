@@ -4,7 +4,7 @@
   gather_facts: false
   become: true
   collections:
-    - ibm.spectrum_virtualize
+    - ibm.storage_virtualize
   vars_files:
     - vars/authentication.yml
   vars:
@@ -13,7 +13,7 @@
 
   tasks:
     - name: gather facts using ibm_svc_info
-      ibm.spectrum_virtualize.ibm_svc_info:
+      ibm.storage_virtualize.ibm_svc_info:
         clustername: "{{ clustername }}"
         gather_subset: array
         username: ansible
