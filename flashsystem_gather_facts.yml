@@ -13,7 +13,7 @@
         gather_subset: array
         # username: 
         # password:
-       token: "{{ api_token }}"
+        token: "{{ api_token }}"
       register: results
       no_log: true
       
