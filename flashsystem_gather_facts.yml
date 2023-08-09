@@ -26,14 +26,16 @@
         path: /etc/ansible/facts.d
         recurse: true
         state: directory
-        
+
+    - name: write array_results to /etc/ansible/facts.d/
+      ansible.builtin.copy:
+        content: "{{ results.Array[0] }}"
+        dest: '/etc/ansible/facts.d/{{ clustername }}.fact'
+
     - name: import registered variable results.Array into set_fact
       ansible.builtin.set_fact:
         array_details: "{{ results.Array[0] }}"
       delegate_facts: true
       delegate_to: "{{ clustername }}"
 
-    - name: write array_results to /etc/ansible/facts.d/
-      ansible.builtin.copy:
-        content: "{{ array_details }}"
-        dest: '/etc/ansible/facts.d/{{ clustername }}.fact'
+    
