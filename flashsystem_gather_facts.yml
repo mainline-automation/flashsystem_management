@@ -7,10 +7,7 @@
     - ibm.storage_virtualize
   vars_files:
     - vars/authentication.yml
-  vars:
-    array_str: |
-      { name}
-
+ 
   tasks:
     - name: gather facts using ibm_svc_info
       ibm.storage_virtualize.ibm_svc_info:
