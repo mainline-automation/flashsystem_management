@@ -35,5 +35,5 @@
 
     - name: write array_results to /etc/ansible/facts.d/
       ansible.builtin.copy:
-        content: "{{ results.Array [0] }}"
+        content: "{{ array_details }}"
         dest: '/etc/ansible/facts.d/{{ clustername }}.fact'
