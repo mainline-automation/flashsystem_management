@@ -1,6 +1,6 @@
 ---
 - name: Gather facts from FlashSystem and store in inventory
-  hosts: v7g3flash
+  hosts: ibm_storage 
   gather_facts: false
   become: true
   collections:
@@ -12,14 +12,12 @@
     - name: gather facts using ibm_svc_info
       ibm.storage_virtualize.ibm_svc_info:
         clustername: "{{ clustername }}"
-        gather_subset: all
-        username: ansible
-        password: M@inline1700
-      #  token: "{{ api_token }}"
+        gather_subset: array
+        # username: 
+        # password:
+       token: "{{ api_token }}"
       register: results
-      # delegate_facts: true
-      # delegate_to: v7g3flash
-
+      
     - name: Print out results.array
       ansible.builtin.debug:
         msg: "{{ results.Array }}"

@@ -2,13 +2,12 @@
 - name: Generate API token for FlashSystem
   hosts: v7g3flash
   gather_facts: false 
-  # collections:
-  #   - ibm.spectrum_virtualize
+  
   vars_files:
     - vars/authentication.yml
   tasks:
     - name: use ibm_spectrum_virtualize.ibm_svc_auth to generate API token
-      ibm.spectrum_virtualize.ibm_svc_auth:
+      ibm.storage_virtualize.ibm_svc_auth:
         clustername: "{{clustername}}"
         #domain: "{{domain}}"
         username: "{{username}}"
