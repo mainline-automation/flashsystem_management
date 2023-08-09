@@ -26,6 +26,7 @@
         path: /etc/ansible/facts.d
         recurse: true
         state: directory
+      delegate_to: localhost
 
     - name: write array_results to /etc/ansible/facts.d/
       ansible.builtin.copy:
