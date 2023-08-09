@@ -1,6 +1,6 @@
 ---
 - name: Gather facts from FlashSystem and store in inventory
-  #hosts: localhost 
+  hosts: localhost
   gather_facts: false
   become: true
   vars_files:
@@ -11,7 +11,7 @@
       ibm.storage_virtualize.ibm_svc_info:
         clustername: "{{ clustername }}"
         gather_subset: array
-        # username: 
+        # username:
         # password:
         token: "{{ api_token }}"
       register: results
@@ -21,7 +21,7 @@
       ansible.builtin.debug:
         msg: "{{ results.Array }}"
 
-    - name: create directory for /etc/ansible/facts.d/ if it doesn't exist
+    - name: create directory for /etc/ansible/facts.d if it doesn't exist
       ansible.builtin.file:
         path: /etc/ansible/facts.d
         recurse: true
