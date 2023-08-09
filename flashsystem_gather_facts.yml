@@ -17,6 +17,7 @@
         # password:
        token: "{{ api_token }}"
       register: results
+      no_log: true
       
     - name: Print out results.array
       ansible.builtin.debug:
