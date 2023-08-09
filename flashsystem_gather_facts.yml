@@ -1,6 +1,6 @@
 ---
 - name: Gather facts from FlashSystem and store in inventory
-  hosts: localhost
+  hosts: v7g3flash
   gather_facts: false
   become: true
   collections:
@@ -17,8 +17,8 @@
         password: M@inline1700
       #  token: "{{ api_token }}"
       register: results
-      delegate_facts: true
-      delegate_to: v7g3flash
+      # delegate_facts: true
+      # delegate_to: v7g3flash
 
     - name: Print out results.array
       ansible.builtin.debug:
