@@ -1,6 +1,6 @@
 ---
 - name: Gather facts from FlashSystem and store in inventory
-  hosts: ibm_flashsystems 
+  hosts: localhost 
   gather_facts: false
   become: true
   vars_files:
@@ -30,6 +30,8 @@
     - name: import registered variable results.Array into set_fact
       ansible.builtin.set_fact:
         array_details: "{{ results.Array[0] }}"
+      delegate_facts: true
+      delegate_to: "{{ clustername }}"
 
     - name: write array_results to /etc/ansible/facts.d/
       ansible.builtin.copy:
