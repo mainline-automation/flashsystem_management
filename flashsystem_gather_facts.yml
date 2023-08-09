@@ -1,6 +1,6 @@
 ---
 - name: Gather facts from FlashSystem and store in inventory
-  hosts: localhost
+  hosts: ibm-flashsystems
   gather_facts: false
   become: true
   vars_files:
