@@ -1,6 +1,6 @@
 ---
 - name: Generate API token for FlashSystem
-  hosts: v7g3flash
+  hosts: ibm-flashsystems
   gather_facts: false 
   
   vars_files:
