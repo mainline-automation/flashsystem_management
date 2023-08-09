@@ -12,7 +12,7 @@
     - name: gather facts using ibm_svc_info
       ibm.storage_virtualize.ibm_svc_info:
         clustername: "{{ clustername }}"
-        gather_subset: array
+        gather_subset: all
         username: ansible
         password: M@inline1700
       #  token: "{{ api_token }}"
