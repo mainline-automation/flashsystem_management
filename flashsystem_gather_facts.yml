@@ -17,6 +17,8 @@
         password: M@inline1700
       #  token: "{{ api_token }}"
       register: results
+      delegate_facts: true
+      delegate_to: v7g3flash
 
     - name: Print out results.array
       ansible.builtin.debug:
