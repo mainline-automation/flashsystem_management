@@ -35,7 +35,5 @@
     - name: import registered variable results.Array into set_fact
       ansible.builtin.set_fact:
         array_details: "{{ results.Array[0] }}"
-      delegate_facts: true
-      delegate_to: "{{ clustername }}"
 
     
