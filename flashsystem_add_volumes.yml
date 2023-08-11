@@ -9,7 +9,8 @@
   tasks:
   - name: read the csv file
     community.general.read_csv:
-      path: 'add-volumes.csv'
+      path: "{{ vars/add-volumes.csv }}"
+      key: name
     register: volumes
  
    
