@@ -15,10 +15,7 @@
       register: result
       no_log: true
 
-    - name: preserve result using set_stat 
-      ansible.builtin.set_stats:
-        data:
-          api_token: "{{result.token}}"
-      no_log: true
+    
+    
     
  
