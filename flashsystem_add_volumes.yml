@@ -1,0 +1,53 @@
+---
+- name: add volumes to FlashSystem
+  hosts: flashsystems_attached_hosts
+  gather_facts: false
+  become: true
+  vars_files:
+    - vars/authentication.yml
+      
+  tasks:
+  - name: read the csv file
+    community.general.read_csv:
+      path: vars/add-volumes.csv
+    register: volumes
+    block:
+    - name: create volumes using svc_manage_volume
+      ibm.storage_virtualize.svc_manage_volume:
+        clustername: "{{ clustername }}"
+        name: "{{ volumes.name }}"
+        pool: "{{ volumes.pool }}"
+        size: "{{ volumes.size }}"
+        thin: "{{ volumes.thin }}"
+        unit: "{{ volumes.unit }}"
+        validate_certs: "{{ volumes.validate_certs }}" 
+        state: present
+        log_path: /tmp/flashsystem/svc_create_volume.debug     
+        token: "{{ api_token }}"
+    
+    - name: make sure that host exists using ibm.storage_virtualize.ibm_svc_host
+      ibm.storage_virtualize.ibm_svc_host:
+        clustername: "{{ clustername }}"
+        name: "{{ volumes.hostname }}"
+        iscsiname: "{{ volumes.isciname }}"
+        token: "{{ api_token }}"
+        state: present
+        protocol: scsi
+        type: generic
+        validate_certs: "{{ volumes.validate_certs }}"
+        log_path: /tmp/flashsystem/validate_host.debug
+      
+    - name: map volume to host
+      ibm.storage_virtualize.ibm_svc_vol_map:
+        clustername: "{{ clustername }}"
+        host: "{{ volumes.hostname }}"
+        state: present
+        volname: "{{ volumes.name }}"
+        log_path: "{{ /tmp/flashsystem/map_volume_to_host.debug }}"
+        token: "{{ api_token }}"
+    
+    loop: volumes.list
+    loop_control:
+      loop_var: volumes
+
+  
