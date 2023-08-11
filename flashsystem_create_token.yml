@@ -16,6 +16,10 @@
       no_log: true
 
     
-    
+    - name: preserve API token with set_stats
+      ansible.builtin.set_stats:
+        data:
+          api_token: "{{ result.token }}"
+
     
  
