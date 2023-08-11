@@ -9,7 +9,7 @@
   tasks:
   - name: read the csv file
     community.general.read_csv:
-      path: /vars/add-volumes.csv
+      path: /vars/addvolumes.csv
       key: name
     register: volumes
  
