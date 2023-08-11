@@ -13,22 +13,25 @@
       # key: name
     register: volumes
  
+  - name: debug 
+    ansible.builtin.debug:
+      var: volumes
    
-  - name: create volumes using svc_manage_volume
-    ibm.storage_virtualize.ibm_svc_manage_volume:
-      clustername: "{{ clustername }}"
-      name: "{{ volumes.name }}"
-      # pool: "{{ volumes.pool }}"
-      # size: "{{ volumes.size }}"
-      # thin: "{{ volumes.thin }}"
-      # unit: "{{ volumes.unit }}"
-      # validate_certs: "{{ volumes.validate_certs }}" 
-      state: present
-      log_path: /tmp/flashsystem/svc_create_volume.debug     
-      token: "{{ api_token }}"
-    loop: "{{ volumes.list }}"
-    loop_control: 
-      loop_var: name
+  # - name: create volumes using svc_manage_volume
+  #   ibm.storage_virtualize.ibm_svc_manage_volume:
+  #     clustername: "{{ clustername }}"
+  #     name: "{{ volumes.name }}"
+  #     # pool: "{{ volumes.pool }}"
+  #     # size: "{{ volumes.size }}"
+  #     # thin: "{{ volumes.thin }}"
+  #     # unit: "{{ volumes.unit }}"
+  #     # validate_certs: "{{ volumes.validate_certs }}" 
+  #     state: present
+  #     log_path: /tmp/flashsystem/svc_create_volume.debug     
+  #     token: "{{ api_token }}"
+  #   loop: "{{ volumes.list }}"
+  #   loop_control: 
+  #     loop_var: name
     
     
     # - name: make sure that host exists using ibm.storage_virtualize.ibm_svc_host
