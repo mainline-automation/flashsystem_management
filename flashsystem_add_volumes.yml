@@ -17,11 +17,11 @@
   - name: create volumes using svc_manage_volume
     ibm.storage_virtualize.ibm_svc_manage_volume:
       clustername: "{{ clustername }}"
-      name: "{{ volumes.name }}"
-      pool: "{{ volumes.pool }}"
-      size: "{{ volumes.size }}"
-      thin: "{{ volumes.thin }}"
-      unit: "{{ volumes.unit }}"
+      name: "{{ volumes.list.name }}"
+      pool: "{{ volumes.list.pool }}"
+      size: "{{ volumes.list.size }}"
+      thin: "{{ volumes.list.thin }}"
+      unit: "{{ volumes.list.unit }}"
       validate_certs: "{{ volumes.validate_certs }}" 
       state: present
       log_path: /tmp/flashsystem/svc_create_volume.debug     
