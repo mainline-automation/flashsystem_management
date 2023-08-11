@@ -17,7 +17,7 @@
   - name: create volumes using svc_manage_volume
     ibm.storage_virtualize.ibm_svc_manage_volume:
       clustername: "{{ clustername }}"
-      name: "{{ volumes.list.name }}"
+      name: "{{ volumes.list.1.name }}"
       # pool: "{{ volumes.pool }}"
       # size: "{{ volumes.size }}"
       # thin: "{{ volumes.thin }}"
