@@ -15,7 +15,7 @@
  
   - name: debug 
     ansible.builtin.debug:
-      var: "{{ volumes | dict2items}}"
+      var: "{{ volumes.list.name }}"
 
   
     
