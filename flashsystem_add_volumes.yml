@@ -9,7 +9,7 @@
   tasks:
   - name: read the csv file
     community.general.read_csv:
-      path: "{{ vars/add-volumes.csv }}"
+      path: '/home/ansible/playbooks/flashsystem_setup/vars/add-volumes.csv'
       key: name
     register: volumes
  
