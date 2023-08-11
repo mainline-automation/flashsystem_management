@@ -11,7 +11,7 @@
     community.general.read_csv:
       path: vars/add-volumes.csv
     register: volumes
-  - name: use the csv data to provision volumes, validate hosts, and map volumes to hosts
+ 
    
   - name: create volumes using svc_manage_volume
     ibm.storage_virtualize.svc_manage_volume:
