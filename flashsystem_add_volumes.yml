@@ -26,9 +26,9 @@
       state: present
       log_path: /tmp/flashsystem/svc_create_volume.debug     
       token: "{{ api_token }}"
-    loop: volumes.list
+    loop: "{{ volumes.list }}"
     loop_control:
-      loop_var: volumes.list.name
+      loop_var: "{{ volumes.list.name }}"
     
     # - name: make sure that host exists using ibm.storage_virtualize.ibm_svc_host
     #   ibm.storage_virtualize.ibm_svc_host:
