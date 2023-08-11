@@ -15,7 +15,10 @@
  
   - name: debug 
     ansible.builtin.debug:
-      var: volumes
+      var: "{{ volumes | dict2items}}""
+
+  
+    
    
   # - name: create volumes using svc_manage_volume
   #   ibm.storage_virtualize.ibm_svc_manage_volume:
