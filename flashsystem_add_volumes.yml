@@ -17,18 +17,18 @@
   - name: create volumes using svc_manage_volume
     ibm.storage_virtualize.ibm_svc_manage_volume:
       clustername: "{{ clustername }}"
-      name: "{{ volumes.list.name }}"
-      pool: "{{ volumes.list.pool }}"
-      size: "{{ volumes.list.size }}"
-      thin: "{{ volumes.list.thin }}"
-      unit: "{{ volumes.list.unit }}"
+      name: "{{ volumes.dict.name }}"
+      pool: "{{ volumes.dict.pool }}"
+      size: "{{ volumes.dict.size }}"
+      thin: "{{ volumes.dict.thin }}"
+      unit: "{{ volumes.dict.unit }}"
       validate_certs: "{{ volumes.validate_certs }}" 
       state: present
       log_path: /tmp/flashsystem/svc_create_volume.debug     
       token: "{{ api_token }}"
-    loop: "{{ volumes.list }}"
+    loop: "{{ volumes.dict }}"
     loop_control:
-      loop_var: "{{ volumes.list.name }}"
+      loop_var: "{{ volumes.dict.name }}"
     
     # - name: make sure that host exists using ibm.storage_virtualize.ibm_svc_host
     #   ibm.storage_virtualize.ibm_svc_host:
@@ -51,7 +51,7 @@
     #     log_path: "{{ /tmp/flashsystem/map_volume_to_host.debug }}"
     #     token: "{{ api_token }}"
     
-    # loop: volumes.list
+    # loop: volumes.dict
     # loop_control:
     #   loop_var: volumes
 
