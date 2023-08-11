@@ -28,7 +28,7 @@
         unit: "{{ item.unit }}"
         thin: "{{ item.thin }}"
         pool: "{{ item.pool }}"
-        validate_certs: "{{ item.validate_certs }}"
+        validate_certs: false
         token: "{{ api_token }}"
     loop: "{{ volumes.list }}"
 
