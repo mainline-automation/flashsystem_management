@@ -1,4 +1,3 @@
----
 - name: add volumes to FlashSystem
   hosts: localhost
   gather_facts: false
@@ -28,7 +27,7 @@
         name: "{{ item.name }}"
         size: "{{ item.size }}"
         unit: "{{ item.unit }}"
-        thin: {{ item.thin }}
+        thin: "{{ item.thin }}"
         pool: "{{ item.pool }}"
         validate_certs: false
         token: "{{ api_token }}"
@@ -78,5 +77,3 @@
     # loop: volumes.dict
     # loop_control:
     #   loop_var: volumes
-
-  
