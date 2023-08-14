@@ -2,7 +2,7 @@
 - name: add volumes to FlashSystem
   hosts: localhost
   gather_facts: false
-  become: false
+  become: true
   vars:
     hostname: 'workflow.bpic.mainline.com'
     _iqn_ : 'iqn.1994-05.com.redhat:fabf787c1d0'
@@ -53,7 +53,7 @@
   - name: create file for debug logging
     ansible.builtin.file:
       path: '/tmp/flashsystem/validate_host.debug'
-      state: file
+      state: touch
 
   - name: make sure that host exists using ibm.storage_virtualize.ibm_svc_host and create if they don't
     ibm.storage_virtualize.ibm_svc_host:
