@@ -1,4 +1,4 @@
-﻿name,pool,size,thin,unit,hostname
+name,pool,size,thin,unit,hostname
 ansible1,Pool_01,20,yes,gb,workflow.bpic.mainline.com
 ansible2,Pool_01,20,yes,gb,workflow.bpic.mainline.com
 ansible3,Pool_01,20,yes,gb,workflow.bpic.mainline.com
