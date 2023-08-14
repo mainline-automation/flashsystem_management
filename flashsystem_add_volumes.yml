@@ -2,7 +2,7 @@
 - name: add volumes to FlashSystem
   hosts: localhost
   gather_facts: false
-  become: true
+  become: false
   vars_files:
     - vars/authentication.yml
       
