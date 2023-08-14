@@ -20,13 +20,13 @@
   - name: use ibm.storage_virtualize.ibm_svc_manage_volume with a loop on the variable volumes 
     ibm.storage_virtualize.ibm_svc_manage_volume:
         clustername: "{{ clustername }}"
-        # log_path: '/tmp/svc_create_volume.debug'
+        log_path: '/tmp/svc_create_volume.debug'
         state: present
         username: "{{ username }}"
         password: "{{ _password_ }}"
         name: "{{ item.name }}"
         size: "{{ item.size }}"
-        # unit: "{{ item.unit }}"
+        unit: "{{ item.unit }}"
         thin: "{{ item.thin }}"
         pool: "{{ item.pool }}"
         validate_certs: false
