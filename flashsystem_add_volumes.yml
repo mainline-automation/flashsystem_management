@@ -1,55 +1,21 @@
 ---
-- name: add volumes to FlashSystem
+- name: Create or validate hosts
   hosts: localhost
   gather_facts: false
-  become: true
+  become: false
   vars:
     hostname: 'workflow.bpic.mainline.com'
     _iqn_ : 'iqn.1994-05.com.redhat:fabf787c1d0'
   vars_files:
     - vars/authentication.yml
-    #- vars/volume_host_data.json
+    - vars/addvolume.csv
       
   tasks:
   - name: read the csv file
     community.general.read_csv:
-      path: vars/host_to_iqn.csv
-      key: hostname
-    register: hosts
- 
-  # - name: debug 
-  #   ansible.builtin.debug:
-  #     var: "{{ hostname.isci_name | from_json }}"
-  #   loop: "{{ host_and_volume | community.general.json_query('hostname.isci_name') }}"
-  
-#   - name: use ibm.storage_virtualize.ibm_svc_manage_volume with a loop on the variable volumes 
-#     ibm.storage_virtualize.ibm_svc_manage_volume:
-#       clustername: "{{ clustername }}"
-#       log_path: '/tmp/svc_create_volume.debug'
-#       state: present
-#         # username: "{{ username }}"
-#         # password: "{{ _password_ }}"
-#       name: "{{ item.name }}"
-#       size: "{{ item.size }}"
-#       unit: "{{ item.unit }}"
-#       thin: "{{ item.thin }}"
-#       pool: "{{ item.pool }}"
-#       validate_certs: false
-#       token: "{{ api_token }}"
-#     loop: "{{ volumes.list }}"
-
-# - name: Confirm that hosts exists
-#   hosts: localhost
-#   gather_facts: false
-#   become: false
-#   vars_files:
-#     - vars/authentication.yml 
-#   tasks:   
-#   - name: read the csv file
-#     community.general.read_csv:
-#       path: vars/addvolume.csv
-#       # key: name
-#     register: volumes
+      path: vars/addvolume.csv
+      key: name
+    register: added_volumes
  
   - name: make sure that host exists using ibm.storage_virtualize.ibm_svc_host and create if they don't
     ibm.storage_virtualize.ibm_svc_host:
@@ -61,26 +27,29 @@
       protocol: scsi
       type: generic
       validate_certs: false
-      
-# - name: Perform mapping to hosts
-#   hosts: localhost
-#   gather_facts: false
-#   become: false
-#   vars_files:
-#     - vars/authentication.yml 
-#   tasks:   
-#   - name: read the csv file
-#     community.general.read_csv:
-#       path: vars/addvolume.csv
-#       # key: name
-#     register: volumes
+      log_path: /tmp/svc_create_host.debug
+  
+  - name:    
+  - name: use ibm.storage_virtualize.ibm_svc_manage_volume with a loop on the variable volumes 
+    ibm.storage_virtualize.ibm_svc_manage_volume:
+      clustername: "{{ clustername }}"
+      log_path: '/tmp/svc_create_volume.debug'
+      state: present
+      name: "{{ item.name }}"
+      size: "{{ item.size }}"
+      unit: "{{ item.unit }}"
+      thin: "{{ item.thin }}"
+      pool: "{{ item.pool }}"
+      validate_certs: false
+      token: "{{ api_token }}"
+    loop: "{{ added_volumes.list }}"
 
-#   - name: map volume to host
-#     ibm.storage_virtualize.ibm_svc_vol_map:
-#       clustername: "{{ clustername }}"
-#       host: "{{ item.hostname }}"
-#       state: present
-#       volname: "{{ item.name }}"
-#       log_path: '/tmp/flashsystem/map_volume_to_host.debug }}'
-#       token: "{{ api_token }}"
-#     loop: "{{ volumes.list }}"
+  - name: map volume to host
+    ibm.storage_virtualize.ibm_svc_vol_map:
+      clustername: "{{ clustername }}"
+      host: "{{ hostname }}"
+      state: present
+      volname: "{{ item.name }}"
+      log_path: '/tmp/map_volume_to_host.debug }}'
+      token: "{{ api_token }}"
+    loop: "{{ added_volumes.list }}"
