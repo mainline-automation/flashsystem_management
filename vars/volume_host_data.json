@@ -1,4 +1,5 @@
 {
+  "host_and_volume": {
     "hostname": [
       {
         "workflow.bpic.mainline.com": [
@@ -27,4 +28,5 @@
       }
     ]
   }
+}
       
