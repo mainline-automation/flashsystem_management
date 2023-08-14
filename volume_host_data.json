@@ -1,0 +1,30 @@
+{
+    "hostname": [
+      {
+        "workflow.bpic.mainline.com": [
+          {
+            "isci_name": "iqn.1994-05.com.redhat:fabf787c1d0"
+          },
+          {
+            "volumes": [
+              {
+                "name": "ansible1",
+                "pool": "Pool_01",
+                "size": "20",
+                "unit": "gb",
+                "thin": "true"
+              },
+              {
+                "name": "ansible2",
+                "pool": "Pool_01",
+                "size": "20",
+                "unit": "gb",
+                "thin": "true"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+      
