@@ -14,7 +14,7 @@
  
   - name: debug 
     ansible.builtin.debug:
-      var: "{{ volumes.dict }}"
+      var: {{ volumes.list }}
 
   
   - name: use ibm.storage_virtualize.ibm_svc_manage_volume with a loop on the variable volumes 
@@ -31,20 +31,20 @@
       pool: "{{ item.pool }}"
       validate_certs: false
       token: "{{ api_token }}"
-    loop: "{{ volumes.dict }}"
+    loop: "{{ volumes.list }}"
     
   - name: make sure that host exists using ibm.storage_virtualize.ibm_svc_host
     ibm.storage_virtualize.ibm_svc_host:
       clustername: "{{ clustername }}"
       name: "{{ item.hostname }}"
-      iscsiname: "{{ item.isciname }}"
+      iscsiname: {{ item.isciname }}
       token: "{{ api_token }}"
       state: present
       protocol: scsi
       type: generic
       validate_certs: "{{ item.validate_certs }}"
       log_path: '/tmp/flashsystem/validate_host.debug'
-    loop: "{{ volumes.dict }}"
+    loop: "{{ volumes.list }}"
       
   - name: map volume to host
     ibm.storage_virtualize.ibm_svc_vol_map:
@@ -54,4 +54,4 @@
       volname: "{{ item.name }}"
       log_path: '/tmp/flashsystem/map_volume_to_host.debug }}'
       token: "{{ api_token }}"
-    loop: "{{ volumes.dict }}"
+    loop: "{{ volumes.list }}"
