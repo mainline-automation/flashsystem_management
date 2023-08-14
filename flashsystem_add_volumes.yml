@@ -13,9 +13,9 @@
       # key: name
     register: volumes
  
-  - name: debug 
-    ansible.builtin.debug:
-      var: {{ volumes.list }}
+  # - name: debug 
+  #   ansible.builtin.debug:
+  #     var: {{ volumes.list }}
 
   
   - name: use ibm.storage_virtualize.ibm_svc_manage_volume with a loop on the variable volumes 
