@@ -8,7 +8,7 @@
     _iqn_ : 'iqn.1994-05.com.redhat:fabf787c1d0'
   vars_files:
     - vars/authentication.yml
-    - vars/addvolume.csv
+    # - vars/addvolume.csv
       
   tasks:
   - name: read the csv file
