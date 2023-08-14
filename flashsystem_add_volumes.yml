@@ -5,6 +5,8 @@
   become: false
   vars_files:
     - vars/authentication.yml
+  collections:
+    - community.general
       
   tasks:
   - name: read the csv file
@@ -15,7 +17,7 @@
  
   - name: debug 
     ansible.builtin.debug:
-      var: {{ volumes.list.1.isciname }}
+      var: "{{ volumes.list.1.isciname }}"
 
   
 #   - name: use ibm.storage_virtualize.ibm_svc_manage_volume with a loop on the variable volumes 
