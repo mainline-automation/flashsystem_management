@@ -23,6 +23,8 @@
         clustername: "{{ clustername }}"
         log_path: '/tmp/svc_create_volume.debug'
         state: present
+        username: "{{ username }}"
+        password: "{{ _password_ }}"
         name: "{{ item.name }}"
         size: "{{ item.size }}"
         unit: "{{ item.unit }}"
