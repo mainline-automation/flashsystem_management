@@ -5,6 +5,7 @@
   become: false
   vars_files:
     - vars/authentication.yml
+    - vars/volume_host_data.json
       
   tasks:
   - name: read the csv file
