@@ -3,10 +3,12 @@
   hosts: localhost
   gather_facts: false
   become: false
+  vars:
+    - hostname: 'workflow.bpic.mainline.com'
+    - _iqn_ : 'iqn.1994-05.com.redhat:fabf787c1d0'
   vars_files:
     - vars/authentication.yml
     #- vars/volume_host_data.json
-    - vars/host_to_iqn.csv
       
   tasks:
   - name: read the csv file
@@ -52,8 +54,8 @@
   - name: make sure that host exists using ibm.storage_virtualize.ibm_svc_host and create if they don't
     ibm.storage_virtualize.ibm_svc_host:
       clustername: "{{ clustername }}"
-      name: "{{ item.hostname }}"
-      iscsiname: "{{ item._iqn_ }}"
+      name: "{{ hostname }}"
+      iscsiname: "{{ _iqn_ }}"
       token: "{{ api_token }}"
       state: present
       protocol: scsi
