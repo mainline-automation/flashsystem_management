@@ -8,16 +8,16 @@
     - vars/volume_host_data.json
       
   tasks:
-  - name: read the csv file
-    community.general.read_csv:
-      path: vars/addvolume.csv
-      # key: name
-    register: volumes
+  # - name: read the csv file
+  #   community.general.read_csv:
+  #     path: vars/addvolume.csv
+  #     # key: name
+  #   register: volumes
  
   - name: debug 
     ansible.builtin.debug:
       var: "{{ item }}"
-    loop: "{{ host_and_volume | community.general.json_query('hostname.iscsi_name') }}"
+    loop: "{{ host_and_volume | community.general.json_query('hostname.iscsi_name'), wantlist=true}}"
   
 #   - name: use ibm.storage_virtualize.ibm_svc_manage_volume with a loop on the variable volumes 
 #     ibm.storage_virtualize.ibm_svc_manage_volume:
