@@ -50,18 +50,7 @@
 #       path: vars/addvolume.csv
 #       # key: name
 #     register: volumes
-  - name: create directory for debug logging
-    ansible.builtin.file:
-      path: 'tmp/ansible_flashsystem/{{ hostname }}'
-      state: directory
-    delegate_to: localhost
-
-  - name: create file for debug logging
-    ansible.builtin.file:
-      path: '/tmp/ansible_flashsystem/{{ hostname }}/validate_host.debug'
-      state: touch
-    delegate_to: localhost
-
+ 
   - name: make sure that host exists using ibm.storage_virtualize.ibm_svc_host and create if they don't
     ibm.storage_virtualize.ibm_svc_host:
       clustername: "{{ clustername }}"
@@ -72,7 +61,6 @@
       protocol: scsi
       type: generic
       validate_certs: false
-      log_path: '/tmp/flashsystem/validate_host.debug'
       
 # - name: Perform mapping to hosts
 #   hosts: localhost
