@@ -17,7 +17,7 @@
  
   - name: debug 
     ansible.builtin.debug:
-      var: "{{ volumes.list.1.isci-name }}"
+      var: "{{ volumes.list.isci_name }}"
 
   
 #   - name: use ibm.storage_virtualize.ibm_svc_manage_volume with a loop on the variable volumes 

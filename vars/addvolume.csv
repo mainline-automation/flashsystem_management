@@ -1,4 +1,4 @@
-name,pool,size,thin,unit,hostname,iscsi-name
+name,pool,size,thin,unit,hostname,iscsi_name
 ansible1,Pool_01,20,yes,gb,workflow.bpic.mainline.com,iqn.1994-05.com.redhat:fabf787c1d0
 ansible2,Pool_01,20,yes,gb,workflow.bpic.mainline.com,iqn.1994-05.com.redhat:fabf787c1d0
 ansible3,Pool_01,20,yes,gb,workflow.bpic.mainline.com,iqn.1994-05.com.redhat:fabf787c1d0
