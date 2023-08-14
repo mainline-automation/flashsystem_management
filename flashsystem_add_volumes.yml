@@ -4,7 +4,7 @@
   gather_facts: false
   become: false
   vars_files:
-    - vars/authentication.yml
+    # - vars/authentication.yml
     - vars/volume_host_data.json
       
   tasks:
@@ -16,8 +16,8 @@
  
   - name: debug 
     ansible.builtin.debug:
-      var: "{{ item }}"
-    loop: "{{ host_and_volume | community.general.json_query('hostname.iscsi_name'), wantlist=true}}"
+      var: "{{ hostname.isci_name }}"
+    with_dict: "{{ host_and_volume }}"
   
 #   - name: use ibm.storage_virtualize.ibm_svc_manage_volume with a loop on the variable volumes 
 #     ibm.storage_virtualize.ibm_svc_manage_volume:
