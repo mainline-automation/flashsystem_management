@@ -60,7 +60,7 @@
       state: present
       protocol: scsi
       type: generic
-      validate_certs: "{{ item.validate_certs }}"
+      validate_certs: false
       log_path: '/tmp/flashsystem/validate_host.debug'
       
 # - name: Perform mapping to hosts
