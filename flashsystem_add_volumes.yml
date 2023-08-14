@@ -16,7 +16,7 @@
  
   - name: debug 
     ansible.builtin.debug:
-      var: "{{ hostname.isci_name }}"
+      var: "{{ hostname.isci_name | from_json }}"
     loop: "{{ host_and_volume | community.general.json_query('hostname.isci_name') }}"
   
 #   - name: use ibm.storage_virtualize.ibm_svc_manage_volume with a loop on the variable volumes 
