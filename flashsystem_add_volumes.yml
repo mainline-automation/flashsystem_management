@@ -4,20 +4,21 @@
   gather_facts: false
   become: false
   vars_files:
-    # - vars/authentication.yml
-    - vars/volume_host_data.json
+    - vars/authentication.yml
+    #- vars/volume_host_data.json
+    - vars/host_to_iqn.csv
       
   tasks:
-  # - name: read the csv file
-  #   community.general.read_csv:
-  #     path: vars/addvolume.csv
-  #     # key: name
-  #   register: volumes
+  - name: read the csv file
+    community.general.read_csv:
+      path: vars/host_to_iqn.csv
+      # key: name
+    register: hosts
  
-  - name: debug 
-    ansible.builtin.debug:
-      var: "{{ hostname.isci_name | from_json }}"
-    loop: "{{ host_and_volume | community.general.json_query('hostname.isci_name') }}"
+  # - name: debug 
+  #   ansible.builtin.debug:
+  #     var: "{{ hostname.isci_name | from_json }}"
+  #   loop: "{{ host_and_volume | community.general.json_query('hostname.isci_name') }}"
   
 #   - name: use ibm.storage_virtualize.ibm_svc_manage_volume with a loop on the variable volumes 
 #     ibm.storage_virtualize.ibm_svc_manage_volume:
@@ -48,18 +49,18 @@
 #       # key: name
 #     register: volumes
 
-#   - name: make sure that host exists using ibm.storage_virtualize.ibm_svc_host and create if they don't
-#     ibm.storage_virtualize.ibm_svc_host:
-#       clustername: "{{ clustername }}"
-#       name: "{{ item.hostname }}"
-#       iscsiname: "{{ item.isciname }}"
-#       token: "{{ api_token }}"
-#       state: present
-#       protocol: scsi
-#       type: generic
-#       validate_certs: "{{ item.validate_certs }}"
-#       log_path: '/tmp/flashsystem/validate_host.debug'
-#     loop: "{{ volumes.list }}"
+  - name: make sure that host exists using ibm.storage_virtualize.ibm_svc_host and create if they don't
+    ibm.storage_virtualize.ibm_svc_host:
+      clustername: "{{ clustername }}"
+      name: "{{ item.hostname }}"
+      iscsiname: "{{ item._iqn_ }}"
+      token: "{{ api_token }}"
+      state: present
+      protocol: scsi
+      type: generic
+      validate_certs: "{{ item.validate_certs }}"
+      log_path: '/tmp/flashsystem/validate_host.debug'
+    loop: "{{ hosts.list }}"
       
 # - name: Perform mapping to hosts
 #   hosts: localhost
