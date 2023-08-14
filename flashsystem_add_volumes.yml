@@ -1,3 +1,4 @@
+---
 - name: add volumes to FlashSystem
   hosts: localhost
   gather_facts: false
