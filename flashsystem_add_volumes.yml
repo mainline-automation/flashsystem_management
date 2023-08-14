@@ -4,8 +4,8 @@
   gather_facts: false
   become: false
   vars:
-    - hostname: 'workflow.bpic.mainline.com'
-    - _iqn_ : 'iqn.1994-05.com.redhat:fabf787c1d0'
+    hostname: 'workflow.bpic.mainline.com'
+    iqn_ : 'iqn.1994-05.com.redhat:fabf787c1d0'
   vars_files:
     - vars/authentication.yml
     #- vars/volume_host_data.json
@@ -62,7 +62,6 @@
       type: generic
       validate_certs: "{{ item.validate_certs }}"
       log_path: '/tmp/flashsystem/validate_host.debug'
-    loop: "{{ hosts.list }}"
       
 # - name: Perform mapping to hosts
 #   hosts: localhost
