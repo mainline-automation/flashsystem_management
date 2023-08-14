@@ -50,6 +50,10 @@
 #       path: vars/addvolume.csv
 #       # key: name
 #     register: volumes
+  - name: create file for debug logging
+    ansible.builtin.file:
+      path: '/tmp/flashsystem/validate_host.debug'
+      state: touch
 
   - name: make sure that host exists using ibm.storage_virtualize.ibm_svc_host and create if they don't
     ibm.storage_virtualize.ibm_svc_host:
