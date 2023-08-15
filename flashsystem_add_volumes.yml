@@ -7,7 +7,7 @@
     # hostname: 'workflow.bpic.mainline.com'
     # _iqn_ : 'iqn.1994-05.com.redhat:fabf787c1d0'
     # _portset_: 'portset0'
-    hostname: esxlab.bpic.mainline.com
+    hostname: 'esxlab'
     _wwpn_: 21000024FF3E263D
   vars_files:
     - vars/authentication.yml
