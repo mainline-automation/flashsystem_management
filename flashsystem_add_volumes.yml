@@ -31,6 +31,7 @@
       type: generic
       validate_certs: false
       log_path: '/tmp/svc_create_host.debug'
+    ignore_errors: true
     
   - name: use ibm.storage_virtualize.ibm_svc_manage_volume with a loop on the variable volumes 
     ibm.storage_virtualize.ibm_svc_manage_volume:
