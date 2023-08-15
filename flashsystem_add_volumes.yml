@@ -24,6 +24,7 @@
       token: "{{ api_token }}"
       state: present
       protocol: scsi
+      portset: portset0
       type: generic
       validate_certs: false
       log_path: '/tmp/svc_create_host.debug'
