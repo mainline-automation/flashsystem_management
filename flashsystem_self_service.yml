@@ -11,10 +11,10 @@
     - vars/authentication.yml
       
   tasks:
-  - name: read the csv file
-    community.general.read_csv:
-      path: vars/addvolume.csv
-    register: added_volumes
+  # - name: read the csv file
+  #   community.general.read_csv:
+  #     path: vars/addvolume.csv
+  #   register: added_volumes
  
   - name: make sure that host exists using ibm.storage_virtualize.ibm_svc_host and create if they don't
     ibm.storage_virtualize.ibm_svc_host:
