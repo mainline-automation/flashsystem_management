@@ -4,9 +4,11 @@
   gather_facts: false
   become: false
   vars:
-    hostname: 'workflow.bpic.mainline.com'
-    _iqn_ : 'iqn.1994-05.com.redhat:fabf787c1d0'
-    _portset_: 'portset0'
+    # hostname: 'workflow.bpic.mainline.com'
+    # _iqn_ : 'iqn.1994-05.com.redhat:fabf787c1d0'
+    # _portset_: 'portset0'
+    hostname: esxlab.bpic.mainline.com
+    _wwpn_: 21000024FF3E263D
   vars_files:
     - vars/authentication.yml
       
@@ -20,11 +22,12 @@
     ibm.storage_virtualize.ibm_svc_host:
       clustername: "{{ clustername }}"
       name: "{{ hostname }}"
-      iscsiname: "{{ _iqn_ }}"
+      # iscsiname: "{{ _iqn_ }}"
+      fcwwpn: "{{ _wwpn_ }}"
       token: "{{ api_token }}"
       state: present
       protocol: scsi
-      portset: "{{ _portset_ }}"
+      # portset: "{{ _portset_ }}"
       type: generic
       validate_certs: false
       log_path: '/tmp/svc_create_host.debug'

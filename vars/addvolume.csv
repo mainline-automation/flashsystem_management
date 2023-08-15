@@ -2,10 +2,3 @@ name,pool,size,thin,unit,hostname
 ansible1,Pool_01,20,yes,gb,workflow.bpic.mainline.com
 ansible2,Pool_01,20,yes,gb,workflow.bpic.mainline.com
 ansible3,Pool_01,20,yes,gb,workflow.bpic.mainline.com
-ansible4,Pool_01,20,yes,gb,workflow.bpic.mainline.com
-ansible5,Pool_01,20,yes,gb,workflow.bpic.mainline.com
-ansible6,Pool_01,20,yes,gb,workflow.bpic.mainline.com
-ansible7,Pool_01,20,yes,gb,workflow.bpic.mainline.com
-ansible8,Pool_01,20,yes,gb,workflow.bpic.mainline.com
-ansible9,Pool_01,20,yes,gb,workflow.bpic.mainline.com
-ansible10,Pool_01,20,yes,gb,workflow.bpic.mainline.com
