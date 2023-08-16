@@ -54,7 +54,7 @@
       host: "{{ hostname }}"
       state: present
       volname: "{{ item.name }}"
-      log_path: '/tmp/map_volume_to_host.debug }}'
+      log_path: '/tmp/map_volume_to_host.debug'
       token: "{{ api_token }}"
     loop: "{{ added_volumes.list }}"
   
@@ -69,7 +69,7 @@
 
   - name: debugging
     ansible.builtin.debug:
-      var: "{{ volume_info.results }}"
+      var: "{{ item.vdisk_UID }}"
     loop: "{{ volume_info.results | flatten }}"
 
   # - name: set fact with volume_facts
