@@ -69,7 +69,7 @@
 
   - name: set_fact debugging
     ansible.builtin.set_fact:
-      vdisk_UID: "{{ volume_info | json_query('*.vdisk_UID') }}" 
+      vdisk_UID: "{{ volume_info | json_query('*.Volume.vdisk_UID') }}" 
   - name: debugging
     ansible.builtin.debug:
       var: vdisk_UID
