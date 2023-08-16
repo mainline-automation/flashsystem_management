@@ -69,8 +69,9 @@
 
   - name: debugging
     ansible.builtin.debug:
-      var: "{{ volume_info |community.general.json_query (item.Volume.vdisk_UID) }}"
-    loop: "{{ volume_info.results | flatten }}"
+      var: volume_info.output | json_query('[].vdisk_UID')
+    #   var: "{{ volume_info |community.general.json_query (item.Volume.vdisk_UID) }}"
+    # loop: "{{ volume_info.results | flatten }}"
 
   # - name: set fact with volume_facts
   #   ansible.builtin.set_fact:
