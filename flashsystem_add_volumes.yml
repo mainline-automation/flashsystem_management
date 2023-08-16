@@ -70,7 +70,7 @@
   - name: debugging
     ansible.builtin.debug:
       var: "{{ volume_info | community.general.json_query ('results.Volume.vdisk_UID') }}"
-    # loop: "{{ volume_info.results | flatten }}"
+    loop: "{{ volume_info.results | flatten }}"
 
   # - name: set fact with volume_facts
   #   ansible.builtin.set_fact:
