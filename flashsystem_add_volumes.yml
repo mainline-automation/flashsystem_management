@@ -71,7 +71,7 @@
     ansible.builtin.set_fact:
       volume_facts: "{{ volume_info | default([]) | combine({ item.vdisk_UID : item.value
         }) }}"
-    with_items: "{{ volume_info.Volume}}"
+    with_items: "{{ volume_info | flatten )}}"
 
   
   - name: create datastore with community.vmware.vmware_host_datastore for each vdisk_UID in volume_facts
