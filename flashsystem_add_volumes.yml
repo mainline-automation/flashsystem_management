@@ -72,7 +72,7 @@
   #     vdisk_UID: "{{ volume_info | json_query('*.vdisk_UID') }}" 
   - name: debugging
     ansible.builtin.debug:
-      var: volume_info.Volumes
+      var: volume_info.Volume
   #     var: "{{ volume_info |community.general.json_query (item.Volume.vdisk_UID) }}"
   #   # loop: "{{ volume_info.results | flatten }}"
 
