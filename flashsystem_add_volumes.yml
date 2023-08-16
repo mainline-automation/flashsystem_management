@@ -67,12 +67,12 @@
     with_items: "{{ added_volumes.list }}"
     register: volume_info
 
-  - name: set_fact debugging
-    ansible.builtin.set_fact:
-      vdisk_UID: "{{ volume_info | json_query('*.Volume.vdisk_UID') }}" 
+  # - name: set_fact debugging
+  #   ansible.builtin.set_fact:
+  #     vdisk_UID: "{{ volume_info | json_query('*.Volume.vdisk_UID') }}" 
   - name: debugging
     ansible.builtin.debug:
-      var: vdisk_UID
+      var: volume_info.results
     #   var: "{{ volume_info |community.general.json_query (item.Volume.vdisk_UID) }}"
     # loop: "{{ volume_info.results | flatten }}"
 
