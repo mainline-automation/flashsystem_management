@@ -57,31 +57,7 @@
       log_path: '/tmp/map_volume_to_host.debug }}'
       token: "{{ api_token }}"
     loop: "{{ added_volumes.list }}"
-
-  # - name: preserve API token with set_stats
-  #   ansible.builtin.set_stats:
-  #     data:
-  #       api_token_esx_play: "{{ api_token }}"
-
-
-- name: Create or validate hosts
-  hosts: localhost
-  gather_facts: false
-  become: false
-  vars:
-    # hostname: 
-    # _iqn_ : 
-    # _portset_: 
-    hostname: 'esxlab'
-    _wwpn_: 21000024FF3E263D
-  vars_files:
-    - vars/authentication.yml
-      
-  tasks:
-  - name: read the csv file with relevent info to create list
-    community.general.read_csv:
-      path: vars/addvolume.csv
-    register: added_volumes
+  
   - name: gather UIDs for created volumes
     ibm.storage_virtualize.ibm_svc_info:
       clustername: "{{ clustername }}"
@@ -89,9 +65,73 @@
       gather_subset: vol
       objectname: "{{ item.name }}"
     with_items: "{{ added_volumes.list }}"
-    register: volume_facts
+    register: volume_info
+
+  - name: set fact with volume_facts
+    ansible.builtin.set_fact:
+      volume_facts: "{{ volume_facts | default([]) | combine({ item.vdisk_UID : item.value
+        }) }}"
+    loop: "{{ volume_info }}"
+
   
-  - name: print out volume facts for debugging
-    ansible.builtin.debug:
-      var: "{{ volume_facts.list }}"
+  - name: create datastore with community.vmware.vmware_host_datastore for each vdisk_UID in volume_facts
+    community.vmware.vmware_host_datastore:
+      hostname: '{{ vcenter_hostname }}'
+      username: '{{ vcenter_username }}'
+      password: '{{ vcenter_password }}'
+      datastore_name: '{{ item.esx_datastore_name }}'
+      datastore_type: '{{ item.esx_datastore_type }}'
+      vmfs_device_name: "naa.{{ query( 'dict', item.vdisk_UID ) }}"
+      vmfs_version: 6.5
+      esxi_hostname: '{{ inventory_hostname }}'
+      state: present
+  delegate_to: localhost
+  with_items: volume_facts
+
+
+
+
+  # - name: preserve API token with set_stats
+  #   ansible.builtin.set_stats:
+  #     data:
+  #       api_token_esx_play: "{{ api_token }}"
+
+
+# - name: Create or validate hosts
+#   hosts: localhost
+#   gather_facts: false
+#   become: false
+#   vars:
+#     # hostname: 
+#     # _iqn_ : 
+#     # _portset_: 
+#     hostname: 'esxlab'
+#     _wwpn_: 21000024FF3E263D
+#   vars_files:
+#     - vars/authentication.yml
+      
+  # tasks:
+  # - name: read the csv file with relevent info to create list
+  #   community.general.read_csv:
+  #     path: vars/addvolume.csv
+  #   register: added_volumes
   
+  
+  
+
+
+
+
+    
+    
+    
+    
+    
+    # community.vmware.vmware_datastore:
+    #   hostname: "{{ vcenter_hostname }}"
+    #   username: "{{ vcenter_username }}"
+    #   password: "{{ vcenter_password }}"
+    #   validate_certs: false
+    #   name: "naa{{ query ('dict', volume_facts.vdisk_UID }}"
+    #   storage_io_control: "{{ storage_io_control }}"
+    
