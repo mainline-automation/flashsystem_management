@@ -79,7 +79,7 @@
   - name: gather UIDs for created volumes
     ibm.storage_virtualize.ibm_svc_info:
       clustername: "{{ clustername }}"
-      gather_subset: volume
+      gather_subset: vol
       objectname: "{{ item.name }}"
     with_items: "{{ added_volumes.list }}"
     register: volume_facts
