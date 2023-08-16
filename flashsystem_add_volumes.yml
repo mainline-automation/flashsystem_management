@@ -80,7 +80,8 @@
     ibm.storage_virtualize.ibm_svc_info:
       clustername: "{{ clustername }}"
       gather_subset: volume
-      objectname: "{{ added_volumes.name }}"
+      objectname: "{{ item.name }}"
+    with_items: "{{ added_volumes.list }}"
     register: volume_facts
   
   - name: print out volume facts for debugging
