@@ -1,0 +1,2 @@
+name,pool,size,thin,unit,esx_host,esx_datastore_name,esx_datastore_type
+ansible1,Pool_01,20,yes,gb,vcsa-lab.bpic.mainline.com,ansible1_esx,vmfs
