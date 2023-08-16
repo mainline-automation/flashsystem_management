@@ -69,7 +69,7 @@
 
   - name: debugging
     ansible.builtin.debug:
-      var: "{{ lookup('ansible.utils.to_paths', volume_info.json) }}"
+      var: "{{ lookup('ansible.utils.to_paths', volume_info.results) }}"
     #   var: "{{ volume_info |community.general.json_query (item.Volume.vdisk_UID) }}"
     # loop: "{{ volume_info.results | flatten }}"
 
