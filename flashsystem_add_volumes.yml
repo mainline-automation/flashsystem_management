@@ -85,8 +85,8 @@
       vmfs_version: 6.5
       esxi_hostname: '{{ inventory_hostname }}'
       state: present
-  delegate_to: localhost
-  with_items: volume_facts
+    delegate_to: localhost
+    with_items: volume_facts
 
 
 
