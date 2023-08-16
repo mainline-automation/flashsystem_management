@@ -69,7 +69,7 @@
 
   - name: debugging
     ansible.builtin.debug:
-      var: "{{ item.vdisk_UID }}"
+      var: "{{ item.Volume.vdisk_UID }}"
     loop: "{{ volume_info.results | flatten }}"
 
   # - name: set fact with volume_facts
