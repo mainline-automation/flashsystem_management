@@ -4,9 +4,9 @@
   gather_facts: false
   become: false
   vars:
-    # hostname: 'workflow.bpic.mainline.com'
-    # _iqn_ : 'iqn.1994-05.com.redhat:fabf787c1d0'
-    # _portset_: 'portset0'
+    # hostname: 
+    # _iqn_ : 
+    # _portset_: 
     hostname: 'esxlab'
     _wwpn_: 21000024FF3E263D
   vars_files:
@@ -19,15 +19,16 @@
     register: added_volumes
  
   - name: make sure that host exists using ibm.storage_virtualize.ibm_svc_host and create if they don't
+  # errors are ignored because this will error out if the host already exists
     ibm.storage_virtualize.ibm_svc_host:
       clustername: "{{ clustername }}"
       name: "{{ hostname }}"
       # iscsiname: "{{ _iqn_ }}"
+      # portset: "{{ _portset_ }}""
       fcwwpn: "{{ _wwpn_ }}"
       token: "{{ api_token }}"
       state: present
       protocol: scsi
-      # portset: "{{ _portset_ }}"
       type: generic
       validate_certs: false
       log_path: '/tmp/svc_create_host.debug'
@@ -56,3 +57,33 @@
       log_path: '/tmp/map_volume_to_host.debug }}'
       token: "{{ api_token }}"
     loop: "{{ added_volumes.list }}"
+
+- name: Create or validate hosts
+  hosts: localhost
+  gather_facts: false
+  become: false
+  vars:
+    # hostname: 
+    # _iqn_ : 
+    # _portset_: 
+    hostname: 'esxlab'
+    _wwpn_: 21000024FF3E263D
+  vars_files:
+    - vars/authentication.yml
+      
+  tasks:
+  - name: read the csv file with relevent info to create list
+    community.general.read_csv:
+      path: vars/addvolume.csv
+    register: added_volumes
+  - name: gather UIDs for created volumes
+    ibm.storage_virtualize.ibm_svc_info:
+      clustername: "{{ clustername }}"
+      gather_subset: volume
+      objectname: "{{ added_volumes.name }}"
+    register: volume_facts
+  
+  - name: print out volume facts for debugging
+    ansible.builtin.debug:
+      var: "{{ volume_facts.list }}"
+  
