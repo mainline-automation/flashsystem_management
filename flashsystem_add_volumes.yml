@@ -58,10 +58,10 @@
       token: "{{ api_token }}"
     loop: "{{ added_volumes.list }}"
 
-   - name: preserve API token with set_stats
-      ansible.builtin.set_stats:
-        data:
-          api_token: "{{ result.token }}"
+  - name: preserve API token with set_stats
+    ansible.builtin.set_stats:
+      data:
+        api_token: "{{ result.token }}"
 
 
 - name: Create or validate hosts
