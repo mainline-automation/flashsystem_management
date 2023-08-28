@@ -3,38 +3,42 @@
   hosts: localhost
   gather_facts: false
   become: false
-  vars:
-    # hostname: 
-    # _iqn_ : 
-    # _portset_: 
-    hostname: 'esxlab'
-    _wwpn_: 21000024FF3E263D
   vars_files:
     - vars/authentication.yml
-      
-  tasks:
-  - name: read the csv file
-    community.general.read_csv:
-      path: vars/addvolume.csv
-    register: added_volumes
  
+  tasks:
+  - name: read the host_to_wwpn csv file
+    community.general.read_csv:
+      path: vars/host_to_wwpn.csv
+    register: host_to_wwpn
+ 
+  
   - name: make sure that host exists using ibm.storage_virtualize.ibm_svc_host and create if they don't
   # errors are ignored because this will error out if the host already exists
+  # task can be modified to use iscsi with portset and iscsiname
     ibm.storage_virtualize.ibm_svc_host:
-      clustername: "{{ clustername }}"
-      name: "{{ hostname }}"
+      clustername: "{{ item.flashsystem_clustername }}"
+      name: "{{ item.hostname }}"
       # iscsiname: "{{ _iqn_ }}"
       # portset: "{{ _portset_ }}""
-      fcwwpn: "{{ _wwpn_ }}"
-      token: "{{ api_token }}"
+      fcwwpn: "{{ item._wwpn_ }}"
+      # token: "{{ api_token }}"
+      username: ansible
+      password: M@inline1700
       state: present
       protocol: scsi
       type: generic
       validate_certs: false
       log_path: '/tmp/svc_create_host.debug'
     ignore_errors: true
+    loop: added_volumes.list
     
-  - name: use ibm.storage_virtualize.ibm_svc_manage_volume with a loop on the variable volumes 
+  - name: Read the csv file containing volume information
+    community.general.read_csv:
+      path: vars/addvolume.csv
+    register: added_volumes
+
+  - name: Use ibm.storage_virtualize.ibm_svc_manage_volume with a loop on the variable volumes 
     ibm.storage_virtualize.ibm_svc_manage_volume:
       clustername: "{{ clustername }}"
       log_path: '/tmp/svc_create_volume.debug'
@@ -45,56 +49,63 @@
       thin: "{{ item.thin }}"
       pool: "{{ item.pool }}"
       validate_certs: false
-      token: "{{ api_token }}"
+      # token: "{{ api_token }}"
+      username: ansible
+      password: M@inline1700
     loop: "{{ added_volumes.list}}"
 
-  - name: map volume to host
+  - name: Map volumes to hosts based on information from csv file
     ibm.storage_virtualize.ibm_svc_vol_map:
       clustername: "{{ clustername }}"
       host: "{{ hostname }}"
       state: present
       volname: "{{ item.name }}"
       log_path: '/tmp/map_volume_to_host.debug'
-      token: "{{ api_token }}"
+      # token: "{{ api_token }}"
+      username: ansible
+      password: M@inline1700
     loop: "{{ added_volumes.list }}"
   
-  - name: gather UIDs for created volumes
+  - name: Gather data from FlashSystems about added and mapped volumes for use in creating datastores
     ibm.storage_virtualize.ibm_svc_info:
       clustername: "{{ clustername }}"
-      token: "{{ api_token }}"
+      # token: "{{ api_token }}"
+      username: ansible
+      password: M@inline1700
       gather_subset: vol
-      objectname: "{{ item.name }}"
-    with_items: "{{ added_volumes.list }}"
-    register: volume_info
+    register: volumes_attributes
 
-  # - name: set_fact debugging
-  #   ansible.builtin.set_fact:
-  #     vdisk_UID: "{{ volume_info | json_query('*.vdisk_UID') }}" 
-  - name: debugging
+  - name: Create defined_volumes fact containing necessary values from added_volumes.list to create esx datastore (uid will still be needed)
+    # This step is just getting rid of variables that aren't needed for simplicity
+    ansible.builtin.set_fact:
+      defined_volumes:  "{{defined_volumes | default([]) + [ {'name': item.name, 'vcenter_hostname': item.vcenter_hostname, 'esx_hostname': item.esx_hostname, 'esx_datastore_name': item.esx_datastore_name, 'esx_datastore_type': item.esx_datastore_type} ] }}" 
+    loop: "{{ added_volumes.list }}"
+
+
+  - name: Create new fact for the new volumes along with the uids that will be used by the esx datastore creation
+    # in order to link the uid value to the other data, I needed to use a nested query against defined volumes and volumes_attributes.Volume
+    ansible.builtin.set_fact:
+      just_new_volumes_with_uids: "{{ just_new_volumes_with_uids | default([]) + [{ 'name': item[0].name, 'vcenter_hostname': item[0].vcenter_hostname, 'esx_hostname': item[0].esx_hostname, 'esx_datastore_name': item[0].esx_datastore_name, 'esx_datastore_type': item[0].esx_datastore_type, 'vdisk_uid': item[1].vdisk_UID}]}}"
+    when: "item[0].name == item[1].name"
+    loop: "{{ query('nested', defined_volumes, volumes_attributes.Volume) }}"
+
+  - name: Print out all values in just_new_volumes_with_uids
     ansible.builtin.debug:
-      var: volume_info.Volume
-  #     var: "{{ volume_info |community.general.json_query (item.Volume.vdisk_UID) }}"
-  #   # loop: "{{ volume_info.results | flatten }}"
+      var: just_new_volumes_with_uids
 
-  # - name: set fact with volume_facts
-  #   ansible.builtin.set_fact:
-  #     volume_facts: "{{ volume_info | default([]) | combine({ item.vdisk_UID : item.value
-  #       }) }}"
-  #   with_items: "{{ volume_info | flatten }}"
-
-  
-  # - name: create datastore with community.vmware.vmware_host_datastore for each vdisk_UID in volume_facts
-  #   community.vmware.vmware_host_datastore:
-  #     hostname: '{{ vcenter_hostname }}'
-  #     username: '{{ vcenter_username }}'
-  #     password: '{{ vcenter_password }}'
-  #     datastore_name: '{{ item.esx_datastore_name }}'
-  #     datastore_type: '{{ item.esx_datastore_type }}'
-  #     vmfs_device_name: "naa.{{ query( 'dict', item.vdisk_UID ) }}"
-  #     vmfs_version: 6.5
-  #     esxi_hostname: '{{ inventory_hostname }}'
-  #     state: present
-  #   delegate_to: localhost
-  #   with_items: volume_facts
-
+  - name: Create new esx datastore
+    # the vmfs device name needs to be all lowercase
+    community.vmware.vmware_host_datastore:
+      username: "{{ vcenter_username }}"
+      password: "{{ vcenter_password }}"
+      hostname: "{{ item.vcenter_hostname }}"
+      esxi_hostname: "{{ item.esx_hostname }}"
+      datastore_name: "{{ item.esx_datastore_name }}"
+      datastore_type: "{{ item.esx_datastore_type }}"
+      vmfs_device_name: "naa.{{ item.vdisk_uid | lower }}"
+      vmfs_version: 6
+      state: present
+      validate_certs: false
+    delegate_to: localhost
+    loop: "{{ just_new_volumes_with_uids }}"
 
