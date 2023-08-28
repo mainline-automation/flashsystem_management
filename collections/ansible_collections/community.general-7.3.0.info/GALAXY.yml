@@ -1,0 +1,8 @@
+download_url: https://automationhub.bpic.mainline.com/api/galaxy/v3/plugin/ansible/content/community/collections/artifacts/community-general-7.3.0.tar.gz
+format_version: 1.0.0
+name: general
+namespace: community
+server: https://automationhub.bpic.mainline.com/api/galaxy/content/community/
+signatures: []
+version: 7.3.0
+version_url: /api/galaxy/content/community/v3/plugin/ansible/content/community/collections/index/community/general/versions/7.3.0/

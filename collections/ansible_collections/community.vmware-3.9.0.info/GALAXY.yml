@@ -1,0 +1,8 @@
+download_url: https://automationhub.bpic.mainline.com/api/galaxy/v3/plugin/ansible/content/community/collections/artifacts/community-vmware-3.9.0.tar.gz
+format_version: 1.0.0
+name: vmware
+namespace: community
+server: https://automationhub.bpic.mainline.com/api/galaxy/content/community/
+signatures: []
+version: 3.9.0
+version_url: /api/galaxy/content/community/v3/plugin/ansible/content/community/collections/index/community/vmware/versions/3.9.0/

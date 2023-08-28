@@ -1,0 +1,45 @@
+download_url: https://automationhub.bpic.mainline.com/api/galaxy/v3/plugin/ansible/content/rh-certified/collections/artifacts/ibm-storage_virtualize-2.0.0.tar.gz
+format_version: 1.0.0
+name: storage_virtualize
+namespace: ibm
+server: https://automationhub.bpic.mainline.com/api/galaxy/content/rh-certified/
+signatures:
+- pubkey_fingerprint: 39B5D759361A97464C564A8FE1A4BD708A828AAD
+  pulp_created: '2023-07-27T15:32:36.596016Z'
+  signature: '-----BEGIN PGP SIGNATURE-----
+
+    Version: GnuPG v1
+
+
+    iQIcBAABCAAGBQJkpbCnAAoJEOGkvXCKgoqt5J4QAIHia1rVal0Jpq73zIGTv8+6
+
+    oESpycNBg1FO3ED7Qzr9J81Rd9zy58/AxuxKqUVjDYLQ3S/zU2qr9pTw31HHK8n1
+
+    5YRTMGx5lcQD5pg9vzC7GddePSdVO0XbROrFqpMDHDrzUXFQLOQeLWJlj4zdm6dJ
+
+    sb55Zo8K9cB3v/9MITLfSCuW8ATdUpaY568euCCkyV/P1PUaOWuuebtmCu0ODzMG
+
+    /PvdUY5q+2tCbiy1FB32j/hKuDMtKXkiWhQs5/al4YqYS1RwDIoOmrc1gMvoUag1
+
+    HWaiPsQ1two+TbFRLEKmdH5eHaKGNG7LwxJwRxW21VEPUoUCOmPELGh3qwD8uR5o
+
+    NbnI93CaqiMJimRU9NvcI0tDMqrR43RMHsgUw53zuCHEnsOoOIHNJqgT3i8MEslw
+
+    5rShpsiEUEXMqF6KJkC7/WcgHA4VwF6synJGITOd4k7s8xBimeiAJzEmIk+o2pO5
+
+    KcjIwB0SW9rH0HjfOF1PP5xpcuoTsFW7PWhCKeKBRDHP18khtPYkpJFTOfVQf1nG
+
+    wJ55aFHFygz/TTYug+z1E0zC6MFoRGZ0aVQK7e0BkuSDYcoiMZ8OhezPXuEOUN+0
+
+    pLJ6cYeYs7Fwe+u6hAdkQ1fQFSA9sVA0b6KMqjV9pGTiksOfAYNq986nTVc75j/6
+
+    Rk/m2Orj1fiOvDPDfzpB
+
+    =YU94
+
+    -----END PGP SIGNATURE-----
+
+    '
+  signing_service: null
+version: 2.0.0
+version_url: /api/galaxy/content/rh-certified/v3/plugin/ansible/content/rh-certified/collections/index/ibm/storage_virtualize/versions/2.0.0/
