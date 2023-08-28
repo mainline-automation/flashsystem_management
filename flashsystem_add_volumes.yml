@@ -22,16 +22,16 @@
       # iscsiname: "{{ _iqn_ }}"
       # portset: "{{ _portset_ }}""
       fcwwpn: "{{ item._wwpn_ }}"
-      # token: "{{ api_token }}"
-      username: ansible
-      password: M@inline1700
+      token: "{{ api_token }}"
+      # username: ansible
+      # password: M@inline1700
       state: present
       protocol: scsi
       type: generic
       validate_certs: false
       log_path: '/tmp/svc_create_host.debug'
     ignore_errors: true
-    loop: added_volumes.list
+    loop: host_to_wwpn
     
   - name: Read the csv file containing volume information
     community.general.read_csv:
@@ -49,9 +49,9 @@
       thin: "{{ item.thin }}"
       pool: "{{ item.pool }}"
       validate_certs: false
-      # token: "{{ api_token }}"
-      username: ansible
-      password: M@inline1700
+      token: "{{ api_token }}"
+      # username: 
+      # password: 
     loop: "{{ added_volumes.list}}"
 
   - name: Map volumes to hosts based on information from csv file
@@ -61,17 +61,17 @@
       state: present
       volname: "{{ item.name }}"
       log_path: '/tmp/map_volume_to_host.debug'
-      # token: "{{ api_token }}"
-      username: ansible
-      password: M@inline1700
+      token: "{{ api_token }}"
+      # username:
+      # password: 
     loop: "{{ added_volumes.list }}"
   
   - name: Gather data from FlashSystems about added and mapped volumes for use in creating datastores
     ibm.storage_virtualize.ibm_svc_info:
       clustername: "{{ clustername }}"
-      # token: "{{ api_token }}"
-      username: ansible
-      password: M@inline1700
+      token: "{{ api_token }}"
+      # username: 
+      # password: 
       gather_subset: vol
     register: volumes_attributes
 
