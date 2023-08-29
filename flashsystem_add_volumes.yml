@@ -29,19 +29,6 @@
       # username: 
       # password: 
     loop: "{{ added_volumes.list}}"
-
-  - name: Map volumes to hosts based on information from csv file
-    # again, uses added_volumes.list as the source of the information
-    ibm.storage_virtualize.ibm_svc_vol_map:
-      clustername: "{{ clustername }}"
-      host: "{{ hostname }}"
-      state: present
-      volname: "{{ item.name }}"
-      log_path: '/tmp/map_volume_to_host.debug'
-      token: "{{ api_token }}"
-      # username:
-      # password: 
-    loop: "{{ added_volumes.list }}"
   
   - name: preserve API token with set_stats
     # preserving api_token for any additional playbooks in workflow
