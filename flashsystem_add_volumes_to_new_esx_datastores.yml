@@ -43,6 +43,7 @@
   - name: Create new esx datastore
     # the vmfs device name needs to be all lowercase, but the vdisk_UID value from ibm_svc_info has all uppercase characters. 
     community.vmware.vmware_host_datastore:
+      auto_expand: true
       username: "{{ vcenter_username }}"
       password: "{{ vcenter_password }}"
       hostname: "{{ item.vcenter_hostname }}"
