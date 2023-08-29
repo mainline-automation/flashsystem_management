@@ -54,11 +54,4 @@
       vmfs_version: 6
       state: present
       validate_certs: false
-    delegate_to: localhost
     loop: "{{ just_new_volumes_with_uids }}"
-
-  - name: preserve API token with set_stats
-    # preserving api_token for any additional playbooks in workflow
-    ansible.builtin.set_stats:
-      data:
-        api_token: "{{ api_token }}"
