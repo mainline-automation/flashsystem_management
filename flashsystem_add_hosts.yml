@@ -1,0 +1,40 @@
+---
+- name: Create or validate hosts
+  hosts: localhost
+  gather_facts: false
+  become: false
+  vars_files:
+    - vars/authentication.yml
+ 
+  tasks:
+  - name: read the host_to_wwpn csv file
+    community.general.read_csv:
+      path: vars/host_to_wwpn.csv
+    register: host_to_wwpn
+ 
+  
+  - name: make sure that host exists using ibm.storage_virtualize.ibm_svc_host and create if they don't
+  # errors are ignored because this will error out if the host already exists
+  # task can be modified to use iscsi with portset and iscsiname
+    ibm.storage_virtualize.ibm_svc_host:
+      clustername: "{{ item.flashsystem_clustername }}"
+      name: "{{ item.hostname }}"
+      # iscsiname: "{{ _iqn_ }}"
+      # portset: "{{ _portset_ }}""
+      fcwwpn: "{{ item._wwpn_ }}"
+      token: "{{ api_token }}"
+      # username: 
+      # password: 
+      state: present
+      protocol: scsi
+      type: generic
+      validate_certs: false
+      log_path: '/tmp/svc_create_host.debug'
+    ignore_errors: true
+    loop: host_to_wwpn
+  
+  - name: preserve API token with set_stats
+    # preserving api_token for any additional playbooks in workflow
+    ansible.builtin.set_stats:
+      data:
+        api_token: "{{ api_token }}"
