@@ -10,20 +10,18 @@
     - name: gather facts using ibm_svc_info
       ibm.storage_virtualize.ibm_svc_info:
         clustername: "{{ clustername }}"
-        gather_subset: all
+        gather_subset: array
         # username:
         # password:
         token: "{{ api_token }}"
       register: results
-      #  no_log: true
-      ignore_errors: true
-      
+#      no_log: true
       
     - name: Print out results.array
       ansible.builtin.debug:
         msg: 
-          - "The following are the details for IBM FlashSystem {{ clustername }}. If the system is not on the latest IBM Storage Virtualize Software, some options may be invalid." 
-          - "{{ results }}"
+          - "The following are the Array level details for {{ clustername }}"
+          - "{{ results.Array }}"
 
     - name: create directory for /etc/ansible/facts.d if it doesn't exist
       ansible.builtin.file:
@@ -33,12 +31,12 @@
 
     - name: write array_results to /etc/ansible/facts.d/
       ansible.builtin.copy:
-        content: "{{ results[0] }}"
+        content: "{{ results.Array[0] }}"
         dest: '/etc/ansible/facts.d/{{ clustername }}.fact'
 
     - name: import registered variable results.Array into set_fact
       ansible.builtin.set_fact:
-        array_details: "{{ results[0] }}"
+        array_details: "{{ results.Array[0] }}"
     
     - name: preserve API token with set_stats
       ansible.builtin.set_stats:
