@@ -22,7 +22,7 @@
       gather_subset: vol
     register: volumes_attributes
 
-   - name: Create esx_volumes fact containing necessary values from added_volumes.list to create esx datastore (uid will still be needed)
+  - name: Create esx_volumes fact containing necessary values from added_volumes.list to create esx datastore (uid will still be needed)
     # This step is just getting rid of variables that aren't needed for simplicity
     ansible.builtin.set_fact:
       esx_volumes:  "{{esx_volumes | default([]) + [ {'name': item.name, 'host_fqdn': item.host_fqdn, 'esx_datastore_name': item.esx_datastore_name, 'esx_datastore_type': item.esx_datastore_type} ] }}" 
