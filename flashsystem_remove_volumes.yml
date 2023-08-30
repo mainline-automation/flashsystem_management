@@ -1,5 +1,5 @@
 ---
-- name: Create new volumes based on information in csv file
+- name: Remove Volumes listed in csv file
   hosts: localhost
   gather_facts: false
   become: false
@@ -13,12 +13,12 @@
       path: vars/addvolume.csv
     register: added_volumes
 
-  - name: Use ibm.storage_virtualize.ibm_svc_manage_volume with a loop to create new volumes from CSV file
+  - name: Use ibm.storage_virtualize.ibm_svc_manage_volume with a loop to remove volumes based on CSV file
     # added_volumes.list is needed from registered variable
     ibm.storage_virtualize.ibm_svc_manage_volume:
       clustername: "{{ clustername }}"
       log_path: '/tmp/svc_create_volume.debug'
-      state: present
+      state: absent
       name: "{{ item.name }}"
       size: "{{ item.size }}"
       unit: "{{ item.unit }}"
@@ -30,10 +30,6 @@
       # password: 
     loop: "{{ added_volumes.list}}"
   
-  - name: preserve API token with set_stats
-    # preserving api_token for any additional playbooks in workflow
-    ansible.builtin.set_stats:
-      data:
-        api_token: "{{ api_token }}"
+  
   
   

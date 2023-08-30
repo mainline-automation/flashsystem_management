@@ -1,0 +1,63 @@
+---
+- name: Remove ESX datastores
+  hosts: localhost
+  gather_facts: false
+  become: false
+  vars_files:
+    - vars/authentication.yml
+  
+  tasks:
+
+  - name: Read the csv file containing volume information
+    community.general.read_csv:
+      path: vars/addvolume.csv
+    register: added_volumes
+
+  - name: Gather data from FlashSystems about added and mapped volumes for use in creating datastores
+    ibm.storage_virtualize.ibm_svc_info:
+      clustername: "{{ clustername }}"
+      token: "{{ api_token }}"
+      # username: 
+      # password: 
+      gather_subset: vol
+    register: volumes_attributes
+
+  - name: Create defined_volumes fact containing necessary values from added_volumes.list to create esx datastore (uid will still be needed)
+    # This step is just getting rid of variables that aren't needed for simplicity
+    ansible.builtin.set_fact:
+      defined_volumes:  "{{defined_volumes | default([]) + [ {'name': item.name, 'vcenter_hostname': item.vcenter_hostname, 'esx_host_fqdn': item.esx_host_fqdn, 'esx_datastore_name': item.esx_datastore_name, 'esx_datastore_type': item.esx_datastore_type} ] }}" 
+    loop: "{{ added_volumes.list }}"
+
+
+  - name: Create new fact for the new volumes along with the uids that will be used by the esx datastore creation
+    # in order to link the uid value to the other data, I needed to use a nested query against defined volumes and volumes_attributes.Volume
+    ansible.builtin.set_fact:
+      just_new_volumes_with_uids: "{{ just_new_volumes_with_uids | default([]) + [{ 'name': item[0].name, 'vcenter_hostname': item[0].vcenter_hostname, 'esx_host_fqdn': item[0].esx_host_fqdn, 'esx_datastore_name': item[0].esx_datastore_name, 'esx_datastore_type': item[0].esx_datastore_type, 'vdisk_uid': item[1].vdisk_UID}]}}"
+    when: "item[0].name == item[1].name"
+    loop: "{{ query('nested', defined_volumes, volumes_attributes.Volume) }}"
+
+  - name: Print out all values in just_new_volumes_with_uids
+    ansible.builtin.debug:
+      var: just_new_volumes_with_uids
+
+  - name: Remove new esx datastore
+    # the vmfs device name needs to be all lowercase, but the vdisk_UID value from ibm_svc_info has all uppercase characters. 
+    community.vmware.vmware_host_datastore:
+      auto_expand: true
+      username: "{{ vcenter_username }}"
+      password: "{{ vcenter_password }}"
+      hostname: "{{ item.vcenter_hostname }}"
+      esxi_hostname: "{{ item.esx_host_fqdn }}"
+      datastore_name: "{{ item.esx_datastore_name }}"
+      # datastore_type: "{{ item.esx_datastore_type }}"
+      vmfs_device_name: "naa.{{ item.vdisk_uid | lower }}"
+      # vmfs_version: 6
+      state: absent
+      validate_certs: false
+    loop: "{{ just_new_volumes_with_uids }}"
+
+  - name: preserve API token with set_stats
+    # preserving api_token for any additional playbooks in workflow
+    ansible.builtin.set_stats:
+      data:
+        api_token: "{{ api_token }}"

@@ -1,0 +1,36 @@
+---
+- name: Remove the host mappings from new volumes
+  hosts: localhost
+  gather_facts: false
+  become: false
+  vars_files:
+    - vars/authentication.yml
+ 
+  tasks:
+   
+  - name: Read the csv file containing volume information
+    community.general.read_csv:
+      path: vars/addvolume.csv
+    register: added_volumes
+
+ 
+  - name: Remove volumes mappings based on information from csv file
+    # again, uses added_volumes.list as the source of the information
+    ibm.storage_virtualize.ibm_svc_vol_map:
+      clustername: "{{ clustername }}"
+      host: "{{ item.esx_hostname }}"
+      state: absent
+      volname: "{{ item.name }}"
+      log_path: '/tmp/map_volume_to_host.debug'
+      token: "{{ api_token }}"
+      # username:
+      # password: 
+    loop: "{{ added_volumes.list }}"
+  
+  - name: preserve API token with set_stats
+    # preserving api_token for any additional playbooks in workflow
+    ansible.builtin.set_stats:
+      data:
+        api_token: "{{ api_token }}"
+  
+  
