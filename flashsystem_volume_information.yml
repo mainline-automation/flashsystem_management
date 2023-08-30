@@ -17,7 +17,7 @@
       register: results
 #      no_log: true
       
-    - name: Print out results.array
+    - name: Print out results.Volume
       ansible.builtin.debug:
         msg: 
           - "The following are the details for Volumes on IBM FlashSystem {{ clustername }}"
