@@ -1,0 +1,28 @@
+---
+- name: Print out information on current volumes for IBM FlashSystem
+  hosts: localhost
+  gather_facts: false
+  become: true
+  vars_files:
+    - vars/authentication.yml
+ 
+  tasks:
+    - name: Gather IBM FlashSystem Volume information
+      ibm.storage_virtualize.ibm_svc_info:
+        clustername: "{{ clustername }}"
+        gather_subset: vol
+        # username:
+        # password:
+        token: "{{ api_token }}"
+      register: results
+#      no_log: true
+      
+    - name: Print out results.array
+      ansible.builtin.debug:
+        msg: 
+          - "The following are the details for Volumes on IBM FlashSystem {{ clustername }}"
+          - "{{ results.Volume }}"
+
+
+
+    
