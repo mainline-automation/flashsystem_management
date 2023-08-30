@@ -47,7 +47,7 @@
       username: "{{ vcenter_username }}"
       password: "{{ vcenter_password }}"
       hostname: "{{ vcenter_hostname }}"
-      esxi_hostname: "{{ item.esx_host_fqdn }}"
+      esxi_hostname: "{{ item.host_fqdn }}"
       datastore_name: "{{ item.esx_datastore_name }}"
       datastore_type: "{{ item.esx_datastore_type }}"
       vmfs_device_name: "naa.{{ item.vdisk_uid | lower }}"
