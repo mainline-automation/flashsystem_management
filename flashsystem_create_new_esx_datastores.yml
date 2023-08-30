@@ -40,13 +40,13 @@
     ansible.builtin.debug:
       var: just_new_volumes_with_uids
 
-  - name: Create new esx datastore
+  - name: Create new ESX datastore
     # the vmfs device name needs to be all lowercase, but the vdisk_UID value from ibm_svc_info has all uppercase characters. 
     community.vmware.vmware_host_datastore:
       auto_expand: true
       username: "{{ vcenter_username }}"
       password: "{{ vcenter_password }}"
-      hostname: "{{ item.vcenter_hostname }}"
+      hostname: "{{ vcenter_hostname }}"
       esxi_hostname: "{{ item.esx_host_fqdn }}"
       datastore_name: "{{ item.esx_datastore_name }}"
       datastore_type: "{{ item.esx_datastore_type }}"
