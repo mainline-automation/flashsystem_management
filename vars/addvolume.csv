@@ -4,7 +4,7 @@ ansible2,Pool_01,20,yes,gb,esx,esxlab,esxlab.bpic.mainline.com,ansible2_esx,vmfs
 ansible3,Pool_01,20,yes,gb,aix,bpicaix04,esxlab.bpic.mainline.com,,
 ansible4,Pool_01,20,yes,gb,aix,bpicaix04,esxlab.bpic.mainline.com,,
 ansible5,Pool_01,20,yes,gb,esx,esxlab,esxlab.bpic.mainline.com,ansible5_esx,vmfs
-ansible6,Pool_01,20,yes,gb,rhel9,,esxlab.bpic.mainline.com,,
+ansible6,Pool_01,20,yes,gb,,,esxlab.bpic.mainline.com,,
 ansible7,Pool_01,20,yes,gb,esx,esxlab,esxlab.bpic.mainline.com,ansible7_esx,vmfs
 ansible8,Pool_01,20,yes,gb,,,esxlab.bpic.mainline.com,ansible8_esx,
 ansible9,Pool_01,20,yes,gb,,,esxlab.bpic.mainline.com,ansible9_esx,
