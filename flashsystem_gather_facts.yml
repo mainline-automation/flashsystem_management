@@ -10,7 +10,7 @@
     - name: gather facts using ibm_svc_info
       ibm.storage_virtualize.ibm_svc_info:
         clustername: "{{ clustername }}"
-        gather_subset: array
+        gather_subset: all
         # username:
         # password:
         token: "{{ api_token }}"
@@ -20,8 +20,8 @@
     - name: Print out results.array
       ansible.builtin.debug:
         msg: 
-          - "The following are the Array level details for {{ clustername }}"
-          - "{{ results.Array }}"
+          - "The following are the details for {{ clustername }}"
+          - "{{ results }}"
 
     - name: create directory for /etc/ansible/facts.d if it doesn't exist
       ansible.builtin.file:
@@ -31,12 +31,12 @@
 
     - name: write array_results to /etc/ansible/facts.d/
       ansible.builtin.copy:
-        content: "{{ results.Array[0] }}"
+        content: "{{ results }}"
         dest: '/etc/ansible/facts.d/{{ clustername }}.fact'
 
     - name: import registered variable results.Array into set_fact
       ansible.builtin.set_fact:
-        array_details: "{{ results.Array[0] }}"
+        array_details: "{{ results }}"
     
     - name: preserve API token with set_stats
       ansible.builtin.set_stats:
