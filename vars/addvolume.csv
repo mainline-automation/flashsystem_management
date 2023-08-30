@@ -1,4 +1,4 @@
-name,pool,size,thin,unit,vcenter_hostname,esx_hostname,esx_host_fqdn,esx_datastore_name,esx_datastore_type
-ansible1,Pool_01,20,yes,gb,vcsa-lab.bpic.mainline.com,esxlab,esxlab.bpic.mainline.com,ansible1_esx,vmfs
-ansible2,Pool_01,20,yes,gb,vcsa-lab.bpic.mainline.com,esxlab,esxlab.bpic.mainline.com,ansible2_esx,vmfs
-ansible3,Pool_01,20,yes,gb,vcsa-lab.bpic.mainline.com,esxlab,esxlab.bpic.mainline.com,ansible3_esx,vmfs
+name,pool,size,thin,unit,esx_hostname,esx_host_fqdn,esx_datastore_name,esx_datastore_type
+ansible1,Pool_01,20,yes,gb,esxlab,esxlab.bpic.mainline.com,ansible1_esx,vmfs
+ansible2,Pool_01,20,yes,gb,esxlab,esxlab.bpic.mainline.com,ansible2_esx,vmfs
+ansible3,Pool_01,20,yes,gb,esxlab,esxlab.bpic.mainline.com,ansible3_esx,vmfs
