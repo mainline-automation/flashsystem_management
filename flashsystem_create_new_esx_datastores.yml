@@ -26,7 +26,7 @@
     # This step is just getting rid of variables that aren't needed for simplicity
     ansible.builtin.set_fact:
       defined_volumes:  "{{defined_volumes | default([]) + [ {'name': item.name, 'os': item.os, 'host_fqdn': item.host_fqdn, 'esx_datastore_name': item.esx_datastore_name, 'esx_datastore_type': item.esx_datastore_type} ] }}" 
-    when: "item.os=esx"
+    when: "{{item.os}} == esx"
     loop: "{{ added_volumes.list }}"
 
 
