@@ -25,6 +25,7 @@
       token: "{{ api_token }}"
       # username:
       # password: 
+    when: "{{ item.hostname != '' }}"
     loop: "{{ added_volumes.list }}"
   
   - name: preserve API token with set_stats
