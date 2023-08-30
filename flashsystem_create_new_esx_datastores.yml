@@ -27,7 +27,7 @@
     ansible.builtin.set_fact:
       esx_volumes:  "{{defined_volumes | default([]) + [ {'name': item.name, 'os': item.os, 'host_fqdn': item.host_fqdn, 'esx_datastore_name': item.esx_datastore_name, 'esx_datastore_type': item.esx_datastore_type} ] }}" 
     when: item.os='esx'
-    loop: "{{ added_volumes.list }}"
+    loop: "{{ query(added_volumes.list) }}"
 
 
   - name: Create new fact for the new volumes along with the uids that will be used by the esx datastore creation
