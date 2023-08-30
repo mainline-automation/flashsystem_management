@@ -32,7 +32,7 @@
   - name: Create new fact for the new volumes along with the uids that will be used by the esx datastore creation
     # in order to link the uid value to the other data, I needed to use a nested query against defined volumes and volumes_attributes.Volume
     ansible.builtin.set_fact:
-      just_new_volumes_with_uids: "{{ just_new_volumes_with_uids | default([]) + [{ 'name': item[0].name, 'host_fqdn': item[0].esx_host_fqdn, 'esx_datastore_name': item[0].esx_datastore_name, 'esx_datastore_type': item[0].esx_datastore_type, 'vdisk_uid': item[1].vdisk_UID}]}}"
+      just_new_volumes_with_uids: "{{ just_new_volumes_with_uids | default([]) + [{ 'name': item[0].name, 'host_fqdn': item[0].host_fqdn, 'esx_datastore_name': item[0].esx_datastore_name, 'esx_datastore_type': item[0].esx_datastore_type, 'vdisk_uid': item[1].vdisk_UID}]}}"
     when: ("item[0].name == item[1].name" and "item[0].os==esx")
     loop: "{{ query('nested', defined_volumes, volumes_attributes.Volume) }}"
 
