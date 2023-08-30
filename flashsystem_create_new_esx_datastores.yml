@@ -26,6 +26,7 @@
     # This step is just getting rid of variables that aren't needed for simplicity
     ansible.builtin.set_fact:
       defined_volumes:  "{{defined_volumes | default([]) + [ {'name': item.name, 'os': item.os, 'host_fqdn': item.host_fqdn, 'esx_datastore_name': item.esx_datastore_name, 'esx_datastore_type': item.esx_datastore_type} ] }}" 
+    when: "item.os='esx'"
     loop: "{{ added_volumes.list }}"
 
 
@@ -33,7 +34,7 @@
     # in order to link the uid value to the other data, I needed to use a nested query against defined volumes and volumes_attributes.Volume
     ansible.builtin.set_fact:
       just_new_volumes_with_uids: "{{ just_new_volumes_with_uids | default([]) + [{ 'name': item[0].name, 'host_fqdn': item[0].host_fqdn, 'esx_datastore_name': item[0].esx_datastore_name, 'esx_datastore_type': item[0].esx_datastore_type, 'vdisk_uid': item[1].vdisk_UID}]}}"
-    when: ("item[0].name == item[1].name" and "item[0].os==esx")
+    when: "item[0].name == item[1].name"
     loop: "{{ query('nested', defined_volumes, volumes_attributes.Volume) }}"
 
   - name: Print out all values in just_new_volumes_with_uids
