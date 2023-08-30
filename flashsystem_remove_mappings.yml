@@ -18,13 +18,14 @@
     # again, uses added_volumes.list as the source of the information
     ibm.storage_virtualize.ibm_svc_vol_map:
       clustername: "{{ clustername }}"
-      host: "{{ item.esx_hostname }}"
+      host: "{{ item.hostname }}"
       state: absent
       volname: "{{ item.name }}"
       log_path: '/tmp/map_volume_to_host.debug'
       token: "{{ api_token }}"
       # username:
       # password: 
+    when: "{{ item.hostname != '' }}"
     loop: "{{ added_volumes.list }}"
   
   - name: preserve API token with set_stats
