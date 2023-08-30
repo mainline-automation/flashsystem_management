@@ -15,6 +15,7 @@
         # password:
         token: "{{ api_token }}"
       register: results
+      ignore_errors: true
 #      no_log: true
       
     - name: Print out results.array
