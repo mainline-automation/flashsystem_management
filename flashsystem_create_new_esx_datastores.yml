@@ -16,17 +16,17 @@
   - name: Gather data from FlashSystems about added and mapped volumes for use in creating datastores
     ibm.storage_virtualize.ibm_svc_info:
       clustername: "{{ clustername }}"
-      token: "{{ api_token }}"
-      # username: 
-      # password: 
+      # token: "{{ api_token }}"
+      username: ansible
+      password: M@inline1700
       gather_subset: vol
     register: volumes_attributes
 
   - name: Create defined_volumes fact containing necessary values from added_volumes.list to create esx datastore (uid will still be needed)
     # This step is just getting rid of variables that aren't needed for simplicity
     ansible.builtin.set_fact:
-      defined_volumes:  "{{defined_volumes | default([]) + [ {'name': item.name, 'os': item.os, 'host_fqdn': item.host_fqdn, 'esx_datastore_name': item.esx_datastore_name, 'esx_datastore_type': item.esx_datastore_type} ] }}" 
-    when: "{{item.os}} == 'esx'"
+      esx_volumes:  "{{defined_volumes | default([]) + [ {'name': item.name, 'os': item.os, 'host_fqdn': item.host_fqdn, 'esx_datastore_name': item.esx_datastore_name, 'esx_datastore_type': item.esx_datastore_type} ] }}" 
+    when: item.os='esx'
     loop: "{{ added_volumes.list }}"
 
 
@@ -35,7 +35,7 @@
     ansible.builtin.set_fact:
       just_new_volumes_with_uids: "{{ just_new_volumes_with_uids | default([]) + [{ 'name': item[0].name, 'host_fqdn': item[0].host_fqdn, 'esx_datastore_name': item[0].esx_datastore_name, 'esx_datastore_type': item[0].esx_datastore_type, 'vdisk_uid': item[1].vdisk_UID}]}}"
     when: "item[0].name == item[1].name"
-    loop: "{{ query('nested', defined_volumes, volumes_attributes.Volume) }}"
+    loop: "{{ query('nested', esx_volumes, volumes_attributes.Volume) }}"
 
   - name: Print out all values in just_new_volumes_with_uids
     ansible.builtin.debug:
