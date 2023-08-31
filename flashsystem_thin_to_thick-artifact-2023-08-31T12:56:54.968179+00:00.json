@@ -21,7 +21,7 @@
                 },
                 "playbook": {
                     "help": false,
-                    "path": "/home/ansible/playbooks/flashsystem_setup/flashsystem_create_new_esx_datastores.yml"
+                    "path": "/home/ansible/playbooks/flashsystem_setup/flashsystem_thin_to_thick.yml"
                 }
             },
             "ansible-builder": {
@@ -110,9 +110,9 @@
         "ansible-navigator.enable-prompts": "Defaults",
         "ansible-navigator.exec.command": "Defaults",
         "ansible-navigator.exec.shell": "Defaults",
-        "ansible-navigator.execution-environment.container-engine": "Settings file",
+        "ansible-navigator.execution-environment.container-engine": "Previous cli command",
         "ansible-navigator.execution-environment.container-options": "Not set",
-        "ansible-navigator.execution-environment.enabled": "Settings file",
+        "ansible-navigator.execution-environment.enabled": "Previous cli command",
         "ansible-navigator.execution-environment.environment-variables.pass": "Not set",
         "ansible-navigator.execution-environment.environment-variables.set": "Not set",
         "ansible-navigator.execution-environment.image": "Previous cli command",
@@ -153,7 +153,16 @@
         "\u001b[1;35m[WARNING]: No inventory was parsed, only implicit localhost is available\u001b[0m",
         "\u001b[1;35m[WARNING]: provided hosts list is empty, only localhost is available. Note that\u001b[0m",
         "\u001b[1;35mthe implicit localhost does not match 'all'\u001b[0m",
-        "\u001b[0;31mERROR! Attempting to decrypt but no vault secrets found\u001b[0m"
+        "\u001b[0;31mERROR! couldn't resolve module/action 'ibm.storage_virutalize.ibm_svc_manage_volume'. This often indicates a misspelling, missing collection, or incorrect module path.\u001b[0m",
+        "\u001b[0;31m\u001b[0m",
+        "\u001b[0;31mThe error appears to be in '/home/ansible/playbooks/flashsystem_setup/flashsystem_thin_to_thick.yml': line 10, column 5, but may\u001b[0m",
+        "\u001b[0;31mbe elsewhere in the file depending on the exact syntax problem.\u001b[0m",
+        "\u001b[0;31m\u001b[0m",
+        "\u001b[0;31mThe offending line appears to be:\u001b[0m",
+        "\u001b[0;31m\u001b[0m",
+        "\u001b[0;31m  tasks:\u001b[0m",
+        "\u001b[0;31m  - name: change volume ansible1 from thin to thick using ibm.storage_virutalize.ibm_svc_manage_volume\u001b[0m",
+        "\u001b[0;31m    ^ here\u001b[0m"
     ],
     "version": "2.0.0"
 }

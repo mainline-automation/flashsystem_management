@@ -1,0 +1,22 @@
+---
+- name: Remove the host mappings from new volumes
+  hosts: localhost
+  gather_facts: false
+  become: false
+  vars_files:
+    - vars/authentication.yml
+ 
+  tasks:
+  - name: change volume ansible1 from thin to thick using ibm.storage_virutalize.ibm_svc_manage_volume
+    ibm.storage_virutalize.ibm_svc_manage_volume:
+      clustername: 10.137.0.30
+      username: "ansible"
+      password: 'M@inline1700'
+      name: "ansible1"
+      state: present
+      pool: "Pool_01"
+      size: "25"
+      unit: "gb"
+      
+      
+
