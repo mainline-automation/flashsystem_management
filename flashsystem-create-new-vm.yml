@@ -1,0 +1,58 @@
+---
+- name: Create VMs based on csv vars_files
+  hosts: localhost
+  gather_facts: false
+  become: false
+  vars_files:
+    - vars/authentication.yml
+  
+  tasks:
+    - name: Read the csv file containing volume information
+      community.general.read_csv:
+        path: vars/addvms.csv
+      register: added_vms
+
+    - name: Clone vms from templates listed in added_volumes.list
+      community.vmware.vmware_guest:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        datacenter: "{{ item.datacenter_name }}"
+        esxi_hostname: "{{ item.host_fqdn }}"
+        state: present
+        folder: "{{ item.folder }}"
+        template: "{{ item.template }}"
+        name: "{{ item.vm_guest_name }}"
+        disk:
+          - autoselect_datastore: false
+            datastore: "{{ item.esx_datastore_name }}"
+            size_gb: 55
+          - autoselect_datastore: false
+            datastore: "{{ item.esx_datastore_name }}"
+            size_gb: 25
+        networks:
+          - name: VM Network
+            device_type: "{{ item.network_device_type }}"
+            ip: "{{ item.ip_addr }}"
+            netmask: "{{ item.netmask }}"
+            gateway: "{{ item.gateway }}"
+        wait_for_ip_address: true
+        validate_certs: false
+        customization:
+          domain: "{{ item.domain }}"
+          dns_servers:
+            - "{{ item.dns_server_1 }}"
+            - "{{ item.dns_server_2 }}"
+          dns_suffix:
+            - "{{ item.dns_suffix }}"
+          script_text: |
+            #!/bin/bash
+            touch /tmp/touch-from-playbook
+      delegate_to: localhost
+      register: vm_results
+      loop: "{{ added_vms.list }}"
+
+    - name: print out vm_results
+      ansible.builtin.debug:
+        var: vm_results
+
