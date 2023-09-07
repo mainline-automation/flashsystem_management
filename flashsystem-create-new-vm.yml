@@ -46,8 +46,9 @@
           dns_servers:
             - "{{ item.dns_server_1 }}"
             - "{{ item.dns_server_2 }}"
-          dns_suffix:
-            - "{{ item.dns_suffix }}"
+          hostname: "{{ item.vm_guest_name }}"
+          # dns_suffix:
+          #   - "{{ item.dns_suffix }}"
           script_text: |
             #!/bin/bash
         wait_for_customization: true
