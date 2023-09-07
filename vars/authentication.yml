@@ -7,9 +7,7 @@ _password_: 'M@inline1700'
 vcenter_username: bpic\ansible
 vcenter_password: 'M@inline1700'
 vm_username: 'ansible'
-satellite_server: 'satellite.bpic.mainline.com'
-satellite_user: 'ansible'
-satellite_password: 'New&User900'
 satellite_activation_key: 'Ansible Server Environment'
+satellite_org: 'Ansible'
 
 

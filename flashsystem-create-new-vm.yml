@@ -70,5 +70,5 @@
     - name: "register with Red Hat Satellite server at {{ satellite_hostname }} using activation key {{ satellite_activation_key }}"
       community.general.redhat_subscription:
         state: present
-        activationkey: "{{ _activationkey_ }}"
-        org_id: "{{ _org_id_ }}"
+        activationkey: "{{ satellite_activation_key }}"
+        org_id: "{{ satellite_org }}"
