@@ -51,6 +51,7 @@
           script_text: |
             #!/bin/bash
         wait_for_customization: true
+      ignore_errors: true
       delegate_to: localhost
       register: vm_results
       loop: "{{ added_vms.list }}"
@@ -59,11 +60,15 @@
       ansible.builtin.debug:
         var: vm_results
 
-    - name: copy ssh key to new rhel guests with ansible.builtin.authorized_key
-      ansible.posix.authorized_key:
-        user: "{{ item.vm_username }}"
+- name: Set up new VMs with Satellite Server
+  hosts: flashsystem-attached-vms
+  gather_facts: false
+  become: true
+  vars_files:
+    - vars/authentication.yml
+  tasks:
+    - name: "register with Red Hat Satellite server at {{ satellite_hostname }} using activation key {{ satellite_activation_key }}"
+      community.general.redhat_subscription:
         state: present
-        key: "{{ lookup('file', 'auth/' + item.inventory_hostname + '.pub') }}"
-      loop: "{{ vm_results.results }}"
-
-
+        activationkey: "{{ _activationkey_ }}"
+        org_id: "{{ _org_id_ }}"
