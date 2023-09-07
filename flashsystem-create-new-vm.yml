@@ -50,7 +50,8 @@
             - "{{ item.dns_suffix }}"
           script_text: |
             #!/bin/bash
-            hostnamectl set-hostname "{{ item.vm_guest_name }}"."{{item.domain}}"
+            nmcli general hostname "{{ item.vm_guest_name }}"."{{item.domain}}"
+            systemctl restart NetworkManager
         wait_for_customization: true
       ignore_errors: true
       delegate_to: localhost
