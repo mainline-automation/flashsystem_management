@@ -1,0 +1,35 @@
+---
+- name: Create VMs based on csv vars_files
+  hosts: localhost
+  gather_facts: false
+  become: false
+  vars_files:
+    - vars/authentication.yml
+  
+  tasks:
+    - name: Read the csv file containing volume information
+      community.general.read_csv:
+        path: vars/addvms.csv
+      register: added_vms
+
+    - name: Clone vms from templates listed in added_volumes.list
+      community.vmware.vmware_guest:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        datacenter: "{{ item.datacenter_name }}"
+        esxi_hostname: "{{ item.host_fqdn }}"
+        state: absent
+        folder: "{{ item.folder }}"
+        template: "{{ item.template }}"
+        name: "{{ item.vm_guest_name }}"
+       
+        wait_for_customization: true
+      delegate_to: localhost
+      register: vm_results
+      loop: "{{ added_vms.list }}"
+
+    - name: print out vm_results
+      ansible.builtin.debug:
+        var: vm_results
+

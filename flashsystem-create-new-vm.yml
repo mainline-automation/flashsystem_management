@@ -31,11 +31,14 @@
             datastore: "{{ item.esx_datastore_name }}"
             size_gb: 25
         networks:
-          - name: VM Network
+          - name: "{{ item.network_adapter }}"
             device_type: "{{ item.network_device_type }}"
             ip: "{{ item.ip_addr }}"
+            type: static
             netmask: "{{ item.netmask }}"
             gateway: "{{ item.gateway }}"
+            connected: true
+            start_connected: true
         wait_for_ip_address: true
         validate_certs: false
         customization:
@@ -47,7 +50,7 @@
             - "{{ item.dns_suffix }}"
           script_text: |
             #!/bin/bash
-            touch /tmp/touch-from-playbook
+        wait_for_customization: true
       delegate_to: localhost
       register: vm_results
       loop: "{{ added_vms.list }}"
@@ -55,4 +58,12 @@
     - name: print out vm_results
       ansible.builtin.debug:
         var: vm_results
+
+    - name: copy ssh key to new rhel guests with ansible.builtin.authorized_key
+      ansible.posix.authorized_key:
+        user: "{{ item.vm_username }}"
+        state: present
+        key: "{{ lookup('file', 'auth/' + item.inventory_hostname + '.pub') }}"
+      loop: "{{ vm_results.results }}"
+
 
