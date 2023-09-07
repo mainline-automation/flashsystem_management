@@ -1,0 +1,20 @@
+- name: Set up new VMs with Satellite Server
+  hosts: flashsystem-attached-vms
+  gather_facts: false
+  become: true
+  vars_files:
+    - vars/authentication.yml
+  
+  tasks:
+    - name: use authorized_key to copy lab_vm_key to host 
+      ansible.posix.authorized_key:
+        user: ansible
+        state: present
+        key: "{{ lab_vm_key }}"
+
+
+    - name: "register with Red Hat Satellite server at {{ satellite_hostname }} using activation key {{ satellite_activation_key }}"
+      community.general.redhat_subscription:
+        state: present
+        activationkey: "{{ satellite_activation_key }}"
+        org_id: "{{ satellite_org }}"

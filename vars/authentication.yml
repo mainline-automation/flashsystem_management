@@ -4,10 +4,12 @@ domain: 'bpic.mainline.com'
 clustername: '10.137.0.30'
 username: 'ansible'
 _password_: 'M@inline1700'
-vcenter_username: bpic\ansible
+vcenter_username: 'bpic\ansible'
 vcenter_password: 'M@inline1700'
 vm_username: 'ansible'
 satellite_activation_key: 'Ansible Server Environment'
 satellite_org: 'Ansible'
+lab_vm_key: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQD7PHVWUBhziA8USmLHL+6P7S5m4uGTz49eEXqbhEkD9KDwKAi38Avk27MA3bunAwY3uoUu49jY+U3FVnNj0pXHm6Xfzw5iRYC20csjsPUDKCvJ7sSBHnHYbkTCPcXpx0BKGMA6owBhim22fQD5aGNB0/ScUdf4MBbE8/O1lptTw7P27jVcG5zVuDxW1nYzncPa9L/tYWhJ6l7LYI14bZtYc363sJQZe1pxibthYm9WHTVamLKZ12Z1aWruIqnq9QP8+lCDVTC3udEMv1sFNAImJqqj4lqEmZY5kS0Ag/QAkRmSgViSGSuPE80O/s9U67zf9ls9DOImeLmwhp4TJdYvcZVOGGBrgUXT1Lbhh+Ofjcv86hdOVgXRME5JgsK9e7+j+Tuds3iNIhl9EEbbn8inXikpu9WCS3Cx7COZdDEDexzbzj9/b4Ce57awQDZX0MfdoWeEbGT6GxXkL7L3bjKNeh0YgaI5y0QnIawD44uz3SsiTotDsJgFzGKo353mW5dkVkzBNeb6z5S1r73X558lL8wHlMcjfN5cBniiMMRWmjGquHcxBORI6v0VzH5FKPVjUiVNrePpcsrPlc86iW7eUzSGD5KnAvmYIzuvewCnKbEmaGp1iyDCtk9086pZ3wClvFANzWcXXOUrsoRRZpojd2XTSoxBTwT2G9KNm6KsyQ=='
+
 
 
