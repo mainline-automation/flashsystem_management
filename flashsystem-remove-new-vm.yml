@@ -23,8 +23,6 @@
         folder: "{{ item.folder }}"
         template: "{{ item.template }}"
         name: "{{ item.vm_guest_name }}"
-       
-        wait_for_customization: true
       delegate_to: localhost
       register: vm_results
       loop: "{{ added_vms.list }}"
