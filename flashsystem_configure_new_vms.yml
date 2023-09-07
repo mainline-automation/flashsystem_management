@@ -18,4 +18,4 @@
         state: present
         activationkey: "{{ satellite_activation_key }}"
         org_id: "{{ satellite_org }}"
-        force: true
+        force_register: true
