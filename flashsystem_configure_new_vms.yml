@@ -1,5 +1,5 @@
 - name: Set up new VMs with Satellite Server
-  hosts: flashsystem-attached-vms
+  hosts: flashsystem_attached_vms
   gather_facts: false
   become: true
   vars_files:
