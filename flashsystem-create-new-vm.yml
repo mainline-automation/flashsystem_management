@@ -50,7 +50,7 @@
             - "{{ item.dns_suffix }}"
           script_text: |
             #!/bin/bash
-            hostnamectl set-hostname "{{ item.vm_guest_name }}.{{item.domain}}"
+            hostnamectl set-hostname "{{ item.vm_guest_name }}"."{{item.domain}}"
         wait_for_customization: true
       ignore_errors: true
       delegate_to: localhost
