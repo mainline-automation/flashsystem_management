@@ -11,6 +11,8 @@
         user: ansible
         state: present
         key: "{{ lab_vm_key }}"
+      retries: 3
+      delay: 10
 
     - name: set sudo to do passwordless root for user ansible
       ansible.builtin.copy:
@@ -22,10 +24,10 @@
         mode: '0644'
 
 
-    - name: Make sure that /etc/sysconfig/network has line HOSTNAME="{{ HOSTNAME }}"."{{ domain }}"
+    - name: Make sure that /etc/sysconfig/network has line HOSTNAME="{{ HOSTNAME + '.' + domain }}"
       ansible.builtin.lineinfile:
         path: /etc/sysconfig/network
-        line: HOSTNAME="{{ ansible_hostname }}"."{{ domain }}"
+        line: HOSTNAME="{{ ansible_hostname + '.' + domain }}"
         regexp: ^HOSTNAME=
         state: present
 

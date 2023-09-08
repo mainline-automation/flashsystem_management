@@ -511,3 +511,5 @@
 2023-09-08T18:17:13.890860+00:00 DEBUG 'ansible_navigator.actions.run_ca84.write_artifact' Formatted artifact file name set to /home/ansible/playbooks/flashsystem_setup/flashsystem-remove-new-vm-artifact-2023-09-08T18:17:13.890821+00:00.json
 2023-09-08T18:17:13.890978+00:00 DEBUG 'ansible_navigator.actions.run_ca84.write_artifact' Resolved artifact file name set to /home/ansible/playbooks/flashsystem_setup/flashsystem-remove-new-vm-artifact-2023-09-08T18:17:13.890821+00:00.json
 2023-09-08T18:17:13.917756+00:00 INFO 'ansible_navigator.actions.run_ca84.write_artifact' Saved artifact as /home/ansible/playbooks/flashsystem_setup/flashsystem-remove-new-vm-artifact-2023-09-08T18:17:13.890821+00:00.json
+2023-09-08T19:09:10.972287+00:00 DEBUG 'ansible_navigator.actions.run_ca84._prepare_to_quit' runner not running
+2023-09-08T19:09:11.022592+00:00 DEBUG 'ansible_navigator.runner.base.__del__' delete temporary ansible-runner private_data_dir at path /tmp/ansible-navigator_f3opzs_1
