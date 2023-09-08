@@ -1,6 +1,6 @@
 - name: Configuration work for newly created VMs including copying SSH keys for Ansible access and registering with Satellite
   hosts: flashsystem_attached_vms
-  gather_facts: false
+  gather_facts: true
   become: true
   vars_files:
     - vars/authentication.yml
