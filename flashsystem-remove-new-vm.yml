@@ -24,6 +24,7 @@
         folder: "{{ item.folder }}"
         template: "{{ item.template }}"
         name: "{{ item.vm_guest_name }}"
+        validate_certs: false
       delegate_to: localhost
       register: vm_results
       loop: "{{ added_vms.list }}"
