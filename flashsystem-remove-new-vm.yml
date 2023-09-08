@@ -12,7 +12,7 @@
         path: vars/addvms.csv
       register: added_vms
 
-    - name: Clone vms from templates listed in added_volumes.list
+    - name: Remove VMs listed in added_volumes.list
       community.vmware.vmware_guest:
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
@@ -20,6 +20,7 @@
         datacenter: "{{ item.datacenter_name }}"
         esxi_hostname: "{{ item.host_fqdn }}"
         state: absent
+        force: true
         folder: "{{ item.folder }}"
         template: "{{ item.template }}"
         name: "{{ item.vm_guest_name }}"
