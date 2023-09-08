@@ -15,7 +15,7 @@
     - name: Make sure that /etc/sysconfig/network has line HOSTNAME="{{ HOSTNAME }}"."{{ domain }}"
       ansible.builtin.lineinfile:
         path: /etc/sysconfig/network
-        line: HOSTNAME="{{ ansible_facts['ansible_hostname'] }}"."{{ domain }}"
+        line: HOSTNAME="{{ ansible_hostname }}"."{{ domain }}"
         regexp: ^HOSTNAME=
         state: present
 
