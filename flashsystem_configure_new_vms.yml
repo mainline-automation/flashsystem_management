@@ -1,9 +1,11 @@
-- name: Set up new VMs with Satellite Server
+- name: Configuration work for newly created VMs including copying SSH keys for Ansible access and registering with Satellite
   hosts: flashsystem_attached_vms
   gather_facts: false
   become: true
   vars_files:
     - vars/authentication.yml
+  collections:
+    - community.general
   
   tasks:
     - name: use authorized_key to copy lab_vm_key to host 
@@ -12,8 +14,14 @@
         state: present
         key: "{{ lab_vm_key }}"
 
+    - name: Make sure that /etc/sysconfig/network has line HOSTNAME="{{ HOSTNAME }}"."{{ domain }}"
+      ansible.builtin.lineinfile:
+        path: /etc/sysconfig/network
+        line: HOSTNAME="{{ HOSTNAME }}"."{{ domain }}"
+        regexp: ^HOSTNAME=
+        state: present
 
-    - name: register with Red Hat Satellite server at satellite_server using activation key "{{ satellite_activation_key }}" 
+    - name: register with Red Hat Satellite server at satellite_server using activation key 
       community.general.redhat_subscription:
         state: present
         activationkey: "{{ satellite_activation_key }}"

@@ -39,6 +39,9 @@
             gateway: "{{ item.gateway }}"
             connected: true
             start_connected: true
+            dns_servers:
+             - "{{ item.dns_server_1 }}"
+             - "{{ item.dns_server_2 }}"
         wait_for_ip_address: true
         validate_certs: false
         customization:
@@ -46,11 +49,12 @@
           dns_servers:
             - "{{ item.dns_server_1 }}"
             - "{{ item.dns_server_2 }}"
-          hostname: "{{ item.vm_guest_name + '.' + item.domain }}"
+          # hostname: "{{ item.vm_guest_name + '.' + item.domain }}"
           # dns_suffix:
           #   - "{{ item.dns_suffix }}"
           script_text: |
             #!/bin/bash
+            echo "ansible   ALL=NOPASSWD:   ALL" | tee -a /etc/sudoers.d/ansible
         wait_for_customization: true
       ignore_errors: true
       delegate_to: localhost
