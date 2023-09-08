@@ -12,12 +12,27 @@
         state: present
         key: "{{ lab_vm_key }}"
 
+    - name: set sudo to do passwordless root for user ansible
+      ansible.builtin.copy:
+        content: ansible ALL=(ALL) NOPASSWD:ALL
+        dest: /etc/sudoers.d/ansible
+        validate: /usr/sbin/visudo -csf %s
+        owner: root
+        group: root
+        mode: '0644'
+
+
     - name: Make sure that /etc/sysconfig/network has line HOSTNAME="{{ HOSTNAME }}"."{{ domain }}"
       ansible.builtin.lineinfile:
         path: /etc/sysconfig/network
         line: HOSTNAME="{{ ansible_hostname }}"."{{ domain }}"
         regexp: ^HOSTNAME=
         state: present
+
+    - name: Restart NetworkManager.service with ansible.builtin.systemd_service
+      ansible.builtin.systemd_service:
+        name: NetworkManager.service
+        state: restarted
 
     - name: register with Red Hat Satellite server at satellite_server using activation key 
       community.general.redhat_subscription:
