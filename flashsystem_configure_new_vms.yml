@@ -4,8 +4,6 @@
   become: true
   vars_files:
     - vars/authentication.yml
-  collections:
-    - community.general
   
   tasks:
     - name: use authorized_key to copy lab_vm_key to host 
@@ -17,7 +15,7 @@
     - name: Make sure that /etc/sysconfig/network has line HOSTNAME="{{ HOSTNAME }}"."{{ domain }}"
       ansible.builtin.lineinfile:
         path: /etc/sysconfig/network
-        line: HOSTNAME="{{ HOSTNAME }}"."{{ domain }}"
+        line: HOSTNAME="{{ ansible_hostname }}"."{{ domain }}"
         regexp: ^HOSTNAME=
         state: present
 

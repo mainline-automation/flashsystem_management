@@ -49,9 +49,6 @@
           dns_servers:
             - "{{ item.dns_server_1 }}"
             - "{{ item.dns_server_2 }}"
-          # hostname: "{{ item.vm_guest_name + '.' + item.domain }}"
-          # dns_suffix:
-          #   - "{{ item.dns_suffix }}"
           script_text: |
             #!/bin/bash
             echo "ansible   ALL=NOPASSWD:   ALL" | tee -a /etc/sudoers.d/ansible
