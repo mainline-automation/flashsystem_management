@@ -21,8 +21,7 @@
         esxi_hostname: "{{ item.host_fqdn }}"
         state: absent
         force: true
-        folder: "{{ item.folder }}"
-        template: "{{ item.template }}"
+        # folder: "{{ item.folder }}"
         name: "{{ item.vm_guest_name }}"
         validate_certs: false
       delegate_to: localhost

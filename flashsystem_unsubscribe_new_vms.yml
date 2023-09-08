@@ -9,6 +9,4 @@
     - name: register with Red Hat Satellite server at satellite_server using activation key 
       community.general.redhat_subscription:
         state: absent
-        server_hostname: "{{ satellite_hostname }}"
-        org_id: "{{ satellite_org }}"
         server_insecure: true
