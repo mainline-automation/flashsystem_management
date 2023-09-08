@@ -1,0 +1,14 @@
+- name: Configuration work for newly created VMs including copying SSH keys for Ansible access and registering with Satellite
+  hosts: flashsystem_attached_vms
+  gather_facts: true
+  become: true
+  vars_files:
+    - vars/authentication.yml
+  
+  tasks:
+    - name: register with Red Hat Satellite server at satellite_server using activation key 
+      community.general.redhat_subscription:
+        state: absent
+        server_hostname: "{{ satellite_hostname }}"
+        org_id: "{{ satellite_org }}"
+        server_insecure: true
