@@ -31,6 +31,11 @@
         regexp: ^HOSTNAME=
         state: present
 
+    - name: change hostname in /etc/hosts to ansible_hostname and domain
+      ansible.builtin.hostname:
+        name: "{{ ansible_hostname + '.' + domain }}"
+        use: systemd
+
     - name: Restart NetworkManager.service with ansible.builtin.systemd_service
       ansible.builtin.systemd_service:
         name: NetworkManager.service
