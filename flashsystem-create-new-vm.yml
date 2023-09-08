@@ -23,6 +23,8 @@
         folder: "{{ item.folder }}"
         template: "{{ item.template }}"
         name: "{{ item.vm_guest_name }}"
+        cdrom:
+          state: absent
         disk:
           - autoselect_datastore: false
             datastore: "{{ item.esx_datastore_name }}"
@@ -56,6 +58,7 @@
             subscription-manager clean
             dnf clean all
             rm -rf /var/cache/yum/*
+            rm -rf /var/cache/dnf/*
         wait_for_customization: true
       ignore_errors: true
       delegate_to: localhost
