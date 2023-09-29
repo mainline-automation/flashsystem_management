@@ -21,22 +21,20 @@
     - vars/authentication.yml
   tasks:
   
-  - name: Define DNS A type record for new VMs
+  - name: Remove DNS A type record for new VMs
     community.windows.win_dns_record:
       
       name: "{{ item.vm_guest_name }}"
       type: "A"
-      value: "{{ item.ip_addr }}"
       zone: "{{ item.domain }}"
       state: absent
     loop: "{{ hostvars['localhost'].win_added_vms }}"
       
-  - name: Configure Pointer Records for new VMsusing community.general.win_dns_record
+  - name: Remove Configure Pointer Records for new VMsusing community.general.win_dns_record
     community.windows.win_dns_record:
       
       name: "{{ item.ip_addr.split('.')[3] }}"
       type: "{{ item.dns_record_type }}"
-      value: "{{ item.vm_guest_name  + '.' + item.domain}}"
       zone: "{{ item.dns_zone }}"
       state: absent
     loop: "{{ hostvars['localhost'].win_added_vms }}"
