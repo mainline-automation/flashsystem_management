@@ -1,0 +1,440 @@
+{
+    "plays": [
+        {
+            "___progress": "100%",
+            "__changed": 0,
+            "__failed": 0,
+            "__ignored": 0,
+            "__in progress": 0,
+            "__ok": 2,
+            "__percent_complete": 100,
+            "__play_name": "Get information from csv",
+            "__progress": "Complete",
+            "__skipped": 0,
+            "__task_count": 2,
+            "__unreachable": 0,
+            "name": "Get information from csv",
+            "pattern": "localhost",
+            "play": "Get information from csv",
+            "play_pattern": "localhost",
+            "play_uuid": "aeff8a5a-d363-5c51-2a88-000000000006",
+            "playbook": "/home/ansible/playbooks/flashsystem_setup/flashsystem_deconfigure_dns.yml",
+            "playbook_uuid": "e0c065fa-41b2-41fa-985b-6457d479adfd",
+            "tasks": [
+                {
+                    "__changed": false,
+                    "__duration": "0s",
+                    "__host": "localhost",
+                    "__number": 0,
+                    "__result": "Ok",
+                    "__task": "Read the csv file containing volume information",
+                    "__task_action": "community.general.read_csv",
+                    "duration": 0.493508,
+                    "end": "2023-09-29T20:21:36.093916",
+                    "event_loop": null,
+                    "host": "localhost",
+                    "play": "Get information from csv",
+                    "play_pattern": "localhost",
+                    "play_uuid": "aeff8a5a-d363-5c51-2a88-000000000006",
+                    "playbook": "/home/ansible/playbooks/flashsystem_setup/flashsystem_deconfigure_dns.yml",
+                    "playbook_uuid": "e0c065fa-41b2-41fa-985b-6457d479adfd",
+                    "remote_addr": "127.0.0.1",
+                    "res": {
+                        "_ansible_no_log": null,
+                        "changed": false,
+                        "dict": {},
+                        "invocation": {
+                            "module_args": {
+                                "delimiter": null,
+                                "dialect": "excel",
+                                "fieldnames": null,
+                                "key": null,
+                                "path": "vars/addvms.csv",
+                                "skipinitialspace": null,
+                                "strict": null,
+                                "unique": true
+                            }
+                        },
+                        "list": [
+                            {
+                                "datacenter_name": "Datacenter",
+                                "dns_record_type": "PTR",
+                                "dns_server_1": "10.125.0.11",
+                                "dns_server_2": "10.125.0.12",
+                                "dns_state": "present",
+                                "dns_zone": "0.140.10.in-addr.arpa",
+                                "domain": "bpic.mainline.com",
+                                "esx_datastore_name": "ansible1_esx",
+                                "folder": "/ansible-lab-demos/ansible-lab-demo-vms/",
+                                "gateway": "10.140.0.1",
+                                "host_fqdn": "esxlab.bpic.mainline.com",
+                                "ip_addr": "10.140.0.194",
+                                "netmask": "255.255.255.0",
+                                "network_adapter": "VLAN 140",
+                                "network_device_type": "vmxnet3",
+                                "template": "ansible-rhel92-vm-template",
+                                "vm_guest_name": "ansible-lab-guest-1"
+                            },
+                            {
+                                "datacenter_name": "Datacenter",
+                                "dns_record_type": "PTR",
+                                "dns_server_1": "10.125.0.11",
+                                "dns_server_2": "10.125.0.12",
+                                "dns_state": "present",
+                                "dns_zone": "0.140.10.in-addr.arpa",
+                                "domain": "bpic.mainline.com",
+                                "esx_datastore_name": "ansible2_esx",
+                                "folder": "/ansible-lab-demos/ansible-lab-demo-vms/",
+                                "gateway": "10.140.0.1",
+                                "host_fqdn": "esxlab.bpic.mainline.com",
+                                "ip_addr": "10.140.0.195",
+                                "netmask": "255.255.255.0",
+                                "network_adapter": "VLAN 140",
+                                "network_device_type": "vmxnet3",
+                                "template": "ansible-rhel92-vm-template",
+                                "vm_guest_name": "ansible-lab-guest-2"
+                            },
+                            {
+                                "datacenter_name": "Datacenter",
+                                "dns_record_type": "PTR",
+                                "dns_server_1": "10.125.0.11",
+                                "dns_server_2": "10.125.0.12",
+                                "dns_state": "present",
+                                "dns_zone": "0.140.10.in-addr.arpa",
+                                "domain": "bpic.mainline.com",
+                                "esx_datastore_name": "ansible5_esx",
+                                "folder": "/ansible-lab-demos/ansible-lab-demo-vms/",
+                                "gateway": "10.140.0.1",
+                                "host_fqdn": "esxlab.bpic.mainline.com",
+                                "ip_addr": "10.140.0.196",
+                                "netmask": "255.255.255.0",
+                                "network_adapter": "VLAN 140",
+                                "network_device_type": "vmxnet3",
+                                "template": "ansible-rhel92-vm-template",
+                                "vm_guest_name": "ansible-lab-guest-5"
+                            }
+                        ]
+                    },
+                    "resolved_action": "community.general.read_csv",
+                    "start": "2023-09-29T20:21:35.600408",
+                    "task": "Read the csv file containing volume information",
+                    "task_action": "community.general.read_csv",
+                    "task_args": "",
+                    "task_path": "/home/ansible/playbooks/flashsystem_setup/flashsystem_deconfigure_dns.yml:5",
+                    "task_uuid": "aeff8a5a-d363-5c51-2a88-000000000008",
+                    "uuid": "fa78a960-4959-4c87-8782-fa24e72dd55a"
+                },
+                {
+                    "__changed": false,
+                    "__duration": "0s",
+                    "__host": "localhost",
+                    "__number": 1,
+                    "__result": "Ok",
+                    "__task": "Set fact with added_vms for use on windows system",
+                    "__task_action": "set_fact",
+                    "duration": 0.031003,
+                    "end": "2023-09-29T20:21:36.135919",
+                    "event_loop": null,
+                    "host": "localhost",
+                    "play": "Get information from csv",
+                    "play_pattern": "localhost",
+                    "play_uuid": "aeff8a5a-d363-5c51-2a88-000000000006",
+                    "playbook": "/home/ansible/playbooks/flashsystem_setup/flashsystem_deconfigure_dns.yml",
+                    "playbook_uuid": "e0c065fa-41b2-41fa-985b-6457d479adfd",
+                    "remote_addr": "127.0.0.1",
+                    "res": {
+                        "_ansible_no_log": null,
+                        "ansible_facts": {
+                            "win_added_vms": [
+                                {
+                                    "datacenter_name": "Datacenter",
+                                    "dns_record_type": "PTR",
+                                    "dns_server_1": "10.125.0.11",
+                                    "dns_server_2": "10.125.0.12",
+                                    "dns_state": "present",
+                                    "dns_zone": "0.140.10.in-addr.arpa",
+                                    "domain": "bpic.mainline.com",
+                                    "esx_datastore_name": "ansible1_esx",
+                                    "folder": "/ansible-lab-demos/ansible-lab-demo-vms/",
+                                    "gateway": "10.140.0.1",
+                                    "host_fqdn": "esxlab.bpic.mainline.com",
+                                    "ip_addr": "10.140.0.194",
+                                    "netmask": "255.255.255.0",
+                                    "network_adapter": "VLAN 140",
+                                    "network_device_type": "vmxnet3",
+                                    "template": "ansible-rhel92-vm-template",
+                                    "vm_guest_name": "ansible-lab-guest-1"
+                                },
+                                {
+                                    "datacenter_name": "Datacenter",
+                                    "dns_record_type": "PTR",
+                                    "dns_server_1": "10.125.0.11",
+                                    "dns_server_2": "10.125.0.12",
+                                    "dns_state": "present",
+                                    "dns_zone": "0.140.10.in-addr.arpa",
+                                    "domain": "bpic.mainline.com",
+                                    "esx_datastore_name": "ansible2_esx",
+                                    "folder": "/ansible-lab-demos/ansible-lab-demo-vms/",
+                                    "gateway": "10.140.0.1",
+                                    "host_fqdn": "esxlab.bpic.mainline.com",
+                                    "ip_addr": "10.140.0.195",
+                                    "netmask": "255.255.255.0",
+                                    "network_adapter": "VLAN 140",
+                                    "network_device_type": "vmxnet3",
+                                    "template": "ansible-rhel92-vm-template",
+                                    "vm_guest_name": "ansible-lab-guest-2"
+                                },
+                                {
+                                    "datacenter_name": "Datacenter",
+                                    "dns_record_type": "PTR",
+                                    "dns_server_1": "10.125.0.11",
+                                    "dns_server_2": "10.125.0.12",
+                                    "dns_state": "present",
+                                    "dns_zone": "0.140.10.in-addr.arpa",
+                                    "domain": "bpic.mainline.com",
+                                    "esx_datastore_name": "ansible5_esx",
+                                    "folder": "/ansible-lab-demos/ansible-lab-demo-vms/",
+                                    "gateway": "10.140.0.1",
+                                    "host_fqdn": "esxlab.bpic.mainline.com",
+                                    "ip_addr": "10.140.0.196",
+                                    "netmask": "255.255.255.0",
+                                    "network_adapter": "VLAN 140",
+                                    "network_device_type": "vmxnet3",
+                                    "template": "ansible-rhel92-vm-template",
+                                    "vm_guest_name": "ansible-lab-guest-5"
+                                }
+                            ]
+                        },
+                        "changed": false
+                    },
+                    "resolved_action": "ansible.builtin.set_fact",
+                    "start": "2023-09-29T20:21:36.104916",
+                    "task": "Set fact with added_vms for use on windows system",
+                    "task_action": "set_fact",
+                    "task_args": "",
+                    "task_path": "/home/ansible/playbooks/flashsystem_setup/flashsystem_deconfigure_dns.yml:10",
+                    "task_uuid": "aeff8a5a-d363-5c51-2a88-000000000009",
+                    "uuid": "fd2256d0-802c-4e22-9370-298e38617558"
+                }
+            ],
+            "uuid": "aeff8a5a-d363-5c51-2a88-000000000006"
+        },
+        {
+            "___progress": "100%",
+            "__changed": 0,
+            "__failed": 1,
+            "__ignored": 0,
+            "__in progress": 0,
+            "__ok": 0,
+            "__percent_complete": 100,
+            "__play_name": "Configure DNS for new VMs",
+            "__progress": "Complete",
+            "__skipped": 0,
+            "__task_count": 1,
+            "__unreachable": 0,
+            "name": "Configure DNS for new VMs",
+            "pattern": "dns",
+            "play": "Configure DNS for new VMs",
+            "play_pattern": "dns",
+            "play_uuid": "aeff8a5a-d363-5c51-2a88-00000000000a",
+            "playbook": "/home/ansible/playbooks/flashsystem_setup/flashsystem_deconfigure_dns.yml",
+            "playbook_uuid": "e0c065fa-41b2-41fa-985b-6457d479adfd",
+            "tasks": [
+                {
+                    "__changed": false,
+                    "__duration": "0s",
+                    "__host": "10.125.0.11",
+                    "__number": 0,
+                    "__result": "Failed",
+                    "__task": "Define DNS A type record for new VMs",
+                    "__task_action": "community.windows.win_dns_record",
+                    "duration": 0.03669,
+                    "end": "2023-09-29T20:21:36.222874",
+                    "event_loop": null,
+                    "host": "10.125.0.11",
+                    "ignore_errors": null,
+                    "play": "Configure DNS for new VMs",
+                    "play_pattern": "dns",
+                    "play_uuid": "aeff8a5a-d363-5c51-2a88-00000000000a",
+                    "playbook": "/home/ansible/playbooks/flashsystem_setup/flashsystem_deconfigure_dns.yml",
+                    "playbook_uuid": "e0c065fa-41b2-41fa-985b-6457d479adfd",
+                    "remote_addr": "10.125.0.11",
+                    "res": {
+                        "_ansible_no_log": false,
+                        "msg": "No setting was provided for required configuration plugin_type: become plugin: runas setting: become_user "
+                    },
+                    "resolved_action": "community.windows.win_dns_record",
+                    "start": "2023-09-29T20:21:36.186184",
+                    "task": "Define DNS A type record for new VMs",
+                    "task_action": "community.windows.win_dns_record",
+                    "task_args": "",
+                    "task_path": "/home/ansible/playbooks/flashsystem_setup/flashsystem_deconfigure_dns.yml:24",
+                    "task_uuid": "aeff8a5a-d363-5c51-2a88-00000000000c",
+                    "uuid": "d9933622-ccf6-44e4-ac2c-0ef835c44e10"
+                }
+            ],
+            "uuid": "aeff8a5a-d363-5c51-2a88-00000000000a"
+        }
+    ],
+    "settings_entries": {
+        "ansible-navigator": {
+            "ansible": {
+                "config": {
+                    "help": false,
+                    "path": "/etc/ansible/ansible.cfg"
+                },
+                "doc": {
+                    "help": false,
+                    "plugin": {
+                        "type": "module"
+                    }
+                },
+                "inventory": {
+                    "entries": [
+                        "/home/ansible/playbooks/flashsystem_setup/inventory"
+                    ],
+                    "help": true
+                },
+                "playbook": {
+                    "help": false,
+                    "path": "/home/ansible/playbooks/flashsystem_setup/flashsystem_deconfigure_dns.yml"
+                }
+            },
+            "ansible-builder": {
+                "help": false,
+                "workdir": "/home/ansible/playbooks/flashsystem_setup"
+            },
+            "ansible-runner": {
+                "job-events": false
+            },
+            "app": "run",
+            "collection-doc-cache-path": "/home/ansible/.cache/ansible-navigator/collection_doc_cache.db",
+            "color": {
+                "enable": true,
+                "osc4": true
+            },
+            "editor": {
+                "command": "vi +{line_number} {filename}",
+                "console": true
+            },
+            "enable-prompts": false,
+            "exec": {
+                "command": "/bin/bash",
+                "shell": true
+            },
+            "execution-environment": {
+                "container-engine": "podman",
+                "enabled": true,
+                "image": "localhost/ee-windows-powershell:latest",
+                "pull": {
+                    "arguments": [
+                        "--tls-verify=false"
+                    ],
+                    "policy": "tag"
+                }
+            },
+            "format": "yaml",
+            "images": {
+                "details": [
+                    "everything"
+                ]
+            },
+            "logging": {
+                "append": false,
+                "file": "/home/ansible/playbooks/flashsystem_setup/ansible-navigator.log",
+                "level": "debug"
+            },
+            "mode": "interactive",
+            "playbook-artifact": {
+                "enable": true,
+                "save-as": "{playbook_dir}/{playbook_name}-artifact-{time_stamp}.json"
+            },
+            "settings": {
+                "effective": false,
+                "sample": false,
+                "schema": "json",
+                "sources": false
+            },
+            "time-zone": "UTC"
+        }
+    },
+    "settings_sources": {
+        "ansible-navigator.ansible-builder.help": "Defaults",
+        "ansible-navigator.ansible-builder.workdir": "Defaults",
+        "ansible-navigator.ansible-lint.config": "Not set",
+        "ansible-navigator.ansible-lint.lintables": "Not set",
+        "ansible-navigator.ansible-runner.artifact-dir": "Not set",
+        "ansible-navigator.ansible-runner.job-events": "Defaults",
+        "ansible-navigator.ansible-runner.rotate-artifacts-count": "Not set",
+        "ansible-navigator.ansible-runner.timeout": "Not set",
+        "ansible-navigator.ansible.cmdline": "Not set",
+        "ansible-navigator.ansible.config.help": "Settings file",
+        "ansible-navigator.ansible.config.path": "Settings file",
+        "ansible-navigator.ansible.doc.help": "Defaults",
+        "ansible-navigator.ansible.doc.plugin.name": "Not set",
+        "ansible-navigator.ansible.doc.plugin.type": "Defaults",
+        "ansible-navigator.ansible.inventory.entries": "Settings file",
+        "ansible-navigator.ansible.inventory.help": "Settings file",
+        "ansible-navigator.ansible.playbook.help": "Defaults",
+        "ansible-navigator.ansible.playbook.path": "Previous cli command",
+        "ansible-navigator.app": "Command line",
+        "ansible-navigator.collection-doc-cache-path": "Defaults",
+        "ansible-navigator.color.enable": "Defaults",
+        "ansible-navigator.color.osc4": "Defaults",
+        "ansible-navigator.editor.command": "Defaults",
+        "ansible-navigator.editor.console": "Defaults",
+        "ansible-navigator.enable-prompts": "Defaults",
+        "ansible-navigator.exec.command": "Defaults",
+        "ansible-navigator.exec.shell": "Defaults",
+        "ansible-navigator.execution-environment.container-engine": "Settings file",
+        "ansible-navigator.execution-environment.container-options": "Not set",
+        "ansible-navigator.execution-environment.enabled": "Settings file",
+        "ansible-navigator.execution-environment.environment-variables.pass": "Not set",
+        "ansible-navigator.execution-environment.environment-variables.set": "Not set",
+        "ansible-navigator.execution-environment.image": "Previous cli command",
+        "ansible-navigator.execution-environment.pull.arguments": "Settings file",
+        "ansible-navigator.execution-environment.pull.policy": "Defaults",
+        "ansible-navigator.execution-environment.volume-mounts": "Not set",
+        "ansible-navigator.format": "Defaults",
+        "ansible-navigator.images.details": "Defaults",
+        "ansible-navigator.inventory-columns": "Not set",
+        "ansible-navigator.logging.append": "Settings file",
+        "ansible-navigator.logging.file": "Defaults",
+        "ansible-navigator.logging.level": "Settings file",
+        "ansible-navigator.mode": "Defaults",
+        "ansible-navigator.playbook-artifact.enable": "Defaults",
+        "ansible-navigator.playbook-artifact.replay": "Not set",
+        "ansible-navigator.playbook-artifact.save-as": "Defaults",
+        "ansible-navigator.settings.effective": "Defaults",
+        "ansible-navigator.settings.sample": "Defaults",
+        "ansible-navigator.settings.schema": "Defaults",
+        "ansible-navigator.settings.sources": "Defaults",
+        "ansible-navigator.time-zone": "Defaults",
+        "settings_file_path": "/home/ansible/playbooks/flashsystem_setup/ansible-navigator.yml",
+        "settings_file_source": "Search path"
+    },
+    "status": "failed",
+    "status_color": 9,
+    "stdout": [
+        "\u001b[1;35m[WARNING]: Invalid characters were found in group names but not replaced, use\u001b[0m",
+        "\u001b[1;35m-vvvv to see details\u001b[0m",
+        "",
+        "PLAY [Get information from csv] ************************************************",
+        "",
+        "TASK [Read the csv file containing volume information] *************************",
+        "\u001b[0;32mok: [localhost]\u001b[0m",
+        "",
+        "TASK [Set fact with added_vms for use on windows system] ***********************",
+        "\u001b[0;32mok: [localhost]\u001b[0m",
+        "",
+        "PLAY [Configure DNS for new VMs] ***********************************************",
+        "",
+        "TASK [Define DNS A type record for new VMs] ************************************",
+        "\u001b[0;31mfatal: [10.125.0.11]: FAILED! => {\"msg\": \"No setting was provided for required configuration plugin_type: become plugin: runas setting: become_user \"}\u001b[0m",
+        "",
+        "PLAY RECAP *********************************************************************",
+        "\u001b[0;31m10.125.0.11\u001b[0m                : ok=0    changed=0    unreachable=0    \u001b[0;31mfailed=1   \u001b[0m skipped=0    rescued=0    ignored=0   ",
+        "\u001b[0;32mlocalhost\u001b[0m                  : \u001b[0;32mok=2   \u001b[0m changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   "
+    ],
+    "version": "2.0.0"
+}
