@@ -11,8 +11,8 @@
         user: ansible
         state: present
         key: "{{ lab_vm_key }}"
-      retries: 3
-      delay: 10
+      retries: 5
+      delay: 30
 
     - name: set sudo to do passwordless root for user ansible
       ansible.builtin.copy:
