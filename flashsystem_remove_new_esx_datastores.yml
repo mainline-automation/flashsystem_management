@@ -40,7 +40,7 @@
     ansible.builtin.debug:
       var: esx_volumes_and_uids
 
-  - name: Remove new esx datastore
+  - name: Remove new esx datastore allowing for retries in case the VMs haven't been removed
     # the vmfs device name needs to be all lowercase, but the vdisk_UID value from ibm_svc_info has all uppercase characters. 
     community.vmware.vmware_host_datastore:
       auto_expand: true
@@ -53,6 +53,8 @@
       state: absent
       validate_certs: false
     loop: "{{ esx_volumes_and_uids }}"
+    retries: 3
+    delay: 30
 
   - name: preserve API token with set_stats
     # preserving api_token for any additional playbooks in workflow
