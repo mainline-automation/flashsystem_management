@@ -1,0 +1,44 @@
+- name: Get information from csv
+  hosts: localhost
+  gather_facts: false
+  tasks:
+  - name: Read the csv file containing volume information
+    community.general.read_csv:
+      path: vars/addvms.csv
+    register: added_vms
+
+  - name: Set fact with added_vms for use on windows system
+    set_fact:
+       win_added_vms: "{{ added_vms.list }}"
+
+- name: Configure DNS for new VMs
+  hosts: dns
+  become: yes
+  become_method: runas
+  
+  gather_facts: false
+  vars_files:
+    - vars/authentication.yml
+  tasks:
+  
+  - name: Define DNS A type record for new VMs
+    community.windows.win_dns_record:
+      
+      name: "{{ item.vm_guest_name }}"
+      type: "A"
+      value: "{{ item.ip_addr }}"
+      zone: "{{ item.domain }}"
+      state: "{{ item.dns_state }}"
+    loop: "{{ hostvars['localhost'].win_added_vms }}"
+      
+  - name: Configure Pointer Records for new VMsusing community.general.win_dns_record
+    community.windows.win_dns_record:
+      
+      name: "{{ item.ip_addr.split('.')[3] }}"
+      type: "{{ item.dns_record_type }}"
+      value: "{{ item.vm_guest_name  + '.' + item.domain}}"
+      zone: "{{ item.dns_zone }}"
+      state: "{{ item.dns_state }}"
+    loop: "{{ hostvars['localhost'].win_added_vms }}"
+   
+

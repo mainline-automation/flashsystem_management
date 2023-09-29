@@ -1,8 +1,8 @@
-
+[jump-server]
+10.125.0.15
+[dns]
+10.125.0.11 ansible_connection=winrm
 [flashsystem_attached_vms]
 10.140.0.194
 10.140.0.195
 10.140.0.196
-
-[ibm-flashsystems]
-v7g3flash 10.137.0.30

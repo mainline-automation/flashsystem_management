@@ -1,6 +1,6 @@
-name,pool,size,thin,unit,os,hostname,host_fqdn,esx_datastore_name,esx_datastore_type,,,
-ansible1,Pool_01,1024,yes,gb,esx,esxlab,esxlab.bpic.mainline.com,ansible1_esx,vmfs,,,
-ansible2,Pool_01,1024,yes,gb,esx,esxlab,esxlab.bpic.mainline.com,ansible2_esx,vmfs,,,
-ansible3,Pool_01,512,yes,gb,aix,bpicaix04,esxlab.bpic.mainline.com,,,,,
-ansible4,Pool_01,512,yes,gb,aix,bpicaix04,esxlab.bpic.mainline.com,,,,,
-ansible5,Pool_01,2048,yes,gb,esx,esxlab,esxlab.bpic.mainline.com,ansible5_esx,vmfs,,,
+name,pool,size,thin,unit,os,hostname,host_fqdn,esx_datastore_name,esx_datastore_type
+ansible1,Pool_01,1024,yes,gb,esx,esxlab,esxlab.bpic.mainline.com,ansible1_esx,vmfs
+ansible2,Pool_01,1024,yes,gb,esx,esxlab,esxlab.bpic.mainline.com,ansible2_esx,vmfs
+ansible3,Pool_01,512,yes,gb,aix,bpicaix04,esxlab.bpic.mainline.com,,
+ansible4,Pool_01,512,yes,gb,aix,bpicaix04,esxlab.bpic.mainline.com,,
+ansible5,Pool_01,2048,yes,gb,esx,esxlab,esxlab.bpic.mainline.com,ansible5_esx,vmfs
