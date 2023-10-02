@@ -1,5 +1,0 @@
----
-collections:
-  - ibm.storage_virtualize
-  - community.general
-  - community.vmware
