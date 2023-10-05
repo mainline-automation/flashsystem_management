@@ -1,54 +1,48 @@
 ---
-- name: Create or validate hosts
+- name: Append additional volumes to vars/addvolume.csv
   hosts: localhost
   gather_facts: false
   become: false
-  vars:
-    hostname: 'workflow.bpic.mainline.com'
-    _iqn_ : 'iqn.1994-05.com.redhat:fabf787c1d0'
-    _portset_: 'portset0'
   vars_files:
     - vars/authentication.yml
-      
-  tasks:
-  # - name: read the csv file
-  #   community.general.read_csv:
-  #     path: vars/addvolume.csv
-  #   register: added_volumes
- 
-  - name: make sure that host exists using ibm.storage_virtualize.ibm_svc_host and create if they don't
-    ibm.storage_virtualize.ibm_svc_host:
-      clustername: "{{ clustername }}"
-      name: "{{ hostname }}"
-      iscsiname: "{{ _iqn_ }}"
-      token: "{{ api_token }}"
-      state: present
-      protocol: scsi
-      portset: "{{ _portset_ }}"
-      type: generic
-      validate_certs: false
-      log_path: '/tmp/svc_create_host.debug'
-    
-  - name: use ibm.storage_virtualize.ibm_svc_manage_volume with a loop on the variable volumes 
-    ibm.storage_virtualize.ibm_svc_manage_volume:
-      clustername: "{{ clustername }}"
-      log_path: '/tmp/svc_create_volume.debug'
-      state: present
-      name: "{{ item.name }}"
-      size: "{{ item.size }}"
-      unit: "{{ item.unit }}"
-      thin: "{{ item.thin }}"
-      pool: "{{ item.pool }}"
-      validate_certs: false
-      token: "{{ api_token }}"
-    loop: "{{ added_volumes.list}}"
+  # vars:
+  #   start_var: 2
+  #   end_var: 10
+  #   countby_var: 2
+  #   vol_base: demo_vol
+  #   pool: Pool01
+  #   size: 1024
+  #   thin: true
+  #   unit: gb 
+  #   os: aix
+  #   hostname: bpicaix04
+  #   host_fqdn: bpicaix04.bpic.mainline.com
+  #   esx_datastore_name: ''
+  #   esx_datastore_type : ''
 
-  - name: map volume to host
-    ibm.storage_virtualize.ibm_svc_vol_map:
-      clustername: "{{ clustername }}"
-      host: "{{ hostname }}"
-      state: present
-      volname: "{{ item.name }}"
-      log_path: '/tmp/map_volume_to_host.debug }}'
-      token: "{{ api_token }}"
-    loop: "{{ added_volumes.list }}"
+
+  tasks:
+  - name: Create a variable with a list of values
+    create_volume_name:
+      vol_base_name: "{{ vol_base }}"
+      vol_sequence_begin: "{{ start_var }}"
+      vol_sequence_end: "{{ end_var }}"
+      vol_sequence_increment: "{{ countby_var }}"
+    register: name_list
+  
+  - name: Print out name_list.vol_names
+    ansible.builtin.debug:
+      msg: "{{ name_list.vol_names }}"
+
+ 
+  - name: Fail if volume already exists
+    ansible.builtin.fail:
+      msg: "Volume Name {{ item }} already exists. Please correct and try again"
+    when: "{{ lookup('csvfile', item + ' file=vars/addvolume.csv col=0 delimiter=,') }}"
+    loop: "{{ name_list.vol_names }}"
+    
+  - name: Add vars to vars/addvolume.csv to add new volumes when { item } is not present in list added_volumes
+    ansible.builtin.lineinfile:
+      path: vars/addvolume.csv
+      line: "{{item }},{{ pool }},{{ size }},{{ thin }},{{ unit }},{{ os }},{{ hostname }},{{host_fqdn }},{{esx_datastore_name }},{{ esx_datastore_type }}"
+    loop: "{{ name_list.vol_names }}"
