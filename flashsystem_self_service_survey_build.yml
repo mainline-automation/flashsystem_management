@@ -64,6 +64,7 @@
       src: /home/ansible/playbooks/flashsystem_setup/templates/templates/self_service_survey_spec_volume.j2
       dest: /home/ansible/playbooks/flashsystem_setup/templates/templates/volume_spec.json
       mode: 420
+    delegate_to: localhost
 
   - name: Update FlashSystem Volume Survey
     ansible.controller.job_template:
