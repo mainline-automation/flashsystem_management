@@ -63,13 +63,13 @@
     ansible.controller.job_template:
       name: "flashsystem_update"
       survey_enabled: true
-      survey_spec: "/templates/self_service_survey_spec_volume.j2') }}"
+      survey_spec: "{{('/templates/self_service_survey_spec_volume.j2') }}"
       validate_certs: no
 
   - name: Update ESX DataStore Survey
     ansible.controller.job_template:
       name: "esx_update"
       survey_enabled: true
-      survey_spec: "/templates/self_service_survey_spec_esx.j2') }}"
+      survey_spec: "{{('/templates/self_service_survey_spec_esx.j2') }}"
     when: os == 'esx'
 
