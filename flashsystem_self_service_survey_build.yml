@@ -61,15 +61,15 @@
 
   - name: Use /templates/self_service_survey_spec_volume.j2 to template a json file
     ansible.builtin.template:
-      src: /templates/self_service_survey_spec_volume.j2
-      dest: /templates/volume_spec.json
+      src: /home/ansible/playbooks/flashsystem_setup/templates/templates/self_service_survey_spec_volume.j2
+      dest: /home/ansible/playbooks/flashsystem_setup/templates/templates/volume_spec.json
       mode: 420
 
   - name: Update FlashSystem Volume Survey
     ansible.controller.job_template:
       name: "flashsystem_update"
       survey_enabled: true
-      survey_spec: /home/ansible/playbooks/flashsystem_setup/templates/volume_spec.json
+      survey_spec: /templates/volume_spec.json
       validate_certs: no
 
   - name: Update ESX DataStore Survey
