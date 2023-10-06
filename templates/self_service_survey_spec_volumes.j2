@@ -51,7 +51,9 @@
         "min": null,
         "default": "",
         "max": null,
-        "choices": "{{ pool_names }}",
+        {% for pool in pool_names %}
+        "choices": "{{ pool + \n }}"
+        {% endfor %},
         "question_description": "What storage pool will be used?",
         "new_question": true,
         "variable": "pool_select",
