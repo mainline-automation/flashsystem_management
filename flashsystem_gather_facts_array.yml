@@ -1,6 +1,6 @@
 ---
 - name: Gather facts from FlashSystem and store in facts.d on server
-  hosts: flashsystems_attached_hosts
+  hosts: flashsystem_workflow
   gather_facts: false
   become: true
   vars_files:
@@ -11,8 +11,8 @@
       ibm.storage_virtualize.ibm_svc_info:
         clustername: "{{ clustername }}"
         gather_subset: array
-        # username:
-        # password:
+        # username: ansible 
+        # password: M@inline1700
         token: "{{ api_token }}"
       register: results
 #      no_log: true
@@ -31,12 +31,12 @@
 
     - name: write array_results to /etc/ansible/facts.d/
       ansible.builtin.copy:
-        content: "{{ results.Array[0] }}"
+        content: "{{ results.Array[] }}"
         dest: '/etc/ansible/facts.d/{{ clustername }}.fact'
 
     - name: import registered variable results.Array into set_fact
       ansible.builtin.set_fact:
-        array_details: "{{ results.Array[0] }}"
+        array_details: "{{ results.Array[] }}"
     
     - name: preserve API token with set_stats
       ansible.builtin.set_stats:

@@ -1,0 +1,75 @@
+---
+- name: Append additional volumes to vars/addvolume.csv
+  hosts: localhost
+  gather_facts: false
+  become: false
+  vars_files:
+    - vars/authentication.yml
+  vars:
+  #   start_var: 2
+  #   end_var: 10
+  #   countby_var: 2
+  #   vol_base: demo_vol
+  #   pool: Pool01
+  #   size: 1024
+  #   thin: true
+  #   unit: gb 
+  #   os: aix
+  #   hostname: bpicaix04
+  #   host_fqdn: bpicaix04.bpic.mainline.com
+  #   esx_datastore_name: ''
+  #   esx_datastore_type : ''
+    
+
+
+  tasks:
+  - name: gather facts using ibm_svc_info
+    ibm.storage_virtualize.ibm_svc_info:
+      clustername: "{{ clustername }}"
+      gather_subset: pool
+      username: ansible 
+      password: M@inline1700
+      # token: "{{ api_token }}"
+    register: svc_results
+#    no_log: true
+
+  - name: create array list of results.list name for use in jinja2 template
+    create_survey_lists:
+      info_results: "{{ svc_results.Pool }}"
+      info_value: name
+    register: pool_names
+
+  - name: Gather datastore info from vmware vcenter
+    community.vmware.vmware_datastore_info:
+      hostname: "{{ vcenter_hostname }}"
+      schema: summary
+      username: "{{ vcenter_username }}"
+      password: "{{ vcenter_password }}"
+      datacenter: Datacenter
+      validate_certs: false
+    register: datastore_info
+
+  - name: print out datastore_info
+    ansible.builtin.debug:
+      var: datastore_info
+  
+  - name: create array list of datastore.list name for use in jinja2 template
+    create_survey_lists:
+      info_results: "{{ datastore_info.datastores }}"
+      info_value: name
+    register: datastore_names
+
+  - name: Update FlashSystem Volume Survey
+    ansible.controller.job_template:
+      name: "flashsystem_update"
+      survey_enabled: true
+      survey_spec: "/templates/self_service_survey_spec_volume.j2') }}"
+      validate_certs: no
+
+  - name: Update ESX DataStore Survey
+    ansible.controller.job_template:
+      name: "esx_update"
+      survey_enabled: true
+      survey_spec: "/templates/self_service_survey_spec_esx.j2') }}"
+    when: os == 'esx'
+

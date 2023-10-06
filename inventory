@@ -2,6 +2,9 @@
 10.125.0.15
 [dns]
 10.125.0.11 ansible_connection=winrm
+
+[flashsystem_workflow]
+10.140.0.140
 [flashsystem_attached_vms]
 10.140.0.194
 10.140.0.195
