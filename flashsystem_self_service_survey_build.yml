@@ -69,7 +69,7 @@
     ansible.controller.job_template:
       name: "flashsystem_update"
       survey_enabled: true
-      survey_spec: /templates/volume_spec.json
+      survey_spec: /home/ansible/playbooks/flashsystem_setup/templates/volume_spec.json
       validate_certs: no
 
   - name: Update ESX DataStore Survey
