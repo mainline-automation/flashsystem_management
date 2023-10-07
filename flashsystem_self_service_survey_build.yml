@@ -2,10 +2,11 @@
 - name: Append additional volumes to vars/addvolume.csv
   hosts: localhost
   gather_facts: false
-  become: false
+  become: true
   vars_files:
     - vars/authentication.yml
   vars:
+    ansible_connection: local
   #   start_var: 2
   #   end_var: 10
   #   countby_var: 2
@@ -39,44 +40,55 @@
       info_value: name
     register: pool_names
 
-  - name: Gather datastore info from vmware vcenter
-    community.vmware.vmware_datastore_info:
-      hostname: "{{ vcenter_hostname }}"
-      schema: summary
-      username: "{{ vcenter_username }}"
-      password: "{{ vcenter_password }}"
-      datacenter: Datacenter
-      validate_certs: false
-    register: datastore_info
+  # - name: Gather datastore info from vmware vcenter
+  #   community.vmware.vmware_datastore_info:
+  #     hostname: "{{ vcenter_hostname }}"
+  #     schema: summary
+  #     username: "{{ vcenter_username }}"
+  #     password: "{{ vcenter_password }}"
+  #     datacenter: Datacenter
+  #     validate_certs: false
+  #   register: datastore_info
 
-  - name: print out datastore_info
-    ansible.builtin.debug:
-      var: datastore_info
+  # - name: print out datastore_info
+  #   ansible.builtin.debug:
+  #     var: datastore_info
   
-  - name: create array list of datastore.list name for use in jinja2 template
-    create_survey_lists:
-      info_results: "{{ datastore_info.datastores }}"
-      info_value: name
-    register: datastore_names
+  # - name: create array list of datastore.list name for use in jinja2 template
+  #   create_survey_lists:
+  #     info_results: "{{ datastore_info.datastores }}"
+  #     info_value: name
+  #   register: datastore_names
 
-  - name: Use /templates/self_service_survey_spec_volume.j2 to template a json file
-    ansible.builtin.template:
-      src: /home/ansible/playbooks/flashsystem_setup/templates/templates/self_service_survey_spec_volume.j2
-      dest: /home/ansible/playbooks/flashsystem_setup/templates/templates/volume_spec.json
-      mode: 420
-    delegate_to: localhost
+  # - name: Create volume_spec.json by using ansible.builtin.template and /templates/self_service_survey_spec_volume.j2
+  #   ansible.builtin.template:
+  #     src: self_service_survey_spec_volumes.j2
+  #     dest: /tmp/self_service_survey_spec.json
+  #     mode: '0644'
+  #   register: spec_results
+
+  - name: print spec_results
+    ansible.builtin.debug:
+      var: spec_results
 
   - name: Update FlashSystem Volume Survey
     ansible.controller.job_template:
-      name: "flashsystem_update"
+      name: "IBM_FlashSystem_Self_Service_Templates"
       survey_enabled: true
-      survey_spec: /templates/volume_spec.json
+      survey_spec: "{{lookup ('file','/home/ansible/playbooks/flashsystem_setup/templates/test.json')}}"
       validate_certs: no
+  # - name: Create volume_spec.json by using ansible.builtin.template and /templates/self_service_survey_spec_volume.j2
+  #   ansible.builtin.template:
+  #     src: self_service_survey_spec_esx.j2
+  #     dest: /tmp/self_service_survey_spec_esx.json
+  #     mode: '0644'
+  #   register: spec_results
 
-  - name: Update ESX DataStore Survey
-    ansible.controller.job_template:
-      name: "esx_update"
-      survey_enabled: true
-      survey_spec: "{{('/templates/self_service_survey_spec_esx.j2') }}"
-    when: os == 'esx'
+  # - name: Update ESX DataStore Survey
+  #   ansible.controller.job_template:
+  #     name: "esx_update"
+  #     survey_enabled: true
+  #     survey_spec: "{{ lookup('file', 'self_service_survey_spec_esx.json') }}"
+    # when: os == 'esx'
 
+  

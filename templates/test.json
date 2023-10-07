@@ -1,0 +1,17 @@
+{
+    "name": "flashsystem_update",
+    "description": "General questions to provision volumes on IBM FlashSystem",
+    "spec": [
+      {
+        "required": "true",
+        "min": "",
+        "default": "new_vol",
+        "max": "",
+        "question_description": "What base name will you be using for the volumes before sequence numbers?",
+        "new_question": "true",
+        "variable": "base_name",
+        "question_name": "volume_base_name",
+        "type": "text"
+      }
+    ]
+ }
