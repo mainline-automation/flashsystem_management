@@ -75,7 +75,7 @@
     ansible.controller.job_template:
       name: "IBM_FlashSystem_Self_Service_Templates"
       survey_enabled: true
-      survey_spec: "{{lookup ('file','/home/ansible/playbooks/flashsystem_setup/templates/test.json')}}"
+      survey_spec: "{{lookup ('file','templates/test.json')}}"
       validate_certs: no
   # - name: Create volume_spec.json by using ansible.builtin.template and /templates/self_service_survey_spec_volume.j2
   #   ansible.builtin.template:
