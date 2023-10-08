@@ -37,7 +37,7 @@
   - name: Fail if volume already exists
     ansible.builtin.fail:
       msg: "Volume Name {{ item }} already exists. Please correct and try again"
-    when: "{{ lookup('csvfile', item + ' file=vars/addvolume.csv col=0 delimiter=,') }}"
+    when: lookup('csvfile', item + ' file=vars/addvolume.csv col=0 delimiter=,') 
     loop: "{{ name_list.vol_names }}"
 
   - name: Add vars to vars/addvolume.csv to add new volumes when { item } is not present in list added_volumes
