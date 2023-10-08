@@ -7,6 +7,7 @@
     - vars/authentication.yml
   vars:
     ansible_connection: local
+    
   #   start_var: 2
   #   end_var: 10
   #   countby_var: 2
@@ -40,6 +41,10 @@
       info_value: name
     register: pool_names
 
+  - name: print pool_names
+    ansible.builtin.debug:
+      var: pool_names
+
   # - name: Gather datastore info from vmware vcenter
   #   community.vmware.vmware_datastore_info:
   #     hostname: "{{ vcenter_hostname }}"
@@ -70,13 +75,26 @@
   - name: print spec_results
     ansible.builtin.debug:
       var: spec_results
+  
+  - name: create suvey_spec_volumes.json with ansible.builtin.template 
+    ansible.builtin.template:
+      src: templates/survey_spec_volumes.j2
+      dest: templates/survey_spec_volumes.json
 
   - name: Update FlashSystem Volume Survey
     ansible.controller.job_template:
-      name: "IBM_FlashSystem_Self_Service_Templates"
+      name: flashsystem_test
       survey_enabled: true
-      survey_spec: "{{lookup ('file','templates/test.json')}}"
+      survey_spec: "{{lookup ('file','templates/survey_spec_volumes.json')}}"
       validate_certs: no
+      inventory: ibm_storage_and_hosts
+      playbook: flashsystem_self_service.yml
+      project: "FlashSystem Management"
+      controller_password: M@inline1700
+      controller_username: ian.wright
+      controller_host: ansible.bpic.mainline.com
+      validate_certs: false
+      controller_config_file: /etc/ansible/ansible.cfg
   # - name: Create volume_spec.json by using ansible.builtin.template and /templates/self_service_survey_spec_volume.j2
   #   ansible.builtin.template:
   #     src: self_service_survey_spec_esx.j2

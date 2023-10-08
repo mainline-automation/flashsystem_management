@@ -70,9 +70,10 @@ def run_module():
 
     # Loop from beginning number to end number by increment. Default increment is 1
     x=0
+    name={}
     while x < len(module.params['info_results']):
         if x < len(module.params['info_results']):
-            result['survey_list'].append(module.params['info_results'][x][module.params['info_value']],)
+            name[x] = result['survey_list'].append(module.params['info_results'][x][module.params['info_value']],)
             x = x+1
         
     # determines that input parameters were provided and changed

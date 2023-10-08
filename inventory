@@ -1,3 +1,5 @@
+localhost ansible_connection=local
+
 [jump-server]
 10.125.0.15
 [dns]
