@@ -44,8 +44,8 @@
         },
         {
             "required": true,
-            "choices": "{%- for info_key in pool_names.survey_info -%}
-            {{ name }}\n
+            "choices": "{%- for item in pool_names.survey_info -%}
+            {{ item }}\n
             {%- endfor -%}",
             "question_description": "Select one storage pool from the list",
             "new_question": true,
