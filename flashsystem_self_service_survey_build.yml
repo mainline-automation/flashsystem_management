@@ -74,8 +74,8 @@
       inventory: ibm_storage_and_hosts
       playbook: flashsystem_self_service.yml
       project: "FlashSystem Management"
-        # controller_password: M@inline1700
-        # controller_username: ian.wright
+      controller_password: M@inline1700
+      controller_username: ian.wright
       controller_host: ansible.bpic.mainline.com
       controller_config_file: /etc/ansible/ansible.cfg
  
