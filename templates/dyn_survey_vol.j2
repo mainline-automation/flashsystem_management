@@ -3,88 +3,84 @@
     "description": "General questions to provision volumes on IBM FlashSystem",
     "spec": [
         
-        {
             {% if configuration_type == "Create volumes" %}
-        {
-            "required": true,
-            "default": "new_vol",
-            "question_description": "Volume names will be constructed as basename+sequence number. Choose your base name here",
-            "new_question": true,
-            "variable": "vol_base",
-            "question_name": "What base name will you be using for the volumes before sequence numbers?",
-            "type": "text"
-        },
-        {
-            "required": true,
-            "min": 0,
-            "default": 1,
-            "question_description": "Volumes names are constructed as basename + sequence number. Choose which number you want to use as your starting point",
-            "new_question": true,
-            "variable": "start_var",
-            "question_name": "What number will the volume sequence numbers <i><b>START</b></i> with?",
-            "type": "integer"
-        },
-        {
-            "required": true,
-            "min": 1,
-            "default": 3,
-            "question_description": "Number of volumes",
-            "new_question": true,
-            "variable": "vol_count",
-            "question_name": "How many volumes do you want?",
-            "type": "integer"
-        },
-        {
-            "required": false,
-            "min": 0,
-            "default": 1,
-            "question_description": "Optional - you may choose an increment other than 1 for counting",
-            "new_question": true,
-            "variable": "countby_var",
-            "question_name": "By how much will the volume numbers increment? optional: make sure that the number of volumes evenly divides by the increment",
-            "type": "integer"
-        },
-        {
-            "required": true,
-            "choices": "{%- for item in pool_names.survey_info -%}
-            {{ item }}\n
-            {%- endfor -%}",
-            "question_description": "Select one storage pool from the list",
-            "new_question": true,
-            "variable": "pool_select",
-            "question_name": "What storage pool will be used?",
-            "type": "multiplechoice"
-        },
-        {
-            "required": false,
-            "choices": "true\nfalse",
-            "question_description": "The default will be for the volume to be fully provisioned. Would you like to have it be thin provisioned instead?",
-            "new_question": true,
-            "variable": "thin",
-            "question_name": "Should the volume be Thin Provisioned?",
-            "type": "multiplechoice"
-        },
-        {
-            "required": true,
-            "choices": "B\nKB\nMB\nGB\nTB",
-            "question_description": "Choose the units that you want to size your capacity in \n '('Bytes, Megabytes, etc...')'",
-            "new_question": true,
-            "variable": "unit",
-            "question_name": "What unit will you size capacity in?",
-            "type": "multiplechoice"
-        },
-        {
-            "required": true,
-            "min": 1,
-            "question_description": "based on your answer to the previous question, choose the number of storage units that you will configure in each volume \n 
-            i.e. 100 GB, 1 TB, etc...",
-            "new_question": true,
-            "variable": "size",
-            "question_name": "How many units of capacity per volume?",
-            "type": "integer"
-        }
-        {% endif %}
-        }
-        
+                {
+                    "required": true,
+                    "default": "new_vol",
+                    "question_description": "Volume names will be constructed as basename+sequence number. Choose your base name here",
+                    "new_question": true,
+                    "variable": "vol_base",
+                    "question_name": "What base name will you be using for the volumes before sequence numbers?",
+                    "type": "text"
+                },
+                {
+                    "required": true,
+                    "min": 0,
+                    "default": 1,
+                    "question_description": "Volumes names are constructed as basename + sequence number. Choose which number you want to use as your starting point",
+                    "new_question": true,
+                    "variable": "start_var",
+                    "question_name": "What number will the volume sequence numbers <i><b>START</b></i> with?",
+                    "type": "integer"
+                },
+                {
+                    "required": true,
+                    "min": 1,
+                    "default": 3,
+                    "question_description": "Number of volumes",
+                    "new_question": true,
+                    "variable": "vol_count",
+                    "question_name": "How many volumes do you want?",
+                    "type": "integer"
+                },
+                {
+                    "required": false,
+                    "min": 0,
+                    "default": 1,
+                    "question_description": "Optional - you may choose an increment other than 1 for counting",
+                    "new_question": true,
+                    "variable": "countby_var",
+                    "question_name": "By how much will the volume numbers increment? optional: make sure that the number of volumes evenly divides by the increment",
+                    "type": "integer"
+                },
+                {
+                    "required": true,
+                    "choices": "{%- for item in pool_names.survey_info -%}
+                    {{ item }}\n
+                    {%- endfor -%}",
+                    "question_description": "Select one storage pool from the list",
+                    "new_question": true,
+                    "variable": "pool_select",
+                    "question_name": "What storage pool will be used?",
+                    "type": "multiplechoice"
+                },
+                {
+                    "required": false,
+                    "choices": "true\nfalse",
+                    "question_description": "The default will be for the volume to be fully provisioned. Would you like to have it be thin provisioned instead?",
+                    "new_question": true,
+                    "variable": "thin",
+                    "question_name": "Should the volume be Thin Provisioned?",
+                    "type": "multiplechoice"
+                },
+                {
+                    "required": true,
+                    "choices": "B\nKB\nMB\nGB\nTB",
+                    "question_description": "Choose the units that you want to size your capacity in \n '('Bytes, Megabytes, etc...')'",
+                    "new_question": true,
+                    "variable": "unit",
+                    "question_name": "What unit will you size capacity in?",
+                    "type": "multiplechoice"
+                },
+                {
+                    "required": true,
+                    "min": 1,
+                    "question_description": "based on your answer to the previous question, choose the number of storage units that you will configure in each volume \n ",
+                    "new_question": true,
+                    "variable": "size",
+                    "question_name": "How many units of capacity per volume?",
+                    "type": "integer"
+                }
+            {% endif %}
     ]
 }
