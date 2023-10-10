@@ -22,28 +22,94 @@
 
 
   tasks:
-  - name: Create a variable with a list of values
-    create_volume_name:
-      vol_base_name: "{{ vol_base }}"
-      vol_sequence_begin: "{{ start_var }}"
-      vol_sequence_end: "{{ end_var }}"
-      vol_sequence_increment: "{{ countby_var }}"
-    register: name_list
+    - block:
+      - name: if countby_var is blank or less than 1, set countby_var=1
+        ansible.builtin.set_fact:
+          countby_var: 1
+        when: countby_var = "" or 0
+      
+      - name: Set the value of the last volume in the sequence
+        ansible.builtin.set_fact:
+          end_var: start_var + ((vol_count -1) * countby_var)
 
-  - name: Print out name_list.vol_names
-    ansible.builtin.debug:
-      msg: "{{ name_list.vol_names }}"
+      - name: Create a variable with a list of values
+        create_volume_name:
+          vol_base_name: "{{ vol_base }}"
+          vol_sequence_begin: "{{ start_var }}"
+          vol_sequence_end: "{{ end_var }}"
+          vol_sequence_increment: "{{ countby_var }}"
+        register: name_list
 
-  - name: Fail if volume already exists
-    ansible.builtin.fail:
-      msg: "Volume Name {{ item }} already exists. Please correct and try again"
-    when: lookup('csvfile', item + ' file=vars/addvolume.csv col=0 delimiter=,') 
-    loop: "{{ name_list.vol_names }}"
+      - name: Fail if volume already exists
+        ansible.builtin.fail:
+          msg: "Volume Name {{ item }} already exists. Please correct and try again"
+        when: lookup('csvfile', item + ' file=vars/addvolume.csv col=0 delimiter=,') 
+        loop: "{{ name_list.vol_names }}"
+      when: "{{configuration_type}} = 'Create volumes' or 'Create and map volumes'"
+
+    - block:
+      - name: Gather svc_info for volumes that haven't been mapped
+        ibm.storage_virtualize.ibm_svc_info:
+          clustername: "{{ clustername }}"
+          gather_subset: hostvdiskmap
+          username: ansible 
+          password: M@inline1700
+        register: mapped_hosts
+
+      - name: Get vdisk_name from mapped_hosts
+        create_survey_info:
+          info_results: "{{ mapped_hosts.HostVdiskMap }}"
+          info_value: vdisk_name
+        register: mapped_volumes
+
+      - name: Get svc_info of all volumes
+        ibm.storage_virtualize.ibm_svc_info:
+          clustername: "{{ clustername }}"
+          gather_subset: vol
+          username: ansible 
+          password: M@inline1700
+        register: all_volumes
+
+      - name: get names of all volumes
+        create_survey_info:
+          info_results: "{{ all_volumes.Volume }}" 
+          info_value: volume_name 
+        register: all_volume_names
+
+      - name: create a new list by removing an item when vdisk_name = name
+        reduce_lists:
+          list_to_remove: "{{ mapped_volumes.survey_info }}"
+          main_list: "{{ all_volume_names.survey_info }}"
+        register: unmapped_volumes
+      when: "{{ configuration_type }} == 'Map unmapped volumes'"
+
+    - block: 
+        - name: Gather svc_info for volumes that haven't been mapped
+          ibm.storage_virtualize.ibm_svc_info:
+            clustername: "{{ clustername }}"
+            gather_subset: host
+            username: ansible 
+            password: M@inline1700
+          register: all_hosts
+
+        - name: Get vdisk_name from mapped_hosts
+          create_survey_info:
+            info_results: "{{ all_hosts.Host }}"
+            info_value: name
+          register: host_list
+      when: "{{ configuration_type }} == 'Create and map volumes' or 'Map unmapped volumes'"
+
+      - name: Temporary set_fact for esx_datastore_name 
+        ansible.builtin.set_fact:
+          esx_datastore_name: '' 
+
+      - name: Temporary set_fact for esx_datastore_type 
+        ansible.builtin.set_fact:
+          esx_datastore_type: '' 
+
 
   - name: Add vars to vars/addvolume.csv to add new volumes when { item } is not present in list added_volumes
     ansible.builtin.lineinfile:
       path: vars/addvolume.csv
-      line: "{{item }},{{ pool }},{{ size }},{{ thin }},{{ unit }},{{ os }},{{ hostname }},{{ host_fqdn }},{{ esx_datastore_name }},{{ esx_datastore_type }}"
+      line: "{{ item }},{{ pool_name }},{{ size }},{{ thin }},{{ unit }},{{ os }},{{ hostname }},{{ host_fqdn }},{{ esx_datastore_name }},{{ esx_datastore_type }}"
     loop: "{{ name_list.vol_names }}"
-
-      

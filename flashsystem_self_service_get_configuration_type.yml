@@ -1,0 +1,16 @@
+---
+- name: Append additional volumes to vars/addvolume.csv
+  hosts: localhost
+  gather_facts: false
+  become: true
+  vars_files:
+    - vars/authentication.yml
+  vars:
+    ansible_connection: local
+    
+  tasks:
+  - name: preserve API token with set_stats
+    # preserving api_token for any additional playbooks in workflow
+    ansible.builtin.set_stats:
+      data:
+        configuration_type: "{{ configuration_type }}"

@@ -6,13 +6,13 @@ from __future__ import (absolute_import,division, print_function)
 __metaclass__ = type
 DOCUMENTATION = r'''
 ---
-module: create_survey_list
+module: create_survey_info
 
 version_added: "1.0.0"
 
 short description: This module will create a volume name from the base name and the sequence number
 
-description: Ansible on its own won't merge a list value with a str or int. This module will do that by converting the values appropriately
+description: Ansible on its own won't merge a list value with a str or int. This module will do that by converting the values appropriately and formats into a list of dictionaries
 
 options:
     info_results:
@@ -34,11 +34,11 @@ author:
 '''
 RETURN = r'''
 # The only important return value is vol_names
-survey_list:
-    description: The properly formatted list 
+survey_info:
+    description: The properly formatted list of dictionaries
     type: list
     returned: always
-    sample: ['pool1', 'pool2',...]
+    sample: ['name': 'pool1', 'name': 'pool2',...]
 
 '''
 
@@ -55,7 +55,7 @@ def run_module():
     # survey list starts off as a blank list in the dictionary
     result = dict(
         changed=False,
-        survey_list=[]
+        survey_info=[]
     )
 
     # supports check mode
@@ -70,16 +70,18 @@ def run_module():
 
     # Loop from beginning number to end number by increment. Default increment is 1
     x=0
-    name={}
+    requested_value={}
     while x < len(module.params['info_results']):
         if x < len(module.params['info_results']):
-            name[x] = result['survey_list'].append(module.params['info_results'][x][module.params['info_value']],)
+            requested_value[x] = result['survey_info'].append(module.params['info_results'][x][module.params['info_value']],)
             x = x+1
+    # remove duplicate values
+    result['survey_info'] = list(dict.fromkeys(result['survey_info']))
         
     # determines that input parameters were provided and changed
     
     
-    if result['survey_list'] != []:
+    if result['survey_info'] != []:
         result['changed'] = True
 
     #Logic to validate that input was provided
@@ -88,6 +90,9 @@ def run_module():
     
 
     module.exit_json(**result)
+
+def new_func(module):
+    print(module.params['info_results'])
 
 
 def main():

@@ -1,0 +1,26 @@
+---
+- name: Create or validate hosts
+  hosts: localhost
+  gather_facts: false
+  become: false
+  vars_files:
+    - vars/authentication.yml
+ 
+  tasks:
+  - name: Gather svc_info for volumes that haven't been mapped
+    ibm.storage_virtualize.ibm_svc_info:
+      clustername: "{{ clustername }}"
+      gather_subset: host
+      username: ansible 
+      password: M@inline1700
+    register: all_hosts
+
+  - name: Get vdisk_name from mapped_hosts
+    create_survey_info:
+      info_results: "{{ all_hosts.Host }}"
+      info_value: name
+    register: host_list
+
+
+
+

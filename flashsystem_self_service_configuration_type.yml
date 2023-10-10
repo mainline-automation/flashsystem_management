@@ -1,0 +1,22 @@
+---
+- name: Append additional volumes to vars/addvolume.csv
+  hosts: localhost
+  gather_facts: false
+  become: false
+  vars_files:
+    - vars/authentication.yml
+  
+
+
+  tasks:
+  - name: Update FlashSystem Volume Survey
+    ansible.controller.job_template:
+      name: flashsystem_test
+      survey_enabled: true
+      survey_spec: "{{lookup ('file','templates/survey_configuration_type.j2')}}"
+      validate_certs: no
+      inventory: ibm_storage_and_hosts
+      playbook: flashsystem_self_service_configuration_type_survey.yml
+      project: "FlashSystem Management"
+      validate_certs: false
+      controller_config_file: /etc/ansible/ansible.cfg

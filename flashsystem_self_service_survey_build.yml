@@ -54,10 +54,6 @@
   #     datacenter: Datacenter
   #     validate_certs: false
   #   register: datastore_info
-
-  # - name: print out datastore_info
-  #   ansible.builtin.debug:
-  #     var: datastore_info
   
   # - name: create array list of datastore.list name for use in jinja2 template
   #   create_survey_lists:
@@ -65,48 +61,43 @@
   #     info_value: name
   #   register: datastore_names
 
-  # - name: Create volume_spec.json by using ansible.builtin.template and /templates/self_service_survey_spec_volume.j2
-  #   ansible.builtin.template:
-  #     src: self_service_survey_spec_volumes.j2
-  #     dest: /tmp/self_service_survey_spec.json
-  #     mode: '0644'
-  #   register: spec_results
+  - name: Create volume_spec.json by using ansible.builtin.template and /templates/self_service_survey_spec_volume.j2
+    ansible.builtin.template:
+      src: dyn_survey_vol.j2
+      dest: /tmp/dyn_survey_vol.json
+      mode: '0644'
+    register: spec_results
 
-  - name: print spec_results
-    ansible.builtin.debug:
-      var: spec_results
-  
   - name: create suvey_spec_volumes.json with ansible.builtin.template 
     ansible.builtin.template:
       src: templates/survey_spec_volumes.j2
       dest: templates/survey_spec_volumes.json
 
-  - name: Update FlashSystem Volume Survey
-    ansible.controller.job_template:
-      name: flashsystem_test
-      survey_enabled: true
-      survey_spec: "{{lookup ('file','templates/survey_spec_volumes.json')}}"
-      validate_certs: no
-      inventory: ibm_storage_and_hosts
-      playbook: flashsystem_self_service.yml
-      project: "FlashSystem Management"
-      controller_password: M@inline1700
-      controller_username: ian.wright
-      controller_host: ansible.bpic.mainline.com
-      validate_certs: false
-      controller_config_file: /etc/ansible/ansible.cfg
-  # - name: Create volume_spec.json by using ansible.builtin.template and /templates/self_service_survey_spec_volume.j2
+  # - name: Update FlashSystem Volume Survey
+  #   ansible.controller.job_template:
+  #     name: flashsystem_test
+  #     survey_enabled: true
+  #     survey_spec: "{{lookup ('file','templates/dyn_survey_vol.json')}}"
+  #     validate_certs: no
+  #     inventory: ibm_storage_and_hosts
+  #     playbook: flashsystem_self_service.yml
+  #     project: "FlashSystem Management"
+  #       # controller_password: M@inline1700
+  #       # controller_username: ian.wright
+  #       # controller_host: ansible.bpic.mainline.com
+  #     controller_config_file: /etc/ansible/ansible.cfg
+  # - name: Create dyn_survey_vol.json by using ansible.builtin.template and /templates/dyn_survey_vol.j2
   #   ansible.builtin.template:
-  #     src: self_service_survey_spec_esx.j2
-  #     dest: /tmp/self_service_survey_spec_esx.json
+  #     src: dyn_survey_vol.j2j2
+  #     dest: /tmp/dyn_survey_vol.json
   #     mode: '0644'
   #   register: spec_results
 
-  # - name: Update ESX DataStore Survey
-  #   ansible.controller.job_template:
-  #     name: "esx_update"
-  #     survey_enabled: true
-  #     survey_spec: "{{ lookup('file', 'self_service_survey_spec_esx.json') }}"
+  # # - name: Update ESX DataStore Survey
+  # #   ansible.controller.job_template:
+  # #     name: "esx_update"
+  # #     survey_enabled: true
+  # #     survey_spec: "{{ lookup('file', 'self_service_survey_spec_esx.json') }}"
     # when: os == 'esx'
 
   
