@@ -62,6 +62,7 @@
     ansible.builtin.template:
       src: dyn_survey_vol.j2
       dest: /tmp/dyn_survey_vol.json
+      owner: ansible
       mode: '0644'
     register: spec_results
 
