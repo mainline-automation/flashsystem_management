@@ -58,17 +58,12 @@
   #     info_value: name
   #   register: datastore_names
 
-  - name: Create volume_spec.json by using ansible.builtin.template and /templates/self_service_survey_spec_volume.j2
+  - name: Create volume_spec.json by using ansible.builtin.template and /templates/dyn_survey_vol.j2
     ansible.builtin.template:
       src: dyn_survey_vol.j2
       dest: /tmp/dyn_survey_vol.json
       mode: '0644'
     register: spec_results
-
-  - name: create suvey_spec_volumes.json with ansible.builtin.template 
-    ansible.builtin.template:
-      src: templates/dyn_survey_vol.j2
-      dest: templates/dyn_survey_vol.json
 
   - name: Update FlashSystem Volume Survey
     ansible.controller.job_template:
