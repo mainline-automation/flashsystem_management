@@ -2,6 +2,7 @@
     "name": "flashsystem_update",
     "description": "General questions to provision volumes on IBM FlashSystem",
     "spec": [
+        {
         {% if configuration_type == "Create volumes" %}
         {
             "required": true,
@@ -226,5 +227,6 @@
             "type": "text"
         }
         {% endif %}
+        }
     ]
 }
