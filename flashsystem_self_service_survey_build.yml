@@ -40,7 +40,7 @@
       info_results: "{{ svc_results.Pool }}"
       info_value: name
     register: pool_names
-- block:
+  - block:
       - name: if countby_var is blank or less than 1, set countby_var=1
         ansible.builtin.set_fact:
           countby_var: 1
@@ -63,9 +63,9 @@
           msg: "Volume Name {{ item }} already exists. Please correct and try again"
         when: lookup('csvfile', item + ' file=vars/addvolume.csv col=0 delimiter=,') 
         loop: "{{ name_list.vol_names }}"
-      when: "{{configuration_type}} = 'Create volumes' or 'Create and map volumes'"
+    when: "{{configuration_type}} = 'Create volumes' or 'Create and map volumes'"
 
-- block:
+  - block:
       - name: Gather svc_info for volumes that haven't been mapped
         ibm.storage_virtualize.ibm_svc_info:
           clustername: "{{ clustername }}"
@@ -99,9 +99,9 @@
           list_to_remove: "{{ mapped_volumes.survey_info }}"
           main_list: "{{ all_volume_names.survey_info }}"
         register: unmapped_volumes
-      when: "{{ configuration_type }} == 'Map unmapped volumes'"
+    when: "{{ configuration_type }} == 'Map unmapped volumes'"
 
-- block: 
+  - block: 
     - name: Gather svc_info for volumes that haven't been mapped
       ibm.storage_virtualize.ibm_svc_info:
         clustername: "{{ clustername }}"
@@ -115,7 +115,7 @@
         info_results: "{{ all_hosts.Host }}"
         info_value: name
       register: host_list
-  when: "{{ configuration_type }} == 'Create and map volumes' or 'Map unmapped volumes'"
+    when: "{{ configuration_type }} == 'Create and map volumes' or 'Map unmapped volumes'"
 
         - name: Temporary set_fact for esx_datastore_name 
           ansible.builtin.set_fact:
