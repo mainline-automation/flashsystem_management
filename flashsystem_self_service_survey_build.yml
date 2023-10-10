@@ -61,8 +61,7 @@
   - name: Create volume_spec.json by using ansible.builtin.template and /templates/dyn_survey_vol.j2
     ansible.builtin.template:
       src: dyn_survey_vol.j2
-      dest: /tmp/dyn_survey_vol.json
-      owner: ansible
+      dest: /templates/dyn_survey_vol.json
       mode: '0644'
     register: spec_results
 
@@ -70,7 +69,7 @@
     ansible.controller.job_template:
       name: IBM_FlashSystem_Self_Service_Update_CSV
       survey_enabled: true
-      survey_spec: "{{ lookup('file','/tmp/dyn_survey_vol.json') }}"
+      survey_spec: "{{ lookup('file','/templates/dyn_survey_vol.json') }}"
       validate_certs: no
       inventory: ibm_storage_and_hosts
       playbook: flashsystem_self_service.yml
