@@ -36,7 +36,7 @@
 #    no_log: true
 
   - name: create array list of results.list name for use in jinja2 template
-    create_survey_lists:
+    create_survey_info:
       info_results: "{{ svc_results.Pool }}"
       info_value: name
     register: pool_names
@@ -73,19 +73,21 @@
       src: templates/survey_spec_volumes.j2
       dest: templates/survey_spec_volumes.json
 
-  # - name: Update FlashSystem Volume Survey
-  #   ansible.controller.job_template:
-  #     name: flashsystem_test
-  #     survey_enabled: true
-  #     survey_spec: "{{lookup ('file','templates/dyn_survey_vol.json')}}"
-  #     validate_certs: no
-  #     inventory: ibm_storage_and_hosts
-  #     playbook: flashsystem_self_service.yml
-  #     project: "FlashSystem Management"
-  #       # controller_password: M@inline1700
-  #       # controller_username: ian.wright
-  #       # controller_host: ansible.bpic.mainline.com
-  #     controller_config_file: /etc/ansible/ansible.cfg
+  - name: Update FlashSystem Volume Survey
+    ansible.controller.job_template:
+      name: IBM_FlashSystem_Self_Service_Update_CSV
+      survey_enabled: true
+      survey_spec: "{{lookup ('file','templates/dyn_survey_vol.json')}}"
+      validate_certs: no
+      inventory: ibm_storage_and_hosts
+      playbook: flashsystem_self_service.yml
+      project: "FlashSystem Management"
+        # controller_password: M@inline1700
+        # controller_username: ian.wright
+        # controller_host: ansible.bpic.mainline.com
+      controller_config_file: /etc/ansible/ansible.cfg
+ 
+ 
   # - name: Create dyn_survey_vol.json by using ansible.builtin.template and /templates/dyn_survey_vol.j2
   #   ansible.builtin.template:
   #     src: dyn_survey_vol.j2j2

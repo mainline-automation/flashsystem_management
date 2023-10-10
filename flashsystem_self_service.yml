@@ -108,8 +108,8 @@
           esx_datastore_type: '' 
 
 
-  - name: Add vars to vars/addvolume.csv to add new volumes when { item } is not present in list added_volumes
-    ansible.builtin.lineinfile:
-      path: vars/addvolume.csv
-      line: "{{ item }},{{ pool_name }},{{ size }},{{ thin }},{{ unit }},{{ os }},{{ hostname }},{{ host_fqdn }},{{ esx_datastore_name }},{{ esx_datastore_type }}"
-    loop: "{{ name_list.vol_names }}"
+    - name: Add vars to vars/addvolume.csv to add new volumes when { item } is not present in list added_volumes
+      ansible.builtin.lineinfile:
+        path: vars/addvolume.csv
+        line: "{{ item }},{{ pool_name }},{{ size }},{{ thin }},{{ unit }},{{ os }},{{ hostname }},{{ host_fqdn }},{{ esx_datastore_name }},{{ esx_datastore_type }}"
+      loop: "{{ name_list.vol_names }}"
