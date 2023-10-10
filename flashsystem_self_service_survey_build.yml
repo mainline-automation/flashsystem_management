@@ -41,9 +41,6 @@
       info_value: name
     register: pool_names
 
-  - name: print pool_names
-    ansible.builtin.debug:
-      var: pool_names
 
   # - name: Gather datastore info from vmware vcenter
   #   community.vmware.vmware_datastore_info:
@@ -70,8 +67,8 @@
 
   - name: create suvey_spec_volumes.json with ansible.builtin.template 
     ansible.builtin.template:
-      src: templates/survey_spec_volumes.j2
-      dest: templates/survey_spec_volumes.json
+      src: templates/dyn_survey_vol.j2
+      dest: templates/dyn_survey_vol.json
 
   - name: Update FlashSystem Volume Survey
     ansible.controller.job_template:
