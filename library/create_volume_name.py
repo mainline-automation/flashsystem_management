@@ -58,7 +58,7 @@ def run_module():
     module_args = dict(
         vol_base_name=dict(type='str', required=True),
         vol_sequence_begin=dict(type='int', required=True),
-        vol_sequence_end=dict(type='int', required=True, ),
+        vol_total=dict(type='int', required=True, ),
         vol_sequence_increment=dict(type='int', default=True)
     )
 
@@ -79,8 +79,12 @@ def run_module():
         module.exit_json(**result)
 
     # Loop from beginning number to end number by increment. Default increment is 1
+    if module.params['vol_sequence_increment'] <= 0:
+        module.params['vol_sequence_increment'] == 1
+    vol_sequence_end = int()
+    vol_sequence_end== module.params['vol_sequence_begin'] + ((module.params['vol_sequence_increment'] - 1) * module.params['vol_total'])
     for vol_sequence_number in range (module.params['vol_sequence_begin'], (module.params['vol_sequence_end'] + 1), module.params['vol_sequence_increment']):
-        result['vol_names'].append(module.params['vol_base_name'] + str(vol_sequence_number))
+        result['vol_names'].append(module.params['vol_base_name'] +'_'+ str(vol_sequence_number))
     # determines that input parameters were provided and changed
     if result['vol_names'] != []:
         result['changed'] = True
