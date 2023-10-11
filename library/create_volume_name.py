@@ -61,10 +61,7 @@ def run_module():
         vol_count=dict(type='int', required=True, ),
         vol_sequence_increment=dict(type='int', default=True)
     )
-    base = module.param['vol_base_name']
-    begin = module.param['vol_sequence_begin']
-    count = module.param['vol_count']
-    increment = module.param ['vol_sequence_increment']
+    
     # result['vol_names'] starts off as a blank list in the dictionary
     result = dict(
         changed=False,
@@ -89,7 +86,10 @@ def run_module():
     # vol_sequence_end = module.params['vol_sequence_begin'] + ((module.params['vol_sequence_increment'] - 1) * module.params['vol_total'])
     # for vol_sequence_number in range (module.params['vol_sequence_begin'], ((vol_sequence_end + 1), module.params['vol_sequence_increment'])):
     #     result['vol_names'].append(module.params['vol_base_name'] +'_'+ str(vol_sequence_number))
-    
+    base = module.param['vol_base_name']
+    begin = module.param['vol_sequence_begin']
+    count = module.param['vol_count']
+    increment = module.param ['vol_sequence_increment']
     end = begin + (increment - 1) * count
     for sequence_number in range (begin, (end + 1), increment):
         result['vol_names'].append(module.params['vol_base_name'] +'_'+ str(sequence_number))
