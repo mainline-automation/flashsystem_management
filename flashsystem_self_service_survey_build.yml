@@ -117,13 +117,13 @@
         register: host_list
       when: "{{ configuration_type }} == 'Create and map volumes' or 'Map unmapped volumes'"
 
-          - name: Temporary set_fact for esx_datastore_name 
-            ansible.builtin.set_fact:
-              esx_datastore_name: '' 
+    - name: Temporary set_fact for esx_datastore_name 
+      ansible.builtin.set_fact:
+        esx_datastore_name: '' 
 
-          - name: Temporary set_fact for esx_datastore_type 
-            ansible.builtin.set_fact:
-              esx_datastore_type: '' 
+    - name: Temporary set_fact for esx_datastore_type 
+      ansible.builtin.set_fact:
+        esx_datastore_type: '' 
 
     - name: Create volume_spec.json by using ansible.builtin.template and /templates/dyn_survey_vol.j2
       ansible.builtin.template:
