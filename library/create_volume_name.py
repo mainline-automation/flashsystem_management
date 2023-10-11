@@ -98,9 +98,6 @@ def run_module():
         else:
             if module.params['vol_sequence_end'] == '':
                 module.fail_json(msg='Provide a volume sequence ending number', **result)
-            else:
-                if ((module.params['vol_sequence_end'] - module.params['vol_sequence_begin'] ) % module.params['vol_sequence_increment']) != 0:
-                    module.fail_json(msg='number of volumes divided by sequence does not = 0. Please check your math and re-enter', **result)
 
     module.exit_json(**result)
 
