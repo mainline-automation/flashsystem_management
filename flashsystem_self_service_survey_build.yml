@@ -123,6 +123,15 @@
         controller_username: ian.wright
         controller_host: ansible.bpic.mainline.com
         controller_config_file: /etc/ansible/ansible.cfg
+      
+    - name: launch flashsystem_self_service job template on controller
+      ansible.controller.job_launch:
+        name: IBM_FlashSystem_Self_Service_Update_CSV
+        controller_username: ansible
+        controller_password: M@inline1700
+        controller_host: ansible.bpic.mainline.com
+        validate_certs: false
+        
 
 
  # - name: Gather datastore info from vmware vcenter
