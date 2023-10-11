@@ -94,7 +94,7 @@
         # ask_variables_on_launch: true
         execution_environment: ee-ibm-flashsystem
         survey_enabled: true
-        survey_spec: "{{ lookup('file','/tmp/dyn_survey_vol.json') }}"
+        survey_spec: "{{ lookup('file','/tmp/dyn_survey_vol.json') | to_nice_json}}"
         validate_certs: no
         inventory: ibm_storage_and_hosts
         playbook: flashsystem_self_service.yml

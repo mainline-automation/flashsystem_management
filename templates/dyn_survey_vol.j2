@@ -3,7 +3,7 @@
     "description": "General questions to provision volumes on IBM FlashSystem",
     "spec": [
         
-            {% if (configuration_type == "Create volumes") or (configuration_type == "Create and map volumes") %}
+            {%- if (configuration_type == "Create volumes") or (configuration_type == "Create and map volumes") %}
                 {
                     "required": true,
                     "default": "new_vol",
@@ -82,9 +82,9 @@
                     "type": "integer"
                 } {%- if configuration_type == "Create and map volumes" -%}
                     ,
-                  {% endif %}
-            {% endif %}
-            {% if configuration_type == "Map unmapped volumes" %}
+                  {%- endif -%}
+            {%- endif -%}
+            {%- if configuration_type == "Map unmapped volumes" -%}
         
                 {
                     "required": true,
@@ -97,8 +97,8 @@
                     "question_name": "Select a currently unmapped volumes to map to a single host",
                     "type": "multiselect"
                 },
-            {% endif %}
-            {% if (configuration_type == "Create and map volumes") or (configuration_type == "Map unmapped volumes") %}
+            {%- endif -%}
+            {%- if (configuration_type == "Create and map volumes") or (configuration_type == "Map unmapped volumes") -%}
                 {
                     "required": false,
                     "choices": "VMware ESX\nIBM AIX",
@@ -127,6 +127,6 @@
                     "question_name": "What is the FQDN for the host?",
                     "type": "text"
                 }
-            {% endif %}
+            {%- endif -%}
             ]
 }
