@@ -36,7 +36,7 @@
           create_volume_name:
             vol_base_name: "{{ vol_base }}"
             vol_sequence_begin: "{{ start_var }}"
-            vol_total: "{{ vol_count }}"
+            vol_count: "{{ vol_count }}"
             vol_sequence_increment: "{{ countby_var }}"
           register: name_list
 
