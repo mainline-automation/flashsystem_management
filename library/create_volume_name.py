@@ -91,7 +91,7 @@ def run_module():
     #     result['vol_names'].append(module.params['vol_base_name'] +'_'+ str(vol_sequence_number))
     
     end = begin + (increment - 1) * count
-    for sequence_number in range (begin, (end + 1), increment)):
+    for sequence_number in range (begin, (end + 1), increment):
         result['vol_names'].append(module.params['vol_base_name'] +'_'+ str(sequence_number))
     # determines that input parameters were provided and changed
     if result['vol_names'] != []:
