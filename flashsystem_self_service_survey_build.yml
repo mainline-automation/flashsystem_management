@@ -44,7 +44,7 @@
         - name: if countby_var is blank or less than 1, set countby_var=1
           ansible.builtin.set_fact:
             countby_var: 1
-          when: countby_var = "" or 0
+          when: "{{ countby_var }} == '' or 0"
         
         - name: Set the value of the last volume in the sequence
           ansible.builtin.set_fact:
