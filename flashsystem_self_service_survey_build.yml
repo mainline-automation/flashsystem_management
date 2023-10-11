@@ -120,7 +120,7 @@
         validate_certs: no
         inventory: ibm_storage_and_hosts
         playbook: flashsystem_self_service.yml
-        project: "FlashSystem Management"
+        project: 'FlashSystem Management'
         controller_password: M@inline1700
         controller_username: ian.wright
         controller_host: ansible.bpic.mainline.com
