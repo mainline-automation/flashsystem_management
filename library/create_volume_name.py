@@ -83,7 +83,7 @@ def run_module():
     if module.params['vol_sequence_increment'] <= 0:
         module.params['vol_sequence_increment'] == 1
     
-    vol_sequence_end = int(module.params['vol_sequence_begin']) + (int((module.params['vol_sequence_increment']) - 1) * int(module.params['vol_total']))
+    vol_sequence_end = module.params['vol_sequence_begin'] + (int((module.params['vol_sequence_increment']) - 1) * module.params['vol_total'])
     for vol_sequence_number in range (module.params['vol_sequence_begin'], ((vol_sequence_end + 1), module.params['vol_sequence_increment'])):
         result['vol_names'].append(module.params['vol_base_name'] +'_'+ str(vol_sequence_number))
     # determines that input parameters were provided and changed
