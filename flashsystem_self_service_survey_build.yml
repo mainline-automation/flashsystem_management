@@ -113,7 +113,7 @@
     - name: Update FlashSystem Volume Survey
       ansible.controller.job_template:
         name: IBM_FlashSystem_Self_Service_Update_CSV
-        ask_variables_on_launch: true
+        # ask_variables_on_launch: true
         execution_environment: ee-ibm-flashsystem
         survey_enabled: true
         survey_spec: "{{ lookup('file','/tmp/dyn_survey_vol.json') }}"
