@@ -5,15 +5,16 @@
   become: false
   vars_files:
     - vars/authentication.yml
-  # vars:
-  #   start_var: 2
-  #   end_var: 10
-  #   countby_var: 2
-  #   vol_base: demo_vol
-  #   pool: Pool01
-  #   size: 1024
-  #   thin: true
-  #   unit: gb 
+  vars:
+    configuration_type: 'Create volumes'
+    start_var: 2
+    vol_count: 10
+    countby_var: 2
+    vol_base: demo_vol
+    pool: Pool01
+    size: 1024
+    thin: true
+    unit: mb 
   #   os: aix
   #   hostname: bpicaix04
   #   host_fqdn: bpicaix04.bpic.mainline.com
