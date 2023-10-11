@@ -63,8 +63,8 @@
             msg: "Volume Name {{ item }} already exists. Please correct and try again"
           when: lookup('csvfile', item + ' file=vars/addvolume.csv col=0 delimiter=,') 
           loop: "{{ name_list.vol_names }}"
-      when: "({{configuration_type}} == 'Create volumes') or
-             ({{configuration_type}} == 'Create and map volumes')"
+      when: ("{{configuration_type}}" == 'Create volumes') or
+             ("{{configuration_type}}" == 'Create and map volumes')
 
     - block:
         - name: Gather svc_info for volumes that haven't been mapped
