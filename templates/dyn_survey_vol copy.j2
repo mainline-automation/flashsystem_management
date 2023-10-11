@@ -95,7 +95,8 @@
             "variable": "unmapped_vol",
             "question_name": "Select a currently unmapped volumes to map to a single host",
             "type": "multiselect"
-            {
+        },
+        {
             "required": false,
             "question_description": "Which of the available host names, if any, do you want to map these to?",
             "choices": "{%- for item in host_list.survey_info -%}
@@ -115,8 +116,6 @@
             "question_name": "What is the FQDN for the host?",
             "type": "text"
         }
-
-        },
         {% endif %}
         {% if configuration_type == "Create and map volumes" %}
         {

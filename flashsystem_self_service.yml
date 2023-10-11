@@ -44,7 +44,15 @@
             msg: "Volume Name {{ item }} already exists. Please correct and try again"
           when: lookup('csvfile', item + ' file=vars/addvolume.csv col=0 delimiter=,')
           loop: "{{ name_list.vol_names }}"
+
       
+    - name: Temporary set_fact for esx_datastore_name 
+      ansible.builtin.set_fact:
+        esx_datastore_name: '' 
+
+    - name: Temporary set_fact for esx_datastore_type 
+      ansible.builtin.set_fact:
+        esx_datastore_type: '' 
 
     - name: Add lines to vars/addvolume.csv
       ansible.builtin.lineinfile:
