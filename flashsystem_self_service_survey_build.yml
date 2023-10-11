@@ -76,7 +76,7 @@
             list_to_remove: "{{ mapped_volumes.survey_info }}"
             main_list: "{{ all_volume_names.survey_info }}"
           register: unmapped_volumes
-      when: "{{ configuration_type }} == 'Map unmapped volumes'"
+      when: ("{{ configuration_type }} == 'Map unmapped volumes'")
 
     - block: 
       - name: Gather svc_info for volumes that haven't been mapped
