@@ -4,7 +4,7 @@
     "spec": 
     [
         
-            {% if configuration_type == "Create volumes" or configuration_type == "Create and map volumes" %}
+            {% if (configuration_type == "Create volumes") or (configuration_type == "Create and map volumes") %}
                 {
                     "required": true,
                     "default": "new_vol",
@@ -81,7 +81,10 @@
                     "variable": "size",
                     "question_name": "How many units of capacity per volume?",
                     "type": "integer"
-                }
+                } 
+                    {%- if (configuration_type == "Create and map volumes") %}
+                    ,
+                    {% endif %}                  
             {% endif %}
             {% if configuration_type == "Map unmapped volumes" %}
         
@@ -96,28 +99,9 @@
                     "question_name": "Select a currently unmapped volumes to map to a single host",
                     "type": "multiselect"
                 },
-                {
-                    "required": false,
-                    "question_description": "Which of the available host names, if any, do you want to map these to?",
-                    "choices": "{%- for item in host_list.survey_info -%}
-                    {{ item }}\n
-                    {%- endfor -%}",
-                    "new_question": true,
-                    "variable": "hostname",
-                    "question_name": "You may select one hostname to map the selected volumes to",
-                    "type": "multiplechoice"
-                },
-                {
-                    "required": false,
-                    "question_description": "Please enter the Fully Qualified Domain Name for the host. \n 
-                    i.e., esx-lab.bpic.mainline.com",
-                    "new_question": true,
-                    "variable": "host_fqdn",
-                    "question_name": "What is the FQDN for the host?",
-                    "type": "text"
-                }   
+                
         {% endif %}
-        {% if configuration_type == "Create and map volumes" %}
+        {% (if configuration_type == "Create and map volumes") or (configuration_type == "Map unmapped volumes") %}
         {
             "required": false,
             "choices": "VMware ESX\nIBM AIX",
@@ -140,8 +124,8 @@
         },
         {
             "required": false,
-            "question_description": "Please enter the Fully Qualified Domain Name for the host. \n 
-            i.e., esx-lab.bpic.mainline.com",
+            "question_description": "Please enter the Fully Qualified Domain Name for the host." \n "i.e., esx-lab.bpic.mainline.com",
+                                    
             "new_question": true,
             "variable": "host_fqdn",
             "question_name": "What is the FQDN for the host?",
