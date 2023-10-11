@@ -75,14 +75,15 @@ def run_module():
     )
 
     # check mode is provided
-    if module.check_mode:
-        module.exit_json(**result)
+    # if module.check_mode:
+    #     module.exit_json(**result)
 
     # Loop from beginning number to end number by increment. Default increment is 1
+
     if module.params['vol_sequence_increment'] <= 0:
         module.params['vol_sequence_increment'] == 1
-    vol_sequence_end=1
-    vol_sequence_end== module.params['vol_sequence_begin'] + ((module.params['vol_sequence_increment'] - 1) * module.params['vol_total'])
+    
+    vol_sequence_end = int(module.params['vol_sequence_begin']) + (int((module.params['vol_sequence_increment']) - 1) * int(module.params['vol_total']))
     for vol_sequence_number in range (module.params['vol_sequence_begin'], (module.params['vol_sequence_end'] + 1), module.params['vol_sequence_increment']):
         result['vol_names'].append(module.params['vol_base_name'] +'_'+ str(vol_sequence_number))
     # determines that input parameters were provided and changed
@@ -99,7 +100,7 @@ def run_module():
             if module.params['vol_sequence_end'] == '':
                 module.fail_json(msg='Provide a volume sequence ending number', **result)
 
-    module.exit_json(**result)
+    # module.exit_json(**result)
 
 
 def main():
