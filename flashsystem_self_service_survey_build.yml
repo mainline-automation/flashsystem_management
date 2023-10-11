@@ -130,6 +130,7 @@
         controller_username: ian.wright
         controller_password: M@inline1700
         controller_host: ansible.bpic.mainline.com
+        controller_config_file: /etc/ansible/ansible.cfg
         validate_certs: false
 
 

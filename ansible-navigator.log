@@ -1,505 +1,523 @@
-2023-10-10T15:17:57.308637+00:00 INFO 'ansible_navigator.setup_logger' New ansible-navigator instance, logging initialized
-2023-10-10T15:17:57.309316+00:00 INFO 'ansible_navigator.setup_logger' New ansible-runner instance, logging initialized
-2023-10-10T15:17:57.309618+00:00 DEBUG 'ansible_navigator.main' Jinja2==3.1.2 
-2023-10-10T15:17:57.309892+00:00 DEBUG 'ansible_navigator.main' MarkupSafe==2.1.0 
-2023-10-10T15:17:57.310305+00:00 DEBUG 'ansible_navigator.main' PyYAML==5.4.1 
-2023-10-10T15:17:57.310581+00:00 DEBUG 'ansible_navigator.main' Pygments==2.11.2 
-2023-10-10T15:17:57.310857+00:00 DEBUG 'ansible_navigator.main' ansible-builder==3.0.0 
-2023-10-10T15:17:57.311136+00:00 DEBUG 'ansible_navigator.main' ansible-compat==4.1.10 
-2023-10-10T15:17:57.311452+00:00 DEBUG 'ansible_navigator.main' ansible-core==2.15.4 
-2023-10-10T15:17:57.311726+00:00 DEBUG 'ansible_navigator.main' ansible-lint==6.14.3 
-2023-10-10T15:17:57.312004+00:00 DEBUG 'ansible_navigator.main' ansible-navigator==3.4.1 
-2023-10-10T15:17:57.312343+00:00 DEBUG 'ansible_navigator.main' ansible-runner==2.3.4 
-2023-10-10T15:17:57.312658+00:00 DEBUG 'ansible_navigator.main' argcomplete==1.12.0 /usr/lib/python3.9/site-packages/argcomplete/__init__.py
-2023-10-10T15:17:57.312931+00:00 DEBUG 'ansible_navigator.main' asttokens==2.4.0 /home/ansible/.local/lib/python3.9/site-packages/asttokens/__init__.py
-2023-10-10T15:17:57.313242+00:00 DEBUG 'ansible_navigator.main' attrs==21.4.0 /usr/lib/python3.9/site-packages/attrs/__init__.py
-2023-10-10T15:17:57.313518+00:00 DEBUG 'ansible_navigator.main' backcall==0.2.0 /home/ansible/.local/lib/python3.9/site-packages/backcall/__init__.py
-2023-10-10T15:17:57.313783+00:00 DEBUG 'ansible_navigator.main' bindep==2.10.2 /usr/lib/python3.9/site-packages/bindep/__init__.py
-2023-10-10T15:17:57.314050+00:00 DEBUG 'ansible_navigator.main' black==22.8.0 /usr/lib/python3.9/site-packages/black/__init__.py
-2023-10-10T15:17:57.314225+00:00 DEBUG 'ansible_navigator.main' bracex==2.2.1 /usr/lib/python3.9/site-packages/bracex/__init__.py
-2023-10-10T15:17:57.314304+00:00 DEBUG 'ansible_navigator.main' certifi==2022.12.7 /usr/lib/python3.9/site-packages/certifi/__init__.py
-2023-10-10T15:17:57.314376+00:00 DEBUG 'ansible_navigator.main' cffi==1.15.0 /usr/lib64/python3.9/site-packages/cffi/__init__.py
-2023-10-10T15:17:57.314445+00:00 DEBUG 'ansible_navigator.main' cfgv==3.4.0 /home/ansible/.local/lib/python3.9/site-packages/cfgv.py
-2023-10-10T15:17:57.314514+00:00 DEBUG 'ansible_navigator.main' charset-normalizer==2.0.11 
-2023-10-10T15:17:57.314577+00:00 DEBUG 'ansible_navigator.main' click-help-colors==0.9.2 
-2023-10-10T15:17:57.314643+00:00 DEBUG 'ansible_navigator.main' click==8.1.3 /usr/lib/python3.9/site-packages/click/__init__.py
-2023-10-10T15:17:57.314708+00:00 DEBUG 'ansible_navigator.main' cloud-init==22.1 
-2023-10-10T15:17:57.314774+00:00 DEBUG 'ansible_navigator.main' comm==0.1.4 /home/ansible/.local/lib/python3.9/site-packages/comm/__init__.py
-2023-10-10T15:17:57.314833+00:00 DEBUG 'ansible_navigator.main' commonmark==0.9.1 /usr/lib/python3.9/site-packages/commonmark/__init__.py
-2023-10-10T15:17:57.314896+00:00 DEBUG 'ansible_navigator.main' cryptography==38.0.4 /usr/lib64/python3.9/site-packages/cryptography/__init__.py
-2023-10-10T15:17:57.314960+00:00 DEBUG 'ansible_navigator.main' dasbus==1.4 /usr/lib/python3.9/site-packages/dasbus/__init__.py
-2023-10-10T15:17:57.315043+00:00 DEBUG 'ansible_navigator.main' dbus-python==1.2.18 
-2023-10-10T15:17:57.315108+00:00 DEBUG 'ansible_navigator.main' debugpy==1.8.0 /home/ansible/.local/lib/python3.9/site-packages/debugpy/__init__.py
-2023-10-10T15:17:57.315167+00:00 DEBUG 'ansible_navigator.main' decorator==4.4.2 /usr/lib/python3.9/site-packages/decorator.py
-2023-10-10T15:17:57.315226+00:00 DEBUG 'ansible_navigator.main' distlib==0.3.7 /home/ansible/.local/lib/python3.9/site-packages/distlib/__init__.py
-2023-10-10T15:17:57.315284+00:00 DEBUG 'ansible_navigator.main' distro==1.6.0 /usr/lib/python3.9/site-packages/distro.py
-2023-10-10T15:17:57.315346+00:00 DEBUG 'ansible_navigator.main' docutils==0.16 /usr/lib/python3.9/site-packages/docutils/__init__.py
-2023-10-10T15:17:57.315426+00:00 DEBUG 'ansible_navigator.main' enrich==1.2.7 /home/ansible/.local/lib/python3.9/site-packages/enrich/__init__.py
-2023-10-10T15:17:57.315550+00:00 DEBUG 'ansible_navigator.main' ethtool==0.15 /usr/lib64/python3.9/site-packages/ethtool.cpython-39-x86_64-linux-gnu.so
-2023-10-10T15:17:57.315626+00:00 DEBUG 'ansible_navigator.main' exceptiongroup==1.1.3 /home/ansible/.local/lib/python3.9/site-packages/exceptiongroup/__init__.py
-2023-10-10T15:17:57.315690+00:00 DEBUG 'ansible_navigator.main' executing==2.0.0 /home/ansible/.local/lib/python3.9/site-packages/executing/__init__.py
-2023-10-10T15:17:57.315749+00:00 DEBUG 'ansible_navigator.main' file-magic==0.4.0 
-2023-10-10T15:17:57.315812+00:00 DEBUG 'ansible_navigator.main' filelock==3.12.4 /home/ansible/.local/lib/python3.9/site-packages/filelock/__init__.py
-2023-10-10T15:17:57.315875+00:00 DEBUG 'ansible_navigator.main' future==0.18.3 /usr/lib/python3.9/site-packages/future/__init__.py
-2023-10-10T15:17:57.315934+00:00 DEBUG 'ansible_navigator.main' identify==2.5.30 /home/ansible/.local/lib/python3.9/site-packages/identify/__init__.py
-2023-10-10T15:17:57.316007+00:00 DEBUG 'ansible_navigator.main' idna==3.3 /usr/lib/python3.9/site-packages/idna/__init__.py
-2023-10-10T15:17:57.316076+00:00 DEBUG 'ansible_navigator.main' importlib-metadata==4.12.0 
-2023-10-10T15:17:57.316136+00:00 DEBUG 'ansible_navigator.main' importlib-resources==5.0.7 
-2023-10-10T15:17:57.316195+00:00 DEBUG 'ansible_navigator.main' iniparse==0.4 /usr/lib/python3.9/site-packages/iniparse/__init__.py
-2023-10-10T15:17:57.316252+00:00 DEBUG 'ansible_navigator.main' ipykernel==6.25.2 /home/ansible/.local/lib/python3.9/site-packages/ipykernel/__init__.py
-2023-10-10T15:17:57.316314+00:00 DEBUG 'ansible_navigator.main' ipython==8.16.1 
-2023-10-10T15:17:57.316387+00:00 DEBUG 'ansible_navigator.main' jedi==0.19.1 /home/ansible/.local/lib/python3.9/site-packages/jedi/__init__.py
-2023-10-10T15:17:57.316448+00:00 DEBUG 'ansible_navigator.main' jmespath==1.0.1 /home/ansible/.local/lib/python3.9/site-packages/jmespath/__init__.py
-2023-10-10T15:17:57.316510+00:00 DEBUG 'ansible_navigator.main' jsonpatch==1.21 /usr/lib/python3.9/site-packages/jsonpatch.py
-2023-10-10T15:17:57.316569+00:00 DEBUG 'ansible_navigator.main' jsonpointer==2.0 /usr/lib/python3.9/site-packages/jsonpointer.py
-2023-10-10T15:17:57.316632+00:00 DEBUG 'ansible_navigator.main' jsonschema==4.16.0 /usr/lib/python3.9/site-packages/jsonschema/__init__.py
-2023-10-10T15:17:57.316694+00:00 DEBUG 'ansible_navigator.main' jupyter_client==8.3.1 /home/ansible/.local/lib/python3.9/site-packages/jupyter_client/__init__.py
-2023-10-10T15:17:57.316757+00:00 DEBUG 'ansible_navigator.main' jupyter_core==5.3.2 /home/ansible/.local/lib/python3.9/site-packages/jupyter_core/__init__.py
-2023-10-10T15:17:57.316816+00:00 DEBUG 'ansible_navigator.main' libvirt-python==9.0.0 
-2023-10-10T15:17:57.316878+00:00 DEBUG 'ansible_navigator.main' lockfile==0.12.2 /usr/lib/python3.9/site-packages/lockfile/__init__.py
-2023-10-10T15:17:57.316941+00:00 DEBUG 'ansible_navigator.main' lxml==4.6.5 /usr/lib64/python3.9/site-packages/lxml/__init__.py
-2023-10-10T15:17:57.317016+00:00 DEBUG 'ansible_navigator.main' matplotlib-inline==0.1.6 
-2023-10-10T15:17:57.317084+00:00 DEBUG 'ansible_navigator.main' molecule==6.0.2 /home/ansible/.local/lib/python3.9/site-packages/molecule/__init__.py
-2023-10-10T15:17:57.317148+00:00 DEBUG 'ansible_navigator.main' mypy-extensions==0.4.3 
-2023-10-10T15:17:57.317207+00:00 DEBUG 'ansible_navigator.main' nest-asyncio==1.5.8 
-2023-10-10T15:17:57.317272+00:00 DEBUG 'ansible_navigator.main' netifaces==0.10.6 /usr/lib64/python3.9/site-packages/netifaces.cpython-39-x86_64-linux-gnu.so
-2023-10-10T15:17:57.317335+00:00 DEBUG 'ansible_navigator.main' nodeenv==1.8.0 /home/ansible/.local/lib/python3.9/site-packages/nodeenv.py
-2023-10-10T15:17:57.317394+00:00 DEBUG 'ansible_navigator.main' oauthlib==3.1.1 /usr/lib/python3.9/site-packages/oauthlib/__init__.py
-2023-10-10T15:17:57.317456+00:00 DEBUG 'ansible_navigator.main' onigurumacffi==1.1.0 /usr/lib64/python3.9/site-packages/onigurumacffi.py
-2023-10-10T15:17:57.317527+00:00 DEBUG 'ansible_navigator.main' packaging==21.3 /usr/lib/python3.9/site-packages/packaging/__init__.py
-2023-10-10T15:17:57.317586+00:00 DEBUG 'ansible_navigator.main' parso==0.8.3 /home/ansible/.local/lib/python3.9/site-packages/parso/__init__.py
-2023-10-10T15:17:57.317649+00:00 DEBUG 'ansible_navigator.main' pathspec==0.10.1 /usr/lib/python3.9/site-packages/pathspec/__init__.py
-2023-10-10T15:17:57.317712+00:00 DEBUG 'ansible_navigator.main' pbr==5.9.0 /usr/lib/python3.9/site-packages/pbr/__init__.py
-2023-10-10T15:17:57.317770+00:00 DEBUG 'ansible_navigator.main' perf==0.1 /usr/lib64/python3.9/site-packages/perf.cpython-39-x86_64-linux-gnu.so
-2023-10-10T15:17:57.317832+00:00 DEBUG 'ansible_navigator.main' pickleshare==0.7.5 /home/ansible/.local/lib/python3.9/site-packages/pickleshare.py
-2023-10-10T15:17:57.317895+00:00 DEBUG 'ansible_navigator.main' pip==21.2.3 /usr/lib/python3.9/site-packages/pip/__init__.py
-2023-10-10T15:17:57.317953+00:00 DEBUG 'ansible_navigator.main' platformdirs==3.11.0 /home/ansible/.local/lib/python3.9/site-packages/platformdirs/__init__.py
-2023-10-10T15:17:57.318043+00:00 DEBUG 'ansible_navigator.main' pluggy==1.3.0 /home/ansible/.local/lib/python3.9/site-packages/pluggy/__init__.py
-2023-10-10T15:17:57.318108+00:00 DEBUG 'ansible_navigator.main' pre-commit==3.4.0 
-2023-10-10T15:17:57.318166+00:00 DEBUG 'ansible_navigator.main' prettytable==0.7.2 /usr/lib/python3.9/site-packages/prettytable.py
-2023-10-10T15:17:57.318224+00:00 DEBUG 'ansible_navigator.main' prompt-toolkit==3.0.39 
-2023-10-10T15:17:57.318281+00:00 DEBUG 'ansible_navigator.main' psutil==5.8.0 /usr/lib64/python3.9/site-packages/psutil/__init__.py
-2023-10-10T15:17:57.318343+00:00 DEBUG 'ansible_navigator.main' psycopg2==2.9.3 /usr/lib64/python3.9/site-packages/psycopg2/__init__.py
-2023-10-10T15:17:57.318406+00:00 DEBUG 'ansible_navigator.main' pure-eval==0.2.2 
-2023-10-10T15:17:57.318464+00:00 DEBUG 'ansible_navigator.main' pycairo==1.20.1 
-2023-10-10T15:17:57.318522+00:00 DEBUG 'ansible_navigator.main' pycparser==2.21 /usr/lib/python3.9/site-packages/pycparser/__init__.py
-2023-10-10T15:17:57.318583+00:00 DEBUG 'ansible_navigator.main' pyinotify==0.9.6 /usr/lib/python3.9/site-packages/pyinotify.py
-2023-10-10T15:17:57.318646+00:00 DEBUG 'ansible_navigator.main' pyrsistent==0.17.3 /usr/lib64/python3.9/site-packages/pyrsistent/__init__.py
-2023-10-10T15:17:57.318704+00:00 DEBUG 'ansible_navigator.main' pyserial==3.4 
-2023-10-10T15:17:57.318766+00:00 DEBUG 'ansible_navigator.main' pyspnego==0.9.2 
-2023-10-10T15:17:57.318829+00:00 DEBUG 'ansible_navigator.main' python-daemon==2.3.2 
-2023-10-10T15:17:57.318887+00:00 DEBUG 'ansible_navigator.main' python-dateutil==2.8.2 
-2023-10-10T15:17:57.318949+00:00 DEBUG 'ansible_navigator.main' python-linux-procfs==0.7.0 
-2023-10-10T15:17:57.319027+00:00 DEBUG 'ansible_navigator.main' pyudev==0.22.0 /usr/lib/python3.9/site-packages/pyudev/__init__.py
-2023-10-10T15:17:57.319087+00:00 DEBUG 'ansible_navigator.main' pywinrm==0.4.3 
-2023-10-10T15:17:57.319149+00:00 DEBUG 'ansible_navigator.main' pyzmq==25.1.1 
-2023-10-10T15:17:57.319209+00:00 DEBUG 'ansible_navigator.main' receptorctl==1.4.1 /usr/lib/python3.9/site-packages/receptorctl/__init__.py
-2023-10-10T15:17:57.319271+00:00 DEBUG 'ansible_navigator.main' requests-credssp==2.0.0 
-2023-10-10T15:17:57.319329+00:00 DEBUG 'ansible_navigator.main' requests-ntlm==1.2.0 
-2023-10-10T15:17:57.319399+00:00 DEBUG 'ansible_navigator.main' requests==2.31.0 /usr/lib/python3.9/site-packages/requests/__init__.py
-2023-10-10T15:17:57.319462+00:00 DEBUG 'ansible_navigator.main' requirements-parser==0.2.0 
-2023-10-10T15:17:57.319526+00:00 DEBUG 'ansible_navigator.main' resolvelib==0.5.4 /usr/lib/python3.9/site-packages/resolvelib/__init__.py
-2023-10-10T15:17:57.319585+00:00 DEBUG 'ansible_navigator.main' ruamel.yaml.clib==0.2.6 
-2023-10-10T15:17:57.319646+00:00 DEBUG 'ansible_navigator.main' ruamel.yaml==0.17.21 /usr/lib/python3.9/site-packages/ruamel/yaml/__init__.py
-2023-10-10T15:17:57.319717+00:00 DEBUG 'ansible_navigator.main' selinux==3.5 /usr/lib64/python3.9/site-packages/selinux/__init__.py
-2023-10-10T15:17:57.319777+00:00 DEBUG 'ansible_navigator.main' sepolicy==3.5 /usr/lib/python3.9/site-packages/sepolicy/__init__.py
-2023-10-10T15:17:57.319838+00:00 DEBUG 'ansible_navigator.main' setools==4.4.1 /usr/lib64/python3.9/site-packages/setools/__init__.py
-2023-10-10T15:17:57.319901+00:00 DEBUG 'ansible_navigator.main' setroubleshoot==3.3.31 /usr/lib/python3.9/site-packages/setroubleshoot/__init__.py
-2023-10-10T15:17:57.319959+00:00 DEBUG 'ansible_navigator.main' setuptools==53.0.0 /usr/lib/python3.9/site-packages/setuptools/__init__.py
-2023-10-10T15:17:57.320037+00:00 DEBUG 'ansible_navigator.main' six==1.16.0 /usr/lib/python3.9/site-packages/six.py
-2023-10-10T15:17:57.320101+00:00 DEBUG 'ansible_navigator.main' sos==4.6.0 /usr/lib/python3.9/site-packages/sos/__init__.py
-2023-10-10T15:17:57.320160+00:00 DEBUG 'ansible_navigator.main' stack-data==0.6.3 
-2023-10-10T15:17:57.320218+00:00 DEBUG 'ansible_navigator.main' subprocess-tee==0.4.1 
-2023-10-10T15:17:57.320275+00:00 DEBUG 'ansible_navigator.main' subscription-manager==1.29.33.1 
-2023-10-10T15:17:57.320332+00:00 DEBUG 'ansible_navigator.main' supervisor==4.2.4 /usr/lib/python3.9/site-packages/supervisor/__init__.py
-2023-10-10T15:17:57.320394+00:00 DEBUG 'ansible_navigator.main' tornado==6.3.3 /home/ansible/.local/lib/python3.9/site-packages/tornado/__init__.py
-2023-10-10T15:17:57.320457+00:00 DEBUG 'ansible_navigator.main' traitlets==5.11.2 /home/ansible/.local/lib/python3.9/site-packages/traitlets/__init__.py
-2023-10-10T15:17:57.320515+00:00 DEBUG 'ansible_navigator.main' typing_extensions==4.8.0 /home/ansible/.local/lib/python3.9/site-packages/typing_extensions.py
-2023-10-10T15:17:57.320577+00:00 DEBUG 'ansible_navigator.main' urllib3==1.26.8 /usr/lib/python3.9/site-packages/urllib3/__init__.py
-2023-10-10T15:17:57.320640+00:00 DEBUG 'ansible_navigator.main' virtualenv==20.24.5 /home/ansible/.local/lib/python3.9/site-packages/virtualenv/__init__.py
-2023-10-10T15:17:57.320698+00:00 DEBUG 'ansible_navigator.main' wcmatch==8.3 /usr/lib/python3.9/site-packages/wcmatch/__init__.py
-2023-10-10T15:17:57.320760+00:00 DEBUG 'ansible_navigator.main' wcwidth==0.2.8 /home/ansible/.local/lib/python3.9/site-packages/wcwidth/__init__.py
-2023-10-10T15:17:57.320822+00:00 DEBUG 'ansible_navigator.main' xmltodict==0.13.0 /home/ansible/.local/lib/python3.9/site-packages/xmltodict.py
-2023-10-10T15:17:57.320880+00:00 DEBUG 'ansible_navigator.main' yamllint==1.32.0 /usr/lib/python3.9/site-packages/yamllint/__init__.py
-2023-10-10T15:17:57.320940+00:00 DEBUG 'ansible_navigator.main' zipp==3.4.0 /usr/lib/python3.9/site-packages/zipp.py
-2023-10-10T15:17:57.321013+00:00 DEBUG 'ansible_navigator.main' Default collection_doc_cache_path set to: /home/ansible/.cache/ansible-navigator/collection_doc_cache.db
-2023-10-10T15:17:57.321077+00:00 DEBUG 'ansible_navigator.main' EDITOR environment variable not set
-2023-10-10T15:17:57.321140+00:00 DEBUG 'ansible_navigator.main' Default editor_command set to: vi +{line_number} {filename}
-2023-10-10T15:17:57.321199+00:00 DEBUG 'ansible_navigator.main' No config file set by ANSIBLE_NAVIGATOR_CONFIG
-2023-10-10T15:17:57.321288+00:00 DEBUG 'ansible_navigator.main' Looking in /home/ansible
-2023-10-10T15:17:57.321380+00:00 DEBUG 'ansible_navigator.main' Looking for '/home/ansible/.ansible-navigator.yml', '/home/ansible/.ansible-navigator.yaml' and '/home/ansible/.ansible-navigator.json'
-2023-10-10T15:17:57.321446+00:00 DEBUG 'ansible_navigator.main' Found 1: '/home/ansible/.ansible-navigator.yml'
-2023-10-10T15:17:57.321505+00:00 DEBUG 'ansible_navigator.main' Looking in /home/ansible/playbooks/flashsystem_setup
-2023-10-10T15:17:57.321567+00:00 DEBUG 'ansible_navigator.main' Looking for '/home/ansible/playbooks/flashsystem_setup/ansible-navigator.yml', '/home/ansible/playbooks/flashsystem_setup/ansible-navigator.yaml' and '/home/ansible/playbooks/flashsystem_setup/ansible-navigator.json'
-2023-10-10T15:17:57.321642+00:00 DEBUG 'ansible_navigator.main' Found 1: '/home/ansible/playbooks/flashsystem_setup/ansible-navigator.yml'
-2023-10-10T15:17:57.321713+00:00 DEBUG 'ansible_navigator.main' All found 2: '/home/ansible/.ansible-navigator.yml' and '/home/ansible/playbooks/flashsystem_setup/ansible-navigator.yml'
-2023-10-10T15:17:57.321777+00:00 DEBUG 'ansible_navigator.main' Using: /home/ansible/playbooks/flashsystem_setup/ansible-navigator.yml
-2023-10-10T15:17:57.321836+00:00 DEBUG 'ansible_navigator.main' Using settings file at /home/ansible/playbooks/flashsystem_setup/ansible-navigator.yml in search path
-2023-10-10T15:17:57.321897+00:00 DEBUG 'ansible_navigator.main' Command provided: 'run scratch.yml --eei localhost/ee-ibm-flashsystem'
-2023-10-10T15:17:57.321960+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.ansible-runner.artifact-dir not found in settings file
-2023-10-10T15:17:57.322035+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.ansible-runner.rotate-artifacts-count not found in settings file
-2023-10-10T15:17:57.322100+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.ansible-runner.timeout not found in settings file
-2023-10-10T15:17:57.322165+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.ansible-runner.job-events not found in settings file
-2023-10-10T15:17:57.322223+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.app not found in settings file
-2023-10-10T15:17:57.322280+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.ansible.cmdline not found in settings file
-2023-10-10T15:17:57.322338+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.collection-doc-cache-path not found in settings file
-2023-10-10T15:17:57.322394+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.execution-environment.container-options not found in settings file
-2023-10-10T15:17:57.322451+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.color.enable not found in settings file
-2023-10-10T15:17:57.322509+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.editor.command not found in settings file
-2023-10-10T15:17:57.322566+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.editor.console not found in settings file
-2023-10-10T15:17:57.322623+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.enable-prompts not found in settings file
-2023-10-10T15:17:57.322680+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.exec.command not found in settings file
-2023-10-10T15:17:57.322742+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.exec.shell not found in settings file
-2023-10-10T15:17:57.322804+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.execution-environment.volume-mounts not found in settings file
-2023-10-10T15:17:57.322867+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.format not found in settings file
-2023-10-10T15:17:57.322926+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.ansible-builder.help not found in settings file
-2023-10-10T15:17:57.322997+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.ansible.doc.help not found in settings file
-2023-10-10T15:17:57.323065+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.ansible.playbook.help not found in settings file
-2023-10-10T15:17:57.323125+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.images.details not found in settings file
-2023-10-10T15:17:57.323183+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.inventory-columns not found in settings file
-2023-10-10T15:17:57.323244+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.ansible-lint.config not found in settings file
-2023-10-10T15:17:57.323307+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.ansible-lint.lintables not found in settings file
-2023-10-10T15:17:57.323365+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.logging.file not found in settings file
-2023-10-10T15:17:57.323422+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.mode not found in settings file
-2023-10-10T15:17:57.323483+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.color.osc4 not found in settings file
-2023-10-10T15:17:57.323542+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.execution-environment.environment-variables.pass not found in settings file
-2023-10-10T15:17:57.323608+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.ansible.playbook.path not found in settings file
-2023-10-10T15:17:57.323697+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.playbook-artifact.enable not found in settings file
-2023-10-10T15:17:57.323770+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.playbook-artifact.replay not found in settings file
-2023-10-10T15:17:57.323834+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.playbook-artifact.save-as not found in settings file
-2023-10-10T15:17:57.323892+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.ansible.doc.plugin.name not found in settings file
-2023-10-10T15:17:57.323954+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.ansible.doc.plugin.type not found in settings file
-2023-10-10T15:17:57.324028+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.execution-environment.pull.policy not found in settings file
-2023-10-10T15:17:57.324088+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.execution-environment.environment-variables.set not found in settings file
-2023-10-10T15:17:57.324151+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.settings.effective not found in settings file
-2023-10-10T15:17:57.324214+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.settings.sample not found in settings file
-2023-10-10T15:17:57.324272+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.settings.schema not found in settings file
-2023-10-10T15:17:57.324334+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.settings.sources not found in settings file
-2023-10-10T15:17:57.324405+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.time-zone not found in settings file
-2023-10-10T15:17:57.324468+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.ansible-builder.workdir not found in settings file
-2023-10-10T15:17:57.324531+00:00 DEBUG 'ansible_navigator.main' EE support enabled: using current working directory for 'ansible.cfg'
-2023-10-10T15:17:57.324589+00:00 INFO 'ansible_navigator.main' EE support enabled: no 'ansible.cfg' found in current working directory. Tried /home/ansible/playbooks/flashsystem_setup/ansible.cfg
-2023-10-10T15:17:57.324647+00:00 DEBUG 'ansible_navigator.main' Completed post processing for ansible_runner_artifact_dir. (changed=False)
-2023-10-10T15:17:57.324710+00:00 DEBUG 'ansible_navigator.main' Completed post processing for ansible_runner_rotate_artifacts_count. (changed=False)
-2023-10-10T15:17:57.324768+00:00 DEBUG 'ansible_navigator.main' Completed post processing for ansible_runner_timeout. (changed=False)
-2023-10-10T15:17:57.324825+00:00 DEBUG 'ansible_navigator.main' Completed post processing for cmdline. (changed=False)
-2023-10-10T15:17:57.324888+00:00 DEBUG 'ansible_navigator.main' Completed post processing for collection_doc_cache_path. (changed=False)
-2023-10-10T15:17:57.324946+00:00 DEBUG 'ansible_navigator.main' Completed post processing for container_engine. (changed=False)
-2023-10-10T15:17:57.325024+00:00 DEBUG 'ansible_navigator.main' Completed post processing for container_options. (changed=False)
-2023-10-10T15:17:57.325086+00:00 DEBUG 'ansible_navigator.main' Completed post processing for display_color. (changed=False)
-2023-10-10T15:17:57.325148+00:00 DEBUG 'ansible_navigator.main' Completed post processing for enable_prompts. (changed=False)
-2023-10-10T15:17:57.325206+00:00 DEBUG 'ansible_navigator.main' Completed post processing for execution_environment. (changed=False)
-2023-10-10T15:17:57.325267+00:00 DEBUG 'ansible_navigator.main' Completed post processing for execution_environment_image. (changed=True)
-2023-10-10T15:17:57.325325+00:00 DEBUG 'ansible_navigator.main'  before: 'localhost/ee-ibm-flashsystem'
-2023-10-10T15:17:57.325383+00:00 DEBUG 'ansible_navigator.main'  after: 'localhost/ee-ibm-flashsystem:latest'
-2023-10-10T15:17:57.325445+00:00 DEBUG 'ansible_navigator.main' Completed post processing for help_builder. (changed=False)
-2023-10-10T15:17:57.325512+00:00 DEBUG 'ansible_navigator.main' Completed post processing for help_config. (changed=False)
-2023-10-10T15:17:57.325576+00:00 DEBUG 'ansible_navigator.main' Completed post processing for help_doc. (changed=False)
-2023-10-10T15:17:57.325634+00:00 DEBUG 'ansible_navigator.main' Completed post processing for help_inventory. (changed=False)
-2023-10-10T15:17:57.325697+00:00 DEBUG 'ansible_navigator.main' Completed post processing for help_playbook. (changed=False)
-2023-10-10T15:17:57.325760+00:00 DEBUG 'ansible_navigator.main' Completed post processing for images_details. (changed=False)
-2023-10-10T15:17:57.325818+00:00 DEBUG 'ansible_navigator.main' Completed post processing for inventory. (changed=True)
-2023-10-10T15:17:57.325876+00:00 DEBUG 'ansible_navigator.main'  before: '['inventory']'
-2023-10-10T15:17:57.325934+00:00 DEBUG 'ansible_navigator.main'  after: '['/home/ansible/playbooks/flashsystem_setup/inventory']'
-2023-10-10T15:17:57.326006+00:00 DEBUG 'ansible_navigator.main' Completed post processing for inventory_column. (changed=False)
-2023-10-10T15:17:57.326069+00:00 DEBUG 'ansible_navigator.main' Completed post processing for log_file. (changed=False)
-2023-10-10T15:17:57.326128+00:00 DEBUG 'ansible_navigator.main' Completed post processing for pass_environment_variable. (changed=False)
-2023-10-10T15:17:57.326190+00:00 DEBUG 'ansible_navigator.main' Completed post processing for playbook. (changed=True)
-2023-10-10T15:17:57.326248+00:00 DEBUG 'ansible_navigator.main'  before: 'scratch.yml'
-2023-10-10T15:17:57.326355+00:00 DEBUG 'ansible_navigator.main'  after: '/home/ansible/playbooks/flashsystem_setup/scratch.yml'
-2023-10-10T15:17:57.326423+00:00 DEBUG 'ansible_navigator.main' Completed post processing for playbook_artifact_replay. (changed=False)
-2023-10-10T15:17:57.326482+00:00 DEBUG 'ansible_navigator.main' Completed post processing for playbook_artifact_save_as. (changed=False)
-2023-10-10T15:17:57.326539+00:00 DEBUG 'ansible_navigator.main' Completed post processing for plugin_name. (changed=False)
-2023-10-10T15:17:57.326601+00:00 DEBUG 'ansible_navigator.main' Completed post processing for pull_arguments. (changed=False)
-2023-10-10T15:17:57.326659+00:00 DEBUG 'ansible_navigator.main' Completed post processing for set_environment_variable. (changed=False)
-2023-10-10T15:17:57.326721+00:00 DEBUG 'ansible_navigator.main' Completed post processing for settings_effective. (changed=False)
-2023-10-10T15:17:57.326779+00:00 DEBUG 'ansible_navigator.main' Completed post processing for settings_sample. (changed=False)
-2023-10-10T15:17:57.326842+00:00 DEBUG 'ansible_navigator.main' Completed post processing for settings_schema. (changed=False)
-2023-10-10T15:17:57.326900+00:00 DEBUG 'ansible_navigator.main' Completed post processing for settings_sources. (changed=False)
-2023-10-10T15:17:57.326962+00:00 DEBUG 'ansible_navigator.main' Completed post processing for time_zone. (changed=False)
-2023-10-10T15:17:57.327038+00:00 DEBUG 'ansible_navigator.main' Completed post processing for execution_environment_volume_mounts. (changed=False)
-2023-10-10T15:17:57.327102+00:00 DEBUG 'ansible_navigator.main' Completed post processing for mode. (changed=False)
-2023-10-10T15:17:57.327161+00:00 DEBUG 'ansible_navigator.main' Completed post processing for playbook_artifact_enable. (changed=False)
-2023-10-10T15:17:57.327219+00:00 DEBUG 'ansible_navigator.main' Collection doc cache not mounted
-2023-10-10T15:17:57.327280+00:00 DEBUG 'ansible_navigator.main' Collection doc cache: 'path' is '/home/ansible/.cache/ansible-navigator/collection_doc_cache.db'
-2023-10-10T15:17:57.327338+00:00 DEBUG 'ansible_navigator.main' Collection doc cache: 'current version' is '1.0'
-2023-10-10T15:17:57.327409+00:00 DEBUG 'ansible_navigator.main' Collection doc cache not attached to args.internals
-2023-10-10T15:17:57.327472+00:00 DEBUG 'ansible_navigator.main' Running with ansible_runner_artifact_dir as 'Not set' (Constants/Not set)
-2023-10-10T15:17:57.327529+00:00 DEBUG 'ansible_navigator.main' Running with ansible_runner_rotate_artifacts_count as 'Not set' (Constants/Not set)
-2023-10-10T15:17:57.327595+00:00 DEBUG 'ansible_navigator.main' Running with ansible_runner_timeout as 'Not set' (Constants/Not set)
-2023-10-10T15:17:57.327658+00:00 DEBUG 'ansible_navigator.main' Running with ansible_runner_write_job_events as 'False' (bool/Defaults)
-2023-10-10T15:17:57.327716+00:00 DEBUG 'ansible_navigator.main' Running with app as 'run' (str/Command line)
-2023-10-10T15:17:57.327779+00:00 DEBUG 'ansible_navigator.main' Running with cmdline as 'Not set' (Constants/Not set)
-2023-10-10T15:17:57.327837+00:00 DEBUG 'ansible_navigator.main' Running with collection_doc_cache_path as '/home/ansible/.cache/ansible-navigator/collection_doc_cache.db' (str/Defaults)
-2023-10-10T15:17:57.327895+00:00 DEBUG 'ansible_navigator.main' Running with config as '/etc/ansible/ansible.cfg' (str/Settings file)
-2023-10-10T15:17:57.327958+00:00 DEBUG 'ansible_navigator.main' Running with container_engine as 'podman' (str/Settings file)
-2023-10-10T15:17:57.328032+00:00 DEBUG 'ansible_navigator.main' Running with container_options as 'Not set' (Constants/Not set)
-2023-10-10T15:17:57.328097+00:00 DEBUG 'ansible_navigator.main' Running with display_color as 'True' (bool/Defaults)
-2023-10-10T15:17:57.328160+00:00 DEBUG 'ansible_navigator.main' Running with editor_command as 'vi +{line_number} {filename}' (str/Defaults)
-2023-10-10T15:17:57.328218+00:00 DEBUG 'ansible_navigator.main' Running with editor_console as 'True' (bool/Defaults)
-2023-10-10T15:17:57.328275+00:00 DEBUG 'ansible_navigator.main' Running with enable_prompts as 'False' (bool/Defaults)
-2023-10-10T15:17:57.328333+00:00 DEBUG 'ansible_navigator.main' Running with exec_command as '/bin/bash' (str/Defaults)
-2023-10-10T15:17:57.328395+00:00 DEBUG 'ansible_navigator.main' Running with exec_shell as 'True' (bool/Defaults)
-2023-10-10T15:17:57.328457+00:00 DEBUG 'ansible_navigator.main' Running with execution_environment as 'True' (bool/Settings file)
-2023-10-10T15:17:57.328516+00:00 DEBUG 'ansible_navigator.main' Running with execution_environment_image as 'localhost/ee-ibm-flashsystem:latest' (str/Command line)
-2023-10-10T15:17:57.328573+00:00 DEBUG 'ansible_navigator.main' Running with execution_environment_volume_mounts as 'Not set' (Constants/Not set)
-2023-10-10T15:17:57.328636+00:00 DEBUG 'ansible_navigator.main' Running with format as 'yaml' (str/Defaults)
-2023-10-10T15:17:57.328694+00:00 DEBUG 'ansible_navigator.main' Running with help_builder as 'False' (bool/Defaults)
-2023-10-10T15:17:57.328752+00:00 DEBUG 'ansible_navigator.main' Running with help_config as 'False' (bool/Settings file)
-2023-10-10T15:17:57.328814+00:00 DEBUG 'ansible_navigator.main' Running with help_doc as 'False' (bool/Defaults)
-2023-10-10T15:17:57.328873+00:00 DEBUG 'ansible_navigator.main' Running with help_inventory as 'True' (bool/Settings file)
-2023-10-10T15:17:57.328935+00:00 DEBUG 'ansible_navigator.main' Running with help_playbook as 'False' (bool/Defaults)
-2023-10-10T15:17:57.329004+00:00 DEBUG 'ansible_navigator.main' Running with images_details as '['everything']' (list/Defaults)
-2023-10-10T15:17:57.329067+00:00 DEBUG 'ansible_navigator.main' Running with inventory as '['/home/ansible/playbooks/flashsystem_setup/inventory']' (list/Settings file)
-2023-10-10T15:17:57.329131+00:00 DEBUG 'ansible_navigator.main' Running with inventory_column as 'Not set' (Constants/Not set)
-2023-10-10T15:17:57.329190+00:00 DEBUG 'ansible_navigator.main' Running with lint_config as 'Not set' (Constants/Not set)
-2023-10-10T15:17:57.329247+00:00 DEBUG 'ansible_navigator.main' Running with lintables as 'Not set' (Constants/Not set)
-2023-10-10T15:17:57.329309+00:00 DEBUG 'ansible_navigator.main' Running with log_append as 'False' (bool/Settings file)
-2023-10-10T15:17:57.329372+00:00 DEBUG 'ansible_navigator.main' Running with log_file as '/home/ansible/playbooks/flashsystem_setup/ansible-navigator.log' (str/Defaults)
-2023-10-10T15:17:57.329430+00:00 DEBUG 'ansible_navigator.main' Running with log_level as 'debug' (str/Settings file)
-2023-10-10T15:17:57.329488+00:00 DEBUG 'ansible_navigator.main' Running with mode as 'interactive' (str/Defaults)
-2023-10-10T15:17:57.329559+00:00 DEBUG 'ansible_navigator.main' Running with osc4 as 'True' (bool/Defaults)
-2023-10-10T15:17:57.329618+00:00 DEBUG 'ansible_navigator.main' Running with pass_environment_variable as 'Not set' (Constants/Not set)
-2023-10-10T15:17:57.329680+00:00 DEBUG 'ansible_navigator.main' Running with playbook as '/home/ansible/playbooks/flashsystem_setup/scratch.yml' (str/Command line)
-2023-10-10T15:17:57.329739+00:00 DEBUG 'ansible_navigator.main' Running with playbook_artifact_enable as 'True' (bool/Defaults)
-2023-10-10T15:17:57.329801+00:00 DEBUG 'ansible_navigator.main' Running with playbook_artifact_replay as 'Not set' (Constants/Not set)
-2023-10-10T15:17:57.329859+00:00 DEBUG 'ansible_navigator.main' Running with playbook_artifact_save_as as '{playbook_dir}/{playbook_name}-artifact-{time_stamp}.json' (str/Defaults)
-2023-10-10T15:17:57.329916+00:00 DEBUG 'ansible_navigator.main' Running with plugin_name as 'Not set' (Constants/Not set)
-2023-10-10T15:17:57.329974+00:00 DEBUG 'ansible_navigator.main' Running with plugin_type as 'module' (str/Defaults)
-2023-10-10T15:17:57.330053+00:00 DEBUG 'ansible_navigator.main' Running with pull_arguments as '['--tls-verify=false']' (list/Settings file)
-2023-10-10T15:17:57.330112+00:00 DEBUG 'ansible_navigator.main' Running with pull_policy as 'tag' (str/Defaults)
-2023-10-10T15:17:57.330175+00:00 DEBUG 'ansible_navigator.main' Running with set_environment_variable as 'Not set' (Constants/Not set)
-2023-10-10T15:17:57.330233+00:00 DEBUG 'ansible_navigator.main' Running with settings_effective as 'False' (bool/Defaults)
-2023-10-10T15:17:57.330290+00:00 DEBUG 'ansible_navigator.main' Running with settings_sample as 'False' (bool/Defaults)
-2023-10-10T15:17:57.330360+00:00 DEBUG 'ansible_navigator.main' Running with settings_schema as 'json' (str/Defaults)
-2023-10-10T15:17:57.330426+00:00 DEBUG 'ansible_navigator.main' Running with settings_sources as 'False' (bool/Defaults)
-2023-10-10T15:17:57.330487+00:00 DEBUG 'ansible_navigator.main' Running with time_zone as 'UTC' (str/Defaults)
-2023-10-10T15:17:57.330544+00:00 DEBUG 'ansible_navigator.main' Running with workdir as '/home/ansible/playbooks/flashsystem_setup' (str/Defaults)
-2023-10-10T15:17:57.330700+00:00 INFO 'ansible_navigator.image_manager.puller._log_message' Image tag is: latest
-2023-10-10T15:17:57.330793+00:00 DEBUG 'ansible_navigator.image_manager.puller._log_message' Command: podman image inspect localhost/ee-ibm-flashsystem:latest
-2023-10-10T15:17:57.446390+00:00 INFO 'ansible_navigator.image_manager.puller._log_message' Execution environment image name:: localhost/ee-ibm-flashsystem:latest
-2023-10-10T15:17:57.446841+00:00 INFO 'ansible_navigator.image_manager.puller._log_message' Execution environment image tag:: latest
-2023-10-10T15:17:57.446948+00:00 INFO 'ansible_navigator.image_manager.puller._log_message' Execution environment pull arguments:: --tls-verify=false
-2023-10-10T15:17:57.447102+00:00 INFO 'ansible_navigator.image_manager.puller._log_message' Execution environment pull policy:: tag
-2023-10-10T15:17:57.447196+00:00 INFO 'ansible_navigator.image_manager.puller._log_message' Execution environment pull needed:: True
-2023-10-10T15:17:57.947799+00:00 ERROR 'ansible_navigator.image_manager.puller._log_message' Execution environment pull failed
-2023-10-10T15:17:57.948183+00:00 INFO 'ansible_navigator.image_manager.puller._log_message' Check the execution environment image name, connectivity to and permissions for the registry, and try again
-2023-10-10T15:17:57.949190+00:00 DEBUG 'ansible_navigator.cache_scripts' No update required for /usr/lib/python3.9/site-packages/ansible_navigator/data/catalog_collections.py to /home/ansible/.cache/ansible-navigator/catalog_collections.py
-2023-10-10T15:17:57.949572+00:00 DEBUG 'ansible_navigator.cache_scripts' No update required for /usr/lib/python3.9/site-packages/ansible_navigator/data/image_introspect.py to /home/ansible/.cache/ansible-navigator/image_introspect.py
-2023-10-10T15:17:57.960464+00:00 DEBUG 'ansible_navigator.action_base.initialize_ui' grammar path = /usr/lib/python3.9/site-packages/ansible_navigator/data/grammar
-2023-10-10T15:17:57.960739+00:00 DEBUG 'ansible_navigator.action_base.initialize_ui' theme path = /usr/lib/python3.9/site-packages/ansible_navigator/data/themes/dark_vs.json
-2023-10-10T15:17:57.960828+00:00 DEBUG 'ansible_navigator.action_base.initialize_ui' terminal colors path = /usr/lib/python3.9/site-packages/ansible_navigator/data/themes/terminal_colors.json
-2023-10-10T15:17:57.960972+00:00 DEBUG 'ansible_navigator.ui_framework.curses_window.__init__' self._ui_config: UIConfig(color=True, colors_initialized=False, grammar_dir=PosixPath('/usr/lib/python3.9/site-packages/ansible_navigator/data/grammar'), osc4=True, terminal_colors_path=PosixPath('/usr/lib/python3.9/site-packages/ansible_navigator/data/themes/terminal_colors.json'), theme_path=PosixPath('/usr/lib/python3.9/site-packages/ansible_navigator/data/themes/dark_vs.json'))
-2023-10-10T15:17:57.961195+00:00 DEBUG 'ansible_navigator.ui_framework.curses_window._set_colors' curses.COLORS: 256
-2023-10-10T15:17:57.961318+00:00 DEBUG 'ansible_navigator.ui_framework.curses_window._set_colors' curses.can_change_color: True
-2023-10-10T15:17:57.961438+00:00 DEBUG 'ansible_navigator.ui_framework.curses_window._set_colors' term_osc4_support: True
-2023-10-10T15:17:57.961830+00:00 DEBUG 'ansible_navigator.ui_framework.curses_window._set_colors' Custom colors set
-2023-10-10T15:17:57.962817+00:00 DEBUG 'ansible_navigator.ui_framework.curses_window.__init__' self._ui_config: UIConfig(color=True, colors_initialized=True, grammar_dir=PosixPath('/usr/lib/python3.9/site-packages/ansible_navigator/data/grammar'), osc4=True, terminal_colors_path=PosixPath('/usr/lib/python3.9/site-packages/ansible_navigator/data/themes/terminal_colors.json'), theme_path=PosixPath('/usr/lib/python3.9/site-packages/ansible_navigator/data/themes/dark_vs.json'))
-2023-10-10T15:17:57.989714+00:00 DEBUG 'ansible_navigator.actions.run.run' run requested in interactive mode
-2023-10-10T15:17:58.052177+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' No config file set by ANSIBLE_NAVIGATOR_CONFIG
-2023-10-10T15:17:58.052324+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Looking in /home/ansible
-2023-10-10T15:17:58.052397+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Looking for '/home/ansible/.ansible-navigator.yml', '/home/ansible/.ansible-navigator.yaml' and '/home/ansible/.ansible-navigator.json'
-2023-10-10T15:17:58.052462+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Found 1: '/home/ansible/.ansible-navigator.yml'
-2023-10-10T15:17:58.052528+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Looking in /home/ansible/playbooks/flashsystem_setup
-2023-10-10T15:17:58.052588+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Looking for '/home/ansible/playbooks/flashsystem_setup/ansible-navigator.yml', '/home/ansible/playbooks/flashsystem_setup/ansible-navigator.yaml' and '/home/ansible/playbooks/flashsystem_setup/ansible-navigator.json'
-2023-10-10T15:17:58.052653+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Found 1: '/home/ansible/playbooks/flashsystem_setup/ansible-navigator.yml'
-2023-10-10T15:17:58.052712+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' All found 2: '/home/ansible/.ansible-navigator.yml' and '/home/ansible/playbooks/flashsystem_setup/ansible-navigator.yml'
-2023-10-10T15:17:58.052774+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Using: /home/ansible/playbooks/flashsystem_setup/ansible-navigator.yml
-2023-10-10T15:17:58.052837+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Using settings file at /home/ansible/playbooks/flashsystem_setup/ansible-navigator.yml in search path
-2023-10-10T15:17:58.052896+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Command provided: 'run'
-2023-10-10T15:17:58.052958+00:00 INFO 'ansible_navigator.actions.run_bcf3._update_args' 'display_color' cannot be reconfigured. (restore original)
-2023-10-10T15:17:58.053051+00:00 INFO 'ansible_navigator.actions.run_bcf3._update_args' 'mode' cannot be reconfigured. (restore original)
-2023-10-10T15:17:58.053113+00:00 INFO 'ansible_navigator.actions.run_bcf3._update_args' 'display_color' cannot be reconfigured. (apply defaults)
-2023-10-10T15:17:58.053170+00:00 INFO 'ansible_navigator.actions.run_bcf3._update_args' 'mode' cannot be reconfigured. (apply defaults)
-2023-10-10T15:17:58.053232+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.ansible-runner.artifact-dir not found in settings file
-2023-10-10T15:17:58.053294+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.ansible-runner.rotate-artifacts-count not found in settings file
-2023-10-10T15:17:58.053352+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.ansible-runner.timeout not found in settings file
-2023-10-10T15:17:58.053410+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.ansible-runner.job-events not found in settings file
-2023-10-10T15:17:58.053467+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.app not found in settings file
-2023-10-10T15:17:58.053524+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.ansible.cmdline not found in settings file
-2023-10-10T15:17:58.053581+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.collection-doc-cache-path not found in settings file
-2023-10-10T15:17:58.053638+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.execution-environment.container-options not found in settings file
-2023-10-10T15:17:58.053699+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.color.enable not found in settings file
-2023-10-10T15:17:58.053762+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.editor.command not found in settings file
-2023-10-10T15:17:58.053819+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.editor.console not found in settings file
-2023-10-10T15:17:58.053877+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.enable-prompts not found in settings file
-2023-10-10T15:17:58.053938+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.exec.command not found in settings file
-2023-10-10T15:17:58.054010+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.exec.shell not found in settings file
-2023-10-10T15:17:58.054073+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.execution-environment.volume-mounts not found in settings file
-2023-10-10T15:17:58.054136+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.format not found in settings file
-2023-10-10T15:17:58.054199+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.ansible-builder.help not found in settings file
-2023-10-10T15:17:58.054257+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.ansible.doc.help not found in settings file
-2023-10-10T15:17:58.054318+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.ansible.playbook.help not found in settings file
-2023-10-10T15:17:58.054389+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.images.details not found in settings file
-2023-10-10T15:17:58.054452+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.inventory-columns not found in settings file
-2023-10-10T15:17:58.054514+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.ansible-lint.config not found in settings file
-2023-10-10T15:17:58.054576+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.ansible-lint.lintables not found in settings file
-2023-10-10T15:17:58.054633+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.logging.file not found in settings file
-2023-10-10T15:17:58.054702+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.mode not found in settings file
-2023-10-10T15:17:58.054766+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.color.osc4 not found in settings file
-2023-10-10T15:17:58.054824+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.execution-environment.environment-variables.pass not found in settings file
-2023-10-10T15:17:58.054882+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.ansible.playbook.path not found in settings file
-2023-10-10T15:17:58.054944+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.playbook-artifact.enable not found in settings file
-2023-10-10T15:17:58.055017+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.playbook-artifact.replay not found in settings file
-2023-10-10T15:17:58.055084+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.playbook-artifact.save-as not found in settings file
-2023-10-10T15:17:58.055149+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.ansible.doc.plugin.name not found in settings file
-2023-10-10T15:17:58.055207+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.ansible.doc.plugin.type not found in settings file
-2023-10-10T15:17:58.055269+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.execution-environment.pull.policy not found in settings file
-2023-10-10T15:17:58.055331+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.execution-environment.environment-variables.set not found in settings file
-2023-10-10T15:17:58.055389+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.settings.effective not found in settings file
-2023-10-10T15:17:58.055446+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.settings.sample not found in settings file
-2023-10-10T15:17:58.055503+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.settings.schema not found in settings file
-2023-10-10T15:17:58.055561+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.settings.sources not found in settings file
-2023-10-10T15:17:58.055622+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.time-zone not found in settings file
-2023-10-10T15:17:58.055684+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' ansible-navigator.ansible-builder.workdir not found in settings file
-2023-10-10T15:17:58.055746+00:00 INFO 'ansible_navigator.actions.run_bcf3._update_args' 'display_color' cannot be reconfigured (apply previous cli)
-2023-10-10T15:17:58.055809+00:00 INFO 'ansible_navigator.actions.run_bcf3._update_args' 'mode' cannot be reconfigured (apply previous cli)
-2023-10-10T15:17:58.055866+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' EE support enabled: using current working directory for 'ansible.cfg'
-2023-10-10T15:17:58.055927+00:00 INFO 'ansible_navigator.actions.run_bcf3._update_args' EE support enabled: no 'ansible.cfg' found in current working directory. Tried /home/ansible/playbooks/flashsystem_setup/ansible.cfg
-2023-10-10T15:17:58.056026+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Completed post processing for ansible_runner_artifact_dir. (changed=False)
-2023-10-10T15:17:58.056093+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Completed post processing for ansible_runner_rotate_artifacts_count. (changed=False)
-2023-10-10T15:17:58.056156+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Completed post processing for ansible_runner_timeout. (changed=False)
-2023-10-10T15:17:58.056218+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Completed post processing for cmdline. (changed=False)
-2023-10-10T15:17:58.056276+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Completed post processing for collection_doc_cache_path. (changed=False)
-2023-10-10T15:17:58.056345+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Completed post processing for container_engine. (changed=False)
-2023-10-10T15:17:58.056409+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Completed post processing for container_options. (changed=False)
-2023-10-10T15:17:58.056466+00:00 INFO 'ansible_navigator.actions.run_bcf3._update_args' 'display_color' cannot be reconfigured. (post process)
-2023-10-10T15:17:58.056523+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Completed post processing for enable_prompts. (changed=False)
-2023-10-10T15:17:58.056583+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Completed post processing for execution_environment. (changed=False)
-2023-10-10T15:17:58.056646+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Completed post processing for execution_environment_image. (changed=False)
-2023-10-10T15:17:58.056704+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Completed post processing for help_builder. (changed=False)
-2023-10-10T15:17:58.056765+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Completed post processing for help_config. (changed=False)
-2023-10-10T15:17:58.056823+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Completed post processing for help_doc. (changed=False)
-2023-10-10T15:17:58.056885+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Completed post processing for help_inventory. (changed=False)
-2023-10-10T15:17:58.056943+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Completed post processing for help_playbook. (changed=False)
-2023-10-10T15:17:58.057016+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Completed post processing for images_details. (changed=False)
-2023-10-10T15:17:58.057084+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Completed post processing for inventory. (changed=True)
-2023-10-10T15:17:58.057142+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args'  before: '['inventory']'
-2023-10-10T15:17:58.057200+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args'  after: '['/home/ansible/playbooks/flashsystem_setup/inventory']'
-2023-10-10T15:17:58.057261+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Completed post processing for inventory_column. (changed=False)
-2023-10-10T15:17:58.057323+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Completed post processing for log_file. (changed=False)
-2023-10-10T15:17:58.057395+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Completed post processing for pass_environment_variable. (changed=False)
-2023-10-10T15:17:58.057459+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Completed post processing for playbook. (changed=False)
-2023-10-10T15:17:58.057517+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Completed post processing for playbook_artifact_replay. (changed=False)
-2023-10-10T15:17:58.057573+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Completed post processing for playbook_artifact_save_as. (changed=False)
-2023-10-10T15:17:58.057634+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Completed post processing for plugin_name. (changed=False)
-2023-10-10T15:17:58.057696+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Completed post processing for pull_arguments. (changed=False)
-2023-10-10T15:17:58.057755+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Completed post processing for set_environment_variable. (changed=False)
-2023-10-10T15:17:58.057817+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Completed post processing for settings_effective. (changed=False)
-2023-10-10T15:17:58.057879+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Completed post processing for settings_sample. (changed=False)
-2023-10-10T15:17:58.057938+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Completed post processing for settings_schema. (changed=False)
-2023-10-10T15:17:58.058017+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Completed post processing for settings_sources. (changed=False)
-2023-10-10T15:17:58.058085+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Completed post processing for time_zone. (changed=False)
-2023-10-10T15:17:58.058145+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Completed post processing for execution_environment_volume_mounts. (changed=False)
-2023-10-10T15:17:58.058206+00:00 INFO 'ansible_navigator.actions.run_bcf3._update_args' 'mode' cannot be reconfigured. (post process)
-2023-10-10T15:17:58.058269+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Completed post processing for playbook_artifact_enable. (changed=False)
-2023-10-10T15:17:58.058326+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Collection doc cache not mounted
-2023-10-10T15:17:58.058387+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Collection doc cache: 'path' is '/home/ansible/.cache/ansible-navigator/collection_doc_cache.db'
-2023-10-10T15:17:58.058478+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Collection doc cache: 'current version' is '1.0'
-2023-10-10T15:17:58.058563+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Collection doc cache not attached to args.internals
-2023-10-10T15:17:58.058629+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with ansible_runner_artifact_dir as 'Not set' (Constants/Not set)
-2023-10-10T15:17:58.058686+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with ansible_runner_rotate_artifacts_count as 'Not set' (Constants/Not set)
-2023-10-10T15:17:58.058747+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with ansible_runner_timeout as 'Not set' (Constants/Not set)
-2023-10-10T15:17:58.058809+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with ansible_runner_write_job_events as 'False' (bool/Defaults)
-2023-10-10T15:17:58.058867+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with app as 'run' (str/Command line)
-2023-10-10T15:17:58.058924+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with cmdline as 'Not set' (Constants/Not set)
-2023-10-10T15:17:58.058996+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with collection_doc_cache_path as '/home/ansible/.cache/ansible-navigator/collection_doc_cache.db' (str/Defaults)
-2023-10-10T15:17:58.059065+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with config as '/etc/ansible/ansible.cfg' (str/Settings file)
-2023-10-10T15:17:58.059124+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with container_engine as 'podman' (str/Settings file)
-2023-10-10T15:17:58.059181+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with container_options as 'Not set' (Constants/Not set)
-2023-10-10T15:17:58.059242+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with display_color as 'True' (bool/Defaults)
-2023-10-10T15:17:58.059304+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with editor_command as 'vi +{line_number} {filename}' (str/Defaults)
-2023-10-10T15:17:58.059362+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with editor_console as 'True' (bool/Defaults)
-2023-10-10T15:17:58.059424+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with enable_prompts as 'False' (bool/Defaults)
-2023-10-10T15:17:58.059486+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with exec_command as '/bin/bash' (str/Defaults)
-2023-10-10T15:17:58.059544+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with exec_shell as 'True' (bool/Defaults)
-2023-10-10T15:17:58.059601+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with execution_environment as 'True' (bool/Settings file)
-2023-10-10T15:17:58.059663+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with execution_environment_image as 'localhost/ee-ibm-flashsystem:latest' (str/Previous cli command)
-2023-10-10T15:17:58.059728+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with execution_environment_volume_mounts as 'Not set' (Constants/Not set)
-2023-10-10T15:17:58.059787+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with format as 'yaml' (str/Defaults)
-2023-10-10T15:17:58.059849+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with help_builder as 'False' (bool/Defaults)
-2023-10-10T15:17:58.059911+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with help_config as 'False' (bool/Settings file)
-2023-10-10T15:17:58.059969+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with help_doc as 'False' (bool/Defaults)
-2023-10-10T15:17:58.060059+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with help_inventory as 'True' (bool/Settings file)
-2023-10-10T15:17:58.060123+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with help_playbook as 'False' (bool/Defaults)
-2023-10-10T15:17:58.060181+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with images_details as '['everything']' (list/Defaults)
-2023-10-10T15:17:58.060243+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with inventory as '['/home/ansible/playbooks/flashsystem_setup/inventory']' (list/Settings file)
-2023-10-10T15:17:58.060301+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with inventory_column as 'Not set' (Constants/Not set)
-2023-10-10T15:17:58.060368+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with lint_config as 'Not set' (Constants/Not set)
-2023-10-10T15:17:58.060432+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with lintables as 'Not set' (Constants/Not set)
-2023-10-10T15:17:58.060490+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with log_append as 'False' (bool/Settings file)
-2023-10-10T15:17:58.060547+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with log_file as '/home/ansible/playbooks/flashsystem_setup/ansible-navigator.log' (str/Defaults)
-2023-10-10T15:17:58.060609+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with log_level as 'debug' (str/Settings file)
-2023-10-10T15:17:58.060666+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with mode as 'interactive' (str/Defaults)
-2023-10-10T15:17:58.060723+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with osc4 as 'True' (bool/Defaults)
-2023-10-10T15:17:58.060780+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with pass_environment_variable as 'Not set' (Constants/Not set)
-2023-10-10T15:17:58.060841+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with playbook as '/home/ansible/playbooks/flashsystem_setup/scratch.yml' (str/Previous cli command)
-2023-10-10T15:17:58.060899+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with playbook_artifact_enable as 'True' (bool/Defaults)
-2023-10-10T15:17:58.060960+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with playbook_artifact_replay as 'Not set' (Constants/Not set)
-2023-10-10T15:17:58.061033+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with playbook_artifact_save_as as '{playbook_dir}/{playbook_name}-artifact-{time_stamp}.json' (str/Defaults)
-2023-10-10T15:17:58.061092+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with plugin_name as 'Not set' (Constants/Not set)
-2023-10-10T15:17:58.061154+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with plugin_type as 'module' (str/Defaults)
-2023-10-10T15:17:58.061212+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with pull_arguments as '['--tls-verify=false']' (list/Settings file)
-2023-10-10T15:17:58.061273+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with pull_policy as 'tag' (str/Defaults)
-2023-10-10T15:17:58.061339+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with set_environment_variable as 'Not set' (Constants/Not set)
-2023-10-10T15:17:58.061410+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with settings_effective as 'False' (bool/Defaults)
-2023-10-10T15:17:58.061473+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with settings_sample as 'False' (bool/Defaults)
-2023-10-10T15:17:58.061531+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with settings_schema as 'json' (str/Defaults)
-2023-10-10T15:17:58.061593+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with settings_sources as 'False' (bool/Defaults)
-2023-10-10T15:17:58.061651+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with time_zone as 'UTC' (str/Defaults)
-2023-10-10T15:17:58.061707+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._update_args' Running with workdir as '/home/ansible/playbooks/flashsystem_setup' (str/Defaults)
-2023-10-10T15:17:58.062531+00:00 DEBUG 'ansible_navigator.runner.base._set_private_data_directory' private data dir not user provided, used tmp location: /tmp/ansible-navigator_1cqx98dt
-2023-10-10T15:17:58.062742+00:00 DEBUG 'ansible_navigator.runner.base.generate_run_command_args' Runner arg: container_image:localhost/ee-ibm-flashsystem:latest
-2023-10-10T15:17:58.062814+00:00 DEBUG 'ansible_navigator.runner.base.generate_run_command_args' Runner arg: process_isolation_executable:podman
-2023-10-10T15:17:58.062881+00:00 DEBUG 'ansible_navigator.runner.base.generate_run_command_args' Runner arg: process_isolation:True
-2023-10-10T15:17:58.062941+00:00 DEBUG 'ansible_navigator.runner.base.generate_run_command_args' Runner arg: container_volume_mounts:None
-2023-10-10T15:17:58.063026+00:00 DEBUG 'ansible_navigator.runner.base.generate_run_command_args' Runner arg: container_options:['--user=root']
-2023-10-10T15:17:58.063095+00:00 DEBUG 'ansible_navigator.runner.base.generate_run_command_args' Runner arg: container_workdir:None
-2023-10-10T15:17:58.063161+00:00 DEBUG 'ansible_navigator.runner.base.generate_run_command_args' Runner arg: private_data_dir:/tmp/ansible-navigator_1cqx98dt
-2023-10-10T15:17:58.063220+00:00 DEBUG 'ansible_navigator.runner.base.generate_run_command_args' Runner arg: json_mode:True
-2023-10-10T15:17:58.063283+00:00 DEBUG 'ansible_navigator.runner.base.generate_run_command_args' Runner arg: quiet:True
-2023-10-10T15:17:58.063343+00:00 DEBUG 'ansible_navigator.runner.base.generate_run_command_args' Runner arg: cancel_callback:<bound method Base.runner_cancelled_callback of <ansible_navigator.runner.command_async.CommandAsync object at 0x7f36a8ec1160>>
-2023-10-10T15:17:58.063416+00:00 DEBUG 'ansible_navigator.runner.base.generate_run_command_args' Runner arg: finished_callback:<bound method Base.runner_finished_callback of <ansible_navigator.runner.command_async.CommandAsync object at 0x7f36a8ec1160>>
-2023-10-10T15:17:58.063479+00:00 DEBUG 'ansible_navigator.runner.base.generate_run_command_args' Runner arg: timeout:None
-2023-10-10T15:17:58.063542+00:00 DEBUG 'ansible_navigator.runner.base.generate_run_command_args' Runner arg: envvars:{}
-2023-10-10T15:17:58.063602+00:00 DEBUG 'ansible_navigator.runner.base.generate_run_command_args' Runner arg: host_cwd:/home/ansible/playbooks/flashsystem_setup/
-2023-10-10T15:17:58.063665+00:00 DEBUG 'ansible_navigator.runner.base.generate_run_command_args' Runner arg: executable_cmd:ansible-playbook
-2023-10-10T15:17:58.063724+00:00 DEBUG 'ansible_navigator.runner.base.generate_run_command_args' Runner arg: cmdline_args:['/home/ansible/playbooks/flashsystem_setup/scratch.yml', '-i', '/home/ansible/playbooks/flashsystem_setup/inventory']
-2023-10-10T15:17:58.066474+00:00 DEBUG 'ansible-runner._handle_command_wrap' containerization enabled
-2023-10-10T15:17:58.067308+00:00 DEBUG 'ansible-runner.wrap_args_for_containerization' container engine invocation: podman run --rm --tty --interactive -v /home/ansible/playbooks/flashsystem_setup/:/home/ansible/playbooks/flashsystem_setup/ --workdir /home/ansible/playbooks/flashsystem_setup -v /home/ansible/.ssh/:/home/runner/.ssh/ -v /home/ansible/.ssh/:/root/.ssh/ --group-add=root --ipc=host -v /tmp/ansible-navigator_1cqx98dt/artifacts/:/runner/artifacts/:Z -v /tmp/ansible-navigator_1cqx98dt/:/runner/:Z --env-file /tmp/ansible-navigator_1cqx98dt/artifacts/31504c78-8d44-4aba-a61a-0d632cfe5bf2/env.list --quiet --name ansible_runner_31504c78-8d44-4aba-a61a-0d632cfe5bf2 --user=root localhost/ee-ibm-flashsystem:latest ansible-playbook /home/ansible/playbooks/flashsystem_setup/scratch.yml -i /home/ansible/playbooks/flashsystem_setup/inventory
-2023-10-10T15:17:58.067422+00:00 DEBUG 'ansible-runner._handle_command_wrap' command: podman run --rm --tty --interactive -v /home/ansible/playbooks/flashsystem_setup/:/home/ansible/playbooks/flashsystem_setup/ --workdir /home/ansible/playbooks/flashsystem_setup -v /home/ansible/.ssh/:/home/runner/.ssh/ -v /home/ansible/.ssh/:/root/.ssh/ --group-add=root --ipc=host -v /tmp/ansible-navigator_1cqx98dt/artifacts/:/runner/artifacts/:Z -v /tmp/ansible-navigator_1cqx98dt/:/runner/:Z --env-file /tmp/ansible-navigator_1cqx98dt/artifacts/31504c78-8d44-4aba-a61a-0d632cfe5bf2/env.list --quiet --name ansible_runner_31504c78-8d44-4aba-a61a-0d632cfe5bf2 --user=root localhost/ee-ibm-flashsystem:latest ansible-playbook /home/ansible/playbooks/flashsystem_setup/scratch.yml -i /home/ansible/playbooks/flashsystem_setup/inventory
-2023-10-10T15:17:58.067955+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._run_runner' runner requested to start
-2023-10-10T15:17:58.068077+00:00 INFO 'ansible_navigator.actions.run_bcf3._init_run' Run initialized and playbook started.
-2023-10-10T15:17:58.068348+00:00 DEBUG 'ansible_navigator.ui_framework.curses_window.__init__' self._ui_config: UIConfig(color=True, colors_initialized=True, grammar_dir=PosixPath('/usr/lib/python3.9/site-packages/ansible_navigator/data/grammar'), osc4=True, terminal_colors_path=PosixPath('/usr/lib/python3.9/site-packages/ansible_navigator/data/themes/terminal_colors.json'), theme_path=PosixPath('/usr/lib/python3.9/site-packages/ansible_navigator/data/themes/dark_vs.json'))
-2023-10-10T15:17:58.098539+00:00 DEBUG 'ansible_navigator.ui_framework.curses_window.__init__' self._ui_config: UIConfig(color=True, colors_initialized=True, grammar_dir=PosixPath('/usr/lib/python3.9/site-packages/ansible_navigator/data/grammar'), osc4=True, terminal_colors_path=PosixPath('/usr/lib/python3.9/site-packages/ansible_navigator/data/themes/terminal_colors.json'), theme_path=PosixPath('/usr/lib/python3.9/site-packages/ansible_navigator/data/themes/dark_vs.json'))
-2023-10-10T15:18:00.512227+00:00 DEBUG 'ansible_navigator.runner.base._event_handler' ansible-runner event handle: {'event': 'verbose', 'uuid': '63508b5d-2033-4518-9990-80c7a9b701e6', 'counter': 1, 'stdout': '\x1b[1;35m[WARNING]: Invalid characters were found in group names but not replaced, use\x1b[0m', 'start_line': 0, 'end_line': 1, 'runner_ident': '31504c78-8d44-4aba-a61a-0d632cfe5bf2', 'created': '2023-10-10T15:18:00.512150'}
-2023-10-10T15:18:00.518093+00:00 CRITICAL 'ansible_navigator.actions.run_bcf3._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '63508b5d-2033-4518-9990-80c7a9b701e6', 'counter': 1, 'stdout': '\x1b[1;35m[WARNING]: Invalid characters were found in group names but not replaced, use\x1b[0m', 'start_line': 0, 'end_line': 1, 'runner_ident': '31504c78-8d44-4aba-a61a-0d632cfe5bf2', 'created': '2023-10-10T15:18:00.512150'}
-2023-10-10T15:18:00.518247+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._dequeue' Drained 1 events
-2023-10-10T15:18:00.519389+00:00 DEBUG 'ansible_navigator.runner.base._event_handler' ansible-runner event handle: {'event': 'verbose', 'uuid': '3cfb3eea-8797-4b7c-906a-282f583fa163', 'counter': 2, 'stdout': '\x1b[1;35m-vvvv to see details\x1b[0m', 'start_line': 1, 'end_line': 2, 'runner_ident': '31504c78-8d44-4aba-a61a-0d632cfe5bf2', 'created': '2023-10-10T15:18:00.519371'}
-2023-10-10T15:18:00.624344+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._take_step' auto_scroll enabled
-2023-10-10T15:18:00.624614+00:00 CRITICAL 'ansible_navigator.actions.run_bcf3._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '3cfb3eea-8797-4b7c-906a-282f583fa163', 'counter': 2, 'stdout': '\x1b[1;35m-vvvv to see details\x1b[0m', 'start_line': 1, 'end_line': 2, 'runner_ident': '31504c78-8d44-4aba-a61a-0d632cfe5bf2', 'created': '2023-10-10T15:18:00.519371'}
-2023-10-10T15:18:00.624708+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._dequeue' Drained 1 events
-2023-10-10T15:18:00.855413+00:00 DEBUG 'ansible_navigator.runner.base._event_handler' ansible-runner event handle: {'uuid': 'e363262c-c1bc-43f4-bfed-f0a154041493', 'counter': 3, 'stdout': '', 'start_line': 2, 'end_line': 2, 'runner_ident': '31504c78-8d44-4aba-a61a-0d632cfe5bf2', 'event': 'playbook_on_start', 'pid': 21, 'created': '2023-10-10T15:18:00.854124', 'event_data': {'playbook': '/home/ansible/playbooks/flashsystem_setup/scratch.yml', 'playbook_uuid': 'e363262c-c1bc-43f4-bfed-f0a154041493', 'uuid': 'e363262c-c1bc-43f4-bfed-f0a154041493'}}
-2023-10-10T15:18:00.860396+00:00 DEBUG 'ansible_navigator.runner.base._event_handler' ansible-runner event handle: {'uuid': '16505e5a-22af-c216-4fcd-000000000008', 'counter': 4, 'stdout': '\r\nPLAY [Create or validate hosts] ************************************************', 'start_line': 2, 'end_line': 4, 'runner_ident': '31504c78-8d44-4aba-a61a-0d632cfe5bf2', 'event': 'playbook_on_play_start', 'pid': 21, 'created': '2023-10-10T15:18:00.859466', 'parent_uuid': 'e363262c-c1bc-43f4-bfed-f0a154041493', 'event_data': {'playbook': '/home/ansible/playbooks/flashsystem_setup/scratch.yml', 'playbook_uuid': 'e363262c-c1bc-43f4-bfed-f0a154041493', 'play': 'Create or validate hosts', 'play_uuid': '16505e5a-22af-c216-4fcd-000000000008', 'play_pattern': 'localhost', 'name': 'Create or validate hosts', 'pattern': 'localhost', 'uuid': '16505e5a-22af-c216-4fcd-000000000008'}}
-2023-10-10T15:18:00.886561+00:00 DEBUG 'ansible_navigator.runner.base._event_handler' ansible-runner event handle: {'uuid': '16505e5a-22af-c216-4fcd-00000000000a', 'counter': 5, 'stdout': "\r\nTASK [Gather svc_info for volumes that haven't been mapped] ********************", 'start_line': 4, 'end_line': 6, 'runner_ident': '31504c78-8d44-4aba-a61a-0d632cfe5bf2', 'event': 'playbook_on_task_start', 'pid': 21, 'created': '2023-10-10T15:18:00.885456', 'parent_uuid': '16505e5a-22af-c216-4fcd-000000000008', 'event_data': {'playbook': '/home/ansible/playbooks/flashsystem_setup/scratch.yml', 'playbook_uuid': 'e363262c-c1bc-43f4-bfed-f0a154041493', 'play': 'Create or validate hosts', 'play_uuid': '16505e5a-22af-c216-4fcd-000000000008', 'play_pattern': 'localhost', 'task': "Gather svc_info for volumes that haven't been mapped", 'task_uuid': '16505e5a-22af-c216-4fcd-00000000000a', 'task_action': 'ibm.storage_virtualize.ibm_svc_info', 'resolved_action': 'ibm.storage_virtualize.ibm_svc_info', 'task_args': '', 'task_path': '/home/ansible/playbooks/flashsystem_setup/scratch.yml:10', 'name': "Gather svc_info for volumes that haven't been mapped", 'is_conditional': False, 'uuid': '16505e5a-22af-c216-4fcd-00000000000a'}}
-2023-10-10T15:18:00.887619+00:00 DEBUG 'ansible_navigator.runner.base._event_handler' ansible-runner event handle: {'uuid': 'd7b1f43c-1bce-47f0-9150-a078925e3d51', 'counter': 6, 'stdout': '', 'start_line': 6, 'end_line': 6, 'runner_ident': '31504c78-8d44-4aba-a61a-0d632cfe5bf2', 'event': 'runner_on_start', 'pid': 21, 'created': '2023-10-10T15:18:00.886947', 'parent_uuid': '16505e5a-22af-c216-4fcd-00000000000a', 'event_data': {'playbook': '/home/ansible/playbooks/flashsystem_setup/scratch.yml', 'playbook_uuid': 'e363262c-c1bc-43f4-bfed-f0a154041493', 'play': 'Create or validate hosts', 'play_uuid': '16505e5a-22af-c216-4fcd-000000000008', 'play_pattern': 'localhost', 'task': "Gather svc_info for volumes that haven't been mapped", 'task_uuid': '16505e5a-22af-c216-4fcd-00000000000a', 'task_action': 'ibm.storage_virtualize.ibm_svc_info', 'resolved_action': 'ibm.storage_virtualize.ibm_svc_info', 'task_args': '', 'task_path': '/home/ansible/playbooks/flashsystem_setup/scratch.yml:10', 'host': 'localhost', 'uuid': 'd7b1f43c-1bce-47f0-9150-a078925e3d51'}}
-2023-10-10T15:18:00.936520+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._dequeue' Drained 4 events
-2023-10-10T15:18:01.843480+00:00 DEBUG 'ansible_navigator.runner.base._event_handler' ansible-runner event handle: {'uuid': '76457adc-ae8a-4ce9-8f4c-fdc6058ff1da', 'counter': 7, 'stdout': '\x1b[0;32mok: [localhost]\x1b[0m', 'start_line': 6, 'end_line': 7, 'runner_ident': '31504c78-8d44-4aba-a61a-0d632cfe5bf2', 'event': 'runner_on_ok', 'pid': 21, 'created': '2023-10-10T15:18:01.841863', 'parent_uuid': '16505e5a-22af-c216-4fcd-00000000000a', 'event_data': {'playbook': '/home/ansible/playbooks/flashsystem_setup/scratch.yml', 'playbook_uuid': 'e363262c-c1bc-43f4-bfed-f0a154041493', 'play': 'Create or validate hosts', 'play_uuid': '16505e5a-22af-c216-4fcd-000000000008', 'play_pattern': 'localhost', 'task': "Gather svc_info for volumes that haven't been mapped", 'task_uuid': '16505e5a-22af-c216-4fcd-00000000000a', 'task_action': 'ibm.storage_virtualize.ibm_svc_info', 'resolved_action': 'ibm.storage_virtualize.ibm_svc_info', 'task_args': '', 'task_path': '/home/ansible/playbooks/flashsystem_setup/scratch.yml:10', 'host': 'localhost', 'remote_addr': 'localhost', 'res': {'Volume': [], 'Pool': [], 'Node': [], 'IOGroup': [], 'Host': [{'id': '0', 'name': 'SSPC', 'port_count': '1', 'iogrp_count': '4', 'status': 'offline', 'site_id': '', 'site_name': '', 'host_cluster_id': '', 'host_cluster_name': '', 'protocol': 'scsi', 'owner_id': '', 'owner_name': '', 'portset_id': '64', 'portset_name': 'portset64'}, {'id': '1', 'name': 'esxlab', 'port_count': '1', 'iogrp_count': '4', 'status': 'degraded', 'site_id': '', 'site_name': '', 'host_cluster_id': '', 'host_cluster_name': '', 'protocol': 'scsi', 'owner_id': '', 'owner_name': '', 'portset_id': '64', 'portset_name': 'portset64'}, {'id': '2', 'name': 'nim3', 'port_count': '4', 'iogrp_count': '4', 'status': 'online', 'site_id': '', 'site_name': '', 'host_cluster_id': '', 'host_cluster_name': '', 'protocol': 'scsi', 'owner_id': '', 'owner_name': '', 'portset_id': '64', 'portset_name': 'portset64'}, {'id': '3', 'name': 'bpicaix04', 'port_count': '4', 'iogrp_count': '4', 'status': 'online', 'site_id': '', 'site_name': '', 'host_cluster_id': '', 'host_cluster_name': '', 'protocol': 'scsi', 'owner_id': '', 'owner_name': '', 'portset_id': '64', 'portset_name': 'portset64'}, {'id': '4', 'name': 'OCPESX7', 'port_count': '1', 'iogrp_count': '4', 'status': 'online', 'site_id': '', 'site_name': '', 'host_cluster_id': '', 'host_cluster_name': '', 'protocol': 'scsi', 'owner_id': '', 'owner_name': '', 'portset_id': '64', 'portset_name': 'portset64'}, {'id': '5', 'name': 'OCP-Worker-1', 'port_count': '2', 'iogrp_count': '4', 'status': 'online', 'site_id': '', 'site_name': '', 'host_cluster_id': '0', 'host_cluster_name': 'OCP-Worker-Cluster', 'protocol': 'scsi', 'owner_id': '', 'owner_name': '', 'portset_id': '64', 'portset_name': 'portset64'}, {'id': '6', 'name': 'OCP-Worker-2', 'port_count': '2', 'iogrp_count': '4', 'status': 'online', 'site_id': '', 'site_name': '', 'host_cluster_id': '0', 'host_cluster_name': 'OCP-Worker-Cluster', 'protocol': 'scsi', 'owner_id': '', 'owner_name': '', 'portset_id': '64', 'portset_name': 'portset64'}], 'HostVdiskMap': [], 'VdiskHostMap': [], 'HostCluster': [], 'FCConnectivitie': [], 'FCConsistgrp': [], 'RCConsistgrp': [], 'VdiskCopy': [], 'FCPort': [], 'TargetPortFC': [], 'iSCSIPort': [], 'FCMap': [], 'RemoteCopy': [], 'Array': [], 'System': [], 'CloudAccount': [], 'CloudAccountUsage': [], 'CloudImportCandidate': [], 'LdapServer': [], 'Drive': [], 'User': [], 'Partnership': [], 'ReplicationPolicy': [], 'SnapshotPolicy': [], 'VolumeGroup': [], 'SnapshotSchedule': [], 'VolumeGroupSnapshotPolicy': [], 'VolumeSnapshot': [], 'DnsServer': [], 'SystemCert': [], 'TrustStore': [], 'Sra': [], 'SysLogServer': [], 'UserGrp': [], 'EmailServer': [], 'EmailUser': [], 'CloudBackup': [], 'CloudBackupGeneration': [], 'ProvisioningPolicy': [], 'VolumeGroupSnapshot': [], 'CallHome': [], 'IP': [], 'Ownershipgroup': [], 'Portset': [], 'SafeguardedPolicy': [], 'Mdisk': [], 'SafeguardedSchedule': [], 'EventLog': [], 'DriveClass': [], 'invocation': {'module_args': {'clustername': '10.137.0.30', 'gather_subset': ['host'], 'username': 'ansible', 'password': 'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', 'validate_certs': False, 'domain': None, 'log_path': None, 'token': None, 'objectname': None}}, 'ansible_facts': {'discovered_interpreter_python': '/usr/libexec/platform-python'}, '_ansible_no_log': None, 'changed': False}, 'start': '2023-10-10T15:18:00.886837', 'end': '2023-10-10T15:18:01.841606', 'duration': 0.954769, 'event_loop': None, 'uuid': '76457adc-ae8a-4ce9-8f4c-fdc6058ff1da'}}
-2023-10-10T15:18:01.850907+00:00 DEBUG 'ansible_navigator.runner.base._event_handler' ansible-runner event handle: {'uuid': '16505e5a-22af-c216-4fcd-00000000000b', 'counter': 8, 'stdout': '\r\nTASK [Get vdisk_name from mapped_hosts] ****************************************', 'start_line': 7, 'end_line': 9, 'runner_ident': '31504c78-8d44-4aba-a61a-0d632cfe5bf2', 'event': 'playbook_on_task_start', 'pid': 21, 'created': '2023-10-10T15:18:01.849785', 'parent_uuid': '16505e5a-22af-c216-4fcd-000000000008', 'event_data': {'playbook': '/home/ansible/playbooks/flashsystem_setup/scratch.yml', 'playbook_uuid': 'e363262c-c1bc-43f4-bfed-f0a154041493', 'play': 'Create or validate hosts', 'play_uuid': '16505e5a-22af-c216-4fcd-000000000008', 'play_pattern': 'localhost', 'task': 'Get vdisk_name from mapped_hosts', 'task_uuid': '16505e5a-22af-c216-4fcd-00000000000b', 'task_action': 'create_survey_info', 'resolved_action': 'create_survey_info', 'task_args': '', 'task_path': '/home/ansible/playbooks/flashsystem_setup/scratch.yml:18', 'name': 'Get vdisk_name from mapped_hosts', 'is_conditional': False, 'uuid': '16505e5a-22af-c216-4fcd-00000000000b'}}
-2023-10-10T15:18:01.860765+00:00 DEBUG 'ansible_navigator.runner.base._event_handler' ansible-runner event handle: {'uuid': '3832dca8-ccb3-4bc0-848f-55775e0abec1', 'counter': 9, 'stdout': '', 'start_line': 9, 'end_line': 9, 'runner_ident': '31504c78-8d44-4aba-a61a-0d632cfe5bf2', 'event': 'runner_on_start', 'pid': 21, 'created': '2023-10-10T15:18:01.860074', 'parent_uuid': '16505e5a-22af-c216-4fcd-00000000000b', 'event_data': {'playbook': '/home/ansible/playbooks/flashsystem_setup/scratch.yml', 'playbook_uuid': 'e363262c-c1bc-43f4-bfed-f0a154041493', 'play': 'Create or validate hosts', 'play_uuid': '16505e5a-22af-c216-4fcd-000000000008', 'play_pattern': 'localhost', 'task': 'Get vdisk_name from mapped_hosts', 'task_uuid': '16505e5a-22af-c216-4fcd-00000000000b', 'task_action': 'create_survey_info', 'resolved_action': 'create_survey_info', 'task_args': '', 'task_path': '/home/ansible/playbooks/flashsystem_setup/scratch.yml:18', 'host': 'localhost', 'uuid': '3832dca8-ccb3-4bc0-848f-55775e0abec1'}}
-2023-10-10T15:18:01.871600+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._dequeue' Drained 3 events
-2023-10-10T15:18:02.348068+00:00 DEBUG 'ansible_navigator.runner.base._event_handler' ansible-runner event handle: {'uuid': 'b4274d9d-d625-4c10-8e3c-7b996a542c3d', 'counter': 10, 'stdout': '\x1b[0;33mchanged: [localhost]\x1b[0m', 'start_line': 9, 'end_line': 10, 'runner_ident': '31504c78-8d44-4aba-a61a-0d632cfe5bf2', 'event': 'runner_on_ok', 'pid': 21, 'created': '2023-10-10T15:18:02.346439', 'parent_uuid': '16505e5a-22af-c216-4fcd-00000000000b', 'event_data': {'playbook': '/home/ansible/playbooks/flashsystem_setup/scratch.yml', 'playbook_uuid': 'e363262c-c1bc-43f4-bfed-f0a154041493', 'play': 'Create or validate hosts', 'play_uuid': '16505e5a-22af-c216-4fcd-000000000008', 'play_pattern': 'localhost', 'task': 'Get vdisk_name from mapped_hosts', 'task_uuid': '16505e5a-22af-c216-4fcd-00000000000b', 'task_action': 'create_survey_info', 'resolved_action': 'create_survey_info', 'task_args': '', 'task_path': '/home/ansible/playbooks/flashsystem_setup/scratch.yml:18', 'host': 'localhost', 'remote_addr': 'localhost', 'res': {'changed': True, 'survey_info': ['SSPC', 'esxlab', 'nim3', 'bpicaix04', 'OCPESX7', 'OCP-Worker-1', 'OCP-Worker-2'], 'invocation': {'module_args': {'info_results': [{'id': '0', 'name': 'SSPC', 'port_count': '1', 'iogrp_count': '4', 'status': 'offline', 'site_id': '', 'site_name': '', 'host_cluster_id': '', 'host_cluster_name': '', 'protocol': 'scsi', 'owner_id': '', 'owner_name': '', 'portset_id': '64', 'portset_name': 'portset64'}, {'id': '1', 'name': 'esxlab', 'port_count': '1', 'iogrp_count': '4', 'status': 'degraded', 'site_id': '', 'site_name': '', 'host_cluster_id': '', 'host_cluster_name': '', 'protocol': 'scsi', 'owner_id': '', 'owner_name': '', 'portset_id': '64', 'portset_name': 'portset64'}, {'id': '2', 'name': 'nim3', 'port_count': '4', 'iogrp_count': '4', 'status': 'online', 'site_id': '', 'site_name': '', 'host_cluster_id': '', 'host_cluster_name': '', 'protocol': 'scsi', 'owner_id': '', 'owner_name': '', 'portset_id': '64', 'portset_name': 'portset64'}, {'id': '3', 'name': 'bpicaix04', 'port_count': '4', 'iogrp_count': '4', 'status': 'online', 'site_id': '', 'site_name': '', 'host_cluster_id': '', 'host_cluster_name': '', 'protocol': 'scsi', 'owner_id': '', 'owner_name': '', 'portset_id': '64', 'portset_name': 'portset64'}, {'id': '4', 'name': 'OCPESX7', 'port_count': '1', 'iogrp_count': '4', 'status': 'online', 'site_id': '', 'site_name': '', 'host_cluster_id': '', 'host_cluster_name': '', 'protocol': 'scsi', 'owner_id': '', 'owner_name': '', 'portset_id': '64', 'portset_name': 'portset64'}, {'id': '5', 'name': 'OCP-Worker-1', 'port_count': '2', 'iogrp_count': '4', 'status': 'online', 'site_id': '', 'site_name': '', 'host_cluster_id': '0', 'host_cluster_name': 'OCP-Worker-Cluster', 'protocol': 'scsi', 'owner_id': '', 'owner_name': '', 'portset_id': '64', 'portset_name': 'portset64'}, {'id': '6', 'name': 'OCP-Worker-2', 'port_count': '2', 'iogrp_count': '4', 'status': 'online', 'site_id': '', 'site_name': '', 'host_cluster_id': '0', 'host_cluster_name': 'OCP-Worker-Cluster', 'protocol': 'scsi', 'owner_id': '', 'owner_name': '', 'portset_id': '64', 'portset_name': 'portset64'}], 'info_value': 'name'}}, '_ansible_no_log': None}, 'start': '2023-10-10T15:18:01.859937', 'end': '2023-10-10T15:18:02.346032', 'duration': 0.486095, 'event_loop': None, 'uuid': 'b4274d9d-d625-4c10-8e3c-7b996a542c3d'}}
-2023-10-10T15:18:02.375965+00:00 DEBUG 'ansible_navigator.runner.base._event_handler' ansible-runner event handle: {'uuid': '2410a2fe-7a20-4dbc-8a90-8b2b34cc9c4a', 'counter': 11, 'stdout': '\r\nPLAY RECAP *********************************************************************\r\n\x1b[0;33mlocalhost\x1b[0m                  : \x1b[0;32mok=2   \x1b[0m \x1b[0;33mchanged=1   \x1b[0m unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   ', 'start_line': 10, 'end_line': 14, 'runner_ident': '31504c78-8d44-4aba-a61a-0d632cfe5bf2', 'event': 'playbook_on_stats', 'pid': 21, 'created': '2023-10-10T15:18:02.374885', 'parent_uuid': 'e363262c-c1bc-43f4-bfed-f0a154041493', 'event_data': {'playbook': '/home/ansible/playbooks/flashsystem_setup/scratch.yml', 'playbook_uuid': 'e363262c-c1bc-43f4-bfed-f0a154041493', 'changed': {'localhost': 1}, 'dark': {}, 'failures': {}, 'ignored': {}, 'ok': {'localhost': 2}, 'processed': {'localhost': 1}, 'rescued': {}, 'skipped': {}, 'artifact_data': {}, 'uuid': '2410a2fe-7a20-4dbc-8a90-8b2b34cc9c4a'}}
-2023-10-10T15:18:02.390961+00:00 DEBUG 'ansible_navigator.actions.run_bcf3._dequeue' Drained 2 events
-2023-10-10T15:18:02.808731+00:00 DEBUG 'ansible_navigator.actions.run_bcf3.update' runner finished
-2023-10-10T15:18:02.808914+00:00 INFO 'ansible_navigator.actions.run_bcf3.update' Playbook complete
-2023-10-10T15:18:02.809101+00:00 DEBUG 'ansible_navigator.actions.run_bcf3.write_artifact' Formatted artifact file name set to /home/ansible/playbooks/flashsystem_setup/scratch-artifact-2023-10-10T15:18:02.809075+00:00.json
-2023-10-10T15:18:02.809236+00:00 DEBUG 'ansible_navigator.actions.run_bcf3.write_artifact' Resolved artifact file name set to /home/ansible/playbooks/flashsystem_setup/scratch-artifact-2023-10-10T15:18:02.809075+00:00.json
-2023-10-10T15:18:02.813361+00:00 INFO 'ansible_navigator.actions.run_bcf3.write_artifact' Saved artifact as /home/ansible/playbooks/flashsystem_setup/scratch-artifact-2023-10-10T15:18:02.809075+00:00.json
-2023-10-10T15:18:03.807473+00:00 DEBUG 'ansible_navigator.actions.select.run' selection made
-2023-10-10T15:18:03.808251+00:00 DEBUG 'ansible_navigator.actions.select.run' Requested next step in run_bcf3 will be task_list
-2023-10-10T15:18:05.028368+00:00 DEBUG 'ansible_navigator.actions.select.run' selection made
-2023-10-10T15:18:05.029079+00:00 DEBUG 'ansible_navigator.actions.select.run' Requested next step in run_bcf3 will be task
-2023-10-10T15:18:05.082423+00:00 DEBUG 'ansible_navigator.ui_framework.ui._cache_init_colors' Added color: 16:(807, 568, 470)
-2023-10-10T15:18:05.082744+00:00 DEBUG 'ansible_navigator.ui_framework.ui._cache_init_colors' Added color: 17:(709, 807, 658)
-2023-10-10T15:18:05.082933+00:00 DEBUG 'ansible_navigator.ui_framework.ui._cache_init_colors' Added color: 18:(337, 611, 839)
+2023-10-11T13:53:46.105411+00:00 INFO 'ansible_navigator.setup_logger' New ansible-navigator instance, logging initialized
+2023-10-11T13:53:46.106052+00:00 INFO 'ansible_navigator.setup_logger' New ansible-runner instance, logging initialized
+2023-10-11T13:53:46.106392+00:00 DEBUG 'ansible_navigator.main' Jinja2==3.1.2 
+2023-10-11T13:53:46.106635+00:00 DEBUG 'ansible_navigator.main' MarkupSafe==2.1.0 
+2023-10-11T13:53:46.106858+00:00 DEBUG 'ansible_navigator.main' PyYAML==5.4.1 
+2023-10-11T13:53:46.107079+00:00 DEBUG 'ansible_navigator.main' Pygments==2.11.2 
+2023-10-11T13:53:46.107423+00:00 DEBUG 'ansible_navigator.main' ansible-builder==3.0.0 
+2023-10-11T13:53:46.107654+00:00 DEBUG 'ansible_navigator.main' ansible-compat==4.1.10 
+2023-10-11T13:53:46.107869+00:00 DEBUG 'ansible_navigator.main' ansible-core==2.15.4 
+2023-10-11T13:53:46.108082+00:00 DEBUG 'ansible_navigator.main' ansible-lint==6.14.3 
+2023-10-11T13:53:46.108307+00:00 DEBUG 'ansible_navigator.main' ansible-navigator==3.4.1 
+2023-10-11T13:53:46.108543+00:00 DEBUG 'ansible_navigator.main' ansible-runner==2.3.4 
+2023-10-11T13:53:46.108755+00:00 DEBUG 'ansible_navigator.main' argcomplete==1.12.0 /usr/lib/python3.9/site-packages/argcomplete/__init__.py
+2023-10-11T13:53:46.108966+00:00 DEBUG 'ansible_navigator.main' asttokens==2.4.0 /home/ansible/.local/lib/python3.9/site-packages/asttokens/__init__.py
+2023-10-11T13:53:46.109183+00:00 DEBUG 'ansible_navigator.main' attrs==21.4.0 /usr/lib/python3.9/site-packages/attrs/__init__.py
+2023-10-11T13:53:46.109416+00:00 DEBUG 'ansible_navigator.main' backcall==0.2.0 /home/ansible/.local/lib/python3.9/site-packages/backcall/__init__.py
+2023-10-11T13:53:46.109627+00:00 DEBUG 'ansible_navigator.main' bindep==2.10.2 /usr/lib/python3.9/site-packages/bindep/__init__.py
+2023-10-11T13:53:46.109838+00:00 DEBUG 'ansible_navigator.main' black==22.8.0 /usr/lib/python3.9/site-packages/black/__init__.py
+2023-10-11T13:53:46.110054+00:00 DEBUG 'ansible_navigator.main' bracex==2.2.1 /usr/lib/python3.9/site-packages/bracex/__init__.py
+2023-10-11T13:53:46.110292+00:00 DEBUG 'ansible_navigator.main' certifi==2022.12.7 /usr/lib/python3.9/site-packages/certifi/__init__.py
+2023-10-11T13:53:46.110508+00:00 DEBUG 'ansible_navigator.main' cffi==1.15.0 /usr/lib64/python3.9/site-packages/cffi/__init__.py
+2023-10-11T13:53:46.110727+00:00 DEBUG 'ansible_navigator.main' cfgv==3.4.0 /home/ansible/.local/lib/python3.9/site-packages/cfgv.py
+2023-10-11T13:53:46.110938+00:00 DEBUG 'ansible_navigator.main' charset-normalizer==2.0.11 
+2023-10-11T13:53:46.111147+00:00 DEBUG 'ansible_navigator.main' click-help-colors==0.9.2 
+2023-10-11T13:53:46.111379+00:00 DEBUG 'ansible_navigator.main' click==8.1.3 /usr/lib/python3.9/site-packages/click/__init__.py
+2023-10-11T13:53:46.111597+00:00 DEBUG 'ansible_navigator.main' cloud-init==22.1 
+2023-10-11T13:53:46.111807+00:00 DEBUG 'ansible_navigator.main' comm==0.1.4 /home/ansible/.local/lib/python3.9/site-packages/comm/__init__.py
+2023-10-11T13:53:46.112016+00:00 DEBUG 'ansible_navigator.main' commonmark==0.9.1 /usr/lib/python3.9/site-packages/commonmark/__init__.py
+2023-10-11T13:53:46.112247+00:00 DEBUG 'ansible_navigator.main' cryptography==38.0.4 /usr/lib64/python3.9/site-packages/cryptography/__init__.py
+2023-10-11T13:53:46.112462+00:00 DEBUG 'ansible_navigator.main' dasbus==1.4 /usr/lib/python3.9/site-packages/dasbus/__init__.py
+2023-10-11T13:53:46.113269+00:00 DEBUG 'ansible_navigator.main' dbus-python==1.2.18 
+2023-10-11T13:53:46.113392+00:00 DEBUG 'ansible_navigator.main' debugpy==1.8.0 /home/ansible/.local/lib/python3.9/site-packages/debugpy/__init__.py
+2023-10-11T13:53:46.113474+00:00 DEBUG 'ansible_navigator.main' decorator==4.4.2 /usr/lib/python3.9/site-packages/decorator.py
+2023-10-11T13:53:46.113633+00:00 DEBUG 'ansible_navigator.main' distlib==0.3.7 /home/ansible/.local/lib/python3.9/site-packages/distlib/__init__.py
+2023-10-11T13:53:46.113771+00:00 DEBUG 'ansible_navigator.main' distro==1.6.0 /usr/lib/python3.9/site-packages/distro.py
+2023-10-11T13:53:46.113890+00:00 DEBUG 'ansible_navigator.main' docutils==0.16 /usr/lib/python3.9/site-packages/docutils/__init__.py
+2023-10-11T13:53:46.113991+00:00 DEBUG 'ansible_navigator.main' enrich==1.2.7 /home/ansible/.local/lib/python3.9/site-packages/enrich/__init__.py
+2023-10-11T13:53:46.114093+00:00 DEBUG 'ansible_navigator.main' ethtool==0.15 /usr/lib64/python3.9/site-packages/ethtool.cpython-39-x86_64-linux-gnu.so
+2023-10-11T13:53:46.114210+00:00 DEBUG 'ansible_navigator.main' exceptiongroup==1.1.3 /home/ansible/.local/lib/python3.9/site-packages/exceptiongroup/__init__.py
+2023-10-11T13:53:46.114528+00:00 DEBUG 'ansible_navigator.main' executing==2.0.0 /home/ansible/.local/lib/python3.9/site-packages/executing/__init__.py
+2023-10-11T13:53:46.114705+00:00 DEBUG 'ansible_navigator.main' file-magic==0.4.0 
+2023-10-11T13:53:46.114842+00:00 DEBUG 'ansible_navigator.main' filelock==3.12.4 /home/ansible/.local/lib/python3.9/site-packages/filelock/__init__.py
+2023-10-11T13:53:46.114947+00:00 DEBUG 'ansible_navigator.main' future==0.18.3 /usr/lib/python3.9/site-packages/future/__init__.py
+2023-10-11T13:53:46.115080+00:00 DEBUG 'ansible_navigator.main' identify==2.5.30 /home/ansible/.local/lib/python3.9/site-packages/identify/__init__.py
+2023-10-11T13:53:46.115180+00:00 DEBUG 'ansible_navigator.main' idna==3.3 /usr/lib/python3.9/site-packages/idna/__init__.py
+2023-10-11T13:53:46.115349+00:00 DEBUG 'ansible_navigator.main' importlib-metadata==4.12.0 
+2023-10-11T13:53:46.115490+00:00 DEBUG 'ansible_navigator.main' importlib-resources==5.0.7 
+2023-10-11T13:53:46.115573+00:00 DEBUG 'ansible_navigator.main' iniparse==0.4 /usr/lib/python3.9/site-packages/iniparse/__init__.py
+2023-10-11T13:53:46.115673+00:00 DEBUG 'ansible_navigator.main' ipykernel==6.25.2 /home/ansible/.local/lib/python3.9/site-packages/ipykernel/__init__.py
+2023-10-11T13:53:46.115765+00:00 DEBUG 'ansible_navigator.main' ipython==8.16.1 
+2023-10-11T13:53:46.115840+00:00 DEBUG 'ansible_navigator.main' jedi==0.19.1 /home/ansible/.local/lib/python3.9/site-packages/jedi/__init__.py
+2023-10-11T13:53:46.115945+00:00 DEBUG 'ansible_navigator.main' jmespath==1.0.1 /home/ansible/.local/lib/python3.9/site-packages/jmespath/__init__.py
+2023-10-11T13:53:46.116083+00:00 DEBUG 'ansible_navigator.main' jsonpatch==1.21 /usr/lib/python3.9/site-packages/jsonpatch.py
+2023-10-11T13:53:46.116161+00:00 DEBUG 'ansible_navigator.main' jsonpointer==2.0 /usr/lib/python3.9/site-packages/jsonpointer.py
+2023-10-11T13:53:46.116263+00:00 DEBUG 'ansible_navigator.main' jsonschema==4.16.0 /usr/lib/python3.9/site-packages/jsonschema/__init__.py
+2023-10-11T13:53:46.116348+00:00 DEBUG 'ansible_navigator.main' jupyter_client==8.3.1 /home/ansible/.local/lib/python3.9/site-packages/jupyter_client/__init__.py
+2023-10-11T13:53:46.116450+00:00 DEBUG 'ansible_navigator.main' jupyter_core==5.3.2 /home/ansible/.local/lib/python3.9/site-packages/jupyter_core/__init__.py
+2023-10-11T13:53:46.116571+00:00 DEBUG 'ansible_navigator.main' libvirt-python==9.0.0 
+2023-10-11T13:53:46.116649+00:00 DEBUG 'ansible_navigator.main' lockfile==0.12.2 /usr/lib/python3.9/site-packages/lockfile/__init__.py
+2023-10-11T13:53:46.116751+00:00 DEBUG 'ansible_navigator.main' lxml==4.6.5 /usr/lib64/python3.9/site-packages/lxml/__init__.py
+2023-10-11T13:53:46.116837+00:00 DEBUG 'ansible_navigator.main' matplotlib-inline==0.1.6 
+2023-10-11T13:53:46.116911+00:00 DEBUG 'ansible_navigator.main' molecule==6.0.2 /home/ansible/.local/lib/python3.9/site-packages/molecule/__init__.py
+2023-10-11T13:53:46.116982+00:00 DEBUG 'ansible_navigator.main' mypy-extensions==0.4.3 
+2023-10-11T13:53:46.117047+00:00 DEBUG 'ansible_navigator.main' nest-asyncio==1.5.8 
+2023-10-11T13:53:46.117120+00:00 DEBUG 'ansible_navigator.main' netifaces==0.10.6 /usr/lib64/python3.9/site-packages/netifaces.cpython-39-x86_64-linux-gnu.so
+2023-10-11T13:53:46.117209+00:00 DEBUG 'ansible_navigator.main' nodeenv==1.8.0 /home/ansible/.local/lib/python3.9/site-packages/nodeenv.py
+2023-10-11T13:53:46.117288+00:00 DEBUG 'ansible_navigator.main' oauthlib==3.1.1 /usr/lib/python3.9/site-packages/oauthlib/__init__.py
+2023-10-11T13:53:46.117363+00:00 DEBUG 'ansible_navigator.main' onigurumacffi==1.1.0 /usr/lib64/python3.9/site-packages/onigurumacffi.py
+2023-10-11T13:53:46.117439+00:00 DEBUG 'ansible_navigator.main' packaging==21.3 /usr/lib/python3.9/site-packages/packaging/__init__.py
+2023-10-11T13:53:46.117512+00:00 DEBUG 'ansible_navigator.main' parso==0.8.3 /home/ansible/.local/lib/python3.9/site-packages/parso/__init__.py
+2023-10-11T13:53:46.117582+00:00 DEBUG 'ansible_navigator.main' pathspec==0.10.1 /usr/lib/python3.9/site-packages/pathspec/__init__.py
+2023-10-11T13:53:46.117648+00:00 DEBUG 'ansible_navigator.main' pbr==5.9.0 /usr/lib/python3.9/site-packages/pbr/__init__.py
+2023-10-11T13:53:46.117717+00:00 DEBUG 'ansible_navigator.main' perf==0.1 /usr/lib64/python3.9/site-packages/perf.cpython-39-x86_64-linux-gnu.so
+2023-10-11T13:53:46.117787+00:00 DEBUG 'ansible_navigator.main' pickleshare==0.7.5 /home/ansible/.local/lib/python3.9/site-packages/pickleshare.py
+2023-10-11T13:53:46.117854+00:00 DEBUG 'ansible_navigator.main' pip==21.2.3 /usr/lib/python3.9/site-packages/pip/__init__.py
+2023-10-11T13:53:46.117923+00:00 DEBUG 'ansible_navigator.main' platformdirs==3.11.0 /home/ansible/.local/lib/python3.9/site-packages/platformdirs/__init__.py
+2023-10-11T13:53:46.117993+00:00 DEBUG 'ansible_navigator.main' pluggy==1.3.0 /home/ansible/.local/lib/python3.9/site-packages/pluggy/__init__.py
+2023-10-11T13:53:46.118063+00:00 DEBUG 'ansible_navigator.main' pre-commit==3.4.0 
+2023-10-11T13:53:46.118133+00:00 DEBUG 'ansible_navigator.main' prettytable==0.7.2 /usr/lib/python3.9/site-packages/prettytable.py
+2023-10-11T13:53:46.118213+00:00 DEBUG 'ansible_navigator.main' prompt-toolkit==3.0.39 
+2023-10-11T13:53:46.118291+00:00 DEBUG 'ansible_navigator.main' psutil==5.8.0 /usr/lib64/python3.9/site-packages/psutil/__init__.py
+2023-10-11T13:53:46.118364+00:00 DEBUG 'ansible_navigator.main' psycopg2==2.9.3 /usr/lib64/python3.9/site-packages/psycopg2/__init__.py
+2023-10-11T13:53:46.118430+00:00 DEBUG 'ansible_navigator.main' pure-eval==0.2.2 
+2023-10-11T13:53:46.118499+00:00 DEBUG 'ansible_navigator.main' pycairo==1.20.1 
+2023-10-11T13:53:46.118569+00:00 DEBUG 'ansible_navigator.main' pycparser==2.21 /usr/lib/python3.9/site-packages/pycparser/__init__.py
+2023-10-11T13:53:46.118635+00:00 DEBUG 'ansible_navigator.main' pyinotify==0.9.6 /usr/lib/python3.9/site-packages/pyinotify.py
+2023-10-11T13:53:46.118705+00:00 DEBUG 'ansible_navigator.main' pyrsistent==0.17.3 /usr/lib64/python3.9/site-packages/pyrsistent/__init__.py
+2023-10-11T13:53:46.118775+00:00 DEBUG 'ansible_navigator.main' pyserial==3.4 
+2023-10-11T13:53:46.118841+00:00 DEBUG 'ansible_navigator.main' pyspnego==0.9.2 
+2023-10-11T13:53:46.118911+00:00 DEBUG 'ansible_navigator.main' python-daemon==2.3.2 
+2023-10-11T13:53:46.118981+00:00 DEBUG 'ansible_navigator.main' python-dateutil==2.8.2 
+2023-10-11T13:53:46.119046+00:00 DEBUG 'ansible_navigator.main' python-linux-procfs==0.7.0 
+2023-10-11T13:53:46.119115+00:00 DEBUG 'ansible_navigator.main' pyudev==0.22.0 /usr/lib/python3.9/site-packages/pyudev/__init__.py
+2023-10-11T13:53:46.119185+00:00 DEBUG 'ansible_navigator.main' pywinrm==0.4.3 
+2023-10-11T13:53:46.119276+00:00 DEBUG 'ansible_navigator.main' pyzmq==25.1.1 
+2023-10-11T13:53:46.119347+00:00 DEBUG 'ansible_navigator.main' receptorctl==1.4.1 /usr/lib/python3.9/site-packages/receptorctl/__init__.py
+2023-10-11T13:53:46.119414+00:00 DEBUG 'ansible_navigator.main' requests-credssp==2.0.0 
+2023-10-11T13:53:46.119487+00:00 DEBUG 'ansible_navigator.main' requests-ntlm==1.2.0 
+2023-10-11T13:53:46.119562+00:00 DEBUG 'ansible_navigator.main' requests==2.31.0 /usr/lib/python3.9/site-packages/requests/__init__.py
+2023-10-11T13:53:46.119628+00:00 DEBUG 'ansible_navigator.main' requirements-parser==0.2.0 
+2023-10-11T13:53:46.119693+00:00 DEBUG 'ansible_navigator.main' resolvelib==0.5.4 /usr/lib/python3.9/site-packages/resolvelib/__init__.py
+2023-10-11T13:53:46.119763+00:00 DEBUG 'ansible_navigator.main' ruamel.yaml.clib==0.2.6 
+2023-10-11T13:53:46.119829+00:00 DEBUG 'ansible_navigator.main' ruamel.yaml==0.17.21 /usr/lib/python3.9/site-packages/ruamel/yaml/__init__.py
+2023-10-11T13:53:46.119902+00:00 DEBUG 'ansible_navigator.main' selinux==3.5 /usr/lib64/python3.9/site-packages/selinux/__init__.py
+2023-10-11T13:53:46.119973+00:00 DEBUG 'ansible_navigator.main' sepolicy==3.5 /usr/lib/python3.9/site-packages/sepolicy/__init__.py
+2023-10-11T13:53:46.120039+00:00 DEBUG 'ansible_navigator.main' setools==4.4.1 /usr/lib64/python3.9/site-packages/setools/__init__.py
+2023-10-11T13:53:46.120105+00:00 DEBUG 'ansible_navigator.main' setroubleshoot==3.3.31 /usr/lib/python3.9/site-packages/setroubleshoot/__init__.py
+2023-10-11T13:53:46.120173+00:00 DEBUG 'ansible_navigator.main' setuptools==53.0.0 /usr/lib/python3.9/site-packages/setuptools/__init__.py
+2023-10-11T13:53:46.120262+00:00 DEBUG 'ansible_navigator.main' six==1.16.0 /usr/lib/python3.9/site-packages/six.py
+2023-10-11T13:53:46.120329+00:00 DEBUG 'ansible_navigator.main' sos==4.6.0 /usr/lib/python3.9/site-packages/sos/__init__.py
+2023-10-11T13:53:46.120399+00:00 DEBUG 'ansible_navigator.main' stack-data==0.6.3 
+2023-10-11T13:53:46.120464+00:00 DEBUG 'ansible_navigator.main' subprocess-tee==0.4.1 
+2023-10-11T13:53:46.120530+00:00 DEBUG 'ansible_navigator.main' subscription-manager==1.29.33.1 
+2023-10-11T13:53:46.120599+00:00 DEBUG 'ansible_navigator.main' supervisor==4.2.4 /usr/lib/python3.9/site-packages/supervisor/__init__.py
+2023-10-11T13:53:46.120666+00:00 DEBUG 'ansible_navigator.main' tornado==6.3.3 /home/ansible/.local/lib/python3.9/site-packages/tornado/__init__.py
+2023-10-11T13:53:46.120731+00:00 DEBUG 'ansible_navigator.main' traitlets==5.11.2 /home/ansible/.local/lib/python3.9/site-packages/traitlets/__init__.py
+2023-10-11T13:53:46.120800+00:00 DEBUG 'ansible_navigator.main' typing_extensions==4.8.0 /home/ansible/.local/lib/python3.9/site-packages/typing_extensions.py
+2023-10-11T13:53:46.120866+00:00 DEBUG 'ansible_navigator.main' urllib3==1.26.8 /usr/lib/python3.9/site-packages/urllib3/__init__.py
+2023-10-11T13:53:46.120931+00:00 DEBUG 'ansible_navigator.main' virtualenv==20.24.5 /home/ansible/.local/lib/python3.9/site-packages/virtualenv/__init__.py
+2023-10-11T13:53:46.121000+00:00 DEBUG 'ansible_navigator.main' wcmatch==8.3 /usr/lib/python3.9/site-packages/wcmatch/__init__.py
+2023-10-11T13:53:46.121065+00:00 DEBUG 'ansible_navigator.main' wcwidth==0.2.8 /home/ansible/.local/lib/python3.9/site-packages/wcwidth/__init__.py
+2023-10-11T13:53:46.121130+00:00 DEBUG 'ansible_navigator.main' xmltodict==0.13.0 /home/ansible/.local/lib/python3.9/site-packages/xmltodict.py
+2023-10-11T13:53:46.121221+00:00 DEBUG 'ansible_navigator.main' yamllint==1.32.0 /usr/lib/python3.9/site-packages/yamllint/__init__.py
+2023-10-11T13:53:46.121297+00:00 DEBUG 'ansible_navigator.main' zipp==3.4.0 /usr/lib/python3.9/site-packages/zipp.py
+2023-10-11T13:53:46.121369+00:00 DEBUG 'ansible_navigator.main' Default collection_doc_cache_path set to: /home/ansible/.cache/ansible-navigator/collection_doc_cache.db
+2023-10-11T13:53:46.121440+00:00 DEBUG 'ansible_navigator.main' EDITOR environment variable not set
+2023-10-11T13:53:46.121507+00:00 DEBUG 'ansible_navigator.main' Default editor_command set to: vi +{line_number} {filename}
+2023-10-11T13:53:46.121576+00:00 DEBUG 'ansible_navigator.main' No config file set by ANSIBLE_NAVIGATOR_CONFIG
+2023-10-11T13:53:46.121641+00:00 DEBUG 'ansible_navigator.main' Looking in /home/ansible
+2023-10-11T13:53:46.121707+00:00 DEBUG 'ansible_navigator.main' Looking for '/home/ansible/.ansible-navigator.yml', '/home/ansible/.ansible-navigator.yaml' and '/home/ansible/.ansible-navigator.json'
+2023-10-11T13:53:46.121778+00:00 DEBUG 'ansible_navigator.main' Found 1: '/home/ansible/.ansible-navigator.yml'
+2023-10-11T13:53:46.121844+00:00 DEBUG 'ansible_navigator.main' Looking in /home/ansible/playbooks/flashsystem_setup
+2023-10-11T13:53:46.121909+00:00 DEBUG 'ansible_navigator.main' Looking for '/home/ansible/playbooks/flashsystem_setup/ansible-navigator.yml', '/home/ansible/playbooks/flashsystem_setup/ansible-navigator.yaml' and '/home/ansible/playbooks/flashsystem_setup/ansible-navigator.json'
+2023-10-11T13:53:46.121987+00:00 DEBUG 'ansible_navigator.main' Found 1: '/home/ansible/playbooks/flashsystem_setup/ansible-navigator.yml'
+2023-10-11T13:53:46.122061+00:00 DEBUG 'ansible_navigator.main' All found 2: '/home/ansible/.ansible-navigator.yml' and '/home/ansible/playbooks/flashsystem_setup/ansible-navigator.yml'
+2023-10-11T13:53:46.122129+00:00 DEBUG 'ansible_navigator.main' Using: /home/ansible/playbooks/flashsystem_setup/ansible-navigator.yml
+2023-10-11T13:53:46.122211+00:00 DEBUG 'ansible_navigator.main' Using settings file at /home/ansible/playbooks/flashsystem_setup/ansible-navigator.yml in search path
+2023-10-11T13:53:46.122284+00:00 DEBUG 'ansible_navigator.main' Command provided: 'run scratch.yml --eei localhost/ee-ibm-flashsystem'
+2023-10-11T13:53:46.122351+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.ansible-runner.artifact-dir not found in settings file
+2023-10-11T13:53:46.122421+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.ansible-runner.rotate-artifacts-count not found in settings file
+2023-10-11T13:53:46.122487+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.ansible-runner.timeout not found in settings file
+2023-10-11T13:53:46.122603+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.ansible-runner.job-events not found in settings file
+2023-10-11T13:53:46.122675+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.app not found in settings file
+2023-10-11T13:53:46.122746+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.ansible.cmdline not found in settings file
+2023-10-11T13:53:46.122812+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.collection-doc-cache-path not found in settings file
+2023-10-11T13:53:46.122877+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.execution-environment.container-options not found in settings file
+2023-10-11T13:53:46.122947+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.color.enable not found in settings file
+2023-10-11T13:53:46.123017+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.editor.command not found in settings file
+2023-10-11T13:53:46.123087+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.editor.console not found in settings file
+2023-10-11T13:53:46.123158+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.enable-prompts not found in settings file
+2023-10-11T13:53:46.123246+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.exec.command not found in settings file
+2023-10-11T13:53:46.123320+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.exec.shell not found in settings file
+2023-10-11T13:53:46.123390+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.execution-environment.volume-mounts not found in settings file
+2023-10-11T13:53:46.123462+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.format not found in settings file
+2023-10-11T13:53:46.123547+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.ansible-builder.help not found in settings file
+2023-10-11T13:53:46.123618+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.ansible.doc.help not found in settings file
+2023-10-11T13:53:46.123688+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.ansible.playbook.help not found in settings file
+2023-10-11T13:53:46.123758+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.images.details not found in settings file
+2023-10-11T13:53:46.123829+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.inventory-columns not found in settings file
+2023-10-11T13:53:46.123899+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.ansible-lint.config not found in settings file
+2023-10-11T13:53:46.123969+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.ansible-lint.lintables not found in settings file
+2023-10-11T13:53:46.124039+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.logging.file not found in settings file
+2023-10-11T13:53:46.124109+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.mode not found in settings file
+2023-10-11T13:53:46.124174+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.color.osc4 not found in settings file
+2023-10-11T13:53:46.124263+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.execution-environment.environment-variables.pass not found in settings file
+2023-10-11T13:53:46.124349+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.ansible.playbook.path not found in settings file
+2023-10-11T13:53:46.124421+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.playbook-artifact.enable not found in settings file
+2023-10-11T13:53:46.124530+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.playbook-artifact.replay not found in settings file
+2023-10-11T13:53:46.124603+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.playbook-artifact.save-as not found in settings file
+2023-10-11T13:53:46.124674+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.ansible.doc.plugin.name not found in settings file
+2023-10-11T13:53:46.124744+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.ansible.doc.plugin.type not found in settings file
+2023-10-11T13:53:46.124815+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.execution-environment.pull.policy not found in settings file
+2023-10-11T13:53:46.124885+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.execution-environment.environment-variables.set not found in settings file
+2023-10-11T13:53:46.124956+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.settings.effective not found in settings file
+2023-10-11T13:53:46.125026+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.settings.sample not found in settings file
+2023-10-11T13:53:46.125097+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.settings.schema not found in settings file
+2023-10-11T13:53:46.125167+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.settings.sources not found in settings file
+2023-10-11T13:53:46.125394+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.time-zone not found in settings file
+2023-10-11T13:53:46.125470+00:00 DEBUG 'ansible_navigator.main' ansible-navigator.ansible-builder.workdir not found in settings file
+2023-10-11T13:53:46.125542+00:00 DEBUG 'ansible_navigator.main' EE support enabled: using current working directory for 'ansible.cfg'
+2023-10-11T13:53:46.125613+00:00 INFO 'ansible_navigator.main' EE support enabled: no 'ansible.cfg' found in current working directory. Tried /home/ansible/playbooks/flashsystem_setup/ansible.cfg
+2023-10-11T13:53:46.125685+00:00 DEBUG 'ansible_navigator.main' Completed post processing for ansible_runner_artifact_dir. (changed=False)
+2023-10-11T13:53:46.125755+00:00 DEBUG 'ansible_navigator.main' Completed post processing for ansible_runner_rotate_artifacts_count. (changed=False)
+2023-10-11T13:53:46.125826+00:00 DEBUG 'ansible_navigator.main' Completed post processing for ansible_runner_timeout. (changed=False)
+2023-10-11T13:53:46.125897+00:00 DEBUG 'ansible_navigator.main' Completed post processing for cmdline. (changed=False)
+2023-10-11T13:53:46.125967+00:00 DEBUG 'ansible_navigator.main' Completed post processing for collection_doc_cache_path. (changed=False)
+2023-10-11T13:53:46.126038+00:00 DEBUG 'ansible_navigator.main' Completed post processing for container_engine. (changed=False)
+2023-10-11T13:53:46.126108+00:00 DEBUG 'ansible_navigator.main' Completed post processing for container_options. (changed=False)
+2023-10-11T13:53:46.126179+00:00 DEBUG 'ansible_navigator.main' Completed post processing for display_color. (changed=False)
+2023-10-11T13:53:46.126272+00:00 DEBUG 'ansible_navigator.main' Completed post processing for enable_prompts. (changed=False)
+2023-10-11T13:53:46.126345+00:00 DEBUG 'ansible_navigator.main' Completed post processing for execution_environment. (changed=False)
+2023-10-11T13:53:46.126416+00:00 DEBUG 'ansible_navigator.main' Completed post processing for execution_environment_image. (changed=True)
+2023-10-11T13:53:46.126487+00:00 DEBUG 'ansible_navigator.main'  before: 'localhost/ee-ibm-flashsystem'
+2023-10-11T13:53:46.126557+00:00 DEBUG 'ansible_navigator.main'  after: 'localhost/ee-ibm-flashsystem:latest'
+2023-10-11T13:53:46.126628+00:00 DEBUG 'ansible_navigator.main' Completed post processing for help_builder. (changed=False)
+2023-10-11T13:53:46.126708+00:00 DEBUG 'ansible_navigator.main' Completed post processing for help_config. (changed=False)
+2023-10-11T13:53:46.126779+00:00 DEBUG 'ansible_navigator.main' Completed post processing for help_doc. (changed=False)
+2023-10-11T13:53:46.126850+00:00 DEBUG 'ansible_navigator.main' Completed post processing for help_inventory. (changed=False)
+2023-10-11T13:53:46.126920+00:00 DEBUG 'ansible_navigator.main' Completed post processing for help_playbook. (changed=False)
+2023-10-11T13:53:46.126991+00:00 DEBUG 'ansible_navigator.main' Completed post processing for images_details. (changed=False)
+2023-10-11T13:53:46.127061+00:00 DEBUG 'ansible_navigator.main' Completed post processing for inventory. (changed=True)
+2023-10-11T13:53:46.127132+00:00 DEBUG 'ansible_navigator.main'  before: '['inventory']'
+2023-10-11T13:53:46.127216+00:00 DEBUG 'ansible_navigator.main'  after: '['/home/ansible/playbooks/flashsystem_setup/inventory']'
+2023-10-11T13:53:46.127293+00:00 DEBUG 'ansible_navigator.main' Completed post processing for inventory_column. (changed=False)
+2023-10-11T13:53:46.127365+00:00 DEBUG 'ansible_navigator.main' Completed post processing for log_file. (changed=False)
+2023-10-11T13:53:46.127437+00:00 DEBUG 'ansible_navigator.main' Completed post processing for pass_environment_variable. (changed=False)
+2023-10-11T13:53:46.127519+00:00 DEBUG 'ansible_navigator.main' Completed post processing for playbook. (changed=True)
+2023-10-11T13:53:46.127592+00:00 DEBUG 'ansible_navigator.main'  before: 'scratch.yml'
+2023-10-11T13:53:46.127663+00:00 DEBUG 'ansible_navigator.main'  after: '/home/ansible/playbooks/flashsystem_setup/scratch.yml'
+2023-10-11T13:53:46.127733+00:00 DEBUG 'ansible_navigator.main' Completed post processing for playbook_artifact_replay. (changed=False)
+2023-10-11T13:53:46.127803+00:00 DEBUG 'ansible_navigator.main' Completed post processing for playbook_artifact_save_as. (changed=False)
+2023-10-11T13:53:46.127873+00:00 DEBUG 'ansible_navigator.main' Completed post processing for plugin_name. (changed=False)
+2023-10-11T13:53:46.127944+00:00 DEBUG 'ansible_navigator.main' Completed post processing for pull_arguments. (changed=False)
+2023-10-11T13:53:46.128014+00:00 DEBUG 'ansible_navigator.main' Completed post processing for set_environment_variable. (changed=False)
+2023-10-11T13:53:46.128085+00:00 DEBUG 'ansible_navigator.main' Completed post processing for settings_effective. (changed=False)
+2023-10-11T13:53:46.128155+00:00 DEBUG 'ansible_navigator.main' Completed post processing for settings_sample. (changed=False)
+2023-10-11T13:53:46.128244+00:00 DEBUG 'ansible_navigator.main' Completed post processing for settings_schema. (changed=False)
+2023-10-11T13:53:46.128316+00:00 DEBUG 'ansible_navigator.main' Completed post processing for settings_sources. (changed=False)
+2023-10-11T13:53:46.128382+00:00 DEBUG 'ansible_navigator.main' Completed post processing for time_zone. (changed=False)
+2023-10-11T13:53:46.128448+00:00 DEBUG 'ansible_navigator.main' Completed post processing for execution_environment_volume_mounts. (changed=False)
+2023-10-11T13:53:46.128518+00:00 DEBUG 'ansible_navigator.main' Completed post processing for mode. (changed=False)
+2023-10-11T13:53:46.128588+00:00 DEBUG 'ansible_navigator.main' Completed post processing for playbook_artifact_enable. (changed=False)
+2023-10-11T13:53:46.128659+00:00 DEBUG 'ansible_navigator.main' Collection doc cache not mounted
+2023-10-11T13:53:46.129323+00:00 DEBUG 'ansible_navigator.main' Collection doc cache: 'path' is '/home/ansible/.cache/ansible-navigator/collection_doc_cache.db'
+2023-10-11T13:53:46.129415+00:00 DEBUG 'ansible_navigator.main' Collection doc cache: 'current version' is '1.0'
+2023-10-11T13:53:46.129495+00:00 DEBUG 'ansible_navigator.main' Collection doc cache not attached to args.internals
+2023-10-11T13:53:46.129572+00:00 DEBUG 'ansible_navigator.main' Running with ansible_runner_artifact_dir as 'Not set' (Constants/Not set)
+2023-10-11T13:53:46.129648+00:00 DEBUG 'ansible_navigator.main' Running with ansible_runner_rotate_artifacts_count as 'Not set' (Constants/Not set)
+2023-10-11T13:53:46.129731+00:00 DEBUG 'ansible_navigator.main' Running with ansible_runner_timeout as 'Not set' (Constants/Not set)
+2023-10-11T13:53:46.129830+00:00 DEBUG 'ansible_navigator.main' Running with ansible_runner_write_job_events as 'False' (bool/Defaults)
+2023-10-11T13:53:46.129904+00:00 DEBUG 'ansible_navigator.main' Running with app as 'run' (str/Command line)
+2023-10-11T13:53:46.129977+00:00 DEBUG 'ansible_navigator.main' Running with cmdline as 'Not set' (Constants/Not set)
+2023-10-11T13:53:46.130049+00:00 DEBUG 'ansible_navigator.main' Running with collection_doc_cache_path as '/home/ansible/.cache/ansible-navigator/collection_doc_cache.db' (str/Defaults)
+2023-10-11T13:53:46.130121+00:00 DEBUG 'ansible_navigator.main' Running with config as '/etc/ansible/ansible.cfg' (str/Settings file)
+2023-10-11T13:53:46.130192+00:00 DEBUG 'ansible_navigator.main' Running with container_engine as 'podman' (str/Settings file)
+2023-10-11T13:53:46.130301+00:00 DEBUG 'ansible_navigator.main' Running with container_options as 'Not set' (Constants/Not set)
+2023-10-11T13:53:46.130374+00:00 DEBUG 'ansible_navigator.main' Running with display_color as 'True' (bool/Defaults)
+2023-10-11T13:53:46.130445+00:00 DEBUG 'ansible_navigator.main' Running with editor_command as 'vi +{line_number} {filename}' (str/Defaults)
+2023-10-11T13:53:46.130516+00:00 DEBUG 'ansible_navigator.main' Running with editor_console as 'True' (bool/Defaults)
+2023-10-11T13:53:46.130587+00:00 DEBUG 'ansible_navigator.main' Running with enable_prompts as 'False' (bool/Defaults)
+2023-10-11T13:53:46.130657+00:00 DEBUG 'ansible_navigator.main' Running with exec_command as '/bin/bash' (str/Defaults)
+2023-10-11T13:53:46.130728+00:00 DEBUG 'ansible_navigator.main' Running with exec_shell as 'True' (bool/Defaults)
+2023-10-11T13:53:46.130825+00:00 DEBUG 'ansible_navigator.main' Running with execution_environment as 'True' (bool/Settings file)
+2023-10-11T13:53:46.130898+00:00 DEBUG 'ansible_navigator.main' Running with execution_environment_image as 'localhost/ee-ibm-flashsystem:latest' (str/Command line)
+2023-10-11T13:53:46.130970+00:00 DEBUG 'ansible_navigator.main' Running with execution_environment_volume_mounts as 'Not set' (Constants/Not set)
+2023-10-11T13:53:46.131036+00:00 DEBUG 'ansible_navigator.main' Running with format as 'yaml' (str/Defaults)
+2023-10-11T13:53:46.131106+00:00 DEBUG 'ansible_navigator.main' Running with help_builder as 'False' (bool/Defaults)
+2023-10-11T13:53:46.131171+00:00 DEBUG 'ansible_navigator.main' Running with help_config as 'False' (bool/Settings file)
+2023-10-11T13:53:46.131259+00:00 DEBUG 'ansible_navigator.main' Running with help_doc as 'False' (bool/Defaults)
+2023-10-11T13:53:46.131331+00:00 DEBUG 'ansible_navigator.main' Running with help_inventory as 'True' (bool/Settings file)
+2023-10-11T13:53:46.131402+00:00 DEBUG 'ansible_navigator.main' Running with help_playbook as 'False' (bool/Defaults)
+2023-10-11T13:53:46.131473+00:00 DEBUG 'ansible_navigator.main' Running with images_details as '['everything']' (list/Defaults)
+2023-10-11T13:53:46.131557+00:00 DEBUG 'ansible_navigator.main' Running with inventory as '['/home/ansible/playbooks/flashsystem_setup/inventory']' (list/Settings file)
+2023-10-11T13:53:46.131628+00:00 DEBUG 'ansible_navigator.main' Running with inventory_column as 'Not set' (Constants/Not set)
+2023-10-11T13:53:46.131699+00:00 DEBUG 'ansible_navigator.main' Running with lint_config as 'Not set' (Constants/Not set)
+2023-10-11T13:53:46.131786+00:00 DEBUG 'ansible_navigator.main' Running with lintables as 'Not set' (Constants/Not set)
+2023-10-11T13:53:46.131866+00:00 DEBUG 'ansible_navigator.main' Running with log_append as 'False' (bool/Settings file)
+2023-10-11T13:53:46.131938+00:00 DEBUG 'ansible_navigator.main' Running with log_file as '/home/ansible/playbooks/flashsystem_setup/ansible-navigator.log' (str/Defaults)
+2023-10-11T13:53:46.132008+00:00 DEBUG 'ansible_navigator.main' Running with log_level as 'debug' (str/Settings file)
+2023-10-11T13:53:46.132079+00:00 DEBUG 'ansible_navigator.main' Running with mode as 'interactive' (str/Defaults)
+2023-10-11T13:53:46.132159+00:00 DEBUG 'ansible_navigator.main' Running with osc4 as 'True' (bool/Defaults)
+2023-10-11T13:53:46.132251+00:00 DEBUG 'ansible_navigator.main' Running with pass_environment_variable as 'Not set' (Constants/Not set)
+2023-10-11T13:53:46.132324+00:00 DEBUG 'ansible_navigator.main' Running with playbook as '/home/ansible/playbooks/flashsystem_setup/scratch.yml' (str/Command line)
+2023-10-11T13:53:46.132395+00:00 DEBUG 'ansible_navigator.main' Running with playbook_artifact_enable as 'True' (bool/Defaults)
+2023-10-11T13:53:46.132466+00:00 DEBUG 'ansible_navigator.main' Running with playbook_artifact_replay as 'Not set' (Constants/Not set)
+2023-10-11T13:53:46.132536+00:00 DEBUG 'ansible_navigator.main' Running with playbook_artifact_save_as as '{playbook_dir}/{playbook_name}-artifact-{time_stamp}.json' (str/Defaults)
+2023-10-11T13:53:46.132608+00:00 DEBUG 'ansible_navigator.main' Running with plugin_name as 'Not set' (Constants/Not set)
+2023-10-11T13:53:46.132678+00:00 DEBUG 'ansible_navigator.main' Running with plugin_type as 'module' (str/Defaults)
+2023-10-11T13:53:46.132754+00:00 DEBUG 'ansible_navigator.main' Running with pull_arguments as '['--tls-verify=false']' (list/Settings file)
+2023-10-11T13:53:46.132847+00:00 DEBUG 'ansible_navigator.main' Running with pull_policy as 'tag' (str/Defaults)
+2023-10-11T13:53:46.132919+00:00 DEBUG 'ansible_navigator.main' Running with set_environment_variable as 'Not set' (Constants/Not set)
+2023-10-11T13:53:46.132990+00:00 DEBUG 'ansible_navigator.main' Running with settings_effective as 'False' (bool/Defaults)
+2023-10-11T13:53:46.133060+00:00 DEBUG 'ansible_navigator.main' Running with settings_sample as 'False' (bool/Defaults)
+2023-10-11T13:53:46.133131+00:00 DEBUG 'ansible_navigator.main' Running with settings_schema as 'json' (str/Defaults)
+2023-10-11T13:53:46.133214+00:00 DEBUG 'ansible_navigator.main' Running with settings_sources as 'False' (bool/Defaults)
+2023-10-11T13:53:46.133292+00:00 DEBUG 'ansible_navigator.main' Running with time_zone as 'UTC' (str/Defaults)
+2023-10-11T13:53:46.133365+00:00 DEBUG 'ansible_navigator.main' Running with workdir as '/home/ansible/playbooks/flashsystem_setup' (str/Defaults)
+2023-10-11T13:53:46.133569+00:00 INFO 'ansible_navigator.image_manager.puller._log_message' Image tag is: latest
+2023-10-11T13:53:46.133678+00:00 DEBUG 'ansible_navigator.image_manager.puller._log_message' Command: podman image inspect localhost/ee-ibm-flashsystem:latest
+2023-10-11T13:53:46.266623+00:00 INFO 'ansible_navigator.image_manager.puller._log_message' Execution environment image name:: localhost/ee-ibm-flashsystem:latest
+2023-10-11T13:53:46.267244+00:00 INFO 'ansible_navigator.image_manager.puller._log_message' Execution environment image tag:: latest
+2023-10-11T13:53:46.267557+00:00 INFO 'ansible_navigator.image_manager.puller._log_message' Execution environment pull arguments:: --tls-verify=false
+2023-10-11T13:53:46.267880+00:00 INFO 'ansible_navigator.image_manager.puller._log_message' Execution environment pull policy:: tag
+2023-10-11T13:53:46.268171+00:00 INFO 'ansible_navigator.image_manager.puller._log_message' Execution environment pull needed:: True
+2023-10-11T13:53:46.845136+00:00 ERROR 'ansible_navigator.image_manager.puller._log_message' Execution environment pull failed
+2023-10-11T13:53:46.845549+00:00 INFO 'ansible_navigator.image_manager.puller._log_message' Check the execution environment image name, connectivity to and permissions for the registry, and try again
+2023-10-11T13:53:46.846701+00:00 DEBUG 'ansible_navigator.cache_scripts' No update required for /usr/lib/python3.9/site-packages/ansible_navigator/data/catalog_collections.py to /home/ansible/.cache/ansible-navigator/catalog_collections.py
+2023-10-11T13:53:46.847123+00:00 DEBUG 'ansible_navigator.cache_scripts' No update required for /usr/lib/python3.9/site-packages/ansible_navigator/data/image_introspect.py to /home/ansible/.cache/ansible-navigator/image_introspect.py
+2023-10-11T13:53:46.863829+00:00 DEBUG 'ansible_navigator.action_base.initialize_ui' grammar path = /usr/lib/python3.9/site-packages/ansible_navigator/data/grammar
+2023-10-11T13:53:46.864134+00:00 DEBUG 'ansible_navigator.action_base.initialize_ui' theme path = /usr/lib/python3.9/site-packages/ansible_navigator/data/themes/dark_vs.json
+2023-10-11T13:53:46.864290+00:00 DEBUG 'ansible_navigator.action_base.initialize_ui' terminal colors path = /usr/lib/python3.9/site-packages/ansible_navigator/data/themes/terminal_colors.json
+2023-10-11T13:53:46.864464+00:00 DEBUG 'ansible_navigator.ui_framework.curses_window.__init__' self._ui_config: UIConfig(color=True, colors_initialized=False, grammar_dir=PosixPath('/usr/lib/python3.9/site-packages/ansible_navigator/data/grammar'), osc4=True, terminal_colors_path=PosixPath('/usr/lib/python3.9/site-packages/ansible_navigator/data/themes/terminal_colors.json'), theme_path=PosixPath('/usr/lib/python3.9/site-packages/ansible_navigator/data/themes/dark_vs.json'))
+2023-10-11T13:53:46.864799+00:00 DEBUG 'ansible_navigator.ui_framework.curses_window._set_colors' curses.COLORS: 256
+2023-10-11T13:53:46.864950+00:00 DEBUG 'ansible_navigator.ui_framework.curses_window._set_colors' curses.can_change_color: True
+2023-10-11T13:53:46.865077+00:00 DEBUG 'ansible_navigator.ui_framework.curses_window._set_colors' term_osc4_support: True
+2023-10-11T13:53:46.865532+00:00 DEBUG 'ansible_navigator.ui_framework.curses_window._set_colors' Custom colors set
+2023-10-11T13:53:46.866728+00:00 DEBUG 'ansible_navigator.ui_framework.curses_window.__init__' self._ui_config: UIConfig(color=True, colors_initialized=True, grammar_dir=PosixPath('/usr/lib/python3.9/site-packages/ansible_navigator/data/grammar'), osc4=True, terminal_colors_path=PosixPath('/usr/lib/python3.9/site-packages/ansible_navigator/data/themes/terminal_colors.json'), theme_path=PosixPath('/usr/lib/python3.9/site-packages/ansible_navigator/data/themes/dark_vs.json'))
+2023-10-11T13:53:46.895498+00:00 DEBUG 'ansible_navigator.actions.run.run' run requested in interactive mode
+2023-10-11T13:53:46.967912+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' No config file set by ANSIBLE_NAVIGATOR_CONFIG
+2023-10-11T13:53:46.968069+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Looking in /home/ansible
+2023-10-11T13:53:46.968154+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Looking for '/home/ansible/.ansible-navigator.yml', '/home/ansible/.ansible-navigator.yaml' and '/home/ansible/.ansible-navigator.json'
+2023-10-11T13:53:46.968253+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Found 1: '/home/ansible/.ansible-navigator.yml'
+2023-10-11T13:53:46.968330+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Looking in /home/ansible/playbooks/flashsystem_setup
+2023-10-11T13:53:46.968398+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Looking for '/home/ansible/playbooks/flashsystem_setup/ansible-navigator.yml', '/home/ansible/playbooks/flashsystem_setup/ansible-navigator.yaml' and '/home/ansible/playbooks/flashsystem_setup/ansible-navigator.json'
+2023-10-11T13:53:46.968471+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Found 1: '/home/ansible/playbooks/flashsystem_setup/ansible-navigator.yml'
+2023-10-11T13:53:46.968542+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' All found 2: '/home/ansible/.ansible-navigator.yml' and '/home/ansible/playbooks/flashsystem_setup/ansible-navigator.yml'
+2023-10-11T13:53:46.968609+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Using: /home/ansible/playbooks/flashsystem_setup/ansible-navigator.yml
+2023-10-11T13:53:46.968678+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Using settings file at /home/ansible/playbooks/flashsystem_setup/ansible-navigator.yml in search path
+2023-10-11T13:53:46.968749+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Command provided: 'run'
+2023-10-11T13:53:46.968824+00:00 INFO 'ansible_navigator.actions.run_0e0b._update_args' 'display_color' cannot be reconfigured. (restore original)
+2023-10-11T13:53:46.968903+00:00 INFO 'ansible_navigator.actions.run_0e0b._update_args' 'mode' cannot be reconfigured. (restore original)
+2023-10-11T13:53:46.968974+00:00 INFO 'ansible_navigator.actions.run_0e0b._update_args' 'display_color' cannot be reconfigured. (apply defaults)
+2023-10-11T13:53:46.969044+00:00 INFO 'ansible_navigator.actions.run_0e0b._update_args' 'mode' cannot be reconfigured. (apply defaults)
+2023-10-11T13:53:46.969110+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.ansible-runner.artifact-dir not found in settings file
+2023-10-11T13:53:46.969179+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.ansible-runner.rotate-artifacts-count not found in settings file
+2023-10-11T13:53:46.969268+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.ansible-runner.timeout not found in settings file
+2023-10-11T13:53:46.969339+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.ansible-runner.job-events not found in settings file
+2023-10-11T13:53:46.969409+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.app not found in settings file
+2023-10-11T13:53:46.969479+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.ansible.cmdline not found in settings file
+2023-10-11T13:53:46.969544+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.collection-doc-cache-path not found in settings file
+2023-10-11T13:53:46.969613+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.execution-environment.container-options not found in settings file
+2023-10-11T13:53:46.969683+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.color.enable not found in settings file
+2023-10-11T13:53:46.969748+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.editor.command not found in settings file
+2023-10-11T13:53:46.969816+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.editor.console not found in settings file
+2023-10-11T13:53:46.969882+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.enable-prompts not found in settings file
+2023-10-11T13:53:46.969951+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.exec.command not found in settings file
+2023-10-11T13:53:46.970016+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.exec.shell not found in settings file
+2023-10-11T13:53:46.970085+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.execution-environment.volume-mounts not found in settings file
+2023-10-11T13:53:46.970154+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.format not found in settings file
+2023-10-11T13:53:46.970252+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.ansible-builder.help not found in settings file
+2023-10-11T13:53:46.970323+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.ansible.doc.help not found in settings file
+2023-10-11T13:53:46.970393+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.ansible.playbook.help not found in settings file
+2023-10-11T13:53:46.970459+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.images.details not found in settings file
+2023-10-11T13:53:46.970542+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.inventory-columns not found in settings file
+2023-10-11T13:53:46.970613+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.ansible-lint.config not found in settings file
+2023-10-11T13:53:46.970679+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.ansible-lint.lintables not found in settings file
+2023-10-11T13:53:46.970748+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.logging.file not found in settings file
+2023-10-11T13:53:46.970828+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.mode not found in settings file
+2023-10-11T13:53:46.970895+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.color.osc4 not found in settings file
+2023-10-11T13:53:46.970959+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.execution-environment.environment-variables.pass not found in settings file
+2023-10-11T13:53:46.971028+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.ansible.playbook.path not found in settings file
+2023-10-11T13:53:46.971097+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.playbook-artifact.enable not found in settings file
+2023-10-11T13:53:46.971167+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.playbook-artifact.replay not found in settings file
+2023-10-11T13:53:46.971295+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.playbook-artifact.save-as not found in settings file
+2023-10-11T13:53:46.971367+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.ansible.doc.plugin.name not found in settings file
+2023-10-11T13:53:46.971432+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.ansible.doc.plugin.type not found in settings file
+2023-10-11T13:53:46.971501+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.execution-environment.pull.policy not found in settings file
+2023-10-11T13:53:46.971571+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.execution-environment.environment-variables.set not found in settings file
+2023-10-11T13:53:46.971637+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.settings.effective not found in settings file
+2023-10-11T13:53:46.971715+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.settings.sample not found in settings file
+2023-10-11T13:53:46.971800+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.settings.schema not found in settings file
+2023-10-11T13:53:46.971871+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.settings.sources not found in settings file
+2023-10-11T13:53:46.971937+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.time-zone not found in settings file
+2023-10-11T13:53:46.972001+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' ansible-navigator.ansible-builder.workdir not found in settings file
+2023-10-11T13:53:46.972065+00:00 INFO 'ansible_navigator.actions.run_0e0b._update_args' 'display_color' cannot be reconfigured (apply previous cli)
+2023-10-11T13:53:46.972129+00:00 INFO 'ansible_navigator.actions.run_0e0b._update_args' 'mode' cannot be reconfigured (apply previous cli)
+2023-10-11T13:53:46.972210+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' EE support enabled: using current working directory for 'ansible.cfg'
+2023-10-11T13:53:46.972282+00:00 INFO 'ansible_navigator.actions.run_0e0b._update_args' EE support enabled: no 'ansible.cfg' found in current working directory. Tried /home/ansible/playbooks/flashsystem_setup/ansible.cfg
+2023-10-11T13:53:46.972354+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Completed post processing for ansible_runner_artifact_dir. (changed=False)
+2023-10-11T13:53:46.972419+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Completed post processing for ansible_runner_rotate_artifacts_count. (changed=False)
+2023-10-11T13:53:46.972489+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Completed post processing for ansible_runner_timeout. (changed=False)
+2023-10-11T13:53:46.972553+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Completed post processing for cmdline. (changed=False)
+2023-10-11T13:53:46.972618+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Completed post processing for collection_doc_cache_path. (changed=False)
+2023-10-11T13:53:46.972696+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Completed post processing for container_engine. (changed=False)
+2023-10-11T13:53:46.972762+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Completed post processing for container_options. (changed=False)
+2023-10-11T13:53:46.972826+00:00 INFO 'ansible_navigator.actions.run_0e0b._update_args' 'display_color' cannot be reconfigured. (post process)
+2023-10-11T13:53:46.972891+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Completed post processing for enable_prompts. (changed=False)
+2023-10-11T13:53:46.972960+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Completed post processing for execution_environment. (changed=False)
+2023-10-11T13:53:46.973025+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Completed post processing for execution_environment_image. (changed=False)
+2023-10-11T13:53:46.973089+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Completed post processing for help_builder. (changed=False)
+2023-10-11T13:53:46.973157+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Completed post processing for help_config. (changed=False)
+2023-10-11T13:53:46.973241+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Completed post processing for help_doc. (changed=False)
+2023-10-11T13:53:46.973308+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Completed post processing for help_inventory. (changed=False)
+2023-10-11T13:53:46.973377+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Completed post processing for help_playbook. (changed=False)
+2023-10-11T13:53:46.973442+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Completed post processing for images_details. (changed=False)
+2023-10-11T13:53:46.973521+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Completed post processing for inventory. (changed=True)
+2023-10-11T13:53:46.973592+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args'  before: '['inventory']'
+2023-10-11T13:53:46.973658+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args'  after: '['/home/ansible/playbooks/flashsystem_setup/inventory']'
+2023-10-11T13:53:46.973722+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Completed post processing for inventory_column. (changed=False)
+2023-10-11T13:53:46.973792+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Completed post processing for log_file. (changed=False)
+2023-10-11T13:53:46.973857+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Completed post processing for pass_environment_variable. (changed=False)
+2023-10-11T13:53:46.973921+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Completed post processing for playbook. (changed=False)
+2023-10-11T13:53:46.973990+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Completed post processing for playbook_artifact_replay. (changed=False)
+2023-10-11T13:53:46.974060+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Completed post processing for playbook_artifact_save_as. (changed=False)
+2023-10-11T13:53:46.974125+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Completed post processing for plugin_name. (changed=False)
+2023-10-11T13:53:46.974189+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Completed post processing for pull_arguments. (changed=False)
+2023-10-11T13:53:46.974290+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Completed post processing for set_environment_variable. (changed=False)
+2023-10-11T13:53:46.974357+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Completed post processing for settings_effective. (changed=False)
+2023-10-11T13:53:46.974421+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Completed post processing for settings_sample. (changed=False)
+2023-10-11T13:53:46.974490+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Completed post processing for settings_schema. (changed=False)
+2023-10-11T13:53:46.974568+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Completed post processing for settings_sources. (changed=False)
+2023-10-11T13:53:46.974639+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Completed post processing for time_zone. (changed=False)
+2023-10-11T13:53:46.974704+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Completed post processing for execution_environment_volume_mounts. (changed=False)
+2023-10-11T13:53:46.974768+00:00 INFO 'ansible_navigator.actions.run_0e0b._update_args' 'mode' cannot be reconfigured. (post process)
+2023-10-11T13:53:46.974837+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Completed post processing for playbook_artifact_enable. (changed=False)
+2023-10-11T13:53:46.974902+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Collection doc cache not mounted
+2023-10-11T13:53:46.974966+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Collection doc cache: 'path' is '/home/ansible/.cache/ansible-navigator/collection_doc_cache.db'
+2023-10-11T13:53:46.975035+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Collection doc cache: 'current version' is '1.0'
+2023-10-11T13:53:46.975100+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Collection doc cache not attached to args.internals
+2023-10-11T13:53:46.975169+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with ansible_runner_artifact_dir as 'Not set' (Constants/Not set)
+2023-10-11T13:53:46.975264+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with ansible_runner_rotate_artifacts_count as 'Not set' (Constants/Not set)
+2023-10-11T13:53:46.975335+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with ansible_runner_timeout as 'Not set' (Constants/Not set)
+2023-10-11T13:53:46.975400+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with ansible_runner_write_job_events as 'False' (bool/Defaults)
+2023-10-11T13:53:46.975464+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with app as 'run' (str/Command line)
+2023-10-11T13:53:46.975533+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with cmdline as 'Not set' (Constants/Not set)
+2023-10-11T13:53:46.975598+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with collection_doc_cache_path as '/home/ansible/.cache/ansible-navigator/collection_doc_cache.db' (str/Defaults)
+2023-10-11T13:53:46.975663+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with config as '/etc/ansible/ansible.cfg' (str/Settings file)
+2023-10-11T13:53:46.975732+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with container_engine as 'podman' (str/Settings file)
+2023-10-11T13:53:46.975797+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with container_options as 'Not set' (Constants/Not set)
+2023-10-11T13:53:46.975861+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with display_color as 'True' (bool/Defaults)
+2023-10-11T13:53:46.975924+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with editor_command as 'vi +{line_number} {filename}' (str/Defaults)
+2023-10-11T13:53:46.975989+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with editor_console as 'True' (bool/Defaults)
+2023-10-11T13:53:46.976058+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with enable_prompts as 'False' (bool/Defaults)
+2023-10-11T13:53:46.976123+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with exec_command as '/bin/bash' (str/Defaults)
+2023-10-11T13:53:46.976186+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with exec_shell as 'True' (bool/Defaults)
+2023-10-11T13:53:46.976275+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with execution_environment as 'True' (bool/Settings file)
+2023-10-11T13:53:46.976342+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with execution_environment_image as 'localhost/ee-ibm-flashsystem:latest' (str/Previous cli command)
+2023-10-11T13:53:46.976418+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with execution_environment_volume_mounts as 'Not set' (Constants/Not set)
+2023-10-11T13:53:46.976496+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with format as 'yaml' (str/Defaults)
+2023-10-11T13:53:46.976564+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with help_builder as 'False' (bool/Defaults)
+2023-10-11T13:53:46.976633+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with help_config as 'False' (bool/Settings file)
+2023-10-11T13:53:46.976698+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with help_doc as 'False' (bool/Defaults)
+2023-10-11T13:53:46.976762+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with help_inventory as 'True' (bool/Settings file)
+2023-10-11T13:53:46.976831+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with help_playbook as 'False' (bool/Defaults)
+2023-10-11T13:53:46.976897+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with images_details as '['everything']' (list/Defaults)
+2023-10-11T13:53:46.976965+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with inventory as '['/home/ansible/playbooks/flashsystem_setup/inventory']' (list/Settings file)
+2023-10-11T13:53:46.977030+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with inventory_column as 'Not set' (Constants/Not set)
+2023-10-11T13:53:46.977099+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with lint_config as 'Not set' (Constants/Not set)
+2023-10-11T13:53:46.977164+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with lintables as 'Not set' (Constants/Not set)
+2023-10-11T13:53:46.977247+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with log_append as 'False' (bool/Settings file)
+2023-10-11T13:53:46.977318+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with log_file as '/home/ansible/playbooks/flashsystem_setup/ansible-navigator.log' (str/Defaults)
+2023-10-11T13:53:46.977383+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with log_level as 'debug' (str/Settings file)
+2023-10-11T13:53:46.977448+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with mode as 'interactive' (str/Defaults)
+2023-10-11T13:53:46.977517+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with osc4 as 'True' (bool/Defaults)
+2023-10-11T13:53:46.977581+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with pass_environment_variable as 'Not set' (Constants/Not set)
+2023-10-11T13:53:46.977646+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with playbook as '/home/ansible/playbooks/flashsystem_setup/scratch.yml' (str/Previous cli command)
+2023-10-11T13:53:46.977715+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with playbook_artifact_enable as 'True' (bool/Defaults)
+2023-10-11T13:53:46.977780+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with playbook_artifact_replay as 'Not set' (Constants/Not set)
+2023-10-11T13:53:46.977844+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with playbook_artifact_save_as as '{playbook_dir}/{playbook_name}-artifact-{time_stamp}.json' (str/Defaults)
+2023-10-11T13:53:46.977908+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with plugin_name as 'Not set' (Constants/Not set)
+2023-10-11T13:53:46.977973+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with plugin_type as 'module' (str/Defaults)
+2023-10-11T13:53:46.978042+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with pull_arguments as '['--tls-verify=false']' (list/Settings file)
+2023-10-11T13:53:46.978107+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with pull_policy as 'tag' (str/Defaults)
+2023-10-11T13:53:46.978184+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with set_environment_variable as 'Not set' (Constants/Not set)
+2023-10-11T13:53:46.978428+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with settings_effective as 'False' (bool/Defaults)
+2023-10-11T13:53:46.978504+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with settings_sample as 'False' (bool/Defaults)
+2023-10-11T13:53:46.978570+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with settings_schema as 'json' (str/Defaults)
+2023-10-11T13:53:46.978641+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with settings_sources as 'False' (bool/Defaults)
+2023-10-11T13:53:46.978706+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with time_zone as 'UTC' (str/Defaults)
+2023-10-11T13:53:46.978776+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._update_args' Running with workdir as '/home/ansible/playbooks/flashsystem_setup' (str/Defaults)
+2023-10-11T13:53:46.979881+00:00 DEBUG 'ansible_navigator.runner.base._set_private_data_directory' private data dir not user provided, used tmp location: /tmp/ansible-navigator_ndqbqfwt
+2023-10-11T13:53:46.980191+00:00 DEBUG 'ansible_navigator.runner.base.generate_run_command_args' Runner arg: container_image:localhost/ee-ibm-flashsystem:latest
+2023-10-11T13:53:46.980302+00:00 DEBUG 'ansible_navigator.runner.base.generate_run_command_args' Runner arg: process_isolation_executable:podman
+2023-10-11T13:53:46.980382+00:00 DEBUG 'ansible_navigator.runner.base.generate_run_command_args' Runner arg: process_isolation:True
+2023-10-11T13:53:46.980451+00:00 DEBUG 'ansible_navigator.runner.base.generate_run_command_args' Runner arg: container_volume_mounts:None
+2023-10-11T13:53:46.980519+00:00 DEBUG 'ansible_navigator.runner.base.generate_run_command_args' Runner arg: container_options:['--user=root']
+2023-10-11T13:53:46.980593+00:00 DEBUG 'ansible_navigator.runner.base.generate_run_command_args' Runner arg: container_workdir:None
+2023-10-11T13:53:46.980661+00:00 DEBUG 'ansible_navigator.runner.base.generate_run_command_args' Runner arg: private_data_dir:/tmp/ansible-navigator_ndqbqfwt
+2023-10-11T13:53:46.980727+00:00 DEBUG 'ansible_navigator.runner.base.generate_run_command_args' Runner arg: json_mode:True
+2023-10-11T13:53:46.980799+00:00 DEBUG 'ansible_navigator.runner.base.generate_run_command_args' Runner arg: quiet:True
+2023-10-11T13:53:46.980867+00:00 DEBUG 'ansible_navigator.runner.base.generate_run_command_args' Runner arg: cancel_callback:<bound method Base.runner_cancelled_callback of <ansible_navigator.runner.command_async.CommandAsync object at 0x7efd469a5190>>
+2023-10-11T13:53:46.980945+00:00 DEBUG 'ansible_navigator.runner.base.generate_run_command_args' Runner arg: finished_callback:<bound method Base.runner_finished_callback of <ansible_navigator.runner.command_async.CommandAsync object at 0x7efd469a5190>>
+2023-10-11T13:53:46.981015+00:00 DEBUG 'ansible_navigator.runner.base.generate_run_command_args' Runner arg: timeout:None
+2023-10-11T13:53:46.981087+00:00 DEBUG 'ansible_navigator.runner.base.generate_run_command_args' Runner arg: envvars:{}
+2023-10-11T13:53:46.981162+00:00 DEBUG 'ansible_navigator.runner.base.generate_run_command_args' Runner arg: host_cwd:/home/ansible/playbooks/flashsystem_setup/
+2023-10-11T13:53:46.981254+00:00 DEBUG 'ansible_navigator.runner.base.generate_run_command_args' Runner arg: executable_cmd:ansible-playbook
+2023-10-11T13:53:46.981327+00:00 DEBUG 'ansible_navigator.runner.base.generate_run_command_args' Runner arg: cmdline_args:['/home/ansible/playbooks/flashsystem_setup/scratch.yml', '-i', '/home/ansible/playbooks/flashsystem_setup/inventory']
+2023-10-11T13:53:46.984550+00:00 DEBUG 'ansible-runner._handle_command_wrap' containerization enabled
+2023-10-11T13:53:46.985405+00:00 DEBUG 'ansible-runner.wrap_args_for_containerization' container engine invocation: podman run --rm --tty --interactive -v /home/ansible/playbooks/flashsystem_setup/:/home/ansible/playbooks/flashsystem_setup/ --workdir /home/ansible/playbooks/flashsystem_setup -v /home/ansible/.ssh/:/home/runner/.ssh/ -v /home/ansible/.ssh/:/root/.ssh/ --group-add=root --ipc=host -v /tmp/ansible-navigator_ndqbqfwt/artifacts/:/runner/artifacts/:Z -v /tmp/ansible-navigator_ndqbqfwt/:/runner/:Z --env-file /tmp/ansible-navigator_ndqbqfwt/artifacts/b3547597-23d2-41ca-afc0-6db0370610ad/env.list --quiet --name ansible_runner_b3547597-23d2-41ca-afc0-6db0370610ad --user=root localhost/ee-ibm-flashsystem:latest ansible-playbook /home/ansible/playbooks/flashsystem_setup/scratch.yml -i /home/ansible/playbooks/flashsystem_setup/inventory
+2023-10-11T13:53:46.985528+00:00 DEBUG 'ansible-runner._handle_command_wrap' command: podman run --rm --tty --interactive -v /home/ansible/playbooks/flashsystem_setup/:/home/ansible/playbooks/flashsystem_setup/ --workdir /home/ansible/playbooks/flashsystem_setup -v /home/ansible/.ssh/:/home/runner/.ssh/ -v /home/ansible/.ssh/:/root/.ssh/ --group-add=root --ipc=host -v /tmp/ansible-navigator_ndqbqfwt/artifacts/:/runner/artifacts/:Z -v /tmp/ansible-navigator_ndqbqfwt/:/runner/:Z --env-file /tmp/ansible-navigator_ndqbqfwt/artifacts/b3547597-23d2-41ca-afc0-6db0370610ad/env.list --quiet --name ansible_runner_b3547597-23d2-41ca-afc0-6db0370610ad --user=root localhost/ee-ibm-flashsystem:latest ansible-playbook /home/ansible/playbooks/flashsystem_setup/scratch.yml -i /home/ansible/playbooks/flashsystem_setup/inventory
+2023-10-11T13:53:46.986031+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._run_runner' runner requested to start
+2023-10-11T13:53:46.986145+00:00 INFO 'ansible_navigator.actions.run_0e0b._init_run' Run initialized and playbook started.
+2023-10-11T13:53:46.986526+00:00 DEBUG 'ansible_navigator.ui_framework.curses_window.__init__' self._ui_config: UIConfig(color=True, colors_initialized=True, grammar_dir=PosixPath('/usr/lib/python3.9/site-packages/ansible_navigator/data/grammar'), osc4=True, terminal_colors_path=PosixPath('/usr/lib/python3.9/site-packages/ansible_navigator/data/themes/terminal_colors.json'), theme_path=PosixPath('/usr/lib/python3.9/site-packages/ansible_navigator/data/themes/dark_vs.json'))
+2023-10-11T13:53:47.021842+00:00 DEBUG 'ansible_navigator.ui_framework.curses_window.__init__' self._ui_config: UIConfig(color=True, colors_initialized=True, grammar_dir=PosixPath('/usr/lib/python3.9/site-packages/ansible_navigator/data/grammar'), osc4=True, terminal_colors_path=PosixPath('/usr/lib/python3.9/site-packages/ansible_navigator/data/themes/terminal_colors.json'), theme_path=PosixPath('/usr/lib/python3.9/site-packages/ansible_navigator/data/themes/dark_vs.json'))
+2023-10-11T13:53:50.022516+00:00 DEBUG 'ansible_navigator.runner.base._event_handler' ansible-runner event handle: {'event': 'verbose', 'uuid': '054b88f1-eed8-4a1d-86f2-77e853e2bb27', 'counter': 1, 'stdout': '\x1b[1;35m[WARNING]: Invalid characters were found in group names but not replaced, use\x1b[0m', 'start_line': 0, 'end_line': 1, 'runner_ident': 'b3547597-23d2-41ca-afc0-6db0370610ad', 'created': '2023-10-11T13:53:50.022425'}
+2023-10-11T13:53:50.028495+00:00 CRITICAL 'ansible_navigator.actions.run_0e0b._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '054b88f1-eed8-4a1d-86f2-77e853e2bb27', 'counter': 1, 'stdout': '\x1b[1;35m[WARNING]: Invalid characters were found in group names but not replaced, use\x1b[0m', 'start_line': 0, 'end_line': 1, 'runner_ident': 'b3547597-23d2-41ca-afc0-6db0370610ad', 'created': '2023-10-11T13:53:50.022425'}
+2023-10-11T13:53:50.028648+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._dequeue' Drained 1 events
+2023-10-11T13:53:50.029955+00:00 DEBUG 'ansible_navigator.runner.base._event_handler' ansible-runner event handle: {'event': 'verbose', 'uuid': '14d99839-9033-4b90-a562-98873ddf552a', 'counter': 2, 'stdout': '\x1b[1;35m-vvvv to see details\x1b[0m', 'start_line': 1, 'end_line': 2, 'runner_ident': 'b3547597-23d2-41ca-afc0-6db0370610ad', 'created': '2023-10-11T13:53:50.029933'}
+2023-10-11T13:53:50.134521+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._take_step' auto_scroll enabled
+2023-10-11T13:53:50.134793+00:00 CRITICAL 'ansible_navigator.actions.run_0e0b._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '14d99839-9033-4b90-a562-98873ddf552a', 'counter': 2, 'stdout': '\x1b[1;35m-vvvv to see details\x1b[0m', 'start_line': 1, 'end_line': 2, 'runner_ident': 'b3547597-23d2-41ca-afc0-6db0370610ad', 'created': '2023-10-11T13:53:50.029933'}
+2023-10-11T13:53:50.134897+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._dequeue' Drained 1 events
+2023-10-11T13:53:50.330316+00:00 DEBUG 'ansible_navigator.runner.base._event_handler' ansible-runner event handle: {'event': 'verbose', 'uuid': '1407ebb0-1733-423e-9c7b-3162090905b7', 'counter': 3, 'stdout': '\x1b[0;35m[DEPRECATION WARNING]: Specifying a list of dictionaries for vars is deprecated\x1b[0m', 'start_line': 2, 'end_line': 3, 'runner_ident': 'b3547597-23d2-41ca-afc0-6db0370610ad', 'created': '2023-10-11T13:53:50.330281'}
+2023-10-11T13:53:50.330673+00:00 DEBUG 'ansible_navigator.runner.base._event_handler' ansible-runner event handle: {'event': 'verbose', 'uuid': 'cc90aa05-aff4-4b5d-88d3-2df6c35d51b4', 'counter': 4, 'stdout': '\x1b[0;35m in favor of specifying a dictionary. This feature will be removed in version \x1b[0m', 'start_line': 3, 'end_line': 4, 'runner_ident': 'b3547597-23d2-41ca-afc0-6db0370610ad', 'created': '2023-10-11T13:53:50.330655'}
+2023-10-11T13:53:50.330914+00:00 DEBUG 'ansible_navigator.runner.base._event_handler' ansible-runner event handle: {'event': 'verbose', 'uuid': '1b62a8e2-b1bb-4bd7-a681-c1cbc1936cbf', 'counter': 5, 'stdout': '\x1b[0;35m2.18. Deprecation warnings can be disabled by setting \x1b[0m', 'start_line': 4, 'end_line': 5, 'runner_ident': 'b3547597-23d2-41ca-afc0-6db0370610ad', 'created': '2023-10-11T13:53:50.330897'}
+2023-10-11T13:53:50.331144+00:00 DEBUG 'ansible_navigator.runner.base._event_handler' ansible-runner event handle: {'event': 'verbose', 'uuid': '1b3b2b5c-d7b4-4234-bc4c-0084b72f5fd1', 'counter': 6, 'stdout': '\x1b[0;35mdeprecation_warnings=False in ansible.cfg.\x1b[0m', 'start_line': 5, 'end_line': 6, 'runner_ident': 'b3547597-23d2-41ca-afc0-6db0370610ad', 'created': '2023-10-11T13:53:50.331127'}
+2023-10-11T13:53:50.343904+00:00 CRITICAL 'ansible_navigator.actions.run_0e0b._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '1407ebb0-1733-423e-9c7b-3162090905b7', 'counter': 3, 'stdout': '\x1b[0;35m[DEPRECATION WARNING]: Specifying a list of dictionaries for vars is deprecated\x1b[0m', 'start_line': 2, 'end_line': 3, 'runner_ident': 'b3547597-23d2-41ca-afc0-6db0370610ad', 'created': '2023-10-11T13:53:50.330281'}
+2023-10-11T13:53:50.344127+00:00 CRITICAL 'ansible_navigator.actions.run_0e0b._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'cc90aa05-aff4-4b5d-88d3-2df6c35d51b4', 'counter': 4, 'stdout': '\x1b[0;35m in favor of specifying a dictionary. This feature will be removed in version \x1b[0m', 'start_line': 3, 'end_line': 4, 'runner_ident': 'b3547597-23d2-41ca-afc0-6db0370610ad', 'created': '2023-10-11T13:53:50.330655'}
+2023-10-11T13:53:50.344292+00:00 CRITICAL 'ansible_navigator.actions.run_0e0b._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '1b62a8e2-b1bb-4bd7-a681-c1cbc1936cbf', 'counter': 5, 'stdout': '\x1b[0;35m2.18. Deprecation warnings can be disabled by setting \x1b[0m', 'start_line': 4, 'end_line': 5, 'runner_ident': 'b3547597-23d2-41ca-afc0-6db0370610ad', 'created': '2023-10-11T13:53:50.330897'}
+2023-10-11T13:53:50.344451+00:00 CRITICAL 'ansible_navigator.actions.run_0e0b._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '1b3b2b5c-d7b4-4234-bc4c-0084b72f5fd1', 'counter': 6, 'stdout': '\x1b[0;35mdeprecation_warnings=False in ansible.cfg.\x1b[0m', 'start_line': 5, 'end_line': 6, 'runner_ident': 'b3547597-23d2-41ca-afc0-6db0370610ad', 'created': '2023-10-11T13:53:50.331127'}
+2023-10-11T13:53:50.344558+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._dequeue' Drained 4 events
+2023-10-11T13:53:50.419911+00:00 DEBUG 'ansible_navigator.runner.base._event_handler' ansible-runner event handle: {'uuid': '011c9865-e611-43f7-b36c-59c281a8e76e', 'counter': 7, 'stdout': '', 'start_line': 6, 'end_line': 6, 'runner_ident': 'b3547597-23d2-41ca-afc0-6db0370610ad', 'event': 'playbook_on_start', 'pid': 21, 'created': '2023-10-11T13:53:50.418566', 'event_data': {'playbook': '/home/ansible/playbooks/flashsystem_setup/scratch.yml', 'playbook_uuid': '011c9865-e611-43f7-b36c-59c281a8e76e', 'uuid': '011c9865-e611-43f7-b36c-59c281a8e76e'}}
+2023-10-11T13:53:50.425557+00:00 DEBUG 'ansible_navigator.runner.base._event_handler' ansible-runner event handle: {'uuid': '362be34c-0822-23b2-17e8-000000000008', 'counter': 8, 'stdout': '\r\nPLAY [Create or validate hosts] ************************************************', 'start_line': 6, 'end_line': 8, 'runner_ident': 'b3547597-23d2-41ca-afc0-6db0370610ad', 'event': 'playbook_on_play_start', 'pid': 21, 'created': '2023-10-11T13:53:50.424642', 'parent_uuid': '011c9865-e611-43f7-b36c-59c281a8e76e', 'event_data': {'playbook': '/home/ansible/playbooks/flashsystem_setup/scratch.yml', 'playbook_uuid': '011c9865-e611-43f7-b36c-59c281a8e76e', 'play': 'Create or validate hosts', 'play_uuid': '362be34c-0822-23b2-17e8-000000000008', 'play_pattern': 'localhost', 'name': 'Create or validate hosts', 'pattern': 'localhost', 'uuid': '362be34c-0822-23b2-17e8-000000000008'}}
+2023-10-11T13:53:50.448705+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._dequeue' Drained 2 events
+2023-10-11T13:53:50.455147+00:00 DEBUG 'ansible_navigator.runner.base._event_handler' ansible-runner event handle: {'uuid': '362be34c-0822-23b2-17e8-00000000000a', 'counter': 9, 'stdout': '\r\nTASK [gather facts using ibm_svc_info] *****************************************', 'start_line': 8, 'end_line': 10, 'runner_ident': 'b3547597-23d2-41ca-afc0-6db0370610ad', 'event': 'playbook_on_task_start', 'pid': 21, 'created': '2023-10-11T13:53:50.454159', 'parent_uuid': '362be34c-0822-23b2-17e8-000000000008', 'event_data': {'playbook': '/home/ansible/playbooks/flashsystem_setup/scratch.yml', 'playbook_uuid': '011c9865-e611-43f7-b36c-59c281a8e76e', 'play': 'Create or validate hosts', 'play_uuid': '362be34c-0822-23b2-17e8-000000000008', 'play_pattern': 'localhost', 'task': 'gather facts using ibm_svc_info', 'task_uuid': '362be34c-0822-23b2-17e8-00000000000a', 'task_action': 'ibm.storage_virtualize.ibm_svc_info', 'resolved_action': 'ibm.storage_virtualize.ibm_svc_info', 'task_args': '', 'task_path': '/home/ansible/playbooks/flashsystem_setup/scratch.yml:12', 'name': 'gather facts using ibm_svc_info', 'is_conditional': False, 'uuid': '362be34c-0822-23b2-17e8-00000000000a'}}
+2023-10-11T13:53:50.456698+00:00 DEBUG 'ansible_navigator.runner.base._event_handler' ansible-runner event handle: {'uuid': '3640764f-fd1d-4eb0-86f5-07ce53f76ede', 'counter': 10, 'stdout': '', 'start_line': 10, 'end_line': 10, 'runner_ident': 'b3547597-23d2-41ca-afc0-6db0370610ad', 'event': 'runner_on_start', 'pid': 21, 'created': '2023-10-11T13:53:50.455832', 'parent_uuid': '362be34c-0822-23b2-17e8-00000000000a', 'event_data': {'playbook': '/home/ansible/playbooks/flashsystem_setup/scratch.yml', 'playbook_uuid': '011c9865-e611-43f7-b36c-59c281a8e76e', 'play': 'Create or validate hosts', 'play_uuid': '362be34c-0822-23b2-17e8-000000000008', 'play_pattern': 'localhost', 'task': 'gather facts using ibm_svc_info', 'task_uuid': '362be34c-0822-23b2-17e8-00000000000a', 'task_action': 'ibm.storage_virtualize.ibm_svc_info', 'resolved_action': 'ibm.storage_virtualize.ibm_svc_info', 'task_args': '', 'task_path': '/home/ansible/playbooks/flashsystem_setup/scratch.yml:12', 'host': 'localhost', 'uuid': '3640764f-fd1d-4eb0-86f5-07ce53f76ede'}}
+2023-10-11T13:53:50.553897+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._dequeue' Drained 2 events
+2023-10-11T13:53:51.815467+00:00 DEBUG 'ansible_navigator.runner.base._event_handler' ansible-runner event handle: {'uuid': '423a3512-36f7-4719-bbd9-157288fee67b', 'counter': 11, 'stdout': '\x1b[0;32mok: [localhost]\x1b[0m', 'start_line': 10, 'end_line': 11, 'runner_ident': 'b3547597-23d2-41ca-afc0-6db0370610ad', 'event': 'runner_on_ok', 'pid': 21, 'created': '2023-10-11T13:53:51.813709', 'parent_uuid': '362be34c-0822-23b2-17e8-00000000000a', 'event_data': {'playbook': '/home/ansible/playbooks/flashsystem_setup/scratch.yml', 'playbook_uuid': '011c9865-e611-43f7-b36c-59c281a8e76e', 'play': 'Create or validate hosts', 'play_uuid': '362be34c-0822-23b2-17e8-000000000008', 'play_pattern': 'localhost', 'task': 'gather facts using ibm_svc_info', 'task_uuid': '362be34c-0822-23b2-17e8-00000000000a', 'task_action': 'ibm.storage_virtualize.ibm_svc_info', 'resolved_action': 'ibm.storage_virtualize.ibm_svc_info', 'task_args': '', 'task_path': '/home/ansible/playbooks/flashsystem_setup/scratch.yml:12', 'host': 'localhost', 'remote_addr': 'localhost', 'res': {'Volume': [], 'Pool': [{'id': '0', 'name': 'TestDDRPool', 'status': 'online', 'mdisk_count': '0', 'vdisk_count': '0', 'capacity': '0', 'extent_size': '4096', 'free_capacity': '0', 'virtual_capacity': '0.00MB', 'used_capacity': '0.00MB', 'real_capacity': '0.00MB', 'overallocation': '0', 'warning': '80', 'easy_tier': 'auto', 'easy_tier_status': 'balanced', 'compression_active': 'no', 'compression_virtual_capacity': '0.00MB', 'compression_compressed_capacity': '0.00MB', 'compression_uncompressed_capacity': '0.00MB', 'parent_mdisk_grp_id': '0', 'parent_mdisk_grp_name': 'TestDDRPool', 'child_mdisk_grp_count': '0', 'child_mdisk_grp_capacity': '0.00MB', 'type': 'parent', 'encrypt': '', 'owner_type': 'none', 'owner_id': '', 'owner_name': '', 'site_id': '', 'site_name': '', 'data_reduction': 'yes', 'used_capacity_before_reduction': '0.00MB', 'used_capacity_after_reduction': '0.00MB', 'overhead_capacity': '0.00MB', 'deduplication_capacity_saving': '0.00MB', 'reclaimable_capacity': '0.00MB', 'easy_tier_fcm_over_allocation_max': '', 'provisioning_policy_id': '', 'provisioning_policy_name': ''}, {'id': '1', 'name': 'TestSSPCTest', 'status': 'online', 'mdisk_count': '0', 'vdisk_count': '0', 'capacity': '0', 'extent_size': '4096', 'free_capacity': '0', 'virtual_capacity': '0.00MB', 'used_capacity': '0.00MB', 'real_capacity': '0.00MB', 'overallocation': '0', 'warning': '80', 'easy_tier': 'auto', 'easy_tier_status': 'balanced', 'compression_active': 'no', 'compression_virtual_capacity': '0.00MB', 'compression_compressed_capacity': '0.00MB', 'compression_uncompressed_capacity': '0.00MB', 'parent_mdisk_grp_id': '1', 'parent_mdisk_grp_name': 'TestSSPCTest', 'child_mdisk_grp_count': '0', 'child_mdisk_grp_capacity': '0.00MB', 'type': 'parent', 'encrypt': '', 'owner_type': 'none', 'owner_id': '', 'owner_name': '', 'site_id': '', 'site_name': '', 'data_reduction': 'yes', 'used_capacity_before_reduction': '0.00MB', 'used_capacity_after_reduction': '0.00MB', 'overhead_capacity': '0.00MB', 'deduplication_capacity_saving': '0.00MB', 'reclaimable_capacity': '0.00MB', 'easy_tier_fcm_over_allocation_max': '', 'provisioning_policy_id': '', 'provisioning_policy_name': ''}, {'id': '2', 'name': 'Pool_01', 'status': 'online', 'mdisk_count': '1', 'vdisk_count': '13', 'capacity': '99.01TB', 'extent_size': '1024', 'free_capacity': '71.96TB', 'virtual_capacity': '27.33TB', 'used_capacity': '27.03TB', 'real_capacity': '27.04TB', 'overallocation': '27', 'warning': '80', 'easy_tier': 'auto', 'easy_tier_status': 'balanced', 'compression_active': 'no', 'compression_virtual_capacity': '0.00MB', 'compression_compressed_capacity': '0.00MB', 'compression_uncompressed_capacity': '0.00MB', 'parent_mdisk_grp_id': '2', 'parent_mdisk_grp_name': 'Pool_01', 'child_mdisk_grp_count': '0', 'child_mdisk_grp_capacity': '0.00MB', 'type': 'parent', 'encrypt': 'no', 'owner_type': 'none', 'owner_id': '', 'owner_name': '', 'site_id': '', 'site_name': '', 'data_reduction': 'no', 'used_capacity_before_reduction': '0.00MB', 'used_capacity_after_reduction': '0.00MB', 'overhead_capacity': '0.00MB', 'deduplication_capacity_saving': '0.00MB', 'reclaimable_capacity': '0.00MB', 'easy_tier_fcm_over_allocation_max': '', 'provisioning_policy_id': '', 'provisioning_policy_name': ''}], 'Node': [], 'IOGroup': [], 'Host': [], 'HostVdiskMap': [], 'VdiskHostMap': [], 'HostCluster': [], 'FCConnectivitie': [], 'FCConsistgrp': [], 'RCConsistgrp': [], 'VdiskCopy': [], 'FCPort': [], 'TargetPortFC': [], 'iSCSIPort': [], 'FCMap': [], 'RemoteCopy': [], 'Array': [], 'System': [], 'CloudAccount': [], 'CloudAccountUsage': [], 'CloudImportCandidate': [], 'LdapServer': [], 'Drive': [], 'User': [], 'Partnership': [], 'ReplicationPolicy': [], 'SnapshotPolicy': [], 'VolumeGroup': [], 'SnapshotSchedule': [], 'VolumeGroupSnapshotPolicy': [], 'VolumeSnapshot': [], 'DnsServer': [], 'SystemCert': [], 'TrustStore': [], 'Sra': [], 'SysLogServer': [], 'UserGrp': [], 'EmailServer': [], 'EmailUser': [], 'CloudBackup': [], 'CloudBackupGeneration': [], 'ProvisioningPolicy': [], 'VolumeGroupSnapshot': [], 'CallHome': [], 'IP': [], 'Ownershipgroup': [], 'Portset': [], 'SafeguardedPolicy': [], 'Mdisk': [], 'SafeguardedSchedule': [], 'EventLog': [], 'DriveClass': [], 'invocation': {'module_args': {'clustername': '10.137.0.30', 'gather_subset': ['pool'], 'username': 'ansible', 'password': 'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', 'validate_certs': False, 'domain': None, 'log_path': None, 'token': None, 'objectname': None}}, 'ansible_facts': {'discovered_interpreter_python': '/usr/libexec/platform-python'}, '_ansible_no_log': None, 'changed': False}, 'start': '2023-10-11T13:53:50.455713', 'end': '2023-10-11T13:53:51.813264', 'duration': 1.357551, 'event_loop': None, 'uuid': '423a3512-36f7-4719-bbd9-157288fee67b'}}
+2023-10-11T13:53:51.825462+00:00 DEBUG 'ansible_navigator.runner.base._event_handler' ansible-runner event handle: {'uuid': '362be34c-0822-23b2-17e8-00000000000b', 'counter': 12, 'stdout': '\r\nTASK [create array list of results.list name for use in jinja2 template] *******', 'start_line': 11, 'end_line': 13, 'runner_ident': 'b3547597-23d2-41ca-afc0-6db0370610ad', 'event': 'playbook_on_task_start', 'pid': 21, 'created': '2023-10-11T13:53:51.824464', 'parent_uuid': '362be34c-0822-23b2-17e8-000000000008', 'event_data': {'playbook': '/home/ansible/playbooks/flashsystem_setup/scratch.yml', 'playbook_uuid': '011c9865-e611-43f7-b36c-59c281a8e76e', 'play': 'Create or validate hosts', 'play_uuid': '362be34c-0822-23b2-17e8-000000000008', 'play_pattern': 'localhost', 'task': 'create array list of results.list name for use in jinja2 template', 'task_uuid': '362be34c-0822-23b2-17e8-00000000000b', 'task_action': 'create_survey_info', 'resolved_action': 'create_survey_info', 'task_args': '', 'task_path': '/home/ansible/playbooks/flashsystem_setup/scratch.yml:22', 'name': 'create array list of results.list name for use in jinja2 template', 'is_conditional': False, 'uuid': '362be34c-0822-23b2-17e8-00000000000b'}}
+2023-10-11T13:53:51.827131+00:00 DEBUG 'ansible_navigator.runner.base._event_handler' ansible-runner event handle: {'uuid': '2e029fc0-2539-4867-a962-adf10f7c49c9', 'counter': 13, 'stdout': '', 'start_line': 13, 'end_line': 13, 'runner_ident': 'b3547597-23d2-41ca-afc0-6db0370610ad', 'event': 'runner_on_start', 'pid': 21, 'created': '2023-10-11T13:53:51.826355', 'parent_uuid': '362be34c-0822-23b2-17e8-00000000000b', 'event_data': {'playbook': '/home/ansible/playbooks/flashsystem_setup/scratch.yml', 'playbook_uuid': '011c9865-e611-43f7-b36c-59c281a8e76e', 'play': 'Create or validate hosts', 'play_uuid': '362be34c-0822-23b2-17e8-000000000008', 'play_pattern': 'localhost', 'task': 'create array list of results.list name for use in jinja2 template', 'task_uuid': '362be34c-0822-23b2-17e8-00000000000b', 'task_action': 'create_survey_info', 'resolved_action': 'create_survey_info', 'task_args': '', 'task_path': '/home/ansible/playbooks/flashsystem_setup/scratch.yml:22', 'host': 'localhost', 'uuid': '2e029fc0-2539-4867-a962-adf10f7c49c9'}}
+2023-10-11T13:53:51.915628+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._dequeue' Drained 3 events
+2023-10-11T13:53:52.402650+00:00 DEBUG 'ansible_navigator.runner.base._event_handler' ansible-runner event handle: {'uuid': '38f7995f-b820-46c3-9b65-17a3c474a871', 'counter': 14, 'stdout': '\x1b[0;33mchanged: [localhost]\x1b[0m', 'start_line': 13, 'end_line': 14, 'runner_ident': 'b3547597-23d2-41ca-afc0-6db0370610ad', 'event': 'runner_on_ok', 'pid': 21, 'created': '2023-10-11T13:53:52.400944', 'parent_uuid': '362be34c-0822-23b2-17e8-00000000000b', 'event_data': {'playbook': '/home/ansible/playbooks/flashsystem_setup/scratch.yml', 'playbook_uuid': '011c9865-e611-43f7-b36c-59c281a8e76e', 'play': 'Create or validate hosts', 'play_uuid': '362be34c-0822-23b2-17e8-000000000008', 'play_pattern': 'localhost', 'task': 'create array list of results.list name for use in jinja2 template', 'task_uuid': '362be34c-0822-23b2-17e8-00000000000b', 'task_action': 'create_survey_info', 'resolved_action': 'create_survey_info', 'task_args': '', 'task_path': '/home/ansible/playbooks/flashsystem_setup/scratch.yml:22', 'host': 'localhost', 'remote_addr': 'localhost', 'res': {'changed': True, 'survey_info': ['TestDDRPool', 'TestSSPCTest', 'Pool_01'], 'invocation': {'module_args': {'info_results': [{'id': '0', 'name': 'TestDDRPool', 'status': 'online', 'mdisk_count': '0', 'vdisk_count': '0', 'capacity': '0', 'extent_size': '4096', 'free_capacity': '0', 'virtual_capacity': '0.00MB', 'used_capacity': '0.00MB', 'real_capacity': '0.00MB', 'overallocation': '0', 'warning': '80', 'easy_tier': 'auto', 'easy_tier_status': 'balanced', 'compression_active': 'no', 'compression_virtual_capacity': '0.00MB', 'compression_compressed_capacity': '0.00MB', 'compression_uncompressed_capacity': '0.00MB', 'parent_mdisk_grp_id': '0', 'parent_mdisk_grp_name': 'TestDDRPool', 'child_mdisk_grp_count': '0', 'child_mdisk_grp_capacity': '0.00MB', 'type': 'parent', 'encrypt': '', 'owner_type': 'none', 'owner_id': '', 'owner_name': '', 'site_id': '', 'site_name': '', 'data_reduction': 'yes', 'used_capacity_before_reduction': '0.00MB', 'used_capacity_after_reduction': '0.00MB', 'overhead_capacity': '0.00MB', 'deduplication_capacity_saving': '0.00MB', 'reclaimable_capacity': '0.00MB', 'easy_tier_fcm_over_allocation_max': '', 'provisioning_policy_id': '', 'provisioning_policy_name': ''}, {'id': '1', 'name': 'TestSSPCTest', 'status': 'online', 'mdisk_count': '0', 'vdisk_count': '0', 'capacity': '0', 'extent_size': '4096', 'free_capacity': '0', 'virtual_capacity': '0.00MB', 'used_capacity': '0.00MB', 'real_capacity': '0.00MB', 'overallocation': '0', 'warning': '80', 'easy_tier': 'auto', 'easy_tier_status': 'balanced', 'compression_active': 'no', 'compression_virtual_capacity': '0.00MB', 'compression_compressed_capacity': '0.00MB', 'compression_uncompressed_capacity': '0.00MB', 'parent_mdisk_grp_id': '1', 'parent_mdisk_grp_name': 'TestSSPCTest', 'child_mdisk_grp_count': '0', 'child_mdisk_grp_capacity': '0.00MB', 'type': 'parent', 'encrypt': '', 'owner_type': 'none', 'owner_id': '', 'owner_name': '', 'site_id': '', 'site_name': '', 'data_reduction': 'yes', 'used_capacity_before_reduction': '0.00MB', 'used_capacity_after_reduction': '0.00MB', 'overhead_capacity': '0.00MB', 'deduplication_capacity_saving': '0.00MB', 'reclaimable_capacity': '0.00MB', 'easy_tier_fcm_over_allocation_max': '', 'provisioning_policy_id': '', 'provisioning_policy_name': ''}, {'id': '2', 'name': 'Pool_01', 'status': 'online', 'mdisk_count': '1', 'vdisk_count': '13', 'capacity': '99.01TB', 'extent_size': '1024', 'free_capacity': '71.96TB', 'virtual_capacity': '27.33TB', 'used_capacity': '27.03TB', 'real_capacity': '27.04TB', 'overallocation': '27', 'warning': '80', 'easy_tier': 'auto', 'easy_tier_status': 'balanced', 'compression_active': 'no', 'compression_virtual_capacity': '0.00MB', 'compression_compressed_capacity': '0.00MB', 'compression_uncompressed_capacity': '0.00MB', 'parent_mdisk_grp_id': '2', 'parent_mdisk_grp_name': 'Pool_01', 'child_mdisk_grp_count': '0', 'child_mdisk_grp_capacity': '0.00MB', 'type': 'parent', 'encrypt': 'no', 'owner_type': 'none', 'owner_id': '', 'owner_name': '', 'site_id': '', 'site_name': '', 'data_reduction': 'no', 'used_capacity_before_reduction': '0.00MB', 'used_capacity_after_reduction': '0.00MB', 'overhead_capacity': '0.00MB', 'deduplication_capacity_saving': '0.00MB', 'reclaimable_capacity': '0.00MB', 'easy_tier_fcm_over_allocation_max': '', 'provisioning_policy_id': '', 'provisioning_policy_name': ''}], 'info_value': 'name'}}, '_ansible_no_log': None}, 'start': '2023-10-11T13:53:51.826236', 'end': '2023-10-11T13:53:52.400546', 'duration': 0.57431, 'event_loop': None, 'uuid': '38f7995f-b820-46c3-9b65-17a3c474a871'}}
+2023-10-11T13:53:52.413857+00:00 DEBUG 'ansible_navigator.runner.base._event_handler' ansible-runner event handle: {'uuid': '362be34c-0822-23b2-17e8-00000000000c', 'counter': 15, 'stdout': '\r\nTASK [Create volume_spec.json by using ansible.builtin.template and /templates/dyn_survey_vol.j2] ***', 'start_line': 14, 'end_line': 16, 'runner_ident': 'b3547597-23d2-41ca-afc0-6db0370610ad', 'event': 'playbook_on_task_start', 'pid': 21, 'created': '2023-10-11T13:53:52.412608', 'parent_uuid': '362be34c-0822-23b2-17e8-000000000008', 'event_data': {'playbook': '/home/ansible/playbooks/flashsystem_setup/scratch.yml', 'playbook_uuid': '011c9865-e611-43f7-b36c-59c281a8e76e', 'play': 'Create or validate hosts', 'play_uuid': '362be34c-0822-23b2-17e8-000000000008', 'play_pattern': 'localhost', 'task': 'Create volume_spec.json by using ansible.builtin.template and /templates/dyn_survey_vol.j2', 'task_uuid': '362be34c-0822-23b2-17e8-00000000000c', 'task_action': 'ansible.builtin.template', 'resolved_action': 'ansible.builtin.template', 'task_args': '', 'task_path': '/home/ansible/playbooks/flashsystem_setup/scratch.yml:27', 'name': 'Create volume_spec.json by using ansible.builtin.template and /templates/dyn_survey_vol.j2', 'is_conditional': False, 'uuid': '362be34c-0822-23b2-17e8-00000000000c'}}
+2023-10-11T13:53:52.415637+00:00 DEBUG 'ansible_navigator.runner.base._event_handler' ansible-runner event handle: {'uuid': '7e94e0e8-d60a-4255-81bd-55c33f43fdaa', 'counter': 16, 'stdout': '', 'start_line': 16, 'end_line': 16, 'runner_ident': 'b3547597-23d2-41ca-afc0-6db0370610ad', 'event': 'runner_on_start', 'pid': 21, 'created': '2023-10-11T13:53:52.414906', 'parent_uuid': '362be34c-0822-23b2-17e8-00000000000c', 'event_data': {'playbook': '/home/ansible/playbooks/flashsystem_setup/scratch.yml', 'playbook_uuid': '011c9865-e611-43f7-b36c-59c281a8e76e', 'play': 'Create or validate hosts', 'play_uuid': '362be34c-0822-23b2-17e8-000000000008', 'play_pattern': 'localhost', 'task': 'Create volume_spec.json by using ansible.builtin.template and /templates/dyn_survey_vol.j2', 'task_uuid': '362be34c-0822-23b2-17e8-00000000000c', 'task_action': 'ansible.builtin.template', 'resolved_action': 'ansible.builtin.template', 'task_args': '', 'task_path': '/home/ansible/playbooks/flashsystem_setup/scratch.yml:27', 'host': 'localhost', 'uuid': '7e94e0e8-d60a-4255-81bd-55c33f43fdaa'}}
+2023-10-11T13:53:52.437744+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._dequeue' Drained 3 events
+2023-10-11T13:53:53.510135+00:00 DEBUG 'ansible_navigator.runner.base._event_handler' ansible-runner event handle: {'uuid': 'ba9b6968-bbb4-410e-a0a1-07ca40a8e31e', 'counter': 17, 'stdout': '\x1b[0;33mchanged: [localhost]\x1b[0m', 'start_line': 16, 'end_line': 17, 'runner_ident': 'b3547597-23d2-41ca-afc0-6db0370610ad', 'event': 'runner_on_ok', 'pid': 21, 'created': '2023-10-11T13:53:53.508231', 'parent_uuid': '362be34c-0822-23b2-17e8-00000000000c', 'event_data': {'playbook': '/home/ansible/playbooks/flashsystem_setup/scratch.yml', 'playbook_uuid': '011c9865-e611-43f7-b36c-59c281a8e76e', 'play': 'Create or validate hosts', 'play_uuid': '362be34c-0822-23b2-17e8-000000000008', 'play_pattern': 'localhost', 'task': 'Create volume_spec.json by using ansible.builtin.template and /templates/dyn_survey_vol.j2', 'task_uuid': '362be34c-0822-23b2-17e8-00000000000c', 'task_action': 'ansible.builtin.template', 'resolved_action': 'ansible.builtin.template', 'task_args': '', 'task_path': '/home/ansible/playbooks/flashsystem_setup/scratch.yml:27', 'host': 'localhost', 'remote_addr': 'localhost', 'res': {'diff': [], 'dest': '/tmp/dyn_survey_vol.json', 'src': '/home/runner/.ansible/tmp/ansible-tmp-1697032432.4520314-64-229779175673868/source', 'md5sum': 'e7a7c0010f659c59e3309c95ddeae858', 'checksum': '18b52d62e9e92bb72702d00cc773f49655787f24', 'changed': True, 'uid': 0, 'gid': 0, 'owner': 'root', 'group': 'root', 'mode': '0644', 'state': 'file', 'size': 4018, 'invocation': {'module_args': {'src': '/home/runner/.ansible/tmp/ansible-tmp-1697032432.4520314-64-229779175673868/source', 'dest': '/tmp/dyn_survey_vol.json', 'mode': '0644', 'follow': False, '_original_basename': 'dyn_survey_vol.j2', 'checksum': '18b52d62e9e92bb72702d00cc773f49655787f24', 'unsafe_writes': True, 'backup': False, 'force': True, 'content': None, 'validate': None, 'directory_mode': None, 'remote_src': None, 'local_follow': None, 'owner': None, 'group': None, 'seuser': None, 'serole': None, 'selevel': None, 'setype': None, 'attributes': None}}, '_ansible_no_log': None}, 'start': '2023-10-11T13:53:52.414787', 'end': '2023-10-11T13:53:53.507799', 'duration': 1.093012, 'event_loop': None, 'uuid': 'ba9b6968-bbb4-410e-a0a1-07ca40a8e31e'}}
+2023-10-11T13:53:53.521599+00:00 DEBUG 'ansible_navigator.runner.base._event_handler' ansible-runner event handle: {'uuid': '362be34c-0822-23b2-17e8-00000000000d', 'counter': 18, 'stdout': '\r\nTASK [print out /tmp/dyn_survey_vol.json] **************************************', 'start_line': 17, 'end_line': 19, 'runner_ident': 'b3547597-23d2-41ca-afc0-6db0370610ad', 'event': 'playbook_on_task_start', 'pid': 21, 'created': '2023-10-11T13:53:53.520423', 'parent_uuid': '362be34c-0822-23b2-17e8-000000000008', 'event_data': {'playbook': '/home/ansible/playbooks/flashsystem_setup/scratch.yml', 'playbook_uuid': '011c9865-e611-43f7-b36c-59c281a8e76e', 'play': 'Create or validate hosts', 'play_uuid': '362be34c-0822-23b2-17e8-000000000008', 'play_pattern': 'localhost', 'task': 'print out /tmp/dyn_survey_vol.json', 'task_uuid': '362be34c-0822-23b2-17e8-00000000000d', 'task_action': 'ansible.builtin.shell', 'resolved_action': 'ansible.builtin.shell', 'task_args': '', 'task_path': '/home/ansible/playbooks/flashsystem_setup/scratch.yml:34', 'name': 'print out /tmp/dyn_survey_vol.json', 'is_conditional': False, 'uuid': '362be34c-0822-23b2-17e8-00000000000d'}}
+2023-10-11T13:53:53.523604+00:00 DEBUG 'ansible_navigator.runner.base._event_handler' ansible-runner event handle: {'uuid': '5b9fe3f4-d048-46f6-bbc6-d312d1cd70ca', 'counter': 19, 'stdout': '', 'start_line': 19, 'end_line': 19, 'runner_ident': 'b3547597-23d2-41ca-afc0-6db0370610ad', 'event': 'runner_on_start', 'pid': 21, 'created': '2023-10-11T13:53:53.522805', 'parent_uuid': '362be34c-0822-23b2-17e8-00000000000d', 'event_data': {'playbook': '/home/ansible/playbooks/flashsystem_setup/scratch.yml', 'playbook_uuid': '011c9865-e611-43f7-b36c-59c281a8e76e', 'play': 'Create or validate hosts', 'play_uuid': '362be34c-0822-23b2-17e8-000000000008', 'play_pattern': 'localhost', 'task': 'print out /tmp/dyn_survey_vol.json', 'task_uuid': '362be34c-0822-23b2-17e8-00000000000d', 'task_action': 'ansible.builtin.shell', 'resolved_action': 'ansible.builtin.shell', 'task_args': '', 'task_path': '/home/ansible/playbooks/flashsystem_setup/scratch.yml:34', 'host': 'localhost', 'uuid': '5b9fe3f4-d048-46f6-bbc6-d312d1cd70ca'}}
+2023-10-11T13:53:53.586853+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._dequeue' Drained 3 events
+2023-10-11T13:53:54.141998+00:00 DEBUG 'ansible_navigator.runner.base._event_handler' ansible-runner event handle: {'uuid': '129f94de-6a4a-47f9-ab10-8f9f1c227a7b', 'counter': 20, 'stdout': '\x1b[0;33mchanged: [localhost]\x1b[0m', 'start_line': 19, 'end_line': 20, 'runner_ident': 'b3547597-23d2-41ca-afc0-6db0370610ad', 'event': 'runner_on_ok', 'pid': 21, 'created': '2023-10-11T13:53:54.140005', 'parent_uuid': '362be34c-0822-23b2-17e8-00000000000d', 'event_data': {'playbook': '/home/ansible/playbooks/flashsystem_setup/scratch.yml', 'playbook_uuid': '011c9865-e611-43f7-b36c-59c281a8e76e', 'play': 'Create or validate hosts', 'play_uuid': '362be34c-0822-23b2-17e8-000000000008', 'play_pattern': 'localhost', 'task': 'print out /tmp/dyn_survey_vol.json', 'task_uuid': '362be34c-0822-23b2-17e8-00000000000d', 'task_action': 'ansible.builtin.shell', 'resolved_action': 'ansible.builtin.shell', 'task_args': '', 'task_path': '/home/ansible/playbooks/flashsystem_setup/scratch.yml:34', 'host': 'localhost', 'remote_addr': 'localhost', 'res': {'changed': True, 'stdout': '{\n    "name": "flashsystem_update",\n    "description": "General questions to provision volumes on IBM FlashSystem",\n    "spec": [\n        \n                            {\n                    "required": true,\n                    "default": "new_vol",\n                    "question_description": "Volume names will be constructed as basename+sequence number. Choose your base name here",\n                    "new_question": true,\n                    "variable": "vol_base",\n                    "question_name": "What base name will you be using for the volumes before sequence numbers?",\n                    "type": "text"\n                },\n                {\n                    "required": true,\n                    "min": 0,\n                    "default": 1,\n                    "question_description": "Volumes names are constructed as basename + sequence number. Choose which number you want to use as your starting point",\n                    "new_question": true,\n                    "variable": "start_var",\n                    "question_name": "What number will the volume sequence numbers <i><b>START</b></i> with?",\n                    "type": "integer"\n                },\n                {\n                    "required": true,\n                    "min": 1,\n                    "default": 3,\n                    "question_description": "Number of volumes",\n                    "new_question": true,\n                    "variable": "vol_count",\n                    "question_name": "How many volumes do you want?",\n                    "type": "integer"\n                },\n                {\n                    "required": false,\n                    "min": 0,\n                    "default": 1,\n                    "question_description": "Optional - you may choose an increment other than 1 for counting",\n                    "new_question": true,\n                    "variable": "countby_var",\n                    "question_name": "By how much will the volume numbers increment? optional: make sure that the number of volumes evenly divides by the increment",\n                    "type": "integer"\n                },\n                {\n                    "required": true,\n                    "choices": "TestDDRPool\\nTestSSPCTest\\nPool_01\\n",\n                    "question_description": "Select one storage pool from the list",\n                    "new_question": true,\n                    "variable": "pool_select",\n                    "question_name": "What storage pool will be used?",\n                    "type": "multiplechoice"\n                },\n                {\n                    "required": false,\n                    "choices": "true\\nfalse",\n                    "question_description": "The default will be for the volume to be fully provisioned. Would you like to have it be thin provisioned instead?",\n                    "new_question": true,\n                    "variable": "thin",\n                    "question_name": "Should the volume be Thin Provisioned?",\n                    "type": "multiplechoice"\n                },\n                {\n                    "required": true,\n                    "choices": "B\\nKB\\nMB\\nGB\\nTB",\n                    "question_description": "Choose the units that you want to size your capacity in \\n \'(\'Bytes, Megabytes, etc...\')\'",\n                    "new_question": true,\n                    "variable": "unit",\n                    "question_name": "What unit will you size capacity in?",\n                    "type": "multiplechoice"\n                },\n                {\n                    "required": true,\n                    "min": 1,\n                    "question_description": "based on your answer to the previous question, choose the number of storage units that you will configure in each volume \\n ",\n                    "new_question": true,\n                    "variable": "size",\n                    "question_name": "How many units of capacity per volume?",\n                    "type": "integer"\n                }\n                    ]\n}', 'stderr': '', 'rc': 0, 'cmd': 'cat /tmp/dyn_survey_vol.json', 'start': '2023-10-11 13:53:54.065886', 'end': '2023-10-11 13:53:54.084335', 'delta': '0:00:00.018449', 'msg': '', 'invocation': {'module_args': {'_raw_params': 'cat /tmp/dyn_survey_vol.json', '_uses_shell': True, 'stdin_add_newline': True, 'strip_empty_ends': True, 'argv': None, 'chdir': None, 'executable': None, 'creates': None, 'removes': None, 'stdin': None}}, 'stdout_lines': ['{', '    "name": "flashsystem_update",', '    "description": "General questions to provision volumes on IBM FlashSystem",', '    "spec": [', '        ', '                            {', '                    "required": true,', '                    "default": "new_vol",', '                    "question_description": "Volume names will be constructed as basename+sequence number. Choose your base name here",', '                    "new_question": true,', '                    "variable": "vol_base",', '                    "question_name": "What base name will you be using for the volumes before sequence numbers?",', '                    "type": "text"', '                },', '                {', '                    "required": true,', '                    "min": 0,', '                    "default": 1,', '                    "question_description": "Volumes names are constructed as basename + sequence number. Choose which number you want to use as your starting point",', '                    "new_question": true,', '                    "variable": "start_var",', '                    "question_name": "What number will the volume sequence numbers <i><b>START</b></i> with?",', '                    "type": "integer"', '                },', '                {', '                    "required": true,', '                    "min": 1,', '                    "default": 3,', '                    "question_description": "Number of volumes",', '                    "new_question": true,', '                    "variable": "vol_count",', '                    "question_name": "How many volumes do you want?",', '                    "type": "integer"', '                },', '                {', '                    "required": false,', '                    "min": 0,', '                    "default": 1,', '                    "question_description": "Optional - you may choose an increment other than 1 for counting",', '                    "new_question": true,', '                    "variable": "countby_var",', '                    "question_name": "By how much will the volume numbers increment? optional: make sure that the number of volumes evenly divides by the increment",', '                    "type": "integer"', '                },', '                {', '                    "required": true,', '                    "choices": "TestDDRPool\\nTestSSPCTest\\nPool_01\\n",', '                    "question_description": "Select one storage pool from the list",', '                    "new_question": true,', '                    "variable": "pool_select",', '                    "question_name": "What storage pool will be used?",', '                    "type": "multiplechoice"', '                },', '                {', '                    "required": false,', '                    "choices": "true\\nfalse",', '                    "question_description": "The default will be for the volume to be fully provisioned. Would you like to have it be thin provisioned instead?",', '                    "new_question": true,', '                    "variable": "thin",', '                    "question_name": "Should the volume be Thin Provisioned?",', '                    "type": "multiplechoice"', '                },', '                {', '                    "required": true,', '                    "choices": "B\\nKB\\nMB\\nGB\\nTB",', '                    "question_description": "Choose the units that you want to size your capacity in \\n \'(\'Bytes, Megabytes, etc...\')\'",', '                    "new_question": true,', '                    "variable": "unit",', '                    "question_name": "What unit will you size capacity in?",', '                    "type": "multiplechoice"', '                },', '                {', '                    "required": true,', '                    "min": 1,', '                    "question_description": "based on your answer to the previous question, choose the number of storage units that you will configure in each volume \\n ",', '                    "new_question": true,', '                    "variable": "size",', '                    "question_name": "How many units of capacity per volume?",', '                    "type": "integer"', '                }', '                    ]', '}'], 'stderr_lines': [], '_ansible_no_log': None}, 'start': '2023-10-11T13:53:53.522682', 'end': '2023-10-11T13:53:54.139637', 'duration': 0.616955, 'event_loop': None, 'uuid': '129f94de-6a4a-47f9-ab10-8f9f1c227a7b'}}
+2023-10-11T13:53:54.172162+00:00 DEBUG 'ansible_navigator.runner.base._event_handler' ansible-runner event handle: {'uuid': 'c3604e75-f3be-460c-aa89-b1cedf74ae22', 'counter': 21, 'stdout': '\r\nPLAY RECAP *********************************************************************\r\n\x1b[0;33mlocalhost\x1b[0m                  : \x1b[0;32mok=4   \x1b[0m \x1b[0;33mchanged=3   \x1b[0m unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   ', 'start_line': 20, 'end_line': 24, 'runner_ident': 'b3547597-23d2-41ca-afc0-6db0370610ad', 'event': 'playbook_on_stats', 'pid': 21, 'created': '2023-10-11T13:53:54.170806', 'parent_uuid': '011c9865-e611-43f7-b36c-59c281a8e76e', 'event_data': {'playbook': '/home/ansible/playbooks/flashsystem_setup/scratch.yml', 'playbook_uuid': '011c9865-e611-43f7-b36c-59c281a8e76e', 'changed': {'localhost': 3}, 'dark': {}, 'failures': {}, 'ignored': {}, 'ok': {'localhost': 4}, 'processed': {'localhost': 1}, 'rescued': {}, 'skipped': {}, 'artifact_data': {}, 'uuid': 'c3604e75-f3be-460c-aa89-b1cedf74ae22'}}
+2023-10-11T13:53:54.214963+00:00 DEBUG 'ansible_navigator.actions.run_0e0b._dequeue' Drained 2 events
+2023-10-11T13:53:54.634272+00:00 DEBUG 'ansible_navigator.actions.run_0e0b.update' runner finished
+2023-10-11T13:53:54.634439+00:00 INFO 'ansible_navigator.actions.run_0e0b.update' Playbook complete
+2023-10-11T13:53:54.634630+00:00 DEBUG 'ansible_navigator.actions.run_0e0b.write_artifact' Formatted artifact file name set to /home/ansible/playbooks/flashsystem_setup/scratch-artifact-2023-10-11T13:53:54.634601+00:00.json
+2023-10-11T13:53:54.634781+00:00 DEBUG 'ansible_navigator.actions.run_0e0b.write_artifact' Resolved artifact file name set to /home/ansible/playbooks/flashsystem_setup/scratch-artifact-2023-10-11T13:53:54.634601+00:00.json
+2023-10-11T13:53:54.640212+00:00 INFO 'ansible_navigator.actions.run_0e0b.write_artifact' Saved artifact as /home/ansible/playbooks/flashsystem_setup/scratch-artifact-2023-10-11T13:53:54.634601+00:00.json
+2023-10-11T13:53:55.847235+00:00 DEBUG 'ansible_navigator.actions.select.run' selection made
+2023-10-11T13:53:55.847883+00:00 DEBUG 'ansible_navigator.actions.select.run' Requested next step in run_0e0b will be task_list
+2023-10-11T13:53:57.107632+00:00 DEBUG 'ansible_navigator.actions.select.run' selection made
+2023-10-11T13:53:57.108244+00:00 DEBUG 'ansible_navigator.actions.select.run' Requested next step in run_0e0b will be task
+2023-10-11T13:53:57.179613+00:00 DEBUG 'ansible_navigator.ui_framework.ui._cache_init_colors' Added color: 16:(807, 568, 470)
+2023-10-11T13:53:57.179853+00:00 DEBUG 'ansible_navigator.ui_framework.ui._cache_init_colors' Added color: 17:(709, 807, 658)
+2023-10-11T13:53:57.180053+00:00 DEBUG 'ansible_navigator.ui_framework.ui._cache_init_colors' Added color: 18:(337, 611, 839)

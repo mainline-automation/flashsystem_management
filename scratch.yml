@@ -5,21 +5,35 @@
   become: false
   vars_files:
     - vars/authentication.yml
+  vars:
+    - configuration_type: 'Create volumes'
  
   tasks:
-  - name: Gather svc_info for volumes that haven't been mapped
+  - name: gather facts using ibm_svc_info
     ibm.storage_virtualize.ibm_svc_info:
       clustername: "{{ clustername }}"
-      gather_subset: host
+      gather_subset: pool
       username: ansible 
       password: M@inline1700
-    register: all_hosts
+      # token: "{{ api_token }}"
+    register: svc_results
+#    no_log: true
 
-  - name: Get vdisk_name from mapped_hosts
+  - name: create array list of results.list name for use in jinja2 template
     create_survey_info:
-      info_results: "{{ all_hosts.Host }}"
+      info_results: "{{ svc_results.Pool }}"
       info_value: name
-    register: host_list
+    register: pool_names
+  - name: Create volume_spec.json by using ansible.builtin.template and /templates/dyn_survey_vol.j2
+    ansible.builtin.template:
+      src: dyn_survey_vol.j2
+      dest: /tmp/dyn_survey_vol.json
+      mode: '0644'
+    register: spec_results
+  
+  - name: print out /tmp/dyn_survey_vol.json
+    ansible.builtin.shell: cat /tmp/dyn_survey_vol.json
+      
 
 
 
