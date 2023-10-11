@@ -1,8 +1,7 @@
 {
     "name": "flashsystem_update",
     "description": "General questions to provision volumes on IBM FlashSystem",
-    "spec": 
-    [
+    "spec": [
         
             {% if (configuration_type == "Create volumes") or (configuration_type == "Create and map volumes") %}
                 {
@@ -21,7 +20,7 @@
                     "question_description": "Volumes names are constructed as basename + sequence number. Choose which number you want to use as your starting point",
                     "new_question": true,
                     "variable": "start_var",
-                    "question_name": "What number will the volume sequence numbers _START_ with?",
+                    "question_name": "What number will the volume sequence numbers being with"
                     "type": "integer"
                 },
                 {
@@ -47,8 +46,8 @@
                 {
                     "required": true,
                     "choices": "{%- for item in pool_names.survey_info -%}
-                    {{ item }}\n
-                    {%- endfor -%}",
+                                    {{ item }}\n
+                                {%- endfor -%}",
                     "question_description": "Select one storage pool from the list",
                     "new_question": true,
                     "variable": "pool_select",
@@ -67,7 +66,7 @@
                 {
                     "required": true,
                     "choices": "B\nKB\nMB\nGB\nTB",
-                    "question_description": "Choose the units that you want to size your capacity in \n '('Bytes, Megabytes, etc...')'",
+                    "question_description": "Choose the units that you want to size your capacity in" ,
                     "new_question": true,
                     "variable": "unit",
                     "question_name": "What unit will you size capacity in?",
@@ -76,61 +75,58 @@
                 {
                     "required": true,
                     "min": 1,
-                    "question_description": "based on your answer to the previous question, choose the number of storage units that you will configure in each volume \n ",
+                    "question_description": "based on your answer to the previous question, choose the number of storage units that you will configure in each volume",
                     "new_question": true,
                     "variable": "size",
                     "question_name": "How many units of capacity per volume?",
                     "type": "integer"
-                } 
-                    {%- if (configuration_type == "Create and map volumes") %}
+                } {%- if configuration_type == "Create and map volumes" -%}
                     ,
-                    {% endif %}                  
+                  {% endif %}
             {% endif %}
             {% if configuration_type == "Map unmapped volumes" %}
         
                 {
                     "required": true,
                     "choices": "{%- for item in unmapped_volumes.reduced_list -%}
-                    {{ item }}\n
-                    {%- endfor -%}",
+                                    {{ item }}\n
+                                {%- endfor -%}",
                     "question_description": "Choose volumes on the flashsystem that are currently unmapped",
                     "new_question": true,
                     "variable": "unmapped_vol",
                     "question_name": "Select a currently unmapped volumes to map to a single host",
                     "type": "multiselect"
                 },
-                
-        {% endif %}
-        {% (if configuration_type == "Create and map volumes") or (configuration_type == "Map unmapped volumes") %}
-        {
-            "required": false,
-            "choices": "VMware ESX\nIBM AIX",
-            "question_description": "choose from the selectable options for the OS that you will map to",
-            "new_question": true,
-            "variable": "os",
-            "question_name": "Which availabe OS will the volume be used with?",
-            "type": "multiplechoice"
-        },
-        {
-            "required": false,
-            "question_description": "Which of the available host names, if any, do you want to map this to?",
-            "choices": "{%- for item in host_list.survey_info -%}
-            {{ item }}\n
-            {%- endfor -%}",
-            "new_question": true,
-            "variable": "hostname",
-            "question_name": "Which hostname will you map this to?",
-            "type": "text"
-        },
-        {
-            "required": false,
-            "question_description": "Please enter the Fully Qualified Domain Name for the host." \n "i.e., esx-lab.bpic.mainline.com",
-                                    
-            "new_question": true,
-            "variable": "host_fqdn",
-            "question_name": "What is the FQDN for the host?",
-            "type": "text"
-        }
-        {% endif %}
-    ]
+            {% endif %}
+            {% if (configuration_type == "Create and map volumes") or (configuration_type == "Map unmapped volumes") %}
+                {
+                    "required": false,
+                    "choices": "VMware ESX\nIBM AIX",
+                    "question_description": "choose from the selectable options for the OS that you will map to",
+                    "new_question": true,
+                    "variable": "os",
+                    "question_name": "Which availabe OS will the volume be used with?",
+                    "type": "multiplechoice"
+                },
+                {
+                    "required": false,
+                    "question_description": "Which of the available host names, if any, do you want to map this to?",
+                    "choices": "{%- for item in host_list.survey_info -%}
+                                    {{ item }}\n
+                                {%- endfor -%}",
+                    "new_question": true,
+                    "variable": "hostname",
+                    "question_name": "Which hostname will you map this to?",
+                    "type": "text"
+                },
+                {
+                    "required": false,
+                    "question_description": "Please enter the Fully Qualified Domain Name for the host.",       
+                    "new_question": true,
+                    "variable": "host_fqdn",
+                    "question_name": "What is the FQDN for the host?",
+                    "type": "text"
+                }
+            {% endif %}
+            ]
 }
