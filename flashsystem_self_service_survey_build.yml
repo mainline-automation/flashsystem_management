@@ -40,31 +40,7 @@
         info_results: "{{ svc_results.Pool }}"
         info_value: name
       register: pool_names
-    - block:
-        - name: if countby_var is blank or less than 1, set countby_var=1
-          ansible.builtin.set_fact:
-            countby_var: 1
-          when: "{{ countby_var }} == '' or 0"
-        
-        - name: Set the value of the last volume in the sequence
-          ansible.builtin.set_fact:
-            end_var: start_var + ((vol_count -1) * countby_var)
-
-        - name: Create a variable with a list of values
-          create_volume_name:
-            vol_base_name: "{{ vol_base }}"
-            vol_sequence_begin: "{{ start_var }}"
-            vol_sequence_end: "{{ end_var }}"
-            vol_sequence_increment: "{{ countby_var }}"
-          register: name_list
-
-        - name: Fail if volume already exists
-          ansible.builtin.fail:
-            msg: "Volume Name {{ item }} already exists. Please correct and try again"
-          when: lookup('csvfile', item + ' file=vars/addvolume.csv col=0 delimiter=,') 
-          loop: "{{ name_list.vol_names }}"
-      when: ("{{configuration_type}}" == 'Create volumes') or
-             ("{{configuration_type}}" == 'Create and map volumes')
+    
 
     - block:
         - name: Gather svc_info for volumes that haven't been mapped
@@ -116,7 +92,8 @@
           info_results: "{{ all_hosts.Host }}"
           info_value: name
         register: host_list
-      when: "{{ configuration_type }} == 'Create and map volumes' or 'Map unmapped volumes'"
+      when: ("{{ configuration_type }} == 'Create and map volumes'") or 
+            ("{{ configuration_type }} =='Map unmapped volumes'")
 
     - name: Temporary set_fact for esx_datastore_name 
       ansible.builtin.set_fact:
