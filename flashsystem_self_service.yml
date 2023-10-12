@@ -1,6 +1,6 @@
 ---
 - name: Append additional volumes to vars/addvolume.csv
-  hosts: localhost
+  hosts: flashsystems_attached_hosts
   gather_facts: false
   become: false
   vars_files:
@@ -23,7 +23,35 @@
 
 
   tasks:
-    - when: ("{{configuration_type}}" == 'Create volumes') or ("{{configuration_type}}" == 'Create and map volumes')
+    - name: make sure that git is installed with dnf 
+      ansible.builtin.dnf:
+        name: git
+        state: present
+      
+    - name: Create vars/ directory on host if it doesn't exist
+      ansible.builtin.file:
+        path: cicd/vars/
+        state: directory
+        recurse: true
+        mode: '0755'              
+     
+    - name: run git init on remote host 
+      ansible.builtin.command:
+        cmd: git remote add origin git@github.com:mainline-automation/flashsystem_management.git
+        chdir: cicd/vars/
+        creates: .git/
+
+    - name: Git push
+      ansible.builtin.command:
+        cmd: git push -u origin test
+        chdir: cicd/vars/
+    - name: Copy vars/addvolume.csv to host 
+      ansible.builtin.copy:
+        src: vars/addvolume.csv
+        dest: cicd/vars/addvolume.csv
+
+    - name: Validate whether config type is create volumes or create and map volumes and follow block
+      when: ("{{configuration_type}}" == 'Create volumes') or ("{{configuration_type}}" == 'Create and map volumes')
       block:
         - name: Make sure that countby_var is at least 1
           ansible.builtin.set_fact:
@@ -66,4 +94,4 @@
 
     - name: print contents of vars/addvolume.csv 
       ansible.builtin.debug:
-        msg: "{{ ('lookup','vars/addvolume.csv') }}"
+        msg:  ('lookup','vars/addvolume.csv') 
