@@ -94,6 +94,9 @@
           survey_enabled: true
           survey_spec: "{{ lookup('file','/tmp/dyn_survey_vol.json') }}"
           validate_certs: no
+          credentials:
+            - 'ansible server credential'
+            - 'ansible_vault_credential'
           inventory: ibm_storage_and_hosts
           playbook: flashsystem_self_service.yml
           project: 'FlashSystem Management'
