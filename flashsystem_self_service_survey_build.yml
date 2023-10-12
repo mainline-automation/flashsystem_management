@@ -5,8 +5,8 @@
   become: true
   vars_files:
     - vars/authentication.yml
-  vars:
-    ansible_connection: local
+  # vars:
+  #   ansible_connection: local
     # configuration_type: 'Create volumes'
 
   tasks:

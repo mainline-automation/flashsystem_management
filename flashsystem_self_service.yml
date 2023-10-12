@@ -2,7 +2,7 @@
 - name: Append additional volumes to vars/addvolume.csv
   hosts: flashsystems_attached_hosts
   gather_facts: false
-  become: false
+  become: true
   vars_files:
     - vars/authentication.yml
   vars:
