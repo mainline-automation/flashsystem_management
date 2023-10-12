@@ -69,17 +69,25 @@
       ansible.builtin.set_fact:
         hostname: ''
       when: ("{{ configuration_type }}" == 'Create volumes') 
-    - name: Temporary set_fact for esx_datastore_name
-      ansible.builtin.set_fact:
-        esx_datastore_name: '' 
+      block:
+        - name: Temporary set_fact for esx_datastore_name
+          ansible.builtin.set_fact:
+            esx_datastore_name: '' 
+        - name: Temp fact os
+          ansible.builtin.set_fact:
+            os: ''
 
     - name: Temporary set_fact for esx_datastore_type
       ansible.builtin.set_fact:
         esx_datastore_type: ''
+    - name: Temporary set_fact for esx_datastore_type
+      ansible.builtin.set_fact:
+        host_fqdn: ''
 
     - name: build host_fqdn 
       ansible.builtin.set_fact:
         host_fqdn: "{{ hostname }} + {{ domain }}"
+      when: "{{ configuration_type }} == 'Create and map volumes'"
     - name: Add lines to vars/addvolume.csv
       ansible.builtin.lineinfile:
         path: vars/addvolume.csv
