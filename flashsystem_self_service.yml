@@ -34,12 +34,14 @@
         state: directory
         recurse: true
         mode: '0755'
+    
     - name: Use git module to retrieve flashsystem_management
       ansible.builtin.git:
         key_file: /root/.ssh/id_ed25519
         dest: cicd/
         remote: origin
         repo: git@github.com:mainline-automation/flashsystem_management.git
+        force: true
 
     - name: Validate whether config type is create volumes or create and map volumes and follow block
       when: ("{{configuration_type}}" == 'Create volumes') or ("{{configuration_type}}" == 'Create and map volumes')
