@@ -123,12 +123,14 @@
                 },
                 {
                     "required": false,
-                    "question_description": "Please enter the Fully Qualified Domain Name for the host.",       
+                    "question_description": "Please enter the domain for your host.",
+                    "default": "bpic.mainline.com"     
                     "new_question": true,
-                    "variable": "host_fqdn",
-                    "question_name": "What is the FQDN for the host?",
+                    "variable": "domain",
+                    "question_name": "What is the domain for the host?",
                     "type": "text"
                 }
             {% endif %}
+            
             ]
 }

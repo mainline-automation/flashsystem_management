@@ -566,3 +566,5 @@
 2023-10-12T14:55:19.792779+00:00 DEBUG 'ansible_navigator.ui_framework.ui._cache_init_colors' Added color: 16:(807, 568, 470)
 2023-10-12T14:55:19.793025+00:00 DEBUG 'ansible_navigator.ui_framework.ui._cache_init_colors' Added color: 17:(709, 807, 658)
 2023-10-12T14:55:19.793237+00:00 DEBUG 'ansible_navigator.ui_framework.ui._cache_init_colors' Added color: 18:(337, 611, 839)
+2023-10-12T15:30:57.910356+00:00 DEBUG 'ansible_navigator.actions.run_205d._prepare_to_quit' runner not running
+2023-10-12T15:30:57.921363+00:00 DEBUG 'ansible_navigator.runner.base.__del__' delete temporary ansible-runner private_data_dir at path /tmp/ansible-navigator_rbatiii7

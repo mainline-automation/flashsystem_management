@@ -6,15 +6,15 @@
   vars_files:
     - vars/authentication.yml
   vars:
-    configuration_type: 'Create volumes'
-    start_var: 2
-    vol_count: 10
-    countby_var: 2
-    vol_base: demo_vol
-    pool: Pool01
-    size: 1024
-    thin: true
-    unit: mb 
+    # configuration_type: 'Create volumes'
+    # start_var: 2
+    # vol_count: 10
+    # countby_var: 2
+    # vol_base: demo_vol
+    # pool: Pool01
+    # size: 1024
+    # thin: true
+    # unit: mb 
   #   os: aix
   #   hostname: bpicaix04
   #   host_fqdn: bpicaix04.bpic.mainline.com
@@ -53,9 +53,13 @@
       ansible.builtin.set_fact:
         esx_datastore_type: ''
 
+    - name: build host_fqdn 
+      ansible.builtin.set_fact:
+        host_fqdn: "{{ hostname }} + {{ domain }}"
     - name: Add lines to vars/addvolume.csv
       ansible.builtin.lineinfile:
         path: vars/addvolume.csv
         line: "{{ item }},{{ pool_select }},{{ size }},{{ thin }},{{ unit }},{{ os }},{{ hostname }},{{ host_fqdn }},
                 {{ esx_datastore_name }},{{ esx_datastore_type }}"
       loop: "{{ name_list.vol_names }}"
+      delegate_to: localhost
