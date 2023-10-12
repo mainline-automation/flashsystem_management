@@ -68,8 +68,9 @@
     - name: Set hostname to '' when no hosts being mapped
       ansible.builtin.set_fact:
         hostname: ''
-      when: ("{{ configuration_type }}" == 'Create volumes') 
+       
       block:
+      
         - name: Temporary set_fact for esx_datastore_name
           ansible.builtin.set_fact:
             esx_datastore_name: '' 
@@ -83,6 +84,7 @@
         - name: Temporary set_fact for esx_datastore_type
           ansible.builtin.set_fact:
             host_fqdn: ''
+      when: ("{{ configuration_type }}" == 'Create volumes')
 
     - name: build host_fqdn 
       ansible.builtin.set_fact:
