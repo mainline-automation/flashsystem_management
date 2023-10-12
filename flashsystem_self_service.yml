@@ -88,7 +88,7 @@
 
     - name: build host_fqdn 
       ansible.builtin.set_fact:
-        host_fqdn: "{{ hostname }} + {{ domain }}"
+        host_fqdn: "{{ hostname + domain }}"
       when: "{{ configuration_type }} == 'Create and map volumes'"
     - name: Add lines to vars/addvolume.csv
       ansible.builtin.lineinfile:
