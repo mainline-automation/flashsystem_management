@@ -27,28 +27,19 @@
       ansible.builtin.dnf:
         name: git
         state: present
-      
+  
     - name: Create vars/ directory on host if it doesn't exist
       ansible.builtin.file:
-        path: cicd/vars/
+        path: cicd
         state: directory
         recurse: true
-        mode: '0755'              
-     
-    - name: run git init on remote host 
-      ansible.builtin.command:
-        cmd: git remote add origin git@github.com:mainline-automation/flashsystem_management.git
-        chdir: cicd/vars/
-        creates: .git/
-
-    - name: Git push
-      ansible.builtin.command:
-        cmd: git push -u origin test
-        chdir: cicd/vars/
-    - name: Copy vars/addvolume.csv to host 
-      ansible.builtin.copy:
-        src: vars/addvolume.csv
-        dest: cicd/vars/addvolume.csv
+        mode: '0755'
+    - name: Use git module to retrieve flashsystem_management
+      ansible.builtin.git:
+        keyfile: /root/.ssh/id_ed25519
+        dest: cicd/
+        remote: origin
+        repo: git@github.com:mainline-automation/flashsystem_management.git
 
     - name: Validate whether config type is create volumes or create and map volumes and follow block
       when: ("{{configuration_type}}" == 'Create volumes') or ("{{configuration_type}}" == 'Create and map volumes')
