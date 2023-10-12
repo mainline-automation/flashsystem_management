@@ -1,9 +1,7 @@
 {
     "name": "flashsystem_update",
     "description": "General questions to provision volumes on IBM FlashSystem",
-    "spec": [
-            {%- if (configuration_type == "Create volumes") or (configuration_type == "Create and map volumes") -%}
-                {
+    "spec": [{
                     "required": true,
                     "default": "new_vol",
                     "question_description": "Volume names will be constructed as basename+sequence number. Choose your base name here",
@@ -44,7 +42,7 @@
                 },
                 {
                     "required": true,
-                    "choices":  "{{pool_names.survey_info}}",
+                    "choices":  {pool_names.survey_info},
                     "question_description": "Select one storage pool from the list",
                     "new_question": true,
                     "variable": "pool_select",
@@ -68,9 +66,7 @@
                     "variable": "unit",
                     "question_name": "What unit will you size capacity in?",
                     "type": "multiplechoice"
-                },
-                {%- if (configuration_type == "Create volumes") -%}
-                {
+                },{
                     "required": true,
                     "min": 1,
                     "question_description": "choose the number of storage units that you will configure in each volume",
@@ -79,56 +75,5 @@
                     "question_name": "How many units of capacity per volume?",
                     "type": "integer"
                 } 
-                {% else %}
-                {
-                    "required": true,
-                    "min": 1,
-                    "question_description": "choose the number of storage units that you will configure in each volume",
-                    "new_question": true,
-                    "variable": "size",
-                    "question_name": "How many units of capacity per volume?",
-                    "type": "integer"
-                },
-                {% endif %}
-            {%- endif -%}
-            {% if (configuration_type == "Map unmapped volumes") %}
-                {
-                    "required": true,
-                    "choices": "{{unmapped_volumes.reduced_list}}",
-                    "question_description": "Choose volumes on the flashsystem that are currently unmapped",
-                    "new_question": true,
-                    "variable": "unmapped_vol",
-                    "question_name": "Select a currently unmapped volumes to map to a single host",
-                    "type": "multiselect"
-                },
-            {% endif %}
-            {% if (configuration_type == "Create and map volumes") or (configuration_type == "Map unmapped volumes")%}
-                {
-                    "required": false,
-                    "choices": "VMware ESX\nIBM AIX",
-                    "question_description": "Choose from the selectable options for the OS that you will map to",
-                    "new_question": true,
-                    "variable": "os",
-                    "question_name": "Which availabe OS will the volume be used with?",
-                    "type": "multiplechoice"
-                },
-                {
-                    "required": false,
-                    "question_description": "Which of the available host names, if any, do you want to map this to?",
-                    "choices": "{{host_list.survey_info}}",
-                    "new_question": true,
-                    "variable": "hostname",
-                    "question_name": "Which hostname will you map this to?",
-                    "type": "text"
-                },
-                {
-                    "required": false,
-                    "question_description": "Please enter the Fully Qualified Domain Name for the host.",       
-                    "new_question": true,
-                    "variable": "host_fqdn",
-                    "question_name": "What is the FQDN for the host?",
-                    "type": "text"
-                }
-            {% endif %}
-            ]
+                                        ]
 }

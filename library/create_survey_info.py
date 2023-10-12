@@ -36,7 +36,7 @@ RETURN = r'''
 # The only important return value is vol_names
 survey_info:
     description: The properly formatted list of dictionaries
-    type: list
+    type: str
     returned: always
     sample: ['name': 'pool1', 'name': 'pool2',...]
 
@@ -55,7 +55,7 @@ def run_module():
     # survey list starts off as a blank list in the dictionary
     result = dict(
         changed=False,
-        survey_info=[]
+        survey_info=""
     )
 
     # supports check mode
@@ -69,14 +69,23 @@ def run_module():
         module.exit_json(**result)
 
     # Loop from beginning number to end number by increment. Default increment is 1
-    x=0
-    requested_value={}
-    while x < len(module.params['info_results']):
-        if x < len(module.params['info_results']):
-            requested_value[x] = result['survey_info'].append(module.params['info_results'][x][module.params['info_value']],)
-            x = x+1
+    # x=0
+    requested_value=[]
+    # while x < len(module.params['info_results']):
+    #     if x < len(module.params['info_results']):
+    for x in range(len(module.params['info_results'])):
+            # requested_value[x] = result['survey_info'].append(module.params['info_results'][x][module.params['info_value']],)
+        requested_value.append(module.params['info_results'][x][module.params['info_value']])
+
+   
+    # requested_value[x]
+    print(requested_value)
+    requested_value = list(set(requested_value))
+    #convert the list to a string for use in JSON
+    list_string="\\n"
+    result['survey_info']=list_string.join(requested_value)
     # remove duplicate values
-    result['survey_info'] = list(dict.fromkeys(result['survey_info']))
+    # result['survey_info'] = list(dict.fromkeys(result['survey_info']))
         
     # determines that input parameters were provided and changed
     

@@ -23,8 +23,7 @@
 
 
   tasks:
-    - when: ("{{configuration_type}}" == 'Create volumes') or
-          ("{{configuration_type}}" == 'Create and map volumes')
+    - when: ("{{configuration_type}}" == 'Create volumes') or ("{{configuration_type}}" == 'Create and map volumes')
       block:
         - name: Make sure that countby_var is at least 1
           ansible.builtin.set_fact:
@@ -46,13 +45,13 @@
           loop: "{{ name_list.vol_names }}"
 
       
-    - name: Temporary set_fact for esx_datastore_name 
+    - name: Temporary set_fact for esx_datastore_name
       ansible.builtin.set_fact:
         esx_datastore_name: '' 
 
-    - name: Temporary set_fact for esx_datastore_type 
+    - name: Temporary set_fact for esx_datastore_type
       ansible.builtin.set_fact:
-        esx_datastore_type: '' 
+        esx_datastore_type: ''
 
     - name: Add lines to vars/addvolume.csv
       ansible.builtin.lineinfile:

@@ -7,6 +7,7 @@
     - vars/authentication.yml
   vars:
     ansible_connection: local
+    # configuration_type: 'Create volumes'
 
   tasks:
     - name: gather facts using ibm_svc_info
@@ -25,8 +26,8 @@
         info_value: name
       register: pool_names
     
-
-    - block:
+    - when: ("{{ configuration_type }} == 'Map unmapped volumes'")
+      block:
         - name: Gather svc_info for volumes that haven't been mapped
           ibm.storage_virtualize.ibm_svc_info:
             clustername: "{{ clustername }}"
@@ -60,9 +61,9 @@
             list_to_remove: "{{ mapped_volumes.survey_info }}"
             main_list: "{{ all_volume_names.survey_info }}"
           register: unmapped_volumes
-      when: ("{{ configuration_type }} == 'Map unmapped volumes'")
 
-    - block: 
+    - when: ("{{ configuration_type }} == 'Create and map volumes'") or ("{{ configuration_type }} == 'Map unmapped volumes'")
+      block: 
       - name: Gather svc_info for volumes that haven't been mapped
         ibm.storage_virtualize.ibm_svc_info:
           clustername: "{{ clustername }}"
@@ -76,35 +77,32 @@
           info_results: "{{ all_hosts.Host }}"
           info_value: name
         register: host_list
-      when: ("{{ configuration_type }} == 'Create and map volumes'") or 
-            ("{{ configuration_type }} =='Map unmapped volumes'")
 
-    
+      - name: Create volume_spec.json by using ansible.builtin.template and /templates/dyn_survey_vol.j2
+        ansible.builtin.template:
+          src: dyn_survey_vol.j2
+          dest: /tmp/dyn_survey_vol.json
+          # dest: /home/ansible/playbooks/flashsystem_setup/templates/dyn_survey_vol.json
+          mode: '0644'
+        register: spec_results
 
-    - name: Create volume_spec.json by using ansible.builtin.template and /templates/dyn_survey_vol.j2
-      ansible.builtin.template:
-        src: dyn_survey_vol.j2
-        dest: /tmp/dyn_survey_vol.json
-        mode: '0644'
-      register: spec_results
-
-    - name: Update FlashSystem Volume Survey
-      ansible.controller.job_template:
-        name: IBM_FlashSystem_Self_Service_Update_CSV
-        # ask_variables_on_launch: true
-        execution_environment: ee-ibm-flashsystem
-        survey_enabled: true
-        survey_spec: "{{ lookup('file','/tmp/dyn_survey_vol.json') | to_nice_json}}"
-        validate_certs: no
-        inventory: ibm_storage_and_hosts
-        playbook: flashsystem_self_service.yml
-        project: 'FlashSystem Management'
-        controller_password: M@inline1700
-        controller_username: ian.wright
-        controller_host: ansible.bpic.mainline.com
-        controller_config_file: /etc/ansible/ansible.cfg
-        extra_vars:
-          configuration_type: "{{ configuration_type }}"
+      - name: Update FlashSystem Volume Survey
+        ansible.controller.job_template:
+          name: IBM_FlashSystem_Self_Service_Update_CSV
+          # ask_variables_on_launch: true
+          execution_environment: ee-ibm-flashsystem
+          survey_enabled: true
+          survey_spec: "{{ lookup('file','/tmp/dyn_survey_vol.json') }}"
+          validate_certs: no
+          inventory: ibm_storage_and_hosts
+          playbook: flashsystem_self_service.yml
+          project: 'FlashSystem Management'
+          controller_password: M@inline1700
+          controller_username: ian.wright
+          controller_host: ansible.bpic.mainline.com
+          controller_config_file: /etc/ansible/ansible.cfg
+          extra_vars:
+            configuration_type: "{{ configuration_type }}"
 
 
      #abandoned this code for now -- ansible just doesn't support multiple surveys in the same workflow 

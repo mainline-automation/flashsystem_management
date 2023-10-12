@@ -1,62 +1,5 @@
 {
-    "plays": [
-        {
-            "___progress": "100%",
-            "__changed": 0,
-            "__failed": 1,
-            "__ignored": 0,
-            "__in progress": 0,
-            "__ok": 0,
-            "__percent_complete": 100,
-            "__play_name": "Append additional volumes to vars/addvolume.csv",
-            "__progress": "Complete",
-            "__skipped": 0,
-            "__task_count": 1,
-            "__unreachable": 0,
-            "name": "Append additional volumes to vars/addvolume.csv",
-            "pattern": "localhost",
-            "play": "Append additional volumes to vars/addvolume.csv",
-            "play_pattern": "localhost",
-            "play_uuid": "9aaf2858-fc3e-9b51-3f5c-000000000008",
-            "playbook": "/home/ansible/playbooks/flashsystem_setup/flashsystem_self_service.yml",
-            "playbook_uuid": "b83da131-0805-41ad-9bad-630522341726",
-            "tasks": [
-                {
-                    "__changed": false,
-                    "__duration": "0s",
-                    "__host": "localhost",
-                    "__number": 0,
-                    "__result": "Failed",
-                    "__task": "if countby_var is blank or less than 1, set countby_var=1",
-                    "__task_action": "ansible.builtin.set_fact",
-                    "duration": 0.021833,
-                    "end": "2023-10-11T17:20:08.733668",
-                    "event_loop": null,
-                    "host": "localhost",
-                    "ignore_errors": null,
-                    "play": "Append additional volumes to vars/addvolume.csv",
-                    "play_pattern": "localhost",
-                    "play_uuid": "9aaf2858-fc3e-9b51-3f5c-000000000008",
-                    "playbook": "/home/ansible/playbooks/flashsystem_setup/flashsystem_self_service.yml",
-                    "playbook_uuid": "b83da131-0805-41ad-9bad-630522341726",
-                    "remote_addr": "localhost",
-                    "res": {
-                        "_ansible_no_log": false,
-                        "msg": "The conditional check '(\"{{configuration_type}}\" == 'Create volumes') or (\"{{configuration_type}}\" == 'Create and map volumes')' failed. The error was: error while evaluating conditional ((\"{{configuration_type}}\" == 'Create volumes') or (\"{{configuration_type}}\" == 'Create and map volumes')): 'configuration_type' is undefined. 'configuration_type' is undefined\n\nThe error appears to be in '/home/ansible/playbooks/flashsystem_setup/flashsystem_self_service.yml': line 26, column 11, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n    - block:\n        - name: if countby_var is blank or less than 1, set countby_var=1\n          ^ here\n"
-                    },
-                    "resolved_action": "ansible.builtin.set_fact",
-                    "start": "2023-10-11T17:20:08.711835",
-                    "task": "if countby_var is blank or less than 1, set countby_var=1",
-                    "task_action": "ansible.builtin.set_fact",
-                    "task_args": "",
-                    "task_path": "/home/ansible/playbooks/flashsystem_setup/flashsystem_self_service.yml:26",
-                    "task_uuid": "9aaf2858-fc3e-9b51-3f5c-00000000000a",
-                    "uuid": "81cd3e0f-9014-4316-a739-ae0c35663387"
-                }
-            ],
-            "uuid": "9aaf2858-fc3e-9b51-3f5c-000000000008"
-        }
-    ],
+    "plays": [],
     "settings_entries": {
         "ansible-navigator": {
             "ansible": {
@@ -78,7 +21,7 @@
                 },
                 "playbook": {
                     "help": false,
-                    "path": "/home/ansible/playbooks/flashsystem_setup/flashsystem_self_service.yml"
+                    "path": "/home/ansible/playbooks/flashsystem_setup/flashsystem_self_service_survey_build.yml"
                 }
             },
             "ansible-builder": {
@@ -199,17 +142,20 @@
     "stdout": [
         "\u001b[1;35m[WARNING]: Invalid characters were found in group names but not replaced, use\u001b[0m",
         "\u001b[1;35m-vvvv to see details\u001b[0m",
-        "",
-        "PLAY [Append additional volumes to vars/addvolume.csv] *************************",
-        "",
-        "TASK [if countby_var is blank or less than 1, set countby_var=1] ***************",
-        "\u001b[1;35m[WARNING]: conditional statements should not include jinja2 templating\u001b[0m",
-        "\u001b[1;35mdelimiters such as {{ }} or {% %}. Found: (\"{{configuration_type}}\" == 'Create\u001b[0m",
-        "\u001b[1;35mvolumes') or (\"{{configuration_type}}\" == 'Create and map volumes')\u001b[0m",
-        "\u001b[0;31mfatal: [localhost]: FAILED! => {\"msg\": \"The conditional check '(\\\"{{configuration_type}}\\\" == 'Create volumes') or (\\\"{{configuration_type}}\\\" == 'Create and map volumes')' failed. The error was: error while evaluating conditional ((\\\"{{configuration_type}}\\\" == 'Create volumes') or (\\\"{{configuration_type}}\\\" == 'Create and map volumes')): 'configuration_type' is undefined. 'configuration_type' is undefined\\n\\nThe error appears to be in '/home/ansible/playbooks/flashsystem_setup/flashsystem_self_service.yml': line 26, column 11, but may\\nbe elsewhere in the file depending on the exact syntax problem.\\n\\nThe offending line appears to be:\\n\\n    - block:\\n        - name: if countby_var is blank or less than 1, set countby_var=1\\n          ^ here\\n\"}\u001b[0m",
-        "",
-        "PLAY RECAP *********************************************************************",
-        "\u001b[0;31mlocalhost\u001b[0m                  : ok=0    changed=0    unreachable=0    \u001b[0;31mfailed=1   \u001b[0m skipped=0    rescued=0    ignored=0   "
+        "\u001b[0;31mERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:\u001b[0m",
+        "\u001b[0;31mJSON: Expecting value: line 1 column 1 (char 0)\u001b[0m",
+        "\u001b[0;31m\u001b[0m",
+        "\u001b[0;31mSyntax Error while loading YAML.\u001b[0m",
+        "\u001b[0;31m  mapping values are not allowed in this context\u001b[0m",
+        "\u001b[0;31m\u001b[0m",
+        "\u001b[0;31mThe error appears to be in '/home/ansible/playbooks/flashsystem_setup/flashsystem_self_service_survey_build.yml': line 66, column 12, but may\u001b[0m",
+        "\u001b[0;31mbe elsewhere in the file depending on the exact syntax problem.\u001b[0m",
+        "\u001b[0;31m\u001b[0m",
+        "\u001b[0;31mThe offending line appears to be:\u001b[0m",
+        "\u001b[0;31m\u001b[0m",
+        "\u001b[0;31m    - when (\"{{ configuration_type }} == 'Create and map volumes'\") or (\"{{ configuration_type }} == 'Map unmapped volumes'\")\u001b[0m",
+        "\u001b[0;31m      block:\u001b[0m",
+        "\u001b[0;31m           ^ here\u001b[0m"
     ],
     "version": "2.0.0"
 }
