@@ -65,10 +65,8 @@
           when: lookup('csvfile', item + ' file=vars/addvolume.csv col=0 delimiter=,')
           loop: "{{ name_list.vol_names }}"
 
-    - name: Set hostname to '' when no hosts being mapped
-      ansible.builtin.set_fact:
-        hostname: ''
-       
+    
+    - name: temporary values for testing
       block:
       
         - name: Temporary set_fact for esx_datastore_name
@@ -77,7 +75,9 @@
         - name: Temp fact os
           ansible.builtin.set_fact:
             os: ''
-
+        - name: Set hostname to '' when no hosts being mapped
+          ansible.builtin.set_fact:
+            hostname: ''
         - name: Temporary set_fact for esx_datastore_type
           ansible.builtin.set_fact:
             esx_datastore_type: ''
