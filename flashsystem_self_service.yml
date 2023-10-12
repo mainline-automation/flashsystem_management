@@ -5,23 +5,8 @@
   become: true
   vars_files:
     - vars/authentication.yml
-  vars:
-    # configuration_type: 'Create volumes'
-    # start_var: 2
-    # vol_count: 10
-    # countby_var: 2
-    # vol_base: demo_vol
-    # pool: Pool01
-    # size: 1024
-    # thin: true
-    # unit: mb 
-  #   os: aix
-  #   hostname: bpicaix04
-  #   host_fqdn: bpicaix04.bpic.mainline.com
-  #   esx_datastore_name: ''
-  #   esx_datastore_type : ''
-
-
+ 
+    
   tasks:
     - name: make sure that git is installed with dnf 
       ansible.builtin.dnf:
@@ -43,7 +28,6 @@
         repo: git@github.com:mainline-automation/flashsystem_management.git
         force: true
         version: 'test'
-
     - name: Validate whether config type is create volumes or create and map volumes and follow block
       when: ("{{configuration_type}}" == 'Create volumes') or ("{{configuration_type}}" == 'Create and map volumes')
       block:
@@ -65,14 +49,13 @@
             msg: "Volume Name {{ item }} already exists. Please correct and try again"
           when: lookup('csvfile', item + ' file=vars/addvolume.csv col=0 delimiter=,')
           loop: "{{ name_list.vol_names }}"
-
-    
-    - name: temporary values for testing
-      block:
-      
         - name: Temporary set_fact for esx_datastore_name
           ansible.builtin.set_fact:
             esx_datastore_name: '' 
+
+    - name: If only creating volumes then set default values
+      when: ("{{configuration_type}}" == 'Create volumes')
+      block:
         - name: Temp fact os
           ansible.builtin.set_fact:
             os: ''
@@ -81,16 +64,13 @@
             hostname: ''
         - name: Temporary set_fact for esx_datastore_type
           ansible.builtin.set_fact:
-            esx_datastore_type: ''
-        - name: Temporary set_fact for esx_datastore_type
-          ansible.builtin.set_fact:
             host_fqdn: ''
-      when: ("{{ configuration_type }}" == 'Create volumes')
 
-    - name: build host_fqdn 
+    - name: set fqdn
       ansible.builtin.set_fact:
         host_fqdn: "{{ hostname + domain }}"
-      when: ("{{ configuration_type }} == 'Create and map volumes'")
+      when: ("{{configuration_type}}" == 'Map unmapped volumes') or ("{{configuration_type}}" == 'Create and map volumes')
+      
     - name: Add lines to vars/addvolume.csv
       ansible.builtin.lineinfile:
         path: cicd/vars/addvolume.csv
