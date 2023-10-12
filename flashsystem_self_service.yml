@@ -94,7 +94,7 @@
         line: "{{ item }},{{ pool_select }},{{ size }},{{ thin }},{{ unit }},{{ os }},{{ hostname }},{{ host_fqdn }},
                 {{ esx_datastore_name }},{{ esx_datastore_type }}"
       loop: "{{ name_list.vol_names }}"
-      delegate_to: localhost
+
 
     - name: print contents of vars/addvolume.csv 
       ansible.builtin.debug:
