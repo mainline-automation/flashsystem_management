@@ -102,13 +102,13 @@
     - name: add updates to git
       ansible.builtin.command:
         cmd: git add vars/addvolume.csv
-        chdir: ~/cicd/
+        chdir: /home/ansible/cicd/
     
     - name: commit updates
       ansible.builtin.command:
         cmd: git commit -m "Update performed by Ansible"
-        chdir: ~/cicd/
+        chdir: /home/ansible/cicd/
     - name: push to git 
       ansible.builtin.command:
         cmd: git push -u origin test
-        chdir: ~/cicd/
+        chdir: /home/ansible/cicd/
