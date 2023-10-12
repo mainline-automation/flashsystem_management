@@ -4,3 +4,6 @@ ansible2,Pool_01,1024,yes,gb,esx,esxlab,esxlab.bpic.mainline.com,ansible2_esx,vm
 ansible3,Pool_01,512,yes,gb,aix,bpicaix04,esxlab.bpic.mainline.com,,
 ansible4,Pool_01,512,yes,gb,aix,bpicaix04,esxlab.bpic.mainline.com,,
 ansible5,Pool_01,2048,yes,gb,esx,esxlab,esxlab.bpic.mainline.com,ansible5_esx,vmfs
+git_1,Pool_01,1,true,GB,,,bpic.mainline.com, ,
+git_2,Pool_01,1,true,GB,,,bpic.mainline.com, ,
+git_3,Pool_01,1,true,GB,,,bpic.mainline.com, ,
