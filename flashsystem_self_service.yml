@@ -92,7 +92,7 @@
       when: ("{{ configuration_type }} == 'Create and map volumes'")
     - name: Add lines to vars/addvolume.csv
       ansible.builtin.lineinfile:
-        path: vars/addvolume.csv
+        path: cicd/vars/addvolume.csv
         line: "{{ item }},{{ pool_select }},{{ size }},{{ thin }},{{ unit }},{{ os }},{{ hostname }},{{ host_fqdn }},
                 {{ esx_datastore_name }},{{ esx_datastore_type }}"
       loop: "{{ name_list.vol_names }}"
@@ -100,4 +100,4 @@
 
     - name: print contents of vars/addvolume.csv 
       ansible.builtin.debug:
-        msg: ('lookup','vars/addvolume.csv') 
+        msg: ('lookup','cicd/vars/addvolume.csv') 
