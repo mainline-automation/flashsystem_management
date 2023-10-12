@@ -36,7 +36,7 @@
         mode: '0755'
     - name: Use git module to retrieve flashsystem_management
       ansible.builtin.git:
-        keyfile: /root/.ssh/id_ed25519
+        key_file: /root/.ssh/id_ed25519
         dest: cicd/
         remote: origin
         repo: git@github.com:mainline-automation/flashsystem_management.git
