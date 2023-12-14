@@ -11,8 +11,6 @@
       ibm.storage_virtualize.ibm_svc_info:
         clustername: "{{ clustername }}"
         gather_subset: array
-        # username: ansible 
-        # password: M@inline1700
         token: "{{ api_token }}"
       register: results
 #      no_log: true
