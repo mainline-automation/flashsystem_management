@@ -23,7 +23,6 @@
   
   - name: Define DNS A type record for new VMs
     community.windows.win_dns_record:
-      
       name: "{{ item.vm_guest_name }}"
       type: "A"
       value: "{{ item.ip_addr }}"
